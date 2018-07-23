@@ -1,7 +1,13 @@
 # Borehole IE
 
 ## Summary
-TODO SG
+Borehole and associated data are crucial for many domains. They are used in any domain that need to probe the underground; geology (hydrogeology, oil and gas, mining), civil engineering (utilities, constructions, transportation) and environment (ice coring, limnology, etc.).
+
+Even though several standards already exist to describe a borehole, its associated data and their position along a borehole (including OGC standards), they all restrict themselves to a specific viewpoint. 
+
+Involving key implementers and editors of the existing standards, this Interoperability Experiment (IE) aims at clarifying the commonalities and differences of the diverse approaches by providing a semantic umbrella linked to the pre-existing work by distilling the core elements shared by all disciplines. This will provide the basis for establishing a better integration of existing standards and possibly a future common approach for describing boreholes.
+
+The IE will produce the semantic umbrella and an OGC engineering report summarizing the achievements and listing the potential adjustments to be made on the pre-existing standards so that the system as a whole is at the end coherent. 
 
 ## Contributing
 
