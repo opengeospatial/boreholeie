@@ -7,7 +7,7 @@
     type: GW_Well
     # identify the "shape" of the borehole. Here, we use a geometry.
     trajectory:
-        type:TrajectoryPosition
+        type: TrajectoryPosition
         accuracyStatement: good
         precisitionStatement: good
         linearElement:
