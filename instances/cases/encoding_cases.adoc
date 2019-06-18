@@ -71,7 +71,7 @@ Reference example: http://schemas.opengis.net/gsml/4.1/instances/GSML4-BoreholeI
             </bhml:location>
         </bhml:BoreholeEvent>
     </bhml:boreholeEventCollectionMember>
-     <bhml:boreholeEventCollectionMember><
+     <bhml:boreholeEventCollectionMember>
         <bhml:BoreholeEvent>
         <!-- by reference this time -->
             <bhml:locatedFeature xlink:href="http://geology.au/lexicon/Westbourne.Formation"/>
