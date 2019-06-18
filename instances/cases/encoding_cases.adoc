@@ -100,6 +100,8 @@ This scenario explore a case where a domain explicitly reuse BHML (has en explic
 
 Same example : 
 
+[source,xml]
+----
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- we skip namespace declaration etc. -->
 <!-- we assume that BoreholeEventCollection is a gml:Feature -->
