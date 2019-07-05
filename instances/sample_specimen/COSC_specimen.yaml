@@ -37,7 +37,7 @@
     boreholeEventCollectionMember:
         sample2: !BoreholeEvent
             &BoreholeEvent2
-            locatedFeature: https://www.geodata.rocks/Samples/SD-5054_1_A_531_3WR_64-76
+            locatedFeature: https://www.geodata.rocks/Samples/SD-5054_1_A_532_2WR_35-45
             location: !FromToLocation
                 fromPosition: 1618.06
                 toPosition: 1618.16
