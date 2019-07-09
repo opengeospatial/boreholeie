@@ -177,7 +177,7 @@ Same example :
 
 Note that both instance (no dependency and with dependency) are valid (just different representation).  The latter adds more properties and provide a more precise semantic.
 
-issue: Maybe this is more a Log than a Borehole ?  This mean we could offset the whole structure and nest BoreholeEvent_Collection inside a Borehole->Log.  Maybe this whole spec if LogML more than BoreholeML ?
+issue: Maybe this is more a Log than a Borehole ?  This mean we could offset the whole structure and nest BoreholeEvent_Collection inside a Borehole->Log.  Maybe this whole spec if LogML more than BhML ?
 
 == Compact encoding
 
@@ -233,12 +233,12 @@ Groundwater well are highly specialised with their casing, screen and sealing co
         <swe:elementType name="LogValue">
             <swe:DataRecord definition="http://www.opengis.net/def/gwml/2.0/datarecord/earthMaterial">
                 <swe:field name="from">
-                    <swe:Quantity definition="https://www.opengis.net/def/BoreholeML/FromToLocation/from">
+                    <swe:Quantity definition="https://www.opengis.net/def/BhML/FromToLocation/from">
                         <swe:uom xlink:href="http://www.opengis.net/def/uom/UCUM/0/m" xlink:title="m"/>
                     </swe:Quantity>
                 </swe:field>
                 <swe:field name="to">
-                    <swe:Quantity definition="https://www.opengis.net/def/BoreholeML/FromToLocation/to">
+                    <swe:Quantity definition="https://www.opengis.net/def/BhML/FromToLocation/to">
                         <swe:uom xlink:href="http://www.opengis.net/def/uom/UCUM/0/m" xlink:title="m"/>
                     </swe:Quantity>
                 </swe:field>
@@ -274,12 +274,12 @@ The elements of interest are the SWE mapping to properties in the bhml model
 [source,xml]
 ----
 <swe:field name="from">
-                    <swe:Quantity definition="https://www.opengis.net/def/BoreholeML/FromToLocation/from">
+                    <swe:Quantity definition="https://www.opengis.net/def/BhML/FromToLocation/from">
                         <swe:uom xlink:href="http://www.opengis.net/def/uom/UCUM/0/m" xlink:title="m"/>
                     </swe:Quantity>
                 </swe:field>
                 <swe:field name="to">
-                    <swe:Quantity definition="https://www.opengis.net/def/BoreholeML/FromToLocation/to">
+                    <swe:Quantity definition="https://www.opengis.net/def/BhML/FromToLocation/to">
                         <swe:uom xlink:href="http://www.opengis.net/def/uom/UCUM/0/m" xlink:title="m"/>
                     </swe:Quantity>
                 </swe:field>
