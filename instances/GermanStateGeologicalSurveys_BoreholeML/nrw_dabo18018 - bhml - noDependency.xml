@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- we assume that BoreholeEventCollection is a gml:Feature -->
+<bhml:BoreholeEvent_Collection xmlns:bml="http://www.infogeo.de/boreholeml/3.0" xmlns:bhml="http://www..gfz-potsdam.de/bhml/1.0" xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gn="urn:x-inspire:specification:gmlas:GeographicalNames:3.0">
+	<gml:identifier codeSpace="http://data.gov.au/boreholes/id">GA.borehole.276547</gml:identifier>
+	<gml:name>BMR Eromanga 1</gml:name>
+	<!-- the distanceExpression is set for the whole Collection as agress on Telco 21 -->
+	<bhml:collectionStartPoint>
+		<bhml:TrajectoryDistance>
+			<bhml:distanceAlong uom="m">0.0</bhml:distanceAlong>
+			<bhml:referent>
+				<bhml:TrajectoryPosition>
+					<bhml:distanceExpression>
+						<bhml:TrajectoryDistance>
+							<bhml:distanceAlong uom="m">0.0</bhml:distanceAlong>
+							<bhml:referent>
+								<gml:Point gml:id="p1" srsName="http://spatialreference.org/ref/epsg/4979/">
+									<gml:pos>-25.9020 132.334 27.9</gml:pos>
+								</gml:Point>
+							</bhml:referent>
+						</bhml:TrajectoryDistance>
+					</bhml:distanceExpression>
+					<bhml:linearElement>
+						<gml:Curve gml:id="bh.1.shape" srsName="http://spatialreference.org/ref/epsg/4979/">
+							<gml:segment>
+								<gml:LineStringSegment>
+									<gml:posList srsDimension="3" count="3">-25.9020 132.334 27.9 -25.9025 132.334 -30.65 -25.9030 132.334 -215.6</gml:posList>
+								</gml:LineStringSegment>
+							</gml:segment>
+						</gml:Curve>
+					</bhml:linearElement>
+				</bhml:TrajectoryPosition>
+			</bhml:referent>
+		</bhml:TrajectoryDistance>
+	</bhml:collectionStartPoint>
+	<bhml:boreholeEventCollectionMember>
+		<!-- man, this is a mouthfull. -->
+		<!-- rhaener 2019-07-09, I strongly recommend to use simple terms, to harmonize them, and to apply well established naming convention (e.g. lowerCamelCase, a property or instance starts with lower camel case, a Class or manifestation of a property with upper camle case) -->
+		<!-- rhaener 2019-07-09, boreholeEventCollectionMember should be renamed to member since all the event collection is known from the context (BoreholeEvent_Collection) -->
+		<!-- rhaener 2019-07-09, BoreholeEvent_Collection should be renamed to boreholeEventCollection -->
+		<bhml:BoreholeEvent>
+			<bhml:locatedFeature>
+				<bml:Component>
+					<bml:rockCode>L</bml:rockCode>
+					<bml:rockNameText xlink:type="simple">
+						<gmd:LocalisedCharacterString xmlns="http://www.infogeo.de/boreholeml/3.0" locale="http://www.infogeo.de/boreholeml/3.0/codelists/DE.xml">keine Angaben</gmd:LocalisedCharacterString>
+					</bml:rockNameText>
+					<bml:petrography>
+						<bml:Lithology>
+							<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">KMat</bml:rockName>
+							<bml:percentageFrom>40</bml:percentageFrom>
+							<bml:percentageTo>100</bml:percentageTo>
+						</bml:Lithology>
+					</bml:petrography>
+					<bml:stratigraphy>
+						<bml:ChronoStratigraphy codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/ChronoStratigraphyList.xml">K2Ca</bml:ChronoStratigraphy>
+					</bml:stratigraphy>
+				</bml:Component>
+			</bhml:locatedFeature>
+			<bhml:location>
+				<bhml:FromToLocation>
+					<bhml:fromPosition uom="m">0.0</bhml:fromPosition>
+					<bhml:toPosition uom="m">15.0</bhml:toPosition>
+				</bhml:FromToLocation>
+			</bhml:location>
+		</bhml:BoreholeEvent>
+	</bhml:boreholeEventCollectionMember>
+	<bhml:boreholeEventCollectionMember>
+		<!-- man, this is a mouthfull.. -->
+		<bhml:BoreholeEvent>
+			<bhml:locatedFeature>
+				<bml:Interval>
+					<bml:rockCode>MEZ; ; FS; 2</bml:rockCode>
+					<bml:rockNameText xlink:type="simple">
+						<gmd:LocalisedCharacterString xmlns="http://www.infogeo.de/boreholeml/3.0" locale="http://www.infogeo.de/boreholeml/3.0/codelists/DE.xml">Mergelstein; feinsandig; schwach / mit wenig ...</gmd:LocalisedCharacterString>
+					</bml:rockNameText>
+					<bml:petrography>
+						<bml:Lithology>
+							<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">Mst</bml:rockName>
+							<bml:percentageFrom>40</bml:percentageFrom>
+							<bml:percentageTo>100</bml:percentageTo>
+							<bml:rockColor codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockColorList.xml">v1&amp;h8</bml:rockColor>
+						</bml:Lithology>
+						<bml:Lithology>
+							<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">fS</bml:rockName>
+							<bml:percentageFrom>0.1</bml:percentageFrom>
+							<bml:percentageTo>15</bml:percentageTo>
+						</bml:Lithology>
+					</bml:petrography>
+					<bml:stratigraphy>
+						<bml:ChronoStratigraphy codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/ChronoStratigraphyList.xml">K2Ca</bml:ChronoStratigraphy>
+					</bml:stratigraphy>
+				</bml:Interval>
+			</bhml:locatedFeature>
+			<bhml:location>
+				<bhml:FromToLocation>
+					<bhml:fromPosition uom="m">15.0</bhml:fromPosition>
+					<bhml:toPosition uom="m">7.0</bhml:toPosition>
+				</bhml:FromToLocation>
+			</bhml:location>
+		</bhml:BoreholeEvent>
+	</bhml:boreholeEventCollectionMember>
+	<bhml:boreholeEventCollectionMember>
+		<bhml:BoreholeEvent>
+			<bhml:locatedFeature>
+				<bml:Component>
+					<bml:rockCode>MEZ; FS; 3</bml:rockCode>
+					<bml:rockNameText xlink:type="simple">
+						<gmd:LocalisedCharacterString xmlns="http://www.infogeo.de/boreholeml/3.0" locale="http://www.infogeo.de/boreholeml/3.0/codelists/DE.xml">Mergelstein; feinsandig; mit ...</gmd:LocalisedCharacterString>
+					</bml:rockNameText>
+					<bml:petrography>
+						<bml:Lithology>
+							<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">Mst</bml:rockName>
+							<bml:rockColor codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockColorList.xml">v1&amp;h5&amp;h8</bml:rockColor>
+						</bml:Lithology>
+						<bml:Lithology>
+							<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">fS</bml:rockName>
+						</bml:Lithology>
+					</bml:petrography>
+				</bml:Component>
+			</bhml:locatedFeature>
+			<bhml:location>
+				<bhml:FromToLocation>
+					<bhml:fromPosition uom="m">15.0</bhml:fromPosition>
+					<bhml:toPosition uom="m">70.0</bhml:toPosition>
+				</bhml:FromToLocation>
+			</bhml:location>
+		</bhml:BoreholeEvent>
+	</bhml:boreholeEventCollectionMember>
+	<bhml:boreholeEventCollectionMember>
+		<bhml:BoreholeEvent>
+			<!-- by reference this time -->
+			<bhml:locatedFeature xlink:href="http://www.infogeo.de/borehole/logging/nrw_dabo18018/samples/aGeoSampleNumer"/>
+			<bhml:location>
+				<bhml:FromToLocation>
+					<bhml:fromPosition uom="m">70.0</bhml:fromPosition>
+					<bhml:toPosition uom="m">80.0</bhml:toPosition>
+				</bhml:FromToLocation>
+			</bhml:location>
+		</bhml:BoreholeEvent>
+	</bhml:boreholeEventCollectionMember>
+</bhml:BoreholeEvent_Collection>
