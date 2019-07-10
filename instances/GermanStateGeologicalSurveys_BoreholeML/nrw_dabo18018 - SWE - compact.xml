@@ -1,235 +1,235 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <DataArray xmlns:bml="http://www.infogeo.de/boreholeml/3.0" xmlns="http://www.opengis.net/swe/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gmd="http://www.isotc211.org/2005/gmd" definition="bml:observation" xsi:schemaLocation="http://www.opengis.net/swe/2.0 ../../../schemas/sweCommon/2.0.1/swe.xsd">
-	<elementCount>
-		<Count>
-			<value>2</value>
-		</Count>
-	</elementCount>
-	<elementType name="IntervalSeries">
-		<DataRecord definition="bml:IntervalSeries">
-			<field name="Interval">
-				<DataRecord definition="bml:Interval">
-					<field name="rockNameText">
-						<Text/>
-					</field>
-					<field name="rockCode">
-						<Text/>
-					</field>
-					<field name="stratigraphy">
-						<DataRecord definition="bml:stratigraphy">
-							<field name="ChronoStratigraphy">
-								<Text definition="http://www.infogeo.de/boreholeml/3.0/codelists/ChronoStratigraphyList"/>
-							</field>
-							<field name="LithoStratigraphy"/>
-						</DataRecord>
-					</field>
-					<field name="petrography">
-						<DataRecord definition="bml:petrography">
-							<field name="Lithology">
-								<DataRecord definition="bml:Lithology">
-									<field name="rockName">
-										<Text definition="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml"/>
-									</field>
-									<field name="percentageFrom">
-										<Quantity>
-											<uom code="%"/>
-										</Quantity>
-									</field>
-									<field name="percentageTo">
-										<Quantity>
-											<uom code="%"/>
-										</Quantity>
-									</field>
-								</DataRecord>
-							</field>
-						</DataRecord>
-					</field>
-					<field name="from">
-						<Quantity>
-							<uom code="m"/>
-						</Quantity>
-					</field>
-					<field name="to">
-						<Quantity>
-							<uom code="m"/>
-						</Quantity>
-					</field>
-				</DataRecord>
-			</field>
-			<field name="Interval">
-				<DataRecord definition="bml:Interval">
-					<field name="rockNameText">
-						<Text/>
-					</field>
-					<field name="rockCode">
-						<Text/>
-					</field>
-					<field name="stratigraphy">
-						<DataRecord definition="bml:stratigraphy">
-							<field name="ChronoStratigraphy">
-								<Text/>
-							</field>
-							<field name="LithoStratigraphy"/>
-						</DataRecord>
-					</field>
-					<field name="petrography">
-						<DataRecord definition="bml:petrography">
-							<field name="Lithology">
-								<DataRecord definition="bml:Lithology">
-									<field name="rockName">
-										<Text definition="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml"/>
-									</field>
-									<field name="rockColor">
-										<Text definition="http://www.infogeo.de/boreholeml/3.0/codelists/RockColorList.xml"/>
-									</field>
-									<field name="percentageFrom">
-										<Quantity>
-											<uom code="%"/>
-										</Quantity>
-									</field>
-									<field name="percentageTo">
-										<Quantity>
-											<uom code="%"/>
-										</Quantity>
-									</field>
-								</DataRecord>
-							</field>
-							<field name="Lithology">
-								<DataRecord definition="bml:Lithology">
-									<field name="rockName">
-										<Text/>
-									</field>
-									<field name="percentageFrom">
-										<Quantity>
-											<uom code="%"/>
-										</Quantity>
-									</field>
-									<field name="percentageTo">
-										<Quantity>
-											<uom code="%"/>
-										</Quantity>
-									</field>
-								</DataRecord>
-							</field>
-						</DataRecord>
-					</field>
-					<field name="Component">
-						<DataRecord definition="bml:Component">
-							<field name="rockNameText">
-								<Text definition="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml"/>
-							</field>
-							<field name="rockCode">
-								<Text/>
-							</field>
-							<field name="stratigraphy">
-								<DataRecord definition="bml:stratigraphy">
-									<field name="ChronoStratigraphy">
-										<Text definition="http://www.infogeo.de/boreholeml/3.0/codelists/ChronoStratigraphyList.xml"/>
-									</field>
-									<field name="LithoStratigraphy">
-										<Text definition="http://www.infogeo.de/boreholeml/3.0/codelists/LithoStratigraphyList.xml"/>
-									</field>
-								</DataRecord>
-							</field>
-							<field name="petrography">
-								<DataRecord definition="bml:petrography">
-									<field name="Lithology">
-										<DataRecord definition="bml:Lithology">
-											<field name="rockName">
-												<Text definition="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml"/>
-											</field>
-											<field name="rockColor">
-												<Text definition="http://www.infogeo.de/boreholeml/3.0/codelists/RockColorList.xml"/>
-											</field>
-										</DataRecord>
-									</field>
-									<field name="Lithology">
-										<DataRecord definition="bml:Lithology">
-											<field name="rockName">
-												<Text/>
-											</field>
-										</DataRecord>
-									</field>
-								</DataRecord>
-							</field>
-							<field name="from">
-								<Quantity>
-									<uom code="m"/>
-								</Quantity>
-							</field>
-							<field name="to">
-								<Quantity>
-									<uom code="m"/>
-								</Quantity>
-							</field>
-						</DataRecord>
-					</field>
-					<field name="from">
-						<Quantity>
-							<uom code="m"/>
-						</Quantity>
-					</field>
-					<field name="to">
-						<Quantity>
-							<uom code="m"/>
-						</Quantity>
-					</field>
-				</DataRecord>
-			</field>
-		</DataRecord>
-	</elementType>
-	<values>
-		<bml:IntervalSeries>
-			<bml:Interval>
-				<bml:from>0</bml:from>
-				<bml:to>15</bml:to>
-				<bml:rockCode>L</bml:rockCode>
-				<bml:rockNameText>keine Angaben</bml:rockNameText>
-				<bml:petrography>
-					<bml:Lithology>
-						<bml:rockName>KMat</bml:rockName>
-						<bml:percentageFrom>40</bml:percentageFrom>
-						<bml:percentageTo>100</bml:percentageTo>
-					</bml:Lithology>
-				</bml:petrography>
-				<bml:stratigraphy>
-					<bml:ChronoStratigraphy>K2Ca</bml:ChronoStratigraphy>
-				</bml:stratigraphy>
-			</bml:Interval>
-			<bml:Interval>
-				<bml:from>15</bml:from>
-				<bml:to>70</bml:to>
-				<bml:rockCode>MEZ; ; FS; 2</bml:rockCode>
-				<bml:rockNameText>Mergelstein; feinsandig; schwach / mit wenig ...</bml:rockNameText>
-				<bml:petrography>
-					<bml:Lithology>
-						<bml:rockName>Mst</bml:rockName>
-						<bml:percentageFrom>40</bml:percentageFrom>
-						<bml:percentageTo>100</bml:percentageTo>
-						<bml:rockColor>v1 &amp; h8</bml:rockColor>
-					</bml:Lithology>
-					<bml:Lithology>
-						<bml:rockName>fS</bml:rockName>
-						<bml:percentageFrom>0.1</bml:percentageFrom>
-						<bml:percentageTo>15</bml:percentageTo>
-					</bml:Lithology>
-				</bml:petrography>
-				<bml:stratigraphy>
-					<bml:ChronoStratigraphy>K2Ca</bml:ChronoStratigraphy>
-				</bml:stratigraphy>
-				<bml:Component>
-					<bml:from>70</bml:from>
-					<bml:to>80</bml:to>
-					<bml:rockCode>MEZ; FS; 3</bml:rockCode>
-					<bml:rockNameText>Mergelstein; feinsandig; mit ...</bml:rockNameText>
-					<bml:petrography>
-						<bml:Lithology>
-							<bml:rockName>fS</bml:rockName>
-							<bml:rockColor>v1 &amp; h5 &amp; h8</bml:rockColor>
-						</bml:Lithology>
-					</bml:petrography>
-				</bml:Component>
-			</bml:Interval>
-		</bml:IntervalSeries>
-	</values>
+    <elementCount>
+        <Count>
+            <value>2</value>
+        </Count>
+    </elementCount>
+    <elementType name="IntervalSeries">
+        <DataRecord definition="bml:IntervalSeries">
+            <field name="Interval">
+                <DataRecord definition="bml:Interval">
+                    <field name="rockNameText">
+                        <Text/>
+                    </field>
+                    <field name="rockCode">
+                        <Text/>
+                    </field>
+                    <field name="stratigraphy">
+                        <DataRecord definition="bml:stratigraphy">
+                            <field name="ChronoStratigraphy">
+                                <Text definition="http://www.infogeo.de/boreholeml/3.0/codelists/ChronoStratigraphyList"/>
+                            </field>
+                            <field name="LithoStratigraphy"/>
+                        </DataRecord>
+                    </field>
+                    <field name="petrography">
+                        <DataRecord definition="bml:petrography">
+                            <field name="Lithology">
+                                <DataRecord definition="bml:Lithology">
+                                    <field name="rockName">
+                                        <Text definition="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml"/>
+                                    </field>
+                                    <field name="percentageFrom">
+                                        <Quantity>
+                                            <uom code="%"/>
+                                        </Quantity>
+                                    </field>
+                                    <field name="percentageTo">
+                                        <Quantity>
+                                            <uom code="%"/>
+                                        </Quantity>
+                                    </field>
+                                </DataRecord>
+                            </field>
+                        </DataRecord>
+                    </field>
+                    <field name="from">
+                        <Quantity>
+                            <uom code="m"/>
+                        </Quantity>
+                    </field>
+                    <field name="to">
+                        <Quantity>
+                            <uom code="m"/>
+                        </Quantity>
+                    </field>
+                </DataRecord>
+            </field>
+            <field name="Interval">
+                <DataRecord definition="bml:Interval">
+                    <field name="rockNameText">
+                        <Text/>
+                    </field>
+                    <field name="rockCode">
+                        <Text/>
+                    </field>
+                    <field name="stratigraphy">
+                        <DataRecord definition="bml:stratigraphy">
+                            <field name="ChronoStratigraphy">
+                                <Text/>
+                            </field>
+                            <field name="LithoStratigraphy"/>
+                        </DataRecord>
+                    </field>
+                    <field name="petrography">
+                        <DataRecord definition="bml:petrography">
+                            <field name="Lithology">
+                                <DataRecord definition="bml:Lithology">
+                                    <field name="rockName">
+                                        <Text definition="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml"/>
+                                    </field>
+                                    <field name="rockColor">
+                                        <Text definition="http://www.infogeo.de/boreholeml/3.0/codelists/RockColorList.xml"/>
+                                    </field>
+                                    <field name="percentageFrom">
+                                        <Quantity>
+                                            <uom code="%"/>
+                                        </Quantity>
+                                    </field>
+                                    <field name="percentageTo">
+                                        <Quantity>
+                                            <uom code="%"/>
+                                        </Quantity>
+                                    </field>
+                                </DataRecord>
+                            </field>
+                            <field name="Lithology">
+                                <DataRecord definition="bml:Lithology">
+                                    <field name="rockName">
+                                        <Text/>
+                                    </field>
+                                    <field name="percentageFrom">
+                                        <Quantity>
+                                            <uom code="%"/>
+                                        </Quantity>
+                                    </field>
+                                    <field name="percentageTo">
+                                        <Quantity>
+                                            <uom code="%"/>
+                                        </Quantity>
+                                    </field>
+                                </DataRecord>
+                            </field>
+                        </DataRecord>
+                    </field>
+                    <field name="Component">
+                        <DataRecord definition="bml:Component">
+                            <field name="rockNameText">
+                                <Text definition="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml"/>
+                            </field>
+                            <field name="rockCode">
+                                <Text/>
+                            </field>
+                            <field name="stratigraphy">
+                                <DataRecord definition="bml:stratigraphy">
+                                    <field name="ChronoStratigraphy">
+                                        <Text definition="http://www.infogeo.de/boreholeml/3.0/codelists/ChronoStratigraphyList.xml"/>
+                                    </field>
+                                    <field name="LithoStratigraphy">
+                                        <Text definition="http://www.infogeo.de/boreholeml/3.0/codelists/LithoStratigraphyList.xml"/>
+                                    </field>
+                                </DataRecord>
+                            </field>
+                            <field name="petrography">
+                                <DataRecord definition="bml:petrography">
+                                    <field name="Lithology">
+                                        <DataRecord definition="bml:Lithology">
+                                            <field name="rockName">
+                                                <Text definition="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml"/>
+                                            </field>
+                                            <field name="rockColor">
+                                                <Text definition="http://www.infogeo.de/boreholeml/3.0/codelists/RockColorList.xml"/>
+                                            </field>
+                                        </DataRecord>
+                                    </field>
+                                    <field name="Lithology">
+                                        <DataRecord definition="bml:Lithology">
+                                            <field name="rockName">
+                                                <Text/>
+                                            </field>
+                                        </DataRecord>
+                                    </field>
+                                </DataRecord>
+                            </field>
+                            <field name="from">
+                                <Quantity>
+                                    <uom code="m"/>
+                                </Quantity>
+                            </field>
+                            <field name="to">
+                                <Quantity>
+                                    <uom code="m"/>
+                                </Quantity>
+                            </field>
+                        </DataRecord>
+                    </field>
+                    <field name="from">
+                        <Quantity>
+                            <uom code="m"/>
+                        </Quantity>
+                    </field>
+                    <field name="to">
+                        <Quantity>
+                            <uom code="m"/>
+                        </Quantity>
+                    </field>
+                </DataRecord>
+            </field>
+        </DataRecord>
+    </elementType>
+    <values>
+        <bml:IntervalSeries>
+            <bml:Interval>
+                <bml:from>0</bml:from>
+                <bml:to>15</bml:to>
+                <bml:rockCode>L</bml:rockCode>
+                <bml:rockNameText>keine Angaben</bml:rockNameText>
+                <bml:petrography>
+                    <bml:Lithology>
+                        <bml:rockName>KMat</bml:rockName>
+                        <bml:percentageFrom>40</bml:percentageFrom>
+                        <bml:percentageTo>100</bml:percentageTo>
+                    </bml:Lithology>
+                </bml:petrography>
+                <bml:stratigraphy>
+                    <bml:ChronoStratigraphy>K2Ca</bml:ChronoStratigraphy>
+                </bml:stratigraphy>
+            </bml:Interval>
+            <bml:Interval>
+                <bml:from>15</bml:from>
+                <bml:to>70</bml:to>
+                <bml:rockCode>MEZ; ; FS; 2</bml:rockCode>
+                <bml:rockNameText>Mergelstein; feinsandig; schwach / mit wenig ...</bml:rockNameText>
+                <bml:petrography>
+                    <bml:Lithology>
+                        <bml:rockName>Mst</bml:rockName>
+                        <bml:percentageFrom>40</bml:percentageFrom>
+                        <bml:percentageTo>100</bml:percentageTo>
+                        <bml:rockColor>v1 &amp; h8</bml:rockColor>
+                    </bml:Lithology>
+                    <bml:Lithology>
+                        <bml:rockName>fS</bml:rockName>
+                        <bml:percentageFrom>0.1</bml:percentageFrom>
+                        <bml:percentageTo>15</bml:percentageTo>
+                    </bml:Lithology>
+                </bml:petrography>
+                <bml:stratigraphy>
+                    <bml:ChronoStratigraphy>K2Ca</bml:ChronoStratigraphy>
+                </bml:stratigraphy>
+                <bml:Component>
+                    <bml:from>70</bml:from>
+                    <bml:to>80</bml:to>
+                    <bml:rockCode>MEZ; FS; 3</bml:rockCode>
+                    <bml:rockNameText>Mergelstein; feinsandig; mit ...</bml:rockNameText>
+                    <bml:petrography>
+                        <bml:Lithology>
+                            <bml:rockName>fS</bml:rockName>
+                            <bml:rockColor>v1 &amp; h5 &amp; h8</bml:rockColor>
+                        </bml:Lithology>
+                    </bml:petrography>
+                </bml:Component>
+            </bml:Interval>
+        </bml:IntervalSeries>
+    </values>
 </DataArray>
