@@ -1,164 +1,164 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Borehole	 gml:id="DABO_18018"
-	xmlns="http://www.gfz-potsdam.de/boreholeml/4.1"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:gml="http://www.opengis.net/gml/3.2"
-	xmlns:base="urn:x-inspire:specification:gmlas:BaseTypes:3.2"
-	xmlns:gco="http://www.isotc211.org/2005/gco"
-	xmlns:gmd="http://www.isotc211.org/2005/gmd"
-	xmlns:xlink="http://www.w3.org/1999/xlink"
-	xmlns:gsr="http://www.isotc211.org/2005/gsr"
-	xmlns:gss="http://www.isotc211.org/2005/gss"
-	xmlns:gts="http://www.isotc211.org/2005/gts"
-	xmlns:swe="http://www.opengis.net/swe/2.0"
-	xmlns:gn="urn:x-inspire:specification:gmlas:GeographicalNames:3.0">
-	<gml:identifier codeSpace="http://www.infogeo.de/">DABO_18018</gml:identifier>
-	<location xlink:type="simple" owns="false">
-		<gml:Point xmlns="http://www.infogeo.de/boreholeml/3.0" gml:id="GEODIN_LOC_BMLGENIN.bmlid.DABO_18018.LOCATION.Geom_0">
-			<gml:pos>386176.36 5763283.15 107</gml:pos>
-		</gml:Point>
-	</location>
-	<boreholePath xlink:type="simple" owns="false">
-		<gml:Curve xmlns="http://www.infogeo.de/boreholeml/3.0" gml:id="GEODIN_LOC_BMLGENIN.bmlid.DABO_18018.BPATH.Geom_0">
-			<gml:segments>
-				<gml:LineStringSegment interpolation="linear" numDerivativesAtStart="0" numDerivativesAtEnd="0" numDerivativeInterior="0">
-					<gml:posList>386176.36 5763283.15 107 386176.36 5763283.15 -5849</gml:posList>
-				</gml:LineStringSegment>
-			</gml:segments>
-		</gml:Curve>
-	</boreholePath>
-	<totalLength uom="m">5956</totalLength>
-	<boreholeStatus codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/BoreholeStatusList.xml">ka</boreholeStatus>
-	<drillingMethod codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/DrillingMethodList.xml">BV</drillingMethod>
-	<drillingDate>1962-12-05</drillingDate>
-	<lastHorizon codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/LastHorizonList.xml">d</lastHorizon>
-	<drillingPurpose codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/DrillingPurposeList.xml">RO</drillingPurpose>
-	<observation>
-		<BoreholeSegment>
-			<segment>
-				<from uom="m">0</from>
-				<to uom="m">5956</to>
-				<azimuth uom="deg">0</azimuth>
-				<inclination uom="deg">0</inclination>
-				<segmentDataQuality codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/SegmentDataQualityList.xml">A</segmentDataQuality>
-			</segment>
-		</BoreholeSegment>
-		<IntervalSeries>
-			<description xlink:type="simple">
-				<gmd:LocalisedCharacterString xmlns="http://www.infogeo.de/boreholeml/3.0" locale="http://www.infogeo.de/boreholeml/3.0/codelists/DE.xml">Master-Schichtenverzeichnis</gmd:LocalisedCharacterString>
-			</description>
-			<layer>
-				<Interval>
-					<from uom="m">0</from>
-					<to uom="m">15</to>
-					<rockCode>L</rockCode>
-					<rockNameText xlink:type="simple">
-						<gmd:LocalisedCharacterString xmlns="http://www.infogeo.de/boreholeml/3.0" locale="http://www.infogeo.de/boreholeml/3.0/codelists/DE.xml">keine Angaben</gmd:LocalisedCharacterString>
-					</rockNameText>
-					<petrography>
-						<Lithology>
-							<rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">KMat</rockName>
-							<percentageFrom>40</percentageFrom>
-							<percentageTo>100</percentageTo>
-						</Lithology>
-					</petrography>
-					<stratigraphy>
-						<ChronoStratigraphy codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/ChronoStratigraphyList.xml">K2Ca</ChronoStratigraphy>
-					</stratigraphy>
-					<layer xsi:nil="true"/>
-				</Interval>
-			</layer>
-			<layer>
-				<Interval>
-					<from uom="m">15</from>
-					<to uom="m">70</to>
-					<rockCode>MEZ; ; FS; 2</rockCode>
-					<rockNameText xlink:type="simple">
-						<gmd:LocalisedCharacterString xmlns="http://www.infogeo.de/boreholeml/3.0" locale="http://www.infogeo.de/boreholeml/3.0/codelists/DE.xml">Mergelstein; feinsandig; schwach / mit wenig ...</gmd:LocalisedCharacterString>
-					</rockNameText>
-					<petrography>
-						<Lithology>
-							<rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">Mst</rockName>
-							<percentageFrom>40</percentageFrom>
-							<percentageTo>100</percentageTo>
-							<rockColor codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockColorList.xml">v1&amp;h8</rockColor>
-						</Lithology>
-						<Lithology>
-							<rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">fS</rockName>
-							<percentageFrom>0.1</percentageFrom>
-							<percentageTo>15</percentageTo>
-						</Lithology>
-					</petrography>
-					<stratigraphy>
-						<ChronoStratigraphy codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/ChronoStratigraphyList.xml">K2Ca</ChronoStratigraphy>
-					</stratigraphy>
-					<layer>
-						<Component>
-							<from uom="m">15</from>
-							<to uom="m">70</to>
-							<rockCode>MEZ; FS; 3</rockCode>
-							<rockNameText xlink:type="simple">
-								<gmd:LocalisedCharacterString xmlns="http://www.infogeo.de/boreholeml/3.0" locale="http://www.infogeo.de/boreholeml/3.0/codelists/DE.xml">Mergelstein; feinsandig; mit ...</gmd:LocalisedCharacterString>
-							</rockNameText>
-							<petrography>
-								<Lithology>
-									<rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">Mst</rockName>
-									<rockColor codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockColorList.xml">v1&amp;h5&amp;h8</rockColor>
-								</Lithology>
-								<Lithology>
-									<rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">fS</rockName>
-								</Lithology>
-							</petrography>
-							<stratigraphy/>
-						</Component>
-					</layer>
-				</Interval>
-			</layer>
-		</IntervalSeries>
-	</observation>
+                 xmlns="http://www.gfz-potsdam.de/boreholeml/4.1"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xmlns:gml="http://www.opengis.net/gml/3.2"
+                 xmlns:base="urn:x-inspire:specification:gmlas:BaseTypes:3.2"
+                 xmlns:gco="http://www.isotc211.org/2005/gco"
+                 xmlns:gmd="http://www.isotc211.org/2005/gmd"
+                 xmlns:xlink="http://www.w3.org/1999/xlink"
+                 xmlns:gsr="http://www.isotc211.org/2005/gsr"
+                 xmlns:gss="http://www.isotc211.org/2005/gss"
+                 xmlns:gts="http://www.isotc211.org/2005/gts"
+                 xmlns:swe="http://www.opengis.net/swe/2.0"
+                 xmlns:gn="urn:x-inspire:specification:gmlas:GeographicalNames:3.0">
+    <gml:identifier codeSpace="http://www.infogeo.de/">DABO_18018</gml:identifier>
+    <location xlink:type="simple" owns="false">
+        <gml:Point xmlns="http://www.infogeo.de/boreholeml/3.0" gml:id="GEODIN_LOC_BMLGENIN.bmlid.DABO_18018.LOCATION.Geom_0">
+            <gml:pos>386176.36 5763283.15 107</gml:pos>
+        </gml:Point>
+    </location>
+    <boreholePath xlink:type="simple" owns="false">
+        <gml:Curve xmlns="http://www.infogeo.de/boreholeml/3.0" gml:id="GEODIN_LOC_BMLGENIN.bmlid.DABO_18018.BPATH.Geom_0">
+            <gml:segments>
+                <gml:LineStringSegment interpolation="linear" numDerivativesAtStart="0" numDerivativesAtEnd="0" numDerivativeInterior="0">
+                    <gml:posList>386176.36 5763283.15 107 386176.36 5763283.15 -5849</gml:posList>
+                </gml:LineStringSegment>
+            </gml:segments>
+        </gml:Curve>
+    </boreholePath>
+    <totalLength uom="m">5956</totalLength>
+    <boreholeStatus codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/BoreholeStatusList.xml">ka</boreholeStatus>
+    <drillingMethod codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/DrillingMethodList.xml">BV</drillingMethod>
+    <drillingDate>1962-12-05</drillingDate>
+    <lastHorizon codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/LastHorizonList.xml">d</lastHorizon>
+    <drillingPurpose codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/DrillingPurposeList.xml">RO</drillingPurpose>
+    <observation>
+        <BoreholeSegment>
+            <segment>
+                <from uom="m">0</from>
+                <to uom="m">5956</to>
+                <azimuth uom="deg">0</azimuth>
+                <inclination uom="deg">0</inclination>
+                <segmentDataQuality codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/SegmentDataQualityList.xml">A</segmentDataQuality>
+            </segment>
+        </BoreholeSegment>
+        <IntervalSeries>
+            <description xlink:type="simple">
+                <gmd:LocalisedCharacterString xmlns="http://www.infogeo.de/boreholeml/3.0" locale="http://www.infogeo.de/boreholeml/3.0/codelists/DE.xml">Master-Schichtenverzeichnis</gmd:LocalisedCharacterString>
+            </description>
+            <layer>
+                <Interval>
+                    <from uom="m">0</from>
+                    <to uom="m">15</to>
+                    <rockCode>L</rockCode>
+                    <rockNameText xlink:type="simple">
+                        <gmd:LocalisedCharacterString xmlns="http://www.infogeo.de/boreholeml/3.0" locale="http://www.infogeo.de/boreholeml/3.0/codelists/DE.xml">keine Angaben</gmd:LocalisedCharacterString>
+                    </rockNameText>
+                    <petrography>
+                        <Lithology>
+                            <rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">KMat</rockName>
+                            <percentageFrom>40</percentageFrom>
+                            <percentageTo>100</percentageTo>
+                        </Lithology>
+                    </petrography>
+                    <stratigraphy>
+                        <ChronoStratigraphy codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/ChronoStratigraphyList.xml">K2Ca</ChronoStratigraphy>
+                    </stratigraphy>
+                    <layer xsi:nil="true"/>
+                </Interval>
+            </layer>
+            <layer>
+                <Interval>
+                    <from uom="m">15</from>
+                    <to uom="m">70</to>
+                    <rockCode>MEZ; ; FS; 2</rockCode>
+                    <rockNameText xlink:type="simple">
+                        <gmd:LocalisedCharacterString xmlns="http://www.infogeo.de/boreholeml/3.0" locale="http://www.infogeo.de/boreholeml/3.0/codelists/DE.xml">Mergelstein; feinsandig; schwach / mit wenig ...</gmd:LocalisedCharacterString>
+                    </rockNameText>
+                    <petrography>
+                        <Lithology>
+                            <rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">Mst</rockName>
+                            <percentageFrom>40</percentageFrom>
+                            <percentageTo>100</percentageTo>
+                            <rockColor codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockColorList.xml">v1&amp;h8</rockColor>
+                        </Lithology>
+                        <Lithology>
+                            <rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">fS</rockName>
+                            <percentageFrom>0.1</percentageFrom>
+                            <percentageTo>15</percentageTo>
+                        </Lithology>
+                    </petrography>
+                    <stratigraphy>
+                        <ChronoStratigraphy codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/ChronoStratigraphyList.xml">K2Ca</ChronoStratigraphy>
+                    </stratigraphy>
+                    <layer>
+                        <Component>
+                            <from uom="m">15</from>
+                            <to uom="m">70</to>
+                            <rockCode>MEZ; FS; 3</rockCode>
+                            <rockNameText xlink:type="simple">
+                                <gmd:LocalisedCharacterString xmlns="http://www.infogeo.de/boreholeml/3.0" locale="http://www.infogeo.de/boreholeml/3.0/codelists/DE.xml">Mergelstein; feinsandig; mit ...</gmd:LocalisedCharacterString>
+                            </rockNameText>
+                            <petrography>
+                                <Lithology>
+                                    <rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">Mst</rockName>
+                                    <rockColor codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockColorList.xml">v1&amp;h5&amp;h8</rockColor>
+                                </Lithology>
+                                <Lithology>
+                                    <rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">fS</rockName>
+                                </Lithology>
+                            </petrography>
+                            <stratigraphy/>
+                        </Component>
+                    </layer>
+                </Interval>
+            </layer>
+        </IntervalSeries>
+    </observation>
 	
-	<installationDetails>
-		<DrillingProcess>
-			<segment>
-				<from uom="m">0.01</from>
-				<to uom="m">5956</to>
-				<drillingMethod codeSpace="qwer">NN</drillingMethod>
-				<drillingTool codeSpace="asdf">NN</drillingTool>
-				<drillholeDiameter uom="m">1</drillholeDiameter>
-			</segment>
-		</DrillingProcess>
-		<Investigation>
-			<segment>
-				<from uom="m">0.01</from>
-				<to uom="m">5956</to>
-				<type codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/InvestigationTypeList.xml">SON</type>
-			</segment>
-			<segment>
-				<from uom="m">0.01</from>
-				<to uom="m">5956</to>
-				<type codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/InvestigationTypeList.xml">SON</type>
-			</segment>
-			<segment>
-				<from uom="m">0.01</from>
-				<to uom="m">5956</to>
-				<type codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/InvestigationTypeList.xml">SON</type>
-			</segment>
-			<segment>
-				<from uom="m">0.01</from>
-				<to uom="m">5956</to>
-				<type codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/InvestigationTypeList.xml">SON</type>
-			</segment>
-			<segment>
-				<from uom="m">0.01</from>
-				<to uom="m">5956</to>
-				<type codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/InvestigationTypeList.xml">SON</type>
-			</segment>
-			<segment>
-				<from uom="m">0.01</from>
-				<to uom="m">5956</to>
-				<type codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/InvestigationTypeList.xml">SON</type>
-			</segment>
-		</Investigation>
-		<Sampling xsi:nil="true" nilReason="missing"/>
-	</installationDetails>
+    <installationDetails>
+        <DrillingProcess>
+            <segment>
+                <from uom="m">0.01</from>
+                <to uom="m">5956</to>
+                <drillingMethod codeSpace="qwer">NN</drillingMethod>
+                <drillingTool codeSpace="asdf">NN</drillingTool>
+                <drillholeDiameter uom="m">1</drillholeDiameter>
+            </segment>
+        </DrillingProcess>
+        <Investigation>
+            <segment>
+                <from uom="m">0.01</from>
+                <to uom="m">5956</to>
+                <type codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/InvestigationTypeList.xml">SON</type>
+            </segment>
+            <segment>
+                <from uom="m">0.01</from>
+                <to uom="m">5956</to>
+                <type codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/InvestigationTypeList.xml">SON</type>
+            </segment>
+            <segment>
+                <from uom="m">0.01</from>
+                <to uom="m">5956</to>
+                <type codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/InvestigationTypeList.xml">SON</type>
+            </segment>
+            <segment>
+                <from uom="m">0.01</from>
+                <to uom="m">5956</to>
+                <type codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/InvestigationTypeList.xml">SON</type>
+            </segment>
+            <segment>
+                <from uom="m">0.01</from>
+                <to uom="m">5956</to>
+                <type codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/InvestigationTypeList.xml">SON</type>
+            </segment>
+            <segment>
+                <from uom="m">0.01</from>
+                <to uom="m">5956</to>
+                <type codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/InvestigationTypeList.xml">SON</type>
+            </segment>
+        </Investigation>
+        <Sampling xsi:nil="true" nilReason="missing"/>
+    </installationDetails>
 </Borehole>
