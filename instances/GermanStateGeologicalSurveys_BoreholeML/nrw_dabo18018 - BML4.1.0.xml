@@ -76,12 +76,23 @@
                     <rockNameText xlink:type="simple">
                         <gmd:LocalisedCharacterString xmlns="http://www.infogeo.de/boreholeml/3.0" locale="http://www.infogeo.de/boreholeml/3.0/codelists/DE.xml">Mergelstein; feinsandig; schwach / mit wenig ...</gmd:LocalisedCharacterString>
                     </rockNameText>
+<!-- non mandatory fields, examplarily -->
+                   <intervalType codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">wl</intervalType>
+                   <genesis codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/GenesisList.xml">akse</genesis>
+                   <geoGenesis codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/GeoGenesisList.xml">fak</geoGenesis>
+                   <carbonateContent codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/CarbonateContentList.xml">c5</carbonateContent>
+                   <waterContent codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/WaterContentList.xml">feu2</waterContent>
+                   <consistency codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/ConsistencyList.xml">flu</consistency>
+                   <compactness codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/CompactnessList.xml">ld3</compactness>
+<!-- non mandatory fields, examplarily -->
+			
                     <petrography>
                         <Lithology>
                             <rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">Mst</rockName>
                             <percentageFrom>40</percentageFrom>
                             <percentageTo>100</percentageTo>
                             <rockColor codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockColorList.xml">v1&amp;h8</rockColor>
+                            <rockColorMixture codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockColorMixtureList.xml">fp</rockColorMixture>
                         </Lithology>
                         <Lithology>
                             <rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">fS</rockName>
