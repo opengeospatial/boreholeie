@@ -6,39 +6,41 @@
 
 - segment.SD-5054_1_A-3.sampleFrame: !BoreholeEventCollection
     &SD-5054_1_A-3_sampleFrame
-    collectionStartPoint:
-        segment.SD-5054_1_A-3.sampleFrame_StartPoint: !TrajectoryDistance
-        # way easier in BhML rev:12 to 'declare' the referent and methods. Still I think I miss the bounce on the relation role
-            distanceAlong: 0.00
-            referent: 
-                &SD-5054_1_A
-                position: # Need POINT(xxxx),SRID=4326 
-                # we could put the 	URI to the collar and not redefine the Geom
-                location:
-                    segment.SD-5054_1_A-3.sampleFrame_StartPoint: !TrajectoryPosition
-                        accuracyStatement: good
-                        precisitionStatement: good
-                        BRM:
-                            segment.SD-5054_1_A-3.sampleFrame_StartPoint: !BoreholeReferencingMethod
-                                name: Linear referencing
-                                units: http://qudt.org/vocab/unit/M     
-                        linearElement:
-                            curve: 
-                                &curve
-                                geometry: # Need LINESTRING (xxx), SRID=EPSG:4979
+    collectionReferent:
+        segment.SD-5054_1_A-3.sampleFrame_StartPoint: !TrajectoryReferent
+            &SD-5054_1_A
+            position: # Need POINT(xxxx),SRID=4326 
+            # we could put the URI to the collar and not redefine the Geom using 'Feature'
+            location:
+                segment.SD-5054_1_A-3.sampleFrame_StartPoint: !TrajectoryPosition
+                    distanceAlong: 0.00
+                    accuracyStatement: good
+                    precisitionStatement: good
+                    BRM:
+                        segment.SD-5054_1_A-3.sampleFrame_StartPoint: !BoreholeReferencingMethod
+                            name: Linear referencing
+                            units: http://qudt.org/vocab/unit/M     
+                    linearElement:
+                        curve: 
+                            &curve
+                            geometry: # Need LINESTRING (xxx), SRID=EPSG:4979
     # I don't think I am allowed to use boreholeEventCollectionMember twice
     boreholeEventCollectionMember:
         sample1: !BoreholeEvent
             &BoreholeEvent1
             locatedFeature: https://www.geodata.rocks/Samples/SD-5054_1_A_531_3WR_64-76
             location: !FromToLocation
-                fromPosition: 1616.294
-                toPosition: 1616.414
+                fromPosition:
+                    distanceAlong: 1616.294
+                toPosition: 
+                    distanceAlong: 1616.414
     boreholeEventCollectionMember:
         sample2: !BoreholeEvent
             &BoreholeEvent2
             locatedFeature: https://www.geodata.rocks/Samples/SD-5054_1_A_532_2WR_35-45
             location: !FromToLocation
-                fromPosition: 1618.06
-                toPosition: 1618.16
+                fromPosition: 
+                    distanceAlong: 1618.06
+                toPosition: 
+                    distanceAlong: 1618.16
     # and this continues with a lot of Samples (see Segment URI above)
