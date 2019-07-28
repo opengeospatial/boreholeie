@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resqmlv2:WellboreFrameRepresentation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:commonv2="http://www.energistics.org/energyml/data/commonv2" xmlns:resqmlv2="http://www.energistics.org/energyml/data/resqmlv2" existenceKind="actual" schemaVersion="Resqml V2.2" uuid="0d7aae52-c48b-455e-a570-66d0272d5ecd">
+  <commonv2:Citation>
+    <commonv2:Title>BOREHOLE_EVENTCOLLECTION_BH-SD15 log_geol</commonv2:Title>
+    <commonv2:Originator>jm.leonard</commonv2:Originator>
+    <commonv2:Creation>2018-06-12T09:22:02.857+02:00</commonv2:Creation>
+    <commonv2:Format>RESQML BUILDER</commonv2:Format>
+    <commonv2:Editor>Geosiris</commonv2:Editor>
+    <commonv2:LastUpdate>2019-07-03T14:57:20.717+02:00</commonv2:LastUpdate>
+    <commonv2:VersionString></commonv2:VersionString>
+    <commonv2:Description>log_geol</commonv2:Description>
+    <commonv2:DescriptiveKeywords>[Geolog]</commonv2:DescriptiveKeywords>
+  </commonv2:Citation>
+  <resqmlv2:RepresentedInterpretation>
+    <commonv2:ContentType>application/x-resqml+xml;version=2.2;type=WellboreInterpretation</commonv2:ContentType>
+    <commonv2:Title>BOREHOLE_USE_NAME_BH-SD15 log_geol</commonv2:Title>
+    <commonv2:Uuid>9b342a81-d19f-4d8f-9128-f5b2adfddbab</commonv2:Uuid>
+    <commonv2:VersionString></commonv2:VersionString>
+  </resqmlv2:RepresentedInterpretation>
+  <resqmlv2:NodeCount>4</resqmlv2:NodeCount>
+  <resqmlv2:NodeMd xsi:type="commonv2:FloatingPointExternalArray">
+    <commonv2:Values>
+      <commonv2:ExternalFileProxy>
+        <commonv2:Count>1</commonv2:Count>
+        <commonv2:PathInExternalFile>/RESQML/0d7aae52-c48b-455e-a570-66d0272d5ecd/mdValues</commonv2:PathInExternalFile>
+        <commonv2:StartIndex>0</commonv2:StartIndex>
+        <commonv2:EpcExternalPartReference>
+          <commonv2:ContentType>application/x-eml+xml;version=2.2;type=EpcExternalPartReference</commonv2:ContentType>
+          <commonv2:Title>External HDF5 proxy</commonv2:Title>
+          <commonv2:Uuid>ae4846e1-2011-49a2-b867-abdd8d3cac03</commonv2:Uuid>
+        </commonv2:EpcExternalPartReference>
+      </commonv2:ExternalFileProxy>
+    </commonv2:Values>
+  </resqmlv2:NodeMd>
+  <resqmlv2:Trajectory>
+    <commonv2:ContentType>application/x-resqml+xml;version=2.2;type=WellboreTrajectoryRepresentation</commonv2:ContentType>
+    <commonv2:Title>BOREHOLE_TRAJECTORY_BH-SD15 DEVIATED</commonv2:Title>
+    <commonv2:Uuid>5db168a3-6971-4062-b014-69b1b89493ec</commonv2:Uuid>
+    <commonv2:VersionString></commonv2:VersionString>
+  </resqmlv2:Trajectory>
+</resqmlv2:WellboreFrameRepresentation>

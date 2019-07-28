@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resqmlv2:WellboreInterpretation xmlns:commonv2="http://www.energistics.org/energyml/data/commonv2" xmlns:resqmlv2="http://www.energistics.org/energyml/data/resqmlv2" existenceKind="actual" schemaVersion="Resqml V2.2" uuid="9b342a81-d19f-4d8f-9128-f5b2adfddbab">
+  <commonv2:Citation>
+    <commonv2:Title>BOREHOLE_USE_NAME_BH-SD15 log_geol</commonv2:Title>
+    <commonv2:Originator>jm.leonard</commonv2:Originator>
+    <commonv2:Creation>2018-06-12T09:20:55.871+02:00</commonv2:Creation>
+    <commonv2:Format>RESQML BUILDER</commonv2:Format>
+    <commonv2:Editor>Geosiris</commonv2:Editor>
+    <commonv2:LastUpdate>2019-07-03T15:31:10.550+02:00</commonv2:LastUpdate>
+    <commonv2:VersionString></commonv2:VersionString>
+    <commonv2:Description>BOREHOLE_USE : log_geol</commonv2:Description>
+    <commonv2:DescriptiveKeywords>[Geolog]</commonv2:DescriptiveKeywords>
+  </commonv2:Citation>
+  <resqmlv2:Domain>depth</resqmlv2:Domain>
+  <resqmlv2:InterpretedFeature>
+    <commonv2:ContentType>application/x-resqml+xml;version=2.2;type=WellboreFeature</commonv2:ContentType>
+    <commonv2:Title>BOREHOLE_NAME-BH-SD15</commonv2:Title>
+    <commonv2:Uuid>b64102c7-2f8d-4737-b9ba-f7aaeb70cb29</commonv2:Uuid>
+    <commonv2:VersionString></commonv2:VersionString>
+  </resqmlv2:InterpretedFeature>
+  <resqmlv2:IsDrilled>true</resqmlv2:IsDrilled>
+</resqmlv2:WellboreInterpretation>
