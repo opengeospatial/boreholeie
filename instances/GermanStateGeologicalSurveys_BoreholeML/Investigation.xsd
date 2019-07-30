@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:bml="http://www.gfz-potsdam.de/boreholeml/4.1" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gn="urn:x-inspire:specification:gmlas:GeographicalNames:3.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" targetNamespace="http://www.gfz-potsdam.de/boreholeml/4.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="4.1.0" vc:minVersion="1.1">
+	<!-- ########################################################   imports   #################################################################################### -->
+	<xs:import namespace="urn:x-inspire:specification:gmlas:GeographicalNames:3.0" schemaLocation="../bml3.0.1/GeographicalNames.xsd"/>
+	<xs:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="../gml/3.2.1/gml.xsd"/>
+	<xs:import namespace="http://www.isotc211.org/2005/gmd" schemaLocation="../iso/19139/20070417/gmd/gmd.xsd"/>
+	<!-- ########################################################   includes   #################################################################################### -->
+	<xs:include schemaLocation="Measurements.xsd"/>
+	<xs:include schemaLocation="DepthInterval.xsd"/>
+	<!-- ####################################################################################################################################################### -->
+	<xs:element name="Investigation" type="bml:InvestigationLogType" substitutionGroup="bml:AbstractInstallationDetailMeasurement" nillable="true">
+		<xs:annotation>
+			<xs:documentation xml:lang="de">Untersuchungsmethoden im Bohrloch (Logging-Verfahren) optional mit Teufenbezug</xs:documentation>
+			<xs:documentation xml:lang="en">Investigations in the borehole (logging methods) with optional depth information</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<!-- ####################################################################################################################################################### -->
+	<xs:complexType name="InvestigationLogType">
+		<xs:complexContent>
+			<xs:extension base="bml:AbstractInstallationDetailMeasurementType">
+				<xs:sequence>
+					<xs:element name="segment" type="bml:InvestigationType" nillable="true" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- ####################################################################################################################################################### -->
+	<xs:complexType name="InvestigationType">
+		<xs:complexContent>
+			<xs:extension base="bml:DepthIntervalType">
+				<xs:sequence>
+					<xs:element name="type" type="gml:CodeType">
+						<xs:annotation>
+							<xs:documentation xml:lang="de">Art oder Methode einer im Bohrloch durchgeführten Untersuchung</xs:documentation>
+							<xs:documentation xml:lang="en">Kind or method of an investigation in the borehole / borehole logging.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="nilReason" type="gml:NilReasonType"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- ####################################################################################################################################################### -->
+</xs:schema>

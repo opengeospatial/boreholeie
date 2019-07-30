@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:bml="http://www.gfz-potsdam.de/boreholeml/4.1" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gn="urn:x-inspire:specification:gmlas:GeographicalNames:3.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" targetNamespace="http://www.gfz-potsdam.de/boreholeml/4.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="4.1.0" vc:minVersion="1.1">
+	<!-- ########################################################   imports   ################################################################################## -->
+	<xs:import namespace="urn:x-inspire:specification:gmlas:GeographicalNames:3.0" schemaLocation="../bml3.0.1/GeographicalNames.xsd"/>
+	<xs:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="../gml/3.2.1/gml.xsd"/>
+	<xs:import namespace="http://www.isotc211.org/2005/gmd" schemaLocation="../iso/19139/20070417/gmd/gmd.xsd"/>
+	<!-- ########################################################   includes   ################################################################################## -->
+	<!-- #################################################################################################################################################### -->
+	<xs:include schemaLocation="BoreholeGeometryLog.xsd"/>
+	<xs:include schemaLocation="BoreholeSegment.xsd"/>
+	<xs:include schemaLocation="Groundwater.xsd"/>
+	<xs:include schemaLocation="GroundwaterObservation.xsd"/>
+	<!--	
+	<xs:include schemaLocation="LithostratigraphicUnits.xsd"/>
+	-->
+	<xs:include schemaLocation="IntervalSeries.xsd"/>
+	<!-- #################################################################################################################################################### -->
+	<!-- ################################### the grouping element for all types of Observations #################################################################### -->
+	<xs:element name="observation" type="bml:ObservationPropertyType"/>
+	<!-- ################################### the grouping element for all types of Observations ################################################################### -->
+	<xs:complexType name="ObservationPropertyType">
+		<xs:sequence>
+			<xs:element ref="bml:AbstractMeasurement" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- #################################################################################################################################################### -->
+	<!-- ##################################################### for later implementations with derivation from gml feature ########################################## -->
+	<xs:element name="observationFeature" type="bml:ObservationFeaturePropertyType" substitutionGroup="gml:AbstractFeature"/>
+	<!-- #################################################################################################################################################### -->
+	<xs:complexType name="ObservationFeaturePropertyType">
+		<xs:complexContent>
+			<xs:extension base="gml:AbstractFeatureType">
+				<xs:sequence>
+					<xs:element ref="bml:AbstractMeasurement" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- #################################################################################################################################################### -->
+</xs:schema>
