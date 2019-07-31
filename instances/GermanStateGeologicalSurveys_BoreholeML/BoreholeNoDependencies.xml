@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BhML:BoreholeEventCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:bml="http://www.gfz-potsdam.de/boreholeml/4.1" xmlns:BhML="https://forge.brgm.fr/svnrepository/boreholeie/schemas" xsi:schemaLocation="https://forge.brgm.fr/svnrepository/boreholeie/schemas ../../schemas/bml4.1.0/BhML-Core.xsd http://www.gfz-potsdam.de/boreholeml/4.1 ../../schemas/bml4.1.0/BoreholeML.xsd">
+	<BhML:collectionMember>
+		<BhML:BoreholeEvent>
+			<BhML:locatedMember xsi:type="bml:LocatedRockClassificationMemberType">
+				<bml:rockCode>L</bml:rockCode>
+				<bml:rockNameText xlink:type="simple">
+					<gmd:LocalisedCharacterString locale="http://www.infogeo.de/boreholeml/3.0/codelists/DE.xml">keine Angaben</gmd:LocalisedCharacterString>
+				</bml:rockNameText>
+				<bml:petrography>
+					<bml:Lithology>
+						<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">KMat</bml:rockName>
+						<bml:percentageFrom>40</bml:percentageFrom>
+						<bml:percentageTo>100</bml:percentageTo>
+					</bml:Lithology>
+				</bml:petrography>
+				<bml:stratigraphy>
+					<bml:ChronoStratigraphy codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/ChronoStratigraphyList.xml">K2Ca</bml:ChronoStratigraphy>
+				</bml:stratigraphy>
+			</BhML:locatedMember>
+			<BhML:location>
+				<BhML:FromToLocation>
+					<BhML:fromPosition>
+						<BhML:MeasureOrEvent>
+							<BhML:boreholeEvent>
+								<BhML:BoreholeEvent>
+									<BhML:locatedMember  xsi:type="bml:LocatedRockClassificationMemberType">
+										<bml:rockCode>L</bml:rockCode>
+										<bml:rockNameText xlink:type="simple">
+											<gmd:LocalisedCharacterString locale="http://www.infogeo.de/boreholeml/3.0/codelists/DE.xml">keine Angaben</gmd:LocalisedCharacterString>
+										</bml:rockNameText>
+										<bml:petrography>
+											<bml:Lithology>
+												<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">KMat</bml:rockName>
+												<bml:percentageFrom>40</bml:percentageFrom>
+												<bml:percentageTo>100</bml:percentageTo>
+											</bml:Lithology>
+										</bml:petrography>
+										<bml:stratigraphy>
+											<bml:ChronoStratigraphy codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/ChronoStratigraphyList.xml">K2Ca</bml:ChronoStratigraphy>
+										</bml:stratigraphy>
+									</BhML:locatedMember>
+									<BhML:location>
+										<BhML:FromToLocation>
+											<BhML:fromPosition>
+												<BhML:MeasureOrEvent>
+													<BhML:distanceAlong uom="m">0</BhML:distanceAlong>
+												</BhML:MeasureOrEvent>
+											</BhML:fromPosition>
+											<BhML:toPosition>
+												<BhML:MeasureOrEvent>
+													<BhML:distanceAlong uom="m">10</BhML:distanceAlong>
+												</BhML:MeasureOrEvent>
+											</BhML:toPosition>
+										</BhML:FromToLocation>
+									</BhML:location>
+								</BhML:BoreholeEvent>
+							</BhML:boreholeEvent>
+						</BhML:MeasureOrEvent>
+					</BhML:fromPosition>
+					<BhML:toPosition>
+						<BhML:MeasureOrEvent>
+							<BhML:boreholeEvent/>
+						</BhML:MeasureOrEvent>
+					</BhML:toPosition>
+				</BhML:FromToLocation>
+			</BhML:location>
+		</BhML:BoreholeEvent>
+	</BhML:collectionMember>
+	<BhML:collectionReferent>
+		<BhML:TrajectoryReferent>
+			<BhML:location>
+				<BhML:TrajectoryPosition>
+					<BhML:accuracyStatement/>
+					<BhML:distanceAlong uom="m">42</BhML:distanceAlong>
+					<BhML:precisionStatement/>
+					<BhML:boreholeReferencingMethod>
+						<BhML:BoreholeReferencingMethod>
+							<BhML:name/>
+							<BhML:unit/>
+						</BhML:BoreholeReferencingMethod>
+					</BhML:boreholeReferencingMethod>
+				</BhML:TrajectoryPosition>
+			</BhML:location>
+		</BhML:TrajectoryReferent>
+	</BhML:collectionReferent>
+</BhML:BoreholeEventCollection>

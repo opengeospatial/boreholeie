@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bml:Borehole xmlns:bml="http://www.gfz-potsdam.de/boreholeml/4.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gn="urn:x-inspire:specification:gmlas:GeographicalNames:3.0" xmlns:BhML="https://forge.brgm.fr/svnrepository/boreholeie/schemas" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.gfz-potsdam.de/boreholeml/4.1 ../../schemas/bml4.1.0/BHML.xsd">
+	<BhML:collectionMember>
+		<BhML:BoreholeEvent>
+			<BhML:locatedMember xsi:type="bml:LocatedRockClassificationMemberType">
+				<bml:rockCode>L</bml:rockCode>
+				<bml:rockNameText xlink:type="simple">
+					<gmd:LocalisedCharacterString locale="http://www.infogeo.de/boreholeml/3.0/codelists/DE.xml">keine Angaben</gmd:LocalisedCharacterString>
+				</bml:rockNameText>
+				<bml:petrography>
+					<bml:Lithology>
+						<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">KMat</bml:rockName>
+						<bml:percentageFrom>40</bml:percentageFrom>
+						<bml:percentageTo>100</bml:percentageTo>
+					</bml:Lithology>
+				</bml:petrography>
+				<bml:stratigraphy>
+					<bml:ChronoStratigraphy codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/ChronoStratigraphyList.xml">K2Ca</bml:ChronoStratigraphy>
+				</bml:stratigraphy>
+			</BhML:locatedMember>
+			<BhML:location>
+				<BhML:FromToLocation>
+					<BhML:fromPosition>
+						<BhML:MeasureOrEvent>
+							<BhML:distanceAlong uom="m">0</BhML:distanceAlong>
+						</BhML:MeasureOrEvent>
+					</BhML:fromPosition>
+					<BhML:toPosition>
+						<BhML:MeasureOrEvent>
+							<BhML:distanceAlong uom="m">10</BhML:distanceAlong>
+						</BhML:MeasureOrEvent>
+					</BhML:toPosition>
+				</BhML:FromToLocation>
+			</BhML:location>
+		</BhML:BoreholeEvent>
+	</BhML:collectionMember>
+	<BhML:collectionReferent/>
+	<bml:location/>
+	<bml:boreholePath/>
+	<bml:totalLength uom="m">108</bml:totalLength>
+	<bml:boreholeStatus>String</bml:boreholeStatus>
+	<bml:drillingMethod/>
+	<bml:drillingDate>1957-08-13</bml:drillingDate>
+	<bml:lastHorizon/>
+	<bml:drillingPurpose/>
+	<bml:observation>
+		<bml:GroundwaterObservation>
+			<bml:drillingDepth uom="m">42</bml:drillingDepth>
+			<bml:groundwaterObservationType>String</bml:groundwaterObservationType>
+			<bml:dateTime/>
+			<bml:groundwaterLevel uom="m">23</bml:groundwaterLevel>
+			<bml:overflow xmlns="http://www.gfz-potsdam.de/boreholeml/4.1">true</bml:overflow>
+		</bml:GroundwaterObservation>
+	</bml:observation>
+	<bml:installationDetails xmlns="http://www.gfz-potsdam.de/boreholeml/4.1"/>
+</bml:Borehole>
