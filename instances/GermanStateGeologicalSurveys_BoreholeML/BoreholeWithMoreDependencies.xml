@@ -9,6 +9,7 @@
 			-->
 			<!-- rhaener 2019-07-31: substituting BhML:locatedMember -->
 			<bml:locatedRockClassificationMember> <!-- I too can fill my mouth -->
+				<!-- rhaener 2019-07-31: Rock Classification mandatory elements -->
 				<bml:rockCode>L</bml:rockCode>
 				<bml:rockNameText xlink:type="simple">
 					<gmd:LocalisedCharacterString locale="http://www.infogeo.de/boreholeml/3.0/codelists/DE.xml">keine Angaben</gmd:LocalisedCharacterString>
