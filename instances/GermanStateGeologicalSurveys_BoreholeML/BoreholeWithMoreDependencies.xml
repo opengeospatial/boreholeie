@@ -9,7 +9,6 @@
 			-->
 			<!-- rhaener 2019-07-31: substituting BhML:locatedMember -->
 			<bml:locatedRockClassificationMember> <!-- I too can fill my mouth -->
-				<!-- rhaener 2019-07-31: Rock Classification mandatory elements -->
 				<bml:rockCode>L</bml:rockCode>
 				<bml:rockNameText xlink:type="simple">
 					<gmd:LocalisedCharacterString locale="http://www.infogeo.de/boreholeml/3.0/codelists/DE.xml">keine Angaben</gmd:LocalisedCharacterString>
@@ -41,7 +40,41 @@
 			</BhML:location>
 		</bml:RockClassificationEvent>
 	</BhML:collectionMember>
-	<BhML:collectionReferent/>
+	
+	<!-- 4 segments in a perfect vertical borehole -->
+	<BhML:collectionReferent>
+		<BhML:TrajectoryReferent>
+			<gml:identifier codeSpace=""/>
+			<!--<BhML:feature/> we could put the URI to the collar and not redefine the Geom using 'Feature'-->
+			<BhML:position>
+				<gml:Point srsDimension="3" srsName="urn:ogc:def:crs:EPSG:5783">
+					<gml:pos>386176.36 5763283.15 107</gml:pos>
+				</gml:Point>
+			</BhML:position>
+			<BhML:location>
+				<BhML:TrajectoryPosition>
+					<BhML:accuracyStatement>outstanding</BhML:accuracyStatement>
+					<BhML:distanceAlong uom="http://qudt.org/vocab/unit/M">0.00</BhML:distanceAlong>
+					<BhML:precisionStatement>good</BhML:precisionStatement>
+					<BhML:boreholeReferencingMethod>
+						<BhML:BoreholeReferencingMethod>
+							<BhML:name>meter</BhML:name>
+							<BhML:unit>http://qudt.org/vocab/unit/M</BhML:unit>
+						</BhML:BoreholeReferencingMethod>
+					</BhML:boreholeReferencingMethod>
+					<BhML:linearElement>
+						<BhML:BoreholeTrajectory>
+							<BhML:curve>
+								<gml:LineString srsDimension="3" srsName="http://www.opengis.net/gml/srs/epsg.xml#4979">
+									<gml:posList>0 0 0 0 0 10 0 0 20 0 0 42</gml:posList>
+								</gml:LineString>
+							</BhML:curve>
+						</BhML:BoreholeTrajectory>
+					</BhML:linearElement>
+				</BhML:TrajectoryPosition>
+			</BhML:location>
+		</BhML:TrajectoryReferent>
+	</BhML:collectionReferent>
 	<bml:location/>
 	<bml:boreholePath/>
 	<bml:totalLength uom="m">108</bml:totalLength>
