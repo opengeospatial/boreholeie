@@ -8,18 +8,18 @@ The transformation still lacks of consistently mapping the two largely heterogen
 		<BoreholeEventCollection>
 			<collectionLRS>
 				<BoreholeLRS>
-					<accuracyStatement>outstanding</accuracyStatement>
-					<precisionStatement>good</precisionStatement>
+					<accuracyStatement/>
+					<precisionStatement/>
 					<boreholeReferencingMethod>
 						<BoreholeReferencingMethod>
-							<name>meter</name>
+							<name>https://epsg.io/31466</name>
 							<unit>http://qudt.org/vocab/unit/M</unit>
 						</BoreholeReferencingMethod>
 					</boreholeReferencingMethod>
 					<linearElement>
 						<BoreholeTrajectory>
 							<curve xlink:type="simple" owns="false">
-								<gml:Curve xmlns="http://www.infogeo.de/boreholeml/3.0" gml:id="GEODIN_LOC_BMLGENIN.bmlid.DABO_18018.BPATH.Geom_0" srsName="EPSG:5783" srsDimension="3" axisLabels="lat lon z">
+								<gml:Curve xmlns="http://www.infogeo.de/boreholeml/3.0" gml:id="GEODIN_LOC_BMLGENIN.bmlid.DABO_18018.BPATH.Geom_0" srsName="https://epsg.io/5783" srsDimension="3" axisLabels="lat lon z">
 									<gml:segments>
 										<gml:LineStringSegment interpolation="linear" numDerivativesAtStart="0" numDerivativesAtEnd="0" numDerivativeInterior="0">
 											<gml:posList>386176.36 5763283.15 107 386176.36 5763283.15 -5849</gml:posList>
@@ -31,34 +31,21 @@ The transformation still lacks of consistently mapping the two largely heterogen
 					</linearElement>
 					<trajectoryReferent>
 						<DistanceExpression>
-							<distanceAlong uom="m">107</distanceAlong>
+							<distanceAlong uom="http://qudt.org/vocab/unit/M">0</distanceAlong>
 							<trajectoryReferent>
 								<TrajectoryReferent>
 									<position xlink:type="simple" owns="false">
-										<gml:Point xmlns="http://www.infogeo.de/boreholeml/3.0" gml:id="GEODIN_LOC_BMLGENIN.bmlid.DABO_18018.LOCATION.Geom_0">
+										<gml:Point xmlns="http://www.infogeo.de/boreholeml/3.0" gml:id="GEODIN_LOC_BMLGENIN.bmlid.DABO_18018.LOCATION.Geom_0" srsName="https://epsg.io/5783" srsDimension="3" axisLabels="lat lon z">
 											<gml:pos>386176.36 5763283.15 107</gml:pos>
 										</gml:Point>
 									</position>
 								</TrajectoryReferent>
 							</trajectoryReferent>
-							<location>
-								<BoreholeLRS>
-									<accuracyStatement/>
-									<precisionStatement/>
-									<boreholeReferencingMethod>
-										<BoreholeReferencingMethod>
-											<name>31466</name>
-											<unit/>
-										</BoreholeReferencingMethod>
-									</boreholeReferencingMethod>
-									<trajectoryReferent/>
-								</BoreholeLRS>
-							</location>
+							<location/>
 						</DistanceExpression>
 					</trajectoryReferent>
 				</BoreholeLRS>
 			</collectionLRS>
-			
 			
 			<collectionMember>
 				<bml:RockClassificationEvent>
