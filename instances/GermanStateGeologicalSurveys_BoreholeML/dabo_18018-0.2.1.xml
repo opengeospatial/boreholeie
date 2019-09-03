@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- rhaener 2019-09-03
+Complete mapping of a borehole (DABO_18018, scientific purpose) including lithology log from north rhine westphalia (NRW).
+The transformation still lacks of consistently mapping the two largely heterogeneous models regarding the referencing.
+-->
 <Borehole xmlns:bml="http://www.gfz-potsdam.de/boreholeml/4.2" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gn="urn:x-inspire:specification:gmlas:GeographicalNames:3.0" xmlns="https://forge.brgm.fr/svnrepository/boreholeie/schemas" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.gfz-potsdam.de/boreholeml/4.2 ../../schemas/bml4.2.1/BhML.xsd">
 	<collection>
 		<BoreholeEventCollection>
