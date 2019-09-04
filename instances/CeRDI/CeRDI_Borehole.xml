@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Example handcrafted based on NRCan, BRGM and GSGS examples at https://github.com/opengeospatial/boreholeie/tree/master/instances -->
+<BhML:BoreholeEventCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sam="http://www.opengis.net/sampling/2.0" xmlns:sams="http://www.opengis.net/samplingSpatial/2.0" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gwml2w="http://www.opengis.net/gwml-well/2.2" xmlns:gwml2wc="http://www.opengis.net/gwml-wellconstruction/2.2" xmlns:BhML="https://forge.brgm.fr/svnrepository/boreholeie/schemas" xsi:schemaLocation="https://forge.brgm.fr/svnrepository/boreholeie/schemas https://forge.brgm.fr/svnrepository/boreholeie/schemas/BhML-Core.xsd
+http://www.opengis.net/gsml/4.1/GeoSciML-Basic http://schemas.opengis.net/gsml/4.1/geoSciMLBasic.xsd
+http://www.opengis.net/gwml-well/2.2 http://ngwd-bdnes.cits.nrcan.gc.ca/service/gwml/schemas/2.2/gwml2-well.xsd 
+http://www.opengis.net/samplingSpecimen/2.0 http://schemas.opengis.net/samplingSpecimen/2.0/specimen.xsd">
+	<!--http://www.opengis.net/gwml-wellconstruction/2.2 http://ngwd-bdnes.cits.nrcan.gc.ca/service/gwml/schemas/2.2/gwml2-wellconstruction.xsd-->
+	<gml:identifier codeSpace="http://www.vvg.org.au/">https://id.cerdi.edu.au/gwml2/feature/well/26654</gml:identifier>
+	<gml:name codeSpace="http://www.vvg.org.au/">26654</gml:name>
+	<gml:name codeSpace="http://www.vvg.org.au/">14</gml:name>
+	<BhML:collectionLRS>
+		<BhML:BoreholeLRS>
+			<BhML:accuracyStatement/>
+			<!--Should be byReference only with xlink:href-->
+			<!-- e.g. <BhML:accuracyStatement xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>-->
+			<BhML:precisionStatement/>
+			<!--Should be byReference only with xlink:href-->
+			<!-- e.g. <BhML:precisionStatement xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>-->
+			<BhML:boreholeReferencingMethod>
+				<BhML:BoreholeReferencingMethod>
+					<BhML:name>Meter point</BhML:name>
+					<!--What is a "Meter point"?-->
+					<BhML:unit>http://qudt.org/vocab/unit/M</BhML:unit>
+					<!-- Should byReference and use xink:href for the URI, allow code and xlink:title as per se:uom -->
+					<!--e.g. <sBhML:unit code="cm" xlink:href="http://qudt.org/vocab/unit/M" xlink:title="Metre"/>-->
+				</BhML:BoreholeReferencingMethod>
+			</BhML:boreholeReferencingMethod>
+			<BhML:linearElement>
+				<BhML:BoreholeTrajectory>
+					<!--This is the Borehole "trace", its x,y,z position as you follow the trajectory-->
+					<BhML:curve>
+						<gml:LineString gml:id="feduni.well.26654.shape" srsDimension="2" srsName="http://www.opengis.net/gml/srs/epsg.xml#4283">
+							<gml:posList>-38.287214 143.650349 -38.287214 143.650349</gml:posList>
+						</gml:LineString>
+					</BhML:curve>
+				</BhML:BoreholeTrajectory>
+			</BhML:linearElement>
+			<BhML:trajectoryReferent>
+				<BhML:DistanceExpression>
+					<BhML:distanceAlong uom="http://qudt.org/vocab/unit/M">0.00</BhML:distanceAlong>
+					<BhML:trajectoryReferent>
+						<BhML:TrajectoryReferent gml:id="TR1">
+							<gml:identifier codeSpace=""/>
+							<!--What is the identifier content? Is it the identifier for an external feature (e.g. a borehole collar feature)?-->
+							<!--If it is a piece of in-line information just to be used by the referencing BhM:collectionMember then it doesn't need a gml:id or a gml:identifier (it won't resolve to anything)-->
+							<BhML:position>
+								<gml:Point srsDimension="3" srsName="urn:ogc:def:crs:EPSG::4979">
+									<gml:pos>63.40163 13.202917 522</gml:pos>
+								</gml:Point>
+							</BhML:position>
+						</BhML:TrajectoryReferent>
+					</BhML:trajectoryReferent>
+					<BhML:location/>
+				</BhML:DistanceExpression>
+			</BhML:trajectoryReferent>
+		</BhML:BoreholeLRS>
+	</BhML:collectionLRS>
+	<BhML:collectionMember>
+		<!-- First BoreholeEvent is the constructed depth. Using xlink:href to specify what the property is that is located at this event. gwWellConstructedDepthhas no additional information apart from a from-to depth -->
+		<BhML:BoreholeEvent>
+			<BhML:locatedMember xlink:href="http://www.opengis.net/gwml-well/2.2/gwWellConstructedDepth" xlink:title="gwWellConstructedDepth"/>
+			<BhML:location>
+				<BhML:FromToLocation>
+					<BhML:fromPosition>
+						<BhML:MeasureOrEvent>
+							<BhML:distanceAlong uom="http://qudt.org/vocab/unit/M">0</BhML:distanceAlong>
+						</BhML:MeasureOrEvent>
+					</BhML:fromPosition>
+					<BhML:toPosition>
+						<BhML:MeasureOrEvent>
+							<BhML:distanceAlong uom="http://qudt.org/vocab/unit/M">11.68</BhML:distanceAlong>
+						</BhML:MeasureOrEvent>
+					</BhML:toPosition>
+				</BhML:FromToLocation>
+			</BhML:location>
+		</BhML:BoreholeEvent>
+	</BhML:collectionMember>
+	<BhML:collectionMember>
+		<!-- The second BoreholeEvent is a gwml2wc:Screen. This is a gwml2wc:Screen described in-line -->
+		<BhML:BoreholeEvent>
+			<BhML:locatedMember>
+				<gwml2wc:Screen gml:id="feduni.borehole.construction.26654.screen.1">
+					<gwml2wc:screenElement>
+						<gwml2wc:ScreenComponent gml:id="feduni.borehole.construction.26654.screen.component.3193">
+							<!-- gwml2wc allows specifying the from-to depth of the construction material. Using BhML:location to capture the from-to depth makes this redundant -->
+							<!--<gwml2wc:from>
+								<swe:Quantity>
+									<swe:uom code="m" xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre"/>
+									<swe:value>9.5</swe:value>
+								</swe:Quantity>
+							</gwml2wc:from>
+							<gwml2wc:to>
+								<swe:Quantity>
+									<swe:uom code="m" xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre"/>
+									<swe:value>11.5</swe:value>
+								</swe:Quantity>
+							</gwml2wc:to>-->
+							<gwml2wc:screenInternalDiameter>
+								<swe:Quantity>
+									<swe:uom xlink:href="http://registry.it.csiro.au/def/qudt/1.1/qudt-unit/Centimeter" code="cm" xlink:title="centimetre"/>
+									<swe:value>7</swe:value>
+								</swe:Quantity>
+							</gwml2wc:screenInternalDiameter>
+						</gwml2wc:ScreenComponent>
+					</gwml2wc:screenElement>
+				</gwml2wc:Screen>
+			</BhML:locatedMember>
+			<BhML:location>
+				<BhML:FromToLocation>
+					<BhML:fromPosition>
+						<BhML:MeasureOrEvent>
+							<BhML:distanceAlong uom="http://qudt.org/vocab/unit/M">9.5</BhML:distanceAlong>
+						</BhML:MeasureOrEvent>
+					</BhML:fromPosition>
+					<BhML:toPosition>
+						<BhML:MeasureOrEvent>
+							<BhML:distanceAlong uom="http://qudt.org/vocab/unit/M">11.5</BhML:distanceAlong>
+						</BhML:MeasureOrEvent>
+					</BhML:toPosition>
+				</BhML:FromToLocation>
+			</BhML:location>
+		</BhML:BoreholeEvent>
+	</BhML:collectionMember>
+</BhML:BoreholeEventCollection>
