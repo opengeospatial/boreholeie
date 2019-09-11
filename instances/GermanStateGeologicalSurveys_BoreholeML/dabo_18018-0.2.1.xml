@@ -1,0 +1,1787 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- rhaener 2019-09-03
+Complete mapping of a borehole (DABO_18018, scientific purpose) including lithology log from north rhine westphalia (NRW).
+The transformation still lacks of consistently mapping the two largely heterogeneous models regarding the referencing.
+-->
+<Borehole xmlns:bml="http://www.gfz-potsdam.de/boreholeml/4.2" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gn="urn:x-inspire:specification:gmlas:GeographicalNames:3.0" xmlns="https://forge.brgm.fr/svnrepository/boreholeie/schemas" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.gfz-potsdam.de/boreholeml/4.2 ../../schemas/bml4.2.1/BhML.xsd">
+	<collection>
+		<BoreholeEventCollection>
+			<collectionLRS>
+				<BoreholeLRS>
+					<accuracyStatement/>
+					<precisionStatement/>
+					<boreholeReferencingMethod>
+						<BoreholeReferencingMethod>
+							<name>https://epsg.io/31466</name>
+							<unit>http://qudt.org/vocab/unit/M</unit>
+						</BoreholeReferencingMethod>
+					</boreholeReferencingMethod>
+					<linearElement>
+						<BoreholeTrajectory>
+							<curve xlink:type="simple" owns="false">
+								<gml:Curve xmlns="http://www.infogeo.de/boreholeml/3.0" gml:id="GEODIN_LOC_BMLGENIN.bmlid.DABO_18018.BPATH.Geom_0" srsName="https://epsg.io/5783" srsDimension="3" axisLabels="lat lon z">
+									<gml:segments>
+										<gml:LineStringSegment interpolation="linear" numDerivativesAtStart="0" numDerivativesAtEnd="0" numDerivativeInterior="0">
+											<gml:posList>386176.36 5763283.15 107 386176.36 5763283.15 -5849</gml:posList>
+										</gml:LineStringSegment>
+									</gml:segments>
+								</gml:Curve>
+							</curve>
+						</BoreholeTrajectory>
+					</linearElement>
+					<trajectoryReferent>
+						<DistanceExpression>
+							<distanceAlong uom="http://qudt.org/vocab/unit/M">0</distanceAlong>
+							<trajectoryReferent>
+								<TrajectoryReferent>
+									<position xlink:type="simple" owns="false">
+										<gml:Point xmlns="http://www.infogeo.de/boreholeml/3.0" gml:id="GEODIN_LOC_BMLGENIN.bmlid.DABO_18018.LOCATION.Geom_0" srsName="https://epsg.io/5783" srsDimension="3" axisLabels="lat lon z">
+											<gml:pos>386176.36 5763283.15 107</gml:pos>
+										</gml:Point>
+									</position>
+								</TrajectoryReferent>
+							</trajectoryReferent>
+							<location/>
+						</DistanceExpression>
+					</trajectoryReferent>
+				</BoreholeLRS>
+			</collectionLRS>
+			
+			<collectionMember>
+				<bml:RockClassificationEvent>
+					<bml:locatedRockClassificationMember>
+						<bml:rockCode>L</bml:rockCode>
+						<bml:rockNameText xlink:type="simple">
+							<gmd:LocalisedCharacterString xmlns="http://www.infogeo.de/boreholeml/3.0" locale="http://www.infogeo.de/boreholeml/3.0/codelists/DE.xml">keine Angaben</gmd:LocalisedCharacterString>
+						</bml:rockNameText>
+						<bml:petrography>
+							<bml:Lithology>
+								<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">KMat</bml:rockName>
+								<bml:percentageFrom>40</bml:percentageFrom>
+								<bml:percentageTo>100</bml:percentageTo>
+							</bml:Lithology>
+						</bml:petrography>
+						<bml:stratigraphy>
+							<bml:ChronoStratigraphy codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/ChronoStratigraphyList.xml">K2Ca</bml:ChronoStratigraphy>
+						</bml:stratigraphy>
+					</bml:locatedRockClassificationMember>
+					<location>
+						<FromToLocation>
+							<fromPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">0</distanceAlong>
+								</MeasureOrEvent>
+							</fromPosition>
+							<toPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">15</distanceAlong>
+								</MeasureOrEvent>
+							</toPosition>
+						</FromToLocation>
+					</location>
+				</bml:RockClassificationEvent>
+			</collectionMember>
+			<collectionMember>
+				<bml:RockClassificationEvent>
+					<bml:locatedRockClassificationMember>
+						<bml:rockCode>MEZ; ; FS; 2</bml:rockCode>
+						<bml:rockNameText xlink:type="simple">
+							<gmd:LocalisedCharacterString xmlns="http://www.infogeo.de/boreholeml/3.0" locale="http://www.infogeo.de/boreholeml/3.0/codelists/DE.xml">Mergelstein; feinsandig; schwach / mit wenig ...</gmd:LocalisedCharacterString>
+						</bml:rockNameText>
+						<bml:intervalType codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">wl</bml:intervalType>
+						<bml:genesis codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/GenesisList.xml">akse</bml:genesis>
+						<bml:geoGenesis codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/GeoGenesisList.xml">fak</bml:geoGenesis>
+						<bml:carbonateContent codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/CarbonateContentList.xml">c5</bml:carbonateContent>
+						<bml:waterContent codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/WaterContentList.xml">feu2</bml:waterContent>
+						<bml:consistency codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/ConsistencyList.xml">flu</bml:consistency>
+						<bml:compactness codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/CompactnessList.xml">ld3</bml:compactness>
+						<bml:petrography>
+							<bml:Lithology>
+								<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">Mst</bml:rockName>
+								<bml:percentageFrom>40</bml:percentageFrom>
+								<bml:percentageTo>100</bml:percentageTo>
+								<bml:rockColor codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockColorList.xml">v1&amp;h8</bml:rockColor>
+								<bml:rockColorMixture codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockColorMixtureList.xml">fp</bml:rockColorMixture>
+							</bml:Lithology>
+							<bml:Lithology>
+								<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">fS</bml:rockName>
+								<bml:percentageFrom>0.1</bml:percentageFrom>
+								<bml:percentageTo>15</bml:percentageTo>
+							</bml:Lithology>
+						</bml:petrography>
+						<bml:stratigraphy>
+							<bml:ChronoStratigraphy codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/ChronoStratigraphyList.xml">K2Ca</bml:ChronoStratigraphy>
+						</bml:stratigraphy>
+					</bml:locatedRockClassificationMember>
+					<location>
+						<FromToLocation>
+							<fromPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">15</distanceAlong>
+								</MeasureOrEvent>
+							</fromPosition>
+							<toPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">70</distanceAlong>
+								</MeasureOrEvent>
+							</toPosition>
+						</FromToLocation>
+					</location>
+				</bml:RockClassificationEvent>
+			</collectionMember>
+			<collectionMember>
+				<bml:RockClassificationEvent>
+					<bml:locatedRockClassificationMember>
+						<bml:rockCode>MEZ; ; FS; 2</bml:rockCode>
+						<bml:rockNameText xlink:type="simple">
+							<gmd:LocalisedCharacterString xmlns="http://www.infogeo.de/boreholeml/3.0" locale="http://www.infogeo.de/boreholeml/3.0/codelists/DE.xml">Mergelstein; feinsandig; schwach / mit wenig ...</gmd:LocalisedCharacterString>
+						</bml:rockNameText>
+						<bml:petrography>
+							<bml:Lithology>
+								<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">Mst</bml:rockName>
+								<bml:percentageFrom>40</bml:percentageFrom>
+								<bml:percentageTo>100</bml:percentageTo>
+								<bml:rockColor codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockColorList.xml">h8</bml:rockColor>
+							</bml:Lithology>
+							<bml:Lithology>
+								<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">fS</bml:rockName>
+								<bml:percentageFrom>0.1</bml:percentageFrom>
+								<bml:percentageTo>15</bml:percentageTo>
+							</bml:Lithology>
+						</bml:petrography>
+						<bml:stratigraphy>
+							<bml:ChronoStratigraphy codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/ChronoStratigraphyList.xml">K2Ca</bml:ChronoStratigraphy>
+						</bml:stratigraphy>
+					</bml:locatedRockClassificationMember>
+					<location>
+						<FromToLocation>
+							<fromPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">70</distanceAlong>
+								</MeasureOrEvent>
+							</fromPosition>
+							<toPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">80</distanceAlong>
+								</MeasureOrEvent>
+							</toPosition>
+						</FromToLocation>
+					</location>
+				</bml:RockClassificationEvent>
+			</collectionMember>
+			<collectionMember>
+				<bml:RockClassificationEvent>
+					<bml:locatedRockClassificationMember>
+						<bml:rockCode>MEZ; ; FS; 3</bml:rockCode>
+						<bml:rockNameText xlink:type="simple">
+							<gmd:LocalisedCharacterString xmlns="http://www.infogeo.de/boreholeml/3.0" locale="http://www.infogeo.de/boreholeml/3.0/codelists/DE.xml">Mergelstein; feinsandig; mit ...</gmd:LocalisedCharacterString>
+						</bml:rockNameText>
+						<bml:petrography>
+							<bml:Lithology>
+								<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">Mst</bml:rockName>
+								<bml:percentageFrom>40</bml:percentageFrom>
+								<bml:percentageTo>100</bml:percentageTo>
+								<bml:rockColor codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockColorList.xml">v1&amp;h5&amp;h8</bml:rockColor>
+							</bml:Lithology>
+							<bml:Lithology>
+								<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">fS</bml:rockName>
+								<bml:percentageFrom>15</bml:percentageFrom>
+								<bml:percentageTo>30</bml:percentageTo>
+							</bml:Lithology>
+						</bml:petrography>
+						<bml:stratigraphy>
+							<bml:ChronoStratigraphy codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/ChronoStratigraphyList.xml">K2Ca</bml:ChronoStratigraphy>
+						</bml:stratigraphy>
+					</bml:locatedRockClassificationMember>
+					<location>
+						<FromToLocation>
+							<fromPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">80</distanceAlong>
+								</MeasureOrEvent>
+							</fromPosition>
+							<toPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">120</distanceAlong>
+								</MeasureOrEvent>
+							</toPosition>
+						</FromToLocation>
+					</location>
+				</bml:RockClassificationEvent>
+			</collectionMember>
+			<collectionMember>
+				<bml:RockClassificationEvent>
+					<bml:locatedRockClassificationMember>
+						<bml:rockCode>MEZ; SM</bml:rockCode>
+						<bml:rockNameText xlink:type="simple">
+							<gmd:LocalisedCharacterString xmlns="http://www.infogeo.de/boreholeml/3.0" locale="http://www.infogeo.de/boreholeml/3.0/codelists/DE.xml">Mergelstein; Sandmergel</gmd:LocalisedCharacterString>
+						</bml:rockNameText>
+						<bml:petrography>
+							<bml:Lithology>
+								<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">Mst</bml:rockName>
+								<bml:percentageFrom>40</bml:percentageFrom>
+								<bml:percentageTo>100</bml:percentageTo>
+								<bml:rockColor codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockColorList.xml">h5&amp;h8</bml:rockColor>
+							</bml:Lithology>
+							<bml:Lithology>
+								<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">SM</bml:rockName>
+								<bml:percentageFrom>40</bml:percentageFrom>
+								<bml:percentageTo>60</bml:percentageTo>
+							</bml:Lithology>
+						</bml:petrography>
+						<bml:stratigraphy>
+							<bml:ChronoStratigraphy codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/ChronoStratigraphyList.xml">K2Ca</bml:ChronoStratigraphy>
+						</bml:stratigraphy>
+					</bml:locatedRockClassificationMember>
+					<location>
+						<FromToLocation>
+							<fromPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">120</distanceAlong>
+								</MeasureOrEvent>
+							</fromPosition>
+							<toPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">130</distanceAlong>
+								</MeasureOrEvent>
+							</toPosition>
+						</FromToLocation>
+					</location>
+				</bml:RockClassificationEvent>
+			</collectionMember>
+			<collectionMember>
+				<bml:RockClassificationEvent>
+					<bml:locatedRockClassificationMember>
+						<bml:rockCode>KSZ; ; FS; 3</bml:rockCode>
+						<bml:rockNameText xlink:type="simple">
+							<gmd:LocalisedCharacterString xmlns="http://www.infogeo.de/boreholeml/3.0" locale="http://www.infogeo.de/boreholeml/3.0/codelists/DE.xml">Kalksandstein; feinsandig; mit ...</gmd:LocalisedCharacterString>
+						</bml:rockNameText>
+						<bml:petrography>
+							<bml:Lithology>
+								<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">Sstk</bml:rockName>
+								<bml:percentageFrom>40</bml:percentageFrom>
+								<bml:percentageTo>100</bml:percentageTo>
+								<bml:rockColor codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockColorList.xml">v1&amp;h8</bml:rockColor>
+							</bml:Lithology>
+							<bml:Lithology>
+								<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">fS</bml:rockName>
+								<bml:percentageFrom>15</bml:percentageFrom>
+								<bml:percentageTo>30</bml:percentageTo>
+							</bml:Lithology>
+						</bml:petrography>
+						<bml:stratigraphy>
+							<bml:ChronoStratigraphy codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/ChronoStratigraphyList.xml">K2Ca</bml:ChronoStratigraphy>
+						</bml:stratigraphy>
+					</bml:locatedRockClassificationMember>
+					<location>
+						<FromToLocation>
+							<fromPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">130</distanceAlong>
+								</MeasureOrEvent>
+							</fromPosition>
+							<toPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">150</distanceAlong>
+								</MeasureOrEvent>
+							</toPosition>
+						</FromToLocation>
+					</location>
+				</bml:RockClassificationEvent>
+			</collectionMember>
+			<collectionMember>
+				<bml:RockClassificationEvent>
+					<bml:locatedRockClassificationMember>
+						<bml:rockCode>MEZ; ; FS; 3</bml:rockCode>
+						<bml:rockNameText xlink:type="simple">
+							<gmd:LocalisedCharacterString xmlns="http://www.infogeo.de/boreholeml/3.0" locale="http://www.infogeo.de/boreholeml/3.0/codelists/DE.xml">Mergelstein; feinsandig; mit ...</gmd:LocalisedCharacterString>
+						</bml:rockNameText>
+						<bml:petrography>
+							<bml:Lithology>
+								<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">Mst</bml:rockName>
+								<bml:percentageFrom>40</bml:percentageFrom>
+								<bml:percentageTo>100</bml:percentageTo>
+								<bml:rockColor codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockColorList.xml">h8</bml:rockColor>
+							</bml:Lithology>
+							<bml:Lithology>
+								<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">fS</bml:rockName>
+								<bml:percentageFrom>15</bml:percentageFrom>
+								<bml:percentageTo>30</bml:percentageTo>
+							</bml:Lithology>
+						</bml:petrography>
+						<bml:stratigraphy>
+							<bml:ChronoStratigraphy codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/ChronoStratigraphyList.xml">K2Ca</bml:ChronoStratigraphy>
+						</bml:stratigraphy>
+					</bml:locatedRockClassificationMember>
+					<location>
+						<FromToLocation>
+							<fromPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">150</distanceAlong>
+								</MeasureOrEvent>
+							</fromPosition>
+							<toPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">240</distanceAlong>
+								</MeasureOrEvent>
+							</toPosition>
+						</FromToLocation>
+					</location>
+				</bml:RockClassificationEvent>
+			</collectionMember>
+			<collectionMember>
+				<bml:RockClassificationEvent>
+					<bml:locatedRockClassificationMember>
+						<bml:rockCode>SMZ</bml:rockCode>
+						<bml:rockNameText xlink:type="simple">
+							<gmd:LocalisedCharacterString xmlns="http://www.infogeo.de/boreholeml/3.0" locale="http://www.infogeo.de/boreholeml/3.0/codelists/DE.xml">Sandmergelstein</gmd:LocalisedCharacterString>
+						</bml:rockNameText>
+						<bml:petrography>
+							<bml:Lithology>
+								<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">fsc</bml:rockName>
+								<bml:percentageFrom>40</bml:percentageFrom>
+								<bml:percentageTo>100</bml:percentageTo>
+								<bml:rockColor codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockColorList.xml">h8</bml:rockColor>
+							</bml:Lithology>
+						</bml:petrography>
+						<bml:stratigraphy>
+							<bml:ChronoStratigraphy codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/ChronoStratigraphyList.xml">K2Ca</bml:ChronoStratigraphy>
+						</bml:stratigraphy>
+					</bml:locatedRockClassificationMember>
+					<location>
+						<FromToLocation>
+							<fromPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">240</distanceAlong>
+								</MeasureOrEvent>
+							</fromPosition>
+							<toPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">250</distanceAlong>
+								</MeasureOrEvent>
+							</toPosition>
+						</FromToLocation>
+					</location>
+				</bml:RockClassificationEvent>
+			</collectionMember>
+			<collectionMember>
+				<bml:RockClassificationEvent>
+					<bml:locatedRockClassificationMember>
+						<bml:rockCode>MEZ; ; FS; 3</bml:rockCode>
+						<bml:rockNameText xlink:type="simple">
+							<gmd:LocalisedCharacterString xmlns="http://www.infogeo.de/boreholeml/3.0" locale="http://www.infogeo.de/boreholeml/3.0/codelists/DE.xml">Mergelstein; feinsandig; mit ...</gmd:LocalisedCharacterString>
+						</bml:rockNameText>
+						<bml:petrography>
+							<bml:Lithology>
+								<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">Mst</bml:rockName>
+								<bml:percentageFrom>40</bml:percentageFrom>
+								<bml:percentageTo>100</bml:percentageTo>
+								<bml:rockColor codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockColorList.xml">h8</bml:rockColor>
+							</bml:Lithology>
+							<bml:Lithology>
+								<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">fS</bml:rockName>
+								<bml:percentageFrom>15</bml:percentageFrom>
+								<bml:percentageTo>30</bml:percentageTo>
+							</bml:Lithology>
+						</bml:petrography>
+						<bml:stratigraphy>
+							<bml:ChronoStratigraphy codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/ChronoStratigraphyList.xml">K2Ca</bml:ChronoStratigraphy>
+						</bml:stratigraphy>
+					</bml:locatedRockClassificationMember>
+					<location>
+						<FromToLocation>
+							<fromPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">250</distanceAlong>
+								</MeasureOrEvent>
+							</fromPosition>
+							<toPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">300</distanceAlong>
+								</MeasureOrEvent>
+							</toPosition>
+						</FromToLocation>
+					</location>
+				</bml:RockClassificationEvent>
+			</collectionMember>
+			<collectionMember>
+				<bml:RockClassificationEvent>
+					<bml:locatedRockClassificationMember>
+						<bml:rockCode>MEZ; ; GU; 3</bml:rockCode>
+						<bml:rockNameText xlink:type="simple">
+							<gmd:LocalisedCharacterString xmlns="http://www.infogeo.de/boreholeml/3.0" locale="http://www.infogeo.de/boreholeml/3.0/codelists/DE.xml">Mergelstein; grobschluffig; mit ...</gmd:LocalisedCharacterString>
+						</bml:rockNameText>
+						<bml:petrography>
+							<bml:Lithology>
+								<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">Mst</bml:rockName>
+								<bml:percentageFrom>40</bml:percentageFrom>
+								<bml:percentageTo>100</bml:percentageTo>
+								<bml:rockColor codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockColorList.xml">h8</bml:rockColor>
+							</bml:Lithology>
+							<bml:Lithology>
+								<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">U</bml:rockName>
+								<bml:percentageFrom>15</bml:percentageFrom>
+								<bml:percentageTo>30</bml:percentageTo>
+							</bml:Lithology>
+						</bml:petrography>
+						<bml:stratigraphy>
+							<bml:ChronoStratigraphy codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/ChronoStratigraphyList.xml">K2S</bml:ChronoStratigraphy>
+						</bml:stratigraphy>
+					</bml:locatedRockClassificationMember>
+					<location>
+						<FromToLocation>
+							<fromPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">300</distanceAlong>
+								</MeasureOrEvent>
+							</fromPosition>
+							<toPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">375</distanceAlong>
+								</MeasureOrEvent>
+							</toPosition>
+						</FromToLocation>
+					</location>
+				</bml:RockClassificationEvent>
+			</collectionMember>
+			<collectionMember>
+				<bml:RockClassificationEvent>
+					<bml:locatedRockClassificationMember>
+						<bml:rockCode>MEZ; ; GU; 3</bml:rockCode>
+						<bml:rockNameText xlink:type="simple">
+							<gmd:LocalisedCharacterString xmlns="http://www.infogeo.de/boreholeml/3.0" locale="http://www.infogeo.de/boreholeml/3.0/codelists/DE.xml">Mergelstein; grobschluffig; mit ...</gmd:LocalisedCharacterString>
+						</bml:rockNameText>
+						<bml:petrography>
+							<bml:Lithology>
+								<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">Mst</bml:rockName>
+								<bml:percentageFrom>40</bml:percentageFrom>
+								<bml:percentageTo>100</bml:percentageTo>
+								<bml:rockColor codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockColorList.xml">h8</bml:rockColor>
+							</bml:Lithology>
+							<bml:Lithology>
+								<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">U</bml:rockName>
+								<bml:percentageFrom>15</bml:percentageFrom>
+								<bml:percentageTo>30</bml:percentageTo>
+							</bml:Lithology>
+						</bml:petrography>
+						<bml:stratigraphy>
+							<bml:ChronoStratigraphy codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/ChronoStratigraphyList.xml">K2S</bml:ChronoStratigraphy>
+						</bml:stratigraphy>
+					</bml:locatedRockClassificationMember>
+					<location>
+						<FromToLocation>
+							<fromPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">375</distanceAlong>
+								</MeasureOrEvent>
+							</fromPosition>
+							<toPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">480</distanceAlong>
+								</MeasureOrEvent>
+							</toPosition>
+						</FromToLocation>
+					</location>
+				</bml:RockClassificationEvent>
+			</collectionMember>
+			<collectionMember>
+				<bml:RockClassificationEvent>
+					<bml:locatedRockClassificationMember>
+						<bml:rockCode>MEZ; TMZ; GU; 3; FS; 2</bml:rockCode>
+						<bml:rockNameText xlink:type="simple">
+							<gmd:LocalisedCharacterString xmlns="http://www.infogeo.de/boreholeml/3.0" locale="http://www.infogeo.de/boreholeml/3.0/codelists/DE.xml">Mergelstein; Tonmergelstein; grobschluffig; mit ...; feinsandig; schwach / mit wenig ...</gmd:LocalisedCharacterString>
+						</bml:rockNameText>
+						<bml:petrography>
+							<bml:Lithology>
+								<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">Mst</bml:rockName>
+								<bml:percentageFrom>40</bml:percentageFrom>
+								<bml:percentageTo>100</bml:percentageTo>
+								<bml:rockColor codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockColorList.xml">h8</bml:rockColor>
+							</bml:Lithology>
+							<bml:Lithology>
+								<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">fsc</bml:rockName>
+								<bml:percentageFrom>40</bml:percentageFrom>
+								<bml:percentageTo>60</bml:percentageTo>
+								<bml:rockColor codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockColorList.xml">c4&amp;h8</bml:rockColor>
+							</bml:Lithology>
+							<bml:Lithology>
+								<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">U</bml:rockName>
+								<bml:percentageFrom>15</bml:percentageFrom>
+								<bml:percentageTo>30</bml:percentageTo>
+							</bml:Lithology>
+							<bml:Lithology>
+								<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">fS</bml:rockName>
+								<bml:percentageFrom>0.1</bml:percentageFrom>
+								<bml:percentageTo>15</bml:percentageTo>
+							</bml:Lithology>
+						</bml:petrography>
+						<bml:stratigraphy>
+							<bml:ChronoStratigraphy codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/ChronoStratigraphyList.xml">K2S</bml:ChronoStratigraphy>
+						</bml:stratigraphy>
+					</bml:locatedRockClassificationMember>
+					<location>
+						<FromToLocation>
+							<fromPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">480</distanceAlong>
+								</MeasureOrEvent>
+							</fromPosition>
+							<toPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">585</distanceAlong>
+								</MeasureOrEvent>
+							</toPosition>
+						</FromToLocation>
+					</location>
+				</bml:RockClassificationEvent>
+			</collectionMember>
+			<collectionMember>
+				<bml:RockClassificationEvent>
+					<bml:locatedRockClassificationMember>
+						<bml:rockCode>TMZ; ; GU; 3</bml:rockCode>
+						<bml:rockNameText xlink:type="simple">
+							<gmd:LocalisedCharacterString xmlns="http://www.infogeo.de/boreholeml/3.0" locale="http://www.infogeo.de/boreholeml/3.0/codelists/DE.xml">Tonmergelstein; grobschluffig; mit ...</gmd:LocalisedCharacterString>
+						</bml:rockNameText>
+						<bml:petrography>
+							<bml:Lithology>
+								<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">fsc</bml:rockName>
+								<bml:percentageFrom>40</bml:percentageFrom>
+								<bml:percentageTo>100</bml:percentageTo>
+								<bml:rockColor codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockColorList.xml">v1&amp;h8</bml:rockColor>
+							</bml:Lithology>
+							<bml:Lithology>
+								<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">U</bml:rockName>
+								<bml:percentageFrom>15</bml:percentageFrom>
+								<bml:percentageTo>30</bml:percentageTo>
+							</bml:Lithology>
+						</bml:petrography>
+						<bml:stratigraphy>
+							<bml:ChronoStratigraphy codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/ChronoStratigraphyList.xml">K2S</bml:ChronoStratigraphy>
+						</bml:stratigraphy>
+					</bml:locatedRockClassificationMember>
+					<location>
+						<FromToLocation>
+							<fromPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">585</distanceAlong>
+								</MeasureOrEvent>
+							</fromPosition>
+							<toPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">675</distanceAlong>
+								</MeasureOrEvent>
+							</toPosition>
+						</FromToLocation>
+					</location>
+				</bml:RockClassificationEvent>
+			</collectionMember>
+			<collectionMember>
+				<bml:RockClassificationEvent>
+					<bml:locatedRockClassificationMember>
+						<bml:rockCode>TMZ; ; GU; 3</bml:rockCode>
+						<bml:rockNameText xlink:type="simple">
+							<gmd:LocalisedCharacterString xmlns="http://www.infogeo.de/boreholeml/3.0" locale="http://www.infogeo.de/boreholeml/3.0/codelists/DE.xml">Tonmergelstein; grobschluffig; mit ...</gmd:LocalisedCharacterString>
+						</bml:rockNameText>
+						<bml:petrography>
+							<bml:Lithology>
+								<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">fsc</bml:rockName>
+								<bml:percentageFrom>40</bml:percentageFrom>
+								<bml:percentageTo>100</bml:percentageTo>
+								<bml:rockColor codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockColorList.xml">v1&amp;h8</bml:rockColor>
+							</bml:Lithology>
+							<bml:Lithology>
+								<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">U</bml:rockName>
+								<bml:percentageFrom>15</bml:percentageFrom>
+								<bml:percentageTo>30</bml:percentageTo>
+							</bml:Lithology>
+						</bml:petrography>
+						<bml:stratigraphy>
+							<bml:ChronoStratigraphy codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/ChronoStratigraphyList.xml">K2S</bml:ChronoStratigraphy>
+						</bml:stratigraphy>
+					</bml:locatedRockClassificationMember>
+					<location>
+						<FromToLocation>
+							<fromPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">675</distanceAlong>
+								</MeasureOrEvent>
+							</fromPosition>
+							<toPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">935</distanceAlong>
+								</MeasureOrEvent>
+							</toPosition>
+						</FromToLocation>
+					</location>
+				</bml:RockClassificationEvent>
+			</collectionMember>
+			<collectionMember>
+				<bml:RockClassificationEvent>
+					<bml:locatedRockClassificationMember>
+						<bml:rockCode>TMZ; ; GU; 3</bml:rockCode>
+						<bml:rockNameText xlink:type="simple">
+							<gmd:LocalisedCharacterString xmlns="http://www.infogeo.de/boreholeml/3.0" locale="http://www.infogeo.de/boreholeml/3.0/codelists/DE.xml">Tonmergelstein; grobschluffig; mit ...</gmd:LocalisedCharacterString>
+						</bml:rockNameText>
+						<bml:petrography>
+							<bml:Lithology>
+								<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">fsc</bml:rockName>
+								<bml:percentageFrom>40</bml:percentageFrom>
+								<bml:percentageTo>100</bml:percentageTo>
+								<bml:rockColor codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockColorList.xml">v1&amp;h8</bml:rockColor>
+							</bml:Lithology>
+							<bml:Lithology>
+								<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">U</bml:rockName>
+								<bml:percentageFrom>15</bml:percentageFrom>
+								<bml:percentageTo>30</bml:percentageTo>
+							</bml:Lithology>
+						</bml:petrography>
+						<bml:stratigraphy>
+							<bml:ChronoStratigraphy codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/ChronoStratigraphyList.xml">K2S</bml:ChronoStratigraphy>
+						</bml:stratigraphy>
+					</bml:locatedRockClassificationMember>
+					<location>
+						<FromToLocation>
+							<fromPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">935</distanceAlong>
+								</MeasureOrEvent>
+							</fromPosition>
+							<toPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">1095</distanceAlong>
+								</MeasureOrEvent>
+							</toPosition>
+						</FromToLocation>
+					</location>
+				</bml:RockClassificationEvent>
+			</collectionMember>
+			<collectionMember>
+				<bml:RockClassificationEvent>
+					<bml:locatedRockClassificationMember>
+						<bml:rockCode>TMZ; ; GU; 3; FS; 2</bml:rockCode>
+						<bml:rockNameText xlink:type="simple">
+							<gmd:LocalisedCharacterString xmlns="http://www.infogeo.de/boreholeml/3.0" locale="http://www.infogeo.de/boreholeml/3.0/codelists/DE.xml">Tonmergelstein; grobschluffig; mit ...; feinsandig; schwach / mit wenig ...</gmd:LocalisedCharacterString>
+						</bml:rockNameText>
+						<bml:petrography>
+							<bml:Lithology>
+								<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">fsc</bml:rockName>
+								<bml:percentageFrom>40</bml:percentageFrom>
+								<bml:percentageTo>100</bml:percentageTo>
+								<bml:rockColor codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockColorList.xml">h8</bml:rockColor>
+							</bml:Lithology>
+							<bml:Lithology>
+								<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">U</bml:rockName>
+								<bml:percentageFrom>15</bml:percentageFrom>
+								<bml:percentageTo>30</bml:percentageTo>
+							</bml:Lithology>
+							<bml:Lithology>
+								<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">fS</bml:rockName>
+								<bml:percentageFrom>0.1</bml:percentageFrom>
+								<bml:percentageTo>15</bml:percentageTo>
+							</bml:Lithology>
+						</bml:petrography>
+						<bml:stratigraphy/>
+					</bml:locatedRockClassificationMember>
+					<location>
+						<FromToLocation>
+							<fromPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">1095</distanceAlong>
+								</MeasureOrEvent>
+							</fromPosition>
+							<toPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">1340</distanceAlong>
+								</MeasureOrEvent>
+							</toPosition>
+						</FromToLocation>
+					</location>
+				</bml:RockClassificationEvent>
+			</collectionMember>
+			<collectionMember>
+				<bml:RockClassificationEvent>
+					<bml:locatedRockClassificationMember>
+						<bml:rockCode>MEZ; MKZ; GU; 3; FS; 2</bml:rockCode>
+						<bml:rockNameText xlink:type="simple">
+							<gmd:LocalisedCharacterString xmlns="http://www.infogeo.de/boreholeml/3.0" locale="http://www.infogeo.de/boreholeml/3.0/codelists/DE.xml">Mergelstein; Mergelkalkstein; grobschluffig; mit ...; feinsandig; schwach / mit wenig ...</gmd:LocalisedCharacterString>
+						</bml:rockNameText>
+						<bml:petrography>
+							<bml:Lithology>
+								<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">Mst</bml:rockName>
+								<bml:percentageFrom>40</bml:percentageFrom>
+								<bml:percentageTo>100</bml:percentageTo>
+								<bml:rockColor codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockColorList.xml">h8</bml:rockColor>
+							</bml:Lithology>
+							<bml:Lithology>
+								<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">fsc</bml:rockName>
+								<bml:percentageFrom>40</bml:percentageFrom>
+								<bml:percentageTo>60</bml:percentageTo>
+							</bml:Lithology>
+							<bml:Lithology>
+								<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">U</bml:rockName>
+								<bml:percentageFrom>15</bml:percentageFrom>
+								<bml:percentageTo>30</bml:percentageTo>
+							</bml:Lithology>
+							<bml:Lithology>
+								<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">fS</bml:rockName>
+								<bml:percentageFrom>0.1</bml:percentageFrom>
+								<bml:percentageTo>15</bml:percentageTo>
+							</bml:Lithology>
+						</bml:petrography>
+						<bml:stratigraphy/>
+					</bml:locatedRockClassificationMember>
+					<location>
+						<FromToLocation>
+							<fromPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">1340</distanceAlong>
+								</MeasureOrEvent>
+							</fromPosition>
+							<toPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">1400</distanceAlong>
+								</MeasureOrEvent>
+							</toPosition>
+						</FromToLocation>
+					</location>
+				</bml:RockClassificationEvent>
+			</collectionMember>
+			<collectionMember>
+				<bml:RockClassificationEvent>
+					<bml:locatedRockClassificationMember>
+						<bml:rockCode>MEZ; KMZ</bml:rockCode>
+						<bml:rockNameText xlink:type="simple">
+							<gmd:LocalisedCharacterString xmlns="http://www.infogeo.de/boreholeml/3.0" locale="http://www.infogeo.de/boreholeml/3.0/codelists/DE.xml">Mergelstein; Kalkmergelstein</gmd:LocalisedCharacterString>
+						</bml:rockNameText>
+						<bml:petrography>
+							<bml:Lithology>
+								<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">Mst</bml:rockName>
+								<bml:percentageFrom>40</bml:percentageFrom>
+								<bml:percentageTo>100</bml:percentageTo>
+								<bml:rockColor codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockColorList.xml">v1&amp;h8</bml:rockColor>
+							</bml:Lithology>
+							<bml:Lithology>
+								<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">fsc</bml:rockName>
+								<bml:percentageFrom>40</bml:percentageFrom>
+								<bml:percentageTo>60</bml:percentageTo>
+							</bml:Lithology>
+						</bml:petrography>
+						<bml:stratigraphy>
+							<bml:ChronoStratigraphy codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/ChronoStratigraphyList.xml">K2Cc</bml:ChronoStratigraphy>
+						</bml:stratigraphy>
+					</bml:locatedRockClassificationMember>
+					<location>
+						<FromToLocation>
+							<fromPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">1400</distanceAlong>
+								</MeasureOrEvent>
+							</fromPosition>
+							<toPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">1455</distanceAlong>
+								</MeasureOrEvent>
+							</toPosition>
+						</FromToLocation>
+					</location>
+				</bml:RockClassificationEvent>
+			</collectionMember>
+			<collectionMember>
+				<bml:RockClassificationEvent>
+					<bml:locatedRockClassificationMember>
+						<bml:rockCode>KMZ</bml:rockCode>
+						<bml:rockNameText xlink:type="simple">
+							<gmd:LocalisedCharacterString xmlns="http://www.infogeo.de/boreholeml/3.0" locale="http://www.infogeo.de/boreholeml/3.0/codelists/DE.xml">Kalkmergelstein</gmd:LocalisedCharacterString>
+						</bml:rockNameText>
+						<bml:petrography>
+							<bml:Lithology>
+								<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">fsc</bml:rockName>
+								<bml:percentageFrom>40</bml:percentageFrom>
+								<bml:percentageTo>100</bml:percentageTo>
+								<bml:rockColor codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockColorList.xml">v1&amp;h8</bml:rockColor>
+							</bml:Lithology>
+						</bml:petrography>
+						<bml:stratigraphy>
+							<bml:ChronoStratigraphy codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/ChronoStratigraphyList.xml">K2Cc</bml:ChronoStratigraphy>
+						</bml:stratigraphy>
+					</bml:locatedRockClassificationMember>
+					<location>
+						<FromToLocation>
+							<fromPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">1455</distanceAlong>
+								</MeasureOrEvent>
+							</fromPosition>
+							<toPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">1470</distanceAlong>
+								</MeasureOrEvent>
+							</toPosition>
+						</FromToLocation>
+					</location>
+				</bml:RockClassificationEvent>
+			</collectionMember>
+			<collectionMember>
+				<bml:RockClassificationEvent>
+					<bml:locatedRockClassificationMember>
+						<bml:rockCode>KMZ; MKZ</bml:rockCode>
+						<bml:rockNameText xlink:type="simple">
+							<gmd:LocalisedCharacterString xmlns="http://www.infogeo.de/boreholeml/3.0" locale="http://www.infogeo.de/boreholeml/3.0/codelists/DE.xml">Kalkmergelstein; Mergelkalkstein</gmd:LocalisedCharacterString>
+						</bml:rockNameText>
+						<bml:petrography>
+							<bml:Lithology>
+								<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">fsc</bml:rockName>
+								<bml:percentageFrom>40</bml:percentageFrom>
+								<bml:percentageTo>100</bml:percentageTo>
+								<bml:rockColor codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockColorList.xml">v1&amp;h8</bml:rockColor>
+							</bml:Lithology>
+							<bml:Lithology>
+								<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">fsc</bml:rockName>
+								<bml:percentageFrom>40</bml:percentageFrom>
+								<bml:percentageTo>60</bml:percentageTo>
+								<bml:rockColor codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockColorList.xml">h8&amp;h7</bml:rockColor>
+							</bml:Lithology>
+						</bml:petrography>
+						<bml:stratigraphy/>
+					</bml:locatedRockClassificationMember>
+					<location>
+						<FromToLocation>
+							<fromPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">1470</distanceAlong>
+								</MeasureOrEvent>
+							</fromPosition>
+							<toPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">1605</distanceAlong>
+								</MeasureOrEvent>
+							</toPosition>
+						</FromToLocation>
+					</location>
+				</bml:RockClassificationEvent>
+			</collectionMember>
+			<collectionMember>
+				<bml:RockClassificationEvent>
+					<bml:locatedRockClassificationMember>
+						<bml:rockCode>MKZ; KMZ</bml:rockCode>
+						<bml:rockNameText xlink:type="simple">
+							<gmd:LocalisedCharacterString xmlns="http://www.infogeo.de/boreholeml/3.0" locale="http://www.infogeo.de/boreholeml/3.0/codelists/DE.xml">Mergelkalkstein; Kalkmergelstein</gmd:LocalisedCharacterString>
+						</bml:rockNameText>
+						<bml:petrography>
+							<bml:Lithology>
+								<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">fsc</bml:rockName>
+								<bml:percentageFrom>40</bml:percentageFrom>
+								<bml:percentageTo>100</bml:percentageTo>
+								<bml:rockColor codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockColorList.xml">v1&amp;h8</bml:rockColor>
+							</bml:Lithology>
+							<bml:Lithology>
+								<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">fsc</bml:rockName>
+								<bml:percentageFrom>40</bml:percentageFrom>
+								<bml:percentageTo>60</bml:percentageTo>
+								<bml:rockColor codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockColorList.xml">h7&amp;h8</bml:rockColor>
+							</bml:Lithology>
+						</bml:petrography>
+						<bml:stratigraphy>
+							<bml:ChronoStratigraphy codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/ChronoStratigraphyList.xml">K2T</bml:ChronoStratigraphy>
+						</bml:stratigraphy>
+					</bml:locatedRockClassificationMember>
+					<location>
+						<FromToLocation>
+							<fromPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">1605</distanceAlong>
+								</MeasureOrEvent>
+							</fromPosition>
+							<toPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">1620</distanceAlong>
+								</MeasureOrEvent>
+							</toPosition>
+						</FromToLocation>
+					</location>
+				</bml:RockClassificationEvent>
+			</collectionMember>
+			<collectionMember>
+				<bml:RockClassificationEvent>
+					<bml:locatedRockClassificationMember>
+						<bml:rockCode>KZ</bml:rockCode>
+						<bml:rockNameText xlink:type="simple">
+							<gmd:LocalisedCharacterString xmlns="http://www.infogeo.de/boreholeml/3.0" locale="http://www.infogeo.de/boreholeml/3.0/codelists/DE.xml">Kalkstein</gmd:LocalisedCharacterString>
+						</bml:rockNameText>
+						<bml:petrography>
+							<bml:Lithology>
+								<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">Kst</bml:rockName>
+								<bml:percentageFrom>40</bml:percentageFrom>
+								<bml:percentageTo>100</bml:percentageTo>
+								<bml:rockColor codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockColorList.xml">h8&amp;h7</bml:rockColor>
+							</bml:Lithology>
+						</bml:petrography>
+						<bml:stratigraphy>
+							<bml:ChronoStratigraphy codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/ChronoStratigraphyList.xml">K2Cn</bml:ChronoStratigraphy>
+							<bml:LithoStratigraphy xlink:type="simple">
+								<gmd:LocalisedCharacterString>:</gmd:LocalisedCharacterString>
+							</bml:LithoStratigraphy>
+						</bml:stratigraphy>
+					</bml:locatedRockClassificationMember>
+					<location>
+						<FromToLocation>
+							<fromPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">1620</distanceAlong>
+								</MeasureOrEvent>
+							</fromPosition>
+							<toPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">1627</distanceAlong>
+								</MeasureOrEvent>
+							</toPosition>
+						</FromToLocation>
+					</location>
+				</bml:RockClassificationEvent>
+			</collectionMember>
+			<collectionMember>
+				<bml:RockClassificationEvent>
+					<bml:locatedRockClassificationMember>
+						<bml:rockCode>KZ</bml:rockCode>
+						<bml:rockNameText xlink:type="simple">
+							<gmd:LocalisedCharacterString xmlns="http://www.infogeo.de/boreholeml/3.0" locale="http://www.infogeo.de/boreholeml/3.0/codelists/DE.xml">Kalkstein</gmd:LocalisedCharacterString>
+						</bml:rockNameText>
+						<bml:petrography>
+							<bml:Lithology>
+								<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">Kst</bml:rockName>
+								<bml:percentageFrom>40</bml:percentageFrom>
+								<bml:percentageTo>100</bml:percentageTo>
+								<bml:rockColor codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockColorList.xml">h8&amp;h7</bml:rockColor>
+							</bml:Lithology>
+						</bml:petrography>
+						<bml:stratigraphy/>
+					</bml:locatedRockClassificationMember>
+					<location>
+						<FromToLocation>
+							<fromPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">1627</distanceAlong>
+								</MeasureOrEvent>
+							</fromPosition>
+							<toPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">1700</distanceAlong>
+								</MeasureOrEvent>
+							</toPosition>
+						</FromToLocation>
+					</location>
+				</bml:RockClassificationEvent>
+			</collectionMember>
+			<collectionMember>
+				<bml:RockClassificationEvent>
+					<bml:locatedRockClassificationMember>
+						<bml:rockCode>TMZ; ; GU; 2</bml:rockCode>
+						<bml:rockNameText xlink:type="simple">
+							<gmd:LocalisedCharacterString xmlns="http://www.infogeo.de/boreholeml/3.0" locale="http://www.infogeo.de/boreholeml/3.0/codelists/DE.xml">Tonmergelstein; grobschluffig; schwach / mit wenig ...</gmd:LocalisedCharacterString>
+						</bml:rockNameText>
+						<bml:petrography>
+							<bml:Lithology>
+								<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">fsc</bml:rockName>
+								<bml:percentageFrom>40</bml:percentageFrom>
+								<bml:percentageTo>100</bml:percentageTo>
+								<bml:rockColor codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockColorList.xml">v2&amp;h8</bml:rockColor>
+							</bml:Lithology>
+							<bml:Lithology>
+								<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">U</bml:rockName>
+								<bml:percentageFrom>0.1</bml:percentageFrom>
+								<bml:percentageTo>15</bml:percentageTo>
+							</bml:Lithology>
+						</bml:petrography>
+						<bml:stratigraphy>
+							<bml:ChronoStratigraphy codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/ChronoStratigraphyList.xml">K2Cn</bml:ChronoStratigraphy>
+						</bml:stratigraphy>
+					</bml:locatedRockClassificationMember>
+					<location>
+						<FromToLocation>
+							<fromPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">1700</distanceAlong>
+								</MeasureOrEvent>
+							</fromPosition>
+							<toPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">1754</distanceAlong>
+								</MeasureOrEvent>
+							</toPosition>
+						</FromToLocation>
+					</location>
+				</bml:RockClassificationEvent>
+			</collectionMember>
+			<collectionMember>
+				<bml:RockClassificationEvent>
+					<bml:locatedRockClassificationMember>
+						<bml:rockCode>TMZ</bml:rockCode>
+						<bml:rockNameText xlink:type="simple">
+							<gmd:LocalisedCharacterString xmlns="http://www.infogeo.de/boreholeml/3.0" locale="http://www.infogeo.de/boreholeml/3.0/codelists/DE.xml">Tonmergelstein</gmd:LocalisedCharacterString>
+						</bml:rockNameText>
+						<bml:petrography>
+							<bml:Lithology>
+								<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">fsc</bml:rockName>
+								<bml:percentageFrom>40</bml:percentageFrom>
+								<bml:percentageTo>100</bml:percentageTo>
+								<bml:rockColor codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockColorList.xml">v2&amp;h8</bml:rockColor>
+							</bml:Lithology>
+						</bml:petrography>
+						<bml:stratigraphy>
+							<bml:ChronoStratigraphy codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/ChronoStratigraphyList.xml">K1Al</bml:ChronoStratigraphy>
+						</bml:stratigraphy>
+					</bml:locatedRockClassificationMember>
+					<location>
+						<FromToLocation>
+							<fromPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">1754</distanceAlong>
+								</MeasureOrEvent>
+							</fromPosition>
+							<toPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">1775</distanceAlong>
+								</MeasureOrEvent>
+							</toPosition>
+						</FromToLocation>
+					</location>
+				</bml:RockClassificationEvent>
+			</collectionMember>
+			<collectionMember>
+				<bml:RockClassificationEvent>
+					<bml:locatedRockClassificationMember>
+						<bml:rockCode>MEZ</bml:rockCode>
+						<bml:rockNameText xlink:type="simple">
+							<gmd:LocalisedCharacterString xmlns="http://www.infogeo.de/boreholeml/3.0" locale="http://www.infogeo.de/boreholeml/3.0/codelists/DE.xml">Mergelstein</gmd:LocalisedCharacterString>
+						</bml:rockNameText>
+						<bml:petrography>
+							<bml:Lithology>
+								<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">Mst</bml:rockName>
+								<bml:percentageFrom>40</bml:percentageFrom>
+								<bml:percentageTo>100</bml:percentageTo>
+								<bml:rockColor codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockColorList.xml">v2&amp;h5&amp;h5</bml:rockColor>
+							</bml:Lithology>
+						</bml:petrography>
+						<bml:stratigraphy>
+							<bml:ChronoStratigraphy codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/ChronoStratigraphyList.xml">K1Al</bml:ChronoStratigraphy>
+						</bml:stratigraphy>
+					</bml:locatedRockClassificationMember>
+					<location>
+						<FromToLocation>
+							<fromPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">1775</distanceAlong>
+								</MeasureOrEvent>
+							</fromPosition>
+							<toPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">1783</distanceAlong>
+								</MeasureOrEvent>
+							</toPosition>
+						</FromToLocation>
+					</location>
+				</bml:RockClassificationEvent>
+			</collectionMember>
+			<collectionMember>
+				<bml:RockClassificationEvent>
+					<bml:locatedRockClassificationMember>
+						<bml:rockCode>MEZ</bml:rockCode>
+						<bml:rockNameText xlink:type="simple">
+							<gmd:LocalisedCharacterString xmlns="http://www.infogeo.de/boreholeml/3.0" locale="http://www.infogeo.de/boreholeml/3.0/codelists/DE.xml">Mergelstein</gmd:LocalisedCharacterString>
+						</bml:rockNameText>
+						<bml:petrography>
+							<bml:Lithology>
+								<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">Mst</bml:rockName>
+								<bml:percentageFrom>40</bml:percentageFrom>
+								<bml:percentageTo>100</bml:percentageTo>
+								<bml:rockColor codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockColorList.xml">v2&amp;h5&amp;h8</bml:rockColor>
+							</bml:Lithology>
+						</bml:petrography>
+						<bml:stratigraphy>
+							<bml:ChronoStratigraphy codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/ChronoStratigraphyList.xml">K1Al</bml:ChronoStratigraphy>
+						</bml:stratigraphy>
+					</bml:locatedRockClassificationMember>
+					<location>
+						<FromToLocation>
+							<fromPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">1783</distanceAlong>
+								</MeasureOrEvent>
+							</fromPosition>
+							<toPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">1788</distanceAlong>
+								</MeasureOrEvent>
+							</toPosition>
+						</FromToLocation>
+					</location>
+				</bml:RockClassificationEvent>
+			</collectionMember>
+			<collectionMember>
+				<bml:RockClassificationEvent>
+					<bml:locatedRockClassificationMember>
+						<bml:rockCode>TZ</bml:rockCode>
+						<bml:rockNameText xlink:type="simple">
+							<gmd:LocalisedCharacterString xmlns="http://www.infogeo.de/boreholeml/3.0" locale="http://www.infogeo.de/boreholeml/3.0/codelists/DE.xml">Tonstein</gmd:LocalisedCharacterString>
+						</bml:rockNameText>
+						<bml:petrography>
+							<bml:Lithology>
+								<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">Tst</bml:rockName>
+								<bml:percentageFrom>40</bml:percentageFrom>
+								<bml:percentageTo>100</bml:percentageTo>
+								<bml:rockColor codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockColorList.xml">h8</bml:rockColor>
+							</bml:Lithology>
+						</bml:petrography>
+						<bml:stratigraphy>
+							<bml:ChronoStratigraphy codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/ChronoStratigraphyList.xml">C2</bml:ChronoStratigraphy>
+							<bml:LithoStratigraphy xlink:type="simple">
+								<gmd:LocalisedCharacterString>:</gmd:LocalisedCharacterString>
+							</bml:LithoStratigraphy>
+						</bml:stratigraphy>
+					</bml:locatedRockClassificationMember>
+					<location>
+						<FromToLocation>
+							<fromPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">1788</distanceAlong>
+								</MeasureOrEvent>
+							</fromPosition>
+							<toPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">1840</distanceAlong>
+								</MeasureOrEvent>
+							</toPosition>
+						</FromToLocation>
+					</location>
+				</bml:RockClassificationEvent>
+			</collectionMember>
+			<collectionMember>
+				<bml:RockClassificationEvent>
+					<bml:locatedRockClassificationMember>
+						<bml:rockCode>TZ</bml:rockCode>
+						<bml:rockNameText xlink:type="simple">
+							<gmd:LocalisedCharacterString xmlns="http://www.infogeo.de/boreholeml/3.0" locale="http://www.infogeo.de/boreholeml/3.0/codelists/DE.xml">Tonstein</gmd:LocalisedCharacterString>
+						</bml:rockNameText>
+						<bml:petrography>
+							<bml:Lithology>
+								<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">Tst</bml:rockName>
+								<bml:percentageFrom>40</bml:percentageFrom>
+								<bml:percentageTo>100</bml:percentageTo>
+								<bml:rockColor codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockColorList.xml">h8&amp;h9</bml:rockColor>
+							</bml:Lithology>
+						</bml:petrography>
+						<bml:stratigraphy>
+							<bml:ChronoStratigraphy codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/ChronoStratigraphyList.xml">C2</bml:ChronoStratigraphy>
+							<bml:LithoStratigraphy xlink:type="simple">
+								<gmd:LocalisedCharacterString>:</gmd:LocalisedCharacterString>
+							</bml:LithoStratigraphy>
+						</bml:stratigraphy>
+					</bml:locatedRockClassificationMember>
+					<location>
+						<FromToLocation>
+							<fromPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">1840</distanceAlong>
+								</MeasureOrEvent>
+							</fromPosition>
+							<toPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">1896</distanceAlong>
+								</MeasureOrEvent>
+							</toPosition>
+						</FromToLocation>
+					</location>
+				</bml:RockClassificationEvent>
+			</collectionMember>
+			<collectionMember>
+				<bml:RockClassificationEvent>
+					<bml:locatedRockClassificationMember>
+						<bml:rockCode>TZ</bml:rockCode>
+						<bml:rockNameText xlink:type="simple">
+							<gmd:LocalisedCharacterString xmlns="http://www.infogeo.de/boreholeml/3.0" locale="http://www.infogeo.de/boreholeml/3.0/codelists/DE.xml">Tonstein</gmd:LocalisedCharacterString>
+						</bml:rockNameText>
+						<bml:petrography>
+							<bml:Lithology>
+								<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">Tst</bml:rockName>
+								<bml:percentageFrom>40</bml:percentageFrom>
+								<bml:percentageTo>100</bml:percentageTo>
+								<bml:rockColor codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockColorList.xml">h8&amp;h9</bml:rockColor>
+							</bml:Lithology>
+						</bml:petrography>
+						<bml:stratigraphy>
+							<bml:ChronoStratigraphy codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/ChronoStratigraphyList.xml">C2</bml:ChronoStratigraphy>
+							<bml:LithoStratigraphy xlink:type="simple">
+								<gmd:LocalisedCharacterString>:</gmd:LocalisedCharacterString>
+							</bml:LithoStratigraphy>
+						</bml:stratigraphy>
+					</bml:locatedRockClassificationMember>
+					<location>
+						<FromToLocation>
+							<fromPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">1896</distanceAlong>
+								</MeasureOrEvent>
+							</fromPosition>
+							<toPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">2599.6</distanceAlong>
+								</MeasureOrEvent>
+							</toPosition>
+						</FromToLocation>
+					</location>
+				</bml:RockClassificationEvent>
+			</collectionMember>
+			<collectionMember>
+				<bml:RockClassificationEvent>
+					<bml:locatedRockClassificationMember>
+						<bml:rockCode>TZ</bml:rockCode>
+						<bml:rockNameText xlink:type="simple">
+							<gmd:LocalisedCharacterString xmlns="http://www.infogeo.de/boreholeml/3.0" locale="http://www.infogeo.de/boreholeml/3.0/codelists/DE.xml">Tonstein</gmd:LocalisedCharacterString>
+						</bml:rockNameText>
+						<bml:petrography>
+							<bml:Lithology>
+								<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">Tst</bml:rockName>
+								<bml:percentageFrom>40</bml:percentageFrom>
+								<bml:percentageTo>100</bml:percentageTo>
+								<bml:rockColor codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockColorList.xml">v2&amp;h8</bml:rockColor>
+							</bml:Lithology>
+						</bml:petrography>
+						<bml:stratigraphy>
+							<bml:ChronoStratigraphy codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/ChronoStratigraphyList.xml">C2</bml:ChronoStratigraphy>
+							<bml:LithoStratigraphy xlink:type="simple">
+								<gmd:LocalisedCharacterString>:</gmd:LocalisedCharacterString>
+							</bml:LithoStratigraphy>
+						</bml:stratigraphy>
+					</bml:locatedRockClassificationMember>
+					<location>
+						<FromToLocation>
+							<fromPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">2599.6</distanceAlong>
+								</MeasureOrEvent>
+							</fromPosition>
+							<toPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">3179.5</distanceAlong>
+								</MeasureOrEvent>
+							</toPosition>
+						</FromToLocation>
+					</location>
+				</bml:RockClassificationEvent>
+			</collectionMember>
+			<collectionMember>
+				<bml:RockClassificationEvent>
+					<bml:locatedRockClassificationMember>
+						<bml:rockCode>TZ; UZ</bml:rockCode>
+						<bml:rockNameText xlink:type="simple">
+							<gmd:LocalisedCharacterString xmlns="http://www.infogeo.de/boreholeml/3.0" locale="http://www.infogeo.de/boreholeml/3.0/codelists/DE.xml">Tonstein; Schluffstein</gmd:LocalisedCharacterString>
+						</bml:rockNameText>
+						<bml:petrography>
+							<bml:Lithology>
+								<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">Tst</bml:rockName>
+								<bml:percentageFrom>40</bml:percentageFrom>
+								<bml:percentageTo>100</bml:percentageTo>
+								<bml:rockColor codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockColorList.xml">h8&amp;h9</bml:rockColor>
+							</bml:Lithology>
+							<bml:Lithology>
+								<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">Ust</bml:rockName>
+								<bml:percentageFrom>40</bml:percentageFrom>
+								<bml:percentageTo>60</bml:percentageTo>
+							</bml:Lithology>
+						</bml:petrography>
+						<bml:stratigraphy>
+							<bml:ChronoStratigraphy codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/ChronoStratigraphyList.xml">C</bml:ChronoStratigraphy>
+						</bml:stratigraphy>
+					</bml:locatedRockClassificationMember>
+					<location>
+						<FromToLocation>
+							<fromPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">3179.5</distanceAlong>
+								</MeasureOrEvent>
+							</fromPosition>
+							<toPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">3678</distanceAlong>
+								</MeasureOrEvent>
+							</toPosition>
+						</FromToLocation>
+					</location>
+				</bml:RockClassificationEvent>
+			</collectionMember>
+			<collectionMember>
+				<bml:RockClassificationEvent>
+					<bml:locatedRockClassificationMember>
+						<bml:rockCode>SZ</bml:rockCode>
+						<bml:rockNameText xlink:type="simple">
+							<gmd:LocalisedCharacterString xmlns="http://www.infogeo.de/boreholeml/3.0" locale="http://www.infogeo.de/boreholeml/3.0/codelists/DE.xml">Sandstein</gmd:LocalisedCharacterString>
+						</bml:rockNameText>
+						<bml:petrography>
+							<bml:Lithology>
+								<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">Sst</bml:rockName>
+								<bml:percentageFrom>40</bml:percentageFrom>
+								<bml:percentageTo>100</bml:percentageTo>
+								<bml:rockColor codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockColorList.xml">h8</bml:rockColor>
+							</bml:Lithology>
+						</bml:petrography>
+						<bml:stratigraphy>
+							<bml:ChronoStratigraphy codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/ChronoStratigraphyList.xml">C</bml:ChronoStratigraphy>
+						</bml:stratigraphy>
+					</bml:locatedRockClassificationMember>
+					<location>
+						<FromToLocation>
+							<fromPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">3678</distanceAlong>
+								</MeasureOrEvent>
+							</fromPosition>
+							<toPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">5415</distanceAlong>
+								</MeasureOrEvent>
+							</toPosition>
+						</FromToLocation>
+					</location>
+				</bml:RockClassificationEvent>
+			</collectionMember>
+			<collectionMember>
+				<bml:RockClassificationEvent>
+					<bml:locatedRockClassificationMember>
+						<bml:rockCode>TZ</bml:rockCode>
+						<bml:rockNameText xlink:type="simple">
+							<gmd:LocalisedCharacterString xmlns="http://www.infogeo.de/boreholeml/3.0" locale="http://www.infogeo.de/boreholeml/3.0/codelists/DE.xml">Tonstein</gmd:LocalisedCharacterString>
+						</bml:rockNameText>
+						<bml:petrography>
+							<bml:Lithology>
+								<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">Tst</bml:rockName>
+								<bml:percentageFrom>40</bml:percentageFrom>
+								<bml:percentageTo>100</bml:percentageTo>
+								<bml:rockColor codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockColorList.xml">h8&amp;h9</bml:rockColor>
+							</bml:Lithology>
+						</bml:petrography>
+						<bml:stratigraphy>
+							<bml:ChronoStratigraphy codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/ChronoStratigraphyList.xml">C</bml:ChronoStratigraphy>
+						</bml:stratigraphy>
+					</bml:locatedRockClassificationMember>
+					<location>
+						<FromToLocation>
+							<fromPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">5415</distanceAlong>
+								</MeasureOrEvent>
+							</fromPosition>
+							<toPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">5438</distanceAlong>
+								</MeasureOrEvent>
+							</toPosition>
+						</FromToLocation>
+					</location>
+				</bml:RockClassificationEvent>
+			</collectionMember>
+			<collectionMember>
+				<bml:RockClassificationEvent>
+					<bml:locatedRockClassificationMember>
+						<bml:rockCode>TZ</bml:rockCode>
+						<bml:rockNameText xlink:type="simple">
+							<gmd:LocalisedCharacterString xmlns="http://www.infogeo.de/boreholeml/3.0" locale="http://www.infogeo.de/boreholeml/3.0/codelists/DE.xml">Tonstein</gmd:LocalisedCharacterString>
+						</bml:rockNameText>
+						<bml:petrography>
+							<bml:Lithology>
+								<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">Tst</bml:rockName>
+								<bml:percentageFrom>40</bml:percentageFrom>
+								<bml:percentageTo>100</bml:percentageTo>
+								<bml:rockColor codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockColorList.xml">h8&amp;h9</bml:rockColor>
+							</bml:Lithology>
+						</bml:petrography>
+						<bml:stratigraphy>
+							<bml:ChronoStratigraphy codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/ChronoStratigraphyList.xml">C1</bml:ChronoStratigraphy>
+						</bml:stratigraphy>
+					</bml:locatedRockClassificationMember>
+					<location>
+						<FromToLocation>
+							<fromPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">5438</distanceAlong>
+								</MeasureOrEvent>
+							</fromPosition>
+							<toPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">5473</distanceAlong>
+								</MeasureOrEvent>
+							</toPosition>
+						</FromToLocation>
+					</location>
+				</bml:RockClassificationEvent>
+			</collectionMember>
+			<collectionMember>
+				<bml:RockClassificationEvent>
+					<bml:locatedRockClassificationMember>
+						<bml:rockCode>TZ; KZ</bml:rockCode>
+						<bml:rockNameText xlink:type="simple">
+							<gmd:LocalisedCharacterString xmlns="http://www.infogeo.de/boreholeml/3.0" locale="http://www.infogeo.de/boreholeml/3.0/codelists/DE.xml">Tonstein; Kalkstein</gmd:LocalisedCharacterString>
+						</bml:rockNameText>
+						<bml:petrography>
+							<bml:Lithology>
+								<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">Tst</bml:rockName>
+								<bml:percentageFrom>40</bml:percentageFrom>
+								<bml:percentageTo>100</bml:percentageTo>
+							</bml:Lithology>
+							<bml:Lithology>
+								<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">Kst</bml:rockName>
+								<bml:percentageFrom>40</bml:percentageFrom>
+								<bml:percentageTo>60</bml:percentageTo>
+							</bml:Lithology>
+						</bml:petrography>
+						<bml:stratigraphy>
+							<bml:ChronoStratigraphy codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/ChronoStratigraphyList.xml">C1</bml:ChronoStratigraphy>
+						</bml:stratigraphy>
+					</bml:locatedRockClassificationMember>
+					<location>
+						<FromToLocation>
+							<fromPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">5473</distanceAlong>
+								</MeasureOrEvent>
+							</fromPosition>
+							<toPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">5485</distanceAlong>
+								</MeasureOrEvent>
+							</toPosition>
+						</FromToLocation>
+					</location>
+				</bml:RockClassificationEvent>
+			</collectionMember>
+			<collectionMember>
+				<bml:RockClassificationEvent>
+					<bml:locatedRockClassificationMember>
+						<bml:rockCode>KZ; TZ</bml:rockCode>
+						<bml:rockNameText xlink:type="simple">
+							<gmd:LocalisedCharacterString xmlns="http://www.infogeo.de/boreholeml/3.0" locale="http://www.infogeo.de/boreholeml/3.0/codelists/DE.xml">Kalkstein; Tonstein</gmd:LocalisedCharacterString>
+						</bml:rockNameText>
+						<bml:petrography>
+							<bml:Lithology>
+								<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">Kst</bml:rockName>
+								<bml:percentageFrom>40</bml:percentageFrom>
+								<bml:percentageTo>100</bml:percentageTo>
+								<bml:rockColor codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockColorList.xml">h8&amp;h9</bml:rockColor>
+							</bml:Lithology>
+							<bml:Lithology>
+								<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">Tst</bml:rockName>
+								<bml:percentageFrom>40</bml:percentageFrom>
+								<bml:percentageTo>60</bml:percentageTo>
+							</bml:Lithology>
+						</bml:petrography>
+						<bml:stratigraphy>
+							<bml:ChronoStratigraphy codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/ChronoStratigraphyList.xml">C1</bml:ChronoStratigraphy>
+						</bml:stratigraphy>
+					</bml:locatedRockClassificationMember>
+					<location>
+						<FromToLocation>
+							<fromPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">5485</distanceAlong>
+								</MeasureOrEvent>
+							</fromPosition>
+							<toPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">5496</distanceAlong>
+								</MeasureOrEvent>
+							</toPosition>
+						</FromToLocation>
+					</location>
+				</bml:RockClassificationEvent>
+			</collectionMember>
+			<collectionMember>
+				<bml:RockClassificationEvent>
+					<bml:locatedRockClassificationMember>
+						<bml:rockCode>TZ</bml:rockCode>
+						<bml:rockNameText xlink:type="simple">
+							<gmd:LocalisedCharacterString xmlns="http://www.infogeo.de/boreholeml/3.0" locale="http://www.infogeo.de/boreholeml/3.0/codelists/DE.xml">Tonstein</gmd:LocalisedCharacterString>
+						</bml:rockNameText>
+						<bml:petrography>
+							<bml:Lithology>
+								<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">Tst</bml:rockName>
+								<bml:percentageFrom>40</bml:percentageFrom>
+								<bml:percentageTo>100</bml:percentageTo>
+								<bml:rockColor codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockColorList.xml">h8&amp;h9</bml:rockColor>
+							</bml:Lithology>
+						</bml:petrography>
+						<bml:stratigraphy>
+							<bml:ChronoStratigraphy codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/ChronoStratigraphyList.xml">C1</bml:ChronoStratigraphy>
+						</bml:stratigraphy>
+					</bml:locatedRockClassificationMember>
+					<location>
+						<FromToLocation>
+							<fromPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">5496</distanceAlong>
+								</MeasureOrEvent>
+							</fromPosition>
+							<toPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">5499</distanceAlong>
+								</MeasureOrEvent>
+							</toPosition>
+						</FromToLocation>
+					</location>
+				</bml:RockClassificationEvent>
+			</collectionMember>
+			<collectionMember>
+				<bml:RockClassificationEvent>
+					<bml:locatedRockClassificationMember>
+						<bml:rockCode>TZ</bml:rockCode>
+						<bml:rockNameText xlink:type="simple">
+							<gmd:LocalisedCharacterString xmlns="http://www.infogeo.de/boreholeml/3.0" locale="http://www.infogeo.de/boreholeml/3.0/codelists/DE.xml">Tonstein</gmd:LocalisedCharacterString>
+						</bml:rockNameText>
+						<bml:petrography>
+							<bml:Lithology>
+								<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">Tst</bml:rockName>
+								<bml:percentageFrom>40</bml:percentageFrom>
+								<bml:percentageTo>100</bml:percentageTo>
+							</bml:Lithology>
+						</bml:petrography>
+						<bml:stratigraphy>
+							<bml:ChronoStratigraphy codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/ChronoStratigraphyList.xml">C1</bml:ChronoStratigraphy>
+						</bml:stratigraphy>
+					</bml:locatedRockClassificationMember>
+					<location>
+						<FromToLocation>
+							<fromPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">5499</distanceAlong>
+								</MeasureOrEvent>
+							</fromPosition>
+							<toPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">5516</distanceAlong>
+								</MeasureOrEvent>
+							</toPosition>
+						</FromToLocation>
+					</location>
+				</bml:RockClassificationEvent>
+			</collectionMember>
+			<collectionMember>
+				<bml:RockClassificationEvent>
+					<bml:locatedRockClassificationMember>
+						<bml:rockCode>SZ</bml:rockCode>
+						<bml:rockNameText xlink:type="simple">
+							<gmd:LocalisedCharacterString xmlns="http://www.infogeo.de/boreholeml/3.0" locale="http://www.infogeo.de/boreholeml/3.0/codelists/DE.xml">Sandstein</gmd:LocalisedCharacterString>
+						</bml:rockNameText>
+						<bml:petrography>
+							<bml:Lithology>
+								<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">Sst</bml:rockName>
+								<bml:percentageFrom>40</bml:percentageFrom>
+								<bml:percentageTo>100</bml:percentageTo>
+								<bml:rockColor codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockColorList.xml">h8</bml:rockColor>
+							</bml:Lithology>
+						</bml:petrography>
+						<bml:stratigraphy>
+							<bml:ChronoStratigraphy codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/ChronoStratigraphyList.xml">D3Fm</bml:ChronoStratigraphy>
+						</bml:stratigraphy>
+					</bml:locatedRockClassificationMember>
+					<location>
+						<FromToLocation>
+							<fromPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">5516</distanceAlong>
+								</MeasureOrEvent>
+							</fromPosition>
+							<toPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">5633</distanceAlong>
+								</MeasureOrEvent>
+							</toPosition>
+						</FromToLocation>
+					</location>
+				</bml:RockClassificationEvent>
+			</collectionMember>
+			<collectionMember>
+				<bml:RockClassificationEvent>
+					<bml:locatedRockClassificationMember>
+						<bml:rockCode>UZ; TZ</bml:rockCode>
+						<bml:rockNameText xlink:type="simple">
+							<gmd:LocalisedCharacterString xmlns="http://www.infogeo.de/boreholeml/3.0" locale="http://www.infogeo.de/boreholeml/3.0/codelists/DE.xml">Schluffstein; Tonstein</gmd:LocalisedCharacterString>
+						</bml:rockNameText>
+						<bml:petrography>
+							<bml:Lithology>
+								<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">Ust</bml:rockName>
+								<bml:percentageFrom>40</bml:percentageFrom>
+								<bml:percentageTo>100</bml:percentageTo>
+								<bml:rockColor codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockColorList.xml">h8&amp;h9</bml:rockColor>
+							</bml:Lithology>
+							<bml:Lithology>
+								<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">Tst</bml:rockName>
+								<bml:percentageFrom>40</bml:percentageFrom>
+								<bml:percentageTo>60</bml:percentageTo>
+							</bml:Lithology>
+						</bml:petrography>
+						<bml:stratigraphy>
+							<bml:ChronoStratigraphy codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/ChronoStratigraphyList.xml">D3Fm</bml:ChronoStratigraphy>
+						</bml:stratigraphy>
+					</bml:locatedRockClassificationMember>
+					<location>
+						<FromToLocation>
+							<fromPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">5633</distanceAlong>
+								</MeasureOrEvent>
+							</fromPosition>
+							<toPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">5738</distanceAlong>
+								</MeasureOrEvent>
+							</toPosition>
+						</FromToLocation>
+					</location>
+				</bml:RockClassificationEvent>
+			</collectionMember>
+			<collectionMember>
+				<bml:RockClassificationEvent>
+					<bml:locatedRockClassificationMember>
+						<bml:rockCode>KZ</bml:rockCode>
+						<bml:rockNameText xlink:type="simple">
+							<gmd:LocalisedCharacterString xmlns="http://www.infogeo.de/boreholeml/3.0" locale="http://www.infogeo.de/boreholeml/3.0/codelists/DE.xml">Kalkstein</gmd:LocalisedCharacterString>
+						</bml:rockNameText>
+						<bml:petrography>
+							<bml:Lithology>
+								<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">Kst</bml:rockName>
+								<bml:percentageFrom>40</bml:percentageFrom>
+								<bml:percentageTo>100</bml:percentageTo>
+								<bml:rockColor codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockColorList.xml">v2&amp;h8</bml:rockColor>
+							</bml:Lithology>
+						</bml:petrography>
+						<bml:stratigraphy>
+							<bml:ChronoStratigraphy codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/ChronoStratigraphyList.xml">D3Fr</bml:ChronoStratigraphy>
+						</bml:stratigraphy>
+					</bml:locatedRockClassificationMember>
+					<location>
+						<FromToLocation>
+							<fromPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">5738</distanceAlong>
+								</MeasureOrEvent>
+							</fromPosition>
+							<toPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">5760</distanceAlong>
+								</MeasureOrEvent>
+							</toPosition>
+						</FromToLocation>
+					</location>
+				</bml:RockClassificationEvent>
+			</collectionMember>
+			<collectionMember>
+				<bml:RockClassificationEvent>
+					<bml:locatedRockClassificationMember>
+						<bml:rockCode>KZ</bml:rockCode>
+						<bml:rockNameText xlink:type="simple">
+							<gmd:LocalisedCharacterString xmlns="http://www.infogeo.de/boreholeml/3.0" locale="http://www.infogeo.de/boreholeml/3.0/codelists/DE.xml">Kalkstein</gmd:LocalisedCharacterString>
+						</bml:rockNameText>
+						<bml:petrography>
+							<bml:Lithology>
+								<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">Kst</bml:rockName>
+								<bml:percentageFrom>40</bml:percentageFrom>
+								<bml:percentageTo>100</bml:percentageTo>
+								<bml:rockColor codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockColorList.xml">v2&amp;h8</bml:rockColor>
+							</bml:Lithology>
+						</bml:petrography>
+						<bml:stratigraphy>
+							<bml:ChronoStratigraphy codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/ChronoStratigraphyList.xml">D2G</bml:ChronoStratigraphy>
+						</bml:stratigraphy>
+					</bml:locatedRockClassificationMember>
+					<location>
+						<FromToLocation>
+							<fromPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">5760</distanceAlong>
+								</MeasureOrEvent>
+							</fromPosition>
+							<toPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">5923</distanceAlong>
+								</MeasureOrEvent>
+							</toPosition>
+						</FromToLocation>
+					</location>
+				</bml:RockClassificationEvent>
+			</collectionMember>
+			<collectionMember>
+				<bml:RockClassificationEvent>
+					<bml:locatedRockClassificationMember>
+						<bml:rockCode>KZ; S</bml:rockCode>
+						<bml:rockNameText xlink:type="simple">
+							<gmd:LocalisedCharacterString xmlns="http://www.infogeo.de/boreholeml/3.0" locale="http://www.infogeo.de/boreholeml/3.0/codelists/DE.xml">Kalkstein; Sand</gmd:LocalisedCharacterString>
+						</bml:rockNameText>
+						<bml:petrography>
+							<bml:Lithology>
+								<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">Kst</bml:rockName>
+								<bml:percentageFrom>40</bml:percentageFrom>
+								<bml:percentageTo>100</bml:percentageTo>
+								<bml:rockColor codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockColorList.xml">v1&amp;h8</bml:rockColor>
+							</bml:Lithology>
+							<bml:Lithology>
+								<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">S</bml:rockName>
+								<bml:percentageFrom>40</bml:percentageFrom>
+								<bml:percentageTo>60</bml:percentageTo>
+							</bml:Lithology>
+						</bml:petrography>
+						<bml:stratigraphy>
+							<bml:ChronoStratigraphy codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/ChronoStratigraphyList.xml">D2G</bml:ChronoStratigraphy>
+						</bml:stratigraphy>
+					</bml:locatedRockClassificationMember>
+					<location>
+						<FromToLocation>
+							<fromPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">5923</distanceAlong>
+								</MeasureOrEvent>
+							</fromPosition>
+							<toPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">5946</distanceAlong>
+								</MeasureOrEvent>
+							</toPosition>
+						</FromToLocation>
+					</location>
+				</bml:RockClassificationEvent>
+			</collectionMember>
+			<collectionMember>
+				<bml:RockClassificationEvent>
+					<bml:locatedRockClassificationMember>
+						<bml:rockCode>QZ</bml:rockCode>
+						<bml:rockNameText xlink:type="simple">
+							<gmd:LocalisedCharacterString xmlns="http://www.infogeo.de/boreholeml/3.0" locale="http://www.infogeo.de/boreholeml/3.0/codelists/DE.xml">Quarzit</gmd:LocalisedCharacterString>
+						</bml:rockNameText>
+						<bml:petrography>
+							<bml:Lithology>
+								<bml:rockName codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockNameList.xml">Qzt</bml:rockName>
+								<bml:percentageFrom>40</bml:percentageFrom>
+								<bml:percentageTo>100</bml:percentageTo>
+								<bml:rockColor codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/RockColorList.xml">v1&amp;h8</bml:rockColor>
+							</bml:Lithology>
+						</bml:petrography>
+						<bml:stratigraphy>
+							<bml:ChronoStratigraphy codeSpace="http://www.infogeo.de/boreholeml/3.0/codelists/ChronoStratigraphyList.xml">D2G</bml:ChronoStratigraphy>
+						</bml:stratigraphy>
+					</bml:locatedRockClassificationMember>
+					<location>
+						<FromToLocation>
+							<fromPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">5946</distanceAlong>
+								</MeasureOrEvent>
+							</fromPosition>
+							<toPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="m">5956</distanceAlong>
+								</MeasureOrEvent>
+							</toPosition>
+						</FromToLocation>
+					</location>
+				</bml:RockClassificationEvent>
+			</collectionMember>
+		</BoreholeEventCollection>
+	</collection>
+</Borehole>
