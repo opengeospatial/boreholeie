@@ -17,91 +17,109 @@ This scenario address cases where a model already exists and must be reused as i
 
 Reference example: http://schemas.opengis.net/gsml/4.1/instances/GSML4-BoreholeIntervals.xml
 
+(Note, still some minor encoding issues), but it's the gist of it
+
+
 [source,xml]
 ----
-<BoreholeEventCollection xmlns="https://forge.brgm.fr/svnrepository/boreholeie/schemas"  xmlns:xlink="http://www.w3.org/1999/xlink"  xmlns:gml="http://www.opengis.net/gml/3.2"  xmlns:gsmlb="http://www.opengis.net/gsml/4.1/GeoSciML-Basic" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-xsi:schemaLocation="http://www.opengis.net/gsml/4.1/GeoSciML-Basic http://schemas.opengis.net/gsml/4.1/geoSciMLBasic.xsd https://forge.brgm.fr/svnrepository/boreholeie/schemas https://forge.brgm.fr/svnrepository/boreholeie/schemas/BhML-Core.xsd">
-	<collectionMember>
-		<BoreholeEvent>
-			<locatedMember>
-				<gsmlb:GeologicUnit gml:id="Hooray.Sandstone">
-					<gml:name>Hooray Sandstone</gml:name>
-					<gsmlb:geologicUnitType xlink:href="http://resource.geoscience.gov.xxx/vocabulary/geologicunittype" xlink:title="lithostratigraphic unit"/>
-					<gsmlb:rank xlink:href="http://resource.geoscience.gov.xxx/vocabulary/geologicunitrank" xlink:title="formation"/>
-				</gsmlb:GeologicUnit>
-			</locatedMember>
-			<location>
-				<FromToLocation>
-					<fromPosition>
-						<MeasureOrEvent>
-							<distanceAlong uom="m">0.0</distanceAlong>
-						</MeasureOrEvent>
-					</fromPosition>
-					<toPosition>
-						<MeasureOrEvent>
-							<distanceAlong uom="m">20.0</distanceAlong>
-						</MeasureOrEvent>
-					</toPosition>
-				</FromToLocation>
-			</location>
-		</BoreholeEvent>
-	</collectionMember>
-	<collectionMember>
-		<BoreholeEvent>
-			<!-- by reference this time -->
-			<locatedMember xlink:href="http://geology.au/lexicon/Westbourne.Formation"/>
-			<location>
-				<FromToLocation>
-					<fromPosition>
-						<MeasureOrEvent>
-							<distanceAlong uom="m">20.0</distanceAlong>
-						</MeasureOrEvent>
-					</fromPosition>
-					<toPosition>
-						<MeasureOrEvent>
-							<distanceAlong uom="m">56.0</distanceAlong>
-						</MeasureOrEvent>
-					</toPosition>
-				</FromToLocation>
-			</location>
-		</BoreholeEvent>
-	</collectionMember>
-	<collectionReferent>
-		<TrajectoryReferent>
-			<position>
-				<gml:Point gml:id="p1" srsName="http://spatialreference.org/ref/epsg/4979/">
-					<gml:pos>-25.9020 132.334 27.9</gml:pos>
-				</gml:Point>
-			</position>
-			<location>
-				<TrajectoryPosition>
-					<accuracyStatement>precise</accuracyStatement>
-					<distanceAlong uom="m">0.0</distanceAlong>
-					<precisionStatement/>
+<?xml version="1.0" encoding="UTF-8"?>
+<Borehole xmlns:gww="http://www.opengis.net/gwml-well/2.2" xmlns:sam="http://www.opengis.net/sampling/2.0" xmlns:spec="http://www.opengis.net/samplingSpecimen/2.0" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns="https://forge.brgm.fr/svnrepository/boreholeie/schemas" xmlns:sams="http://www.opengis.net/samplingSpatial/2.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gwml2="http://www.opengis.net/gwml-main/2.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gsmlb="http://www.opengis.net/gsml/4.1/GeoSciML-Basic" xsi:schemaLocation="https://forge.brgm.fr/svnrepository/boreholeie/schemas https://forge.brgm.fr/svnrepository/boreholeie/schemas/BhML-Core.xsd http://www.opengis.net/gsml/4.1/GeoSciML-Basic http://schemas.opengis.net/gsml/4.1/geoSciMLBasic.xsd http://www.opengis.net/samplingSpecimen/2.0 http://schemas.opengis.net/samplingSpecimen/2.0/specimen.xsd http://www.opengis.net/gwml-main/2.2 http://schemas.opengis.net/gwml/2.2/gwml2-main.xsd">
+	<gml:description>Example of encoding of a borehole of feature from another domain using BhML as is</gml:description>
+	<gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616">https://myorganisation.org/id/myborehole</gml:identifier>
+	<gml:name codeSpace="urn:myorg">MyBorehole</gml:name>
+	<collection>
+		<BoreholeEventCollection gml:id="samples1">
+			<gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616">https://myorganisation.org/id/myborehole/logs/log1</gml:identifier>
+			<gml:name codeSpace="urn:myorg">log1</gml:name>
+			<collectionLRS>
+				<BoreholeLRS gml:id="LRS1">
+					<accuracyStatement>Surprisingly good</accuracyStatement>
+					<precisionStatement>As good as the other guy</precisionStatement>
 					<boreholeReferencingMethod>
 						<BoreholeReferencingMethod>
-							<name/>
-							<unit/>
+							<name>relative</name>
+							<unit>http://qudt.org/vocab/unit/M</unit>
 						</BoreholeReferencingMethod>
 					</boreholeReferencingMethod>
 					<linearElement>
 						<BoreholeTrajectory>
-							<curve>
-								<gml:Curve gml:id="bh.1.shape" srsName="http://spatialreference.org/ref/epsg/4979/">
-									<gml:segments>
-										<gml:LineStringSegment>
-											<gml:posList srsDimension="3" count="3">-25.9020 132.334 27.9 -25.9025 132.334 -30.65 -25.9030 132.334 -215.6</gml:posList>
-										</gml:LineStringSegment>
-									</gml:segments>
-								</gml:Curve>
-							</curve>
+							<gml:Curve gml:id="bh.1.shape" srsName="http://spatialreference.org/ref/epsg/4979/">
+								<gml:segments>
+									<gml:LineStringSegment>
+										<gml:posList srsDimension="3" count="3">-25.9020 132.334 27.9 -25.9025 132.334 -30.65 -25.9030 132.334 -215.6</gml:posList>
+									</gml:LineStringSegment>
+								</gml:segments>
+							</gml:Curve>
 						</BoreholeTrajectory>
 					</linearElement>
-				</TrajectoryPosition>
-			</location>
-		</TrajectoryReferent>
-	</collectionReferent>
-</BoreholeEventCollection>
+					<trajectoryReferent>
+						<DistanceExpression>
+							<distanceAlong uom="http://qudt.org/vocab/unit/M">0.00</distanceAlong>
+							<trajectoryReferent>
+								<TrajectoryReferent gml:id="TR1">
+									<gml:identifier codeSpace="unn:_">Collar position</gml:identifier>
+									<position>
+										<gml:Point gml:id="p1" srsName="http://spatialreference.org/ref/epsg/4979/">
+											<gml:pos>-25.9020 132.334 27.9</gml:pos>
+										</gml:Point>
+									</position>
+								</TrajectoryReferent>
+							</trajectoryReferent>
+							<location/>
+						</DistanceExpression>
+					</trajectoryReferent>
+				</BoreholeLRS>
+			</collectionLRS>
+			<collectionMember>
+				<BoreholeEvent>
+					<locatedMember>
+						<gsmlb:GeologicUnit gml:id="Hooray.Sandstone">
+							<gml:name>Hooray Sandstone</gml:name>
+							<gsmlb:geologicUnitType xlink:href="http://resource.geoscience.gov.xxx/vocabulary/geologicunittype" xlink:title="lithostratigraphic unit"/>
+							<gsmlb:rank xlink:href="http://resource.geoscience.gov.xxx/vocabulary/geologicunitrank" xlink:title="formation"/>
+						</gsmlb:GeologicUnit>
+					</locatedMember>
+					<location>
+						<FromToLocation>
+							<fromPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="http://qudt.org/vocab/unit/M">0.0</distanceAlong>
+								</MeasureOrEvent>
+							</fromPosition>
+							<toPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="http://qudt.org/vocab/unit/M">20.0</distanceAlong>
+								</MeasureOrEvent>
+							</toPosition>
+						</FromToLocation>
+					</location>
+				</BoreholeEvent>
+			</collectionMember>
+			<collectionMember>
+				<BoreholeEvent>
+					<locatedMember xlink:href="http://geology.au/lexicon/Westbourne.Formation"/>
+					<location>
+						<FromToLocation>
+							<fromPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="http://qudt.org/vocab/unit/M">20.0</distanceAlong>
+								</MeasureOrEvent>
+							</fromPosition>
+							<toPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="http://qudt.org/vocab/unit/M">56.0</distanceAlong>
+								</MeasureOrEvent>
+							</toPosition>
+						</FromToLocation>
+					</location>
+				</BoreholeEvent>
+			</collectionMember>
+		</BoreholeEventCollection>
+	</collection>
+</Borehole>
+
+
+
 ----
 
 issue: locatedFeature might now always be feature (in OGC sense)
@@ -121,103 +139,74 @@ Same example :
 [source,xml]
 ----
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- we skip namespace declaration etc. -->
-<!-- we assume that BoreholeEventCollection is a gml:Feature -->
-<gsmlb:Borehole>
-    <gml:identifier codeSpace="http://data.gov.au/boreholes/id">GA.borehole.276547</gml:identifier>
-    <gml:name>BMR Eromanga 1</gml:name>
-    <!-- the distanceExpression is set for the whole Collection as agress on Telco 21 -->
-   <collectionMember>
-		<BoreholeEvent>
-			<locatedMember>
-				<gsmlb:GeologicUnit gml:id="Hooray.Sandstone">
-					<gml:name>Hooray Sandstone</gml:name>
-					<gsmlb:geologicUnitType xlink:href="http://resource.geoscience.gov.xxx/vocabulary/geologicunittype" xlink:title="lithostratigraphic unit"/>
-					<gsmlb:rank xlink:href="http://resource.geoscience.gov.xxx/vocabulary/geologicunitrank" xlink:title="formation"/>
-				</gsmlb:GeologicUnit>
-			</locatedMember>
-			<location>
-				<FromToLocation>
-					<fromPosition>
-						<MeasureOrEvent>
-							<distanceAlong uom="m">0.0</distanceAlong>
-						</MeasureOrEvent>
-					</fromPosition>
-					<toPosition>
-						<MeasureOrEvent>
-							<distanceAlong uom="m">20.0</distanceAlong>
-						</MeasureOrEvent>
-					</toPosition>
-				</FromToLocation>
-			</location>
-		</BoreholeEvent>
-	</collectionMember>
-	<collectionMember>
-		<BoreholeEvent>
-			<!-- by reference this time -->
-			<locatedMember xlink:href="http://geology.au/lexicon/Westbourne.Formation"/>
-			<location>
-				<FromToLocation>
-					<fromPosition>
-						<MeasureOrEvent>
-							<distanceAlong uom="m">20.0</distanceAlong>
-						</MeasureOrEvent>
-					</fromPosition>
-					<toPosition>
-						<MeasureOrEvent>
-							<distanceAlong uom="m">56.0</distanceAlong>
-						</MeasureOrEvent>
-					</toPosition>
-				</FromToLocation>
-			</location>
-		</BoreholeEvent>
-	</collectionMember>
-	<collectionReferent>
-		<TrajectoryReferent>
-			<position>
-				<gml:Point gml:id="p1" srsName="http://spatialreference.org/ref/epsg/4979/">
-					<gml:pos>-25.9020 132.334 27.9</gml:pos>
-				</gml:Point>
-			</position>
-			<location>
-				<TrajectoryPosition>
-					<accuracyStatement>precise</accuracyStatement>
-					<distanceAlong uom="m">0.0</distanceAlong>
-					<precisionStatement/>
-					<boreholeReferencingMethod>
-						<BoreholeReferencingMethod>
-							<name/>
-							<unit/>
-						</BoreholeReferencingMethod>
-					</boreholeReferencingMethod>
-					<linearElement>
-						<BoreholeTrajectory>
-							<curve>
-								<gml:Curve gml:id="bh.1.shape" srsName="http://spatialreference.org/ref/epsg/4979/">
-									<gml:segments>
-										<gml:LineStringSegment>
-											<gml:posList srsDimension="3" count="3">-25.9020 132.334 27.9 -25.9025 132.334 -30.65 -25.9030 132.334 -215.6</gml:posList>
-										</gml:LineStringSegment>
-									</gml:segments>
-								</gml:Curve>
-							</curve>
-						</BoreholeTrajectory>
-					</linearElement>
-				</TrajectoryPosition>
-			</location>
-		</TrajectoryReferent>
-	</collectionReferent>
-<!-- we now have GeoScience specifics -->
+<gsmlb:Borehole xmlns:gww="http://www.opengis.net/gwml-well/2.2" xmlns:sam="http://www.opengis.net/sampling/2.0" xmlns:spec="http://www.opengis.net/samplingSpecimen/2.0" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns="https://forge.brgm.fr/svnrepository/boreholeie/schemas" xmlns:sams="http://www.opengis.net/samplingSpatial/2.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gwml2="http://www.opengis.net/gwml-main/2.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gsmlb="http://www.opengis.net/gsml/4.1/GeoSciML-Basic" xsi:schemaLocation="https://forge.brgm.fr/svnrepository/boreholeie/schemas https://forge.brgm.fr/svnrepository/boreholeie/schemas/BhML-Core.xsd http://www.opengis.net/gsml/4.1/GeoSciML-Basic http://schemas.opengis.net/gsml/4.1/geoSciMLBasic.xsd http://www.opengis.net/samplingSpecimen/2.0 http://schemas.opengis.net/samplingSpecimen/2.0/specimen.xsd http://www.opengis.net/gwml-main/2.2 http://schemas.opengis.net/gwml/2.2/gwml2-main.xsd">
+	<gml:description>Example of encoding of a borehole of feature from another domain using BhML as is</gml:description>
+	<gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616">https://myorganisation.org/id/myborehole</gml:identifier>
+	<gml:name codeSpace="urn:gin">MyBorehole</gml:name>
+	<collection>
+		<BoreholeEventCollection gml:id="samples1">
+			<gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616">https://geoconnex.ca/id/log/unbounded.1.samples</gml:identifier>
+			<gml:name codeSpace="urn:gin">demo.samples</gml:name>
+			<collectionLRS xlink:href="#LRS1"/>
+			<!-- samples are not constrained by contact, they have arbitrary positions -->
+			<collectionMember>
+				<BoreholeEvent>
+					<locatedMember>
+						<gsmlb:GeologicUnit gml:id="Hooray.Sandstone">
+							<gml:name>Hooray Sandstone</gml:name>
+							<gsmlb:geologicUnitType xlink:href="http://resource.geoscience.gov.xxx/vocabulary/geologicunittype" xlink:title="lithostratigraphic unit"/>
+							<gsmlb:rank xlink:href="http://resource.geoscience.gov.xxx/vocabulary/geologicunitrank" xlink:title="formation"/>
+						</gsmlb:GeologicUnit>
+					</locatedMember>
+					<location>
+						<FromToLocation>
+							<fromPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="http://qudt.org/vocab/unit/M">0.0</distanceAlong>
+								</MeasureOrEvent>
+							</fromPosition>
+							<toPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="http://qudt.org/vocab/unit/M">20.0</distanceAlong>
+								</MeasureOrEvent>
+							</toPosition>
+						</FromToLocation>
+					</location>
+				</BoreholeEvent>
+			</collectionMember>
+			<collectionMember>
+				<BoreholeEvent>
+					<locatedMember xlink:href="http://geology.au/lexicon/Westbourne.Formation"/>
+					<location>
+						<FromToLocation>
+							<fromPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="http://qudt.org/vocab/unit/M">20.0</distanceAlong>
+								</MeasureOrEvent>
+							</fromPosition>
+							<toPosition>
+								<MeasureOrEvent>
+									<distanceAlong uom="http://qudt.org/vocab/unit/M">56.0</distanceAlong>
+								</MeasureOrEvent>
+							</toPosition>
+						</FromToLocation>
+					</location>
+				</BoreholeEvent>
+			</collectionMember>
+		</BoreholeEventCollection>
+	</collection>
+	<!-- we now have GeoScience specifics -->
 <gsmlb:indexData>
     <gsmlb:BoreholeDetails>
     (...)
     </gsmlb:BoreholeDetails>
 </gsmlb:indexData>
+</gsmlb:Borehole>
+
 ----
 
 Note that both instance (no dependency and with dependency) are valid (just different representation).  The latter adds more properties and provide a more precise semantic.
 
-issue: Maybe this is more a Log than a Borehole ?  This mean we could offset the whole structure and nest BoreholeEvent_Collection inside a Borehole->Log.  Maybe this whole spec if LogML more than BoreholeML ?
 
 == Compact encoding
 
@@ -233,34 +222,45 @@ Groundwater well are highly specialised with their casing, screen and sealing co
 
 <gww:GW_Well gml:id="gin.59710">
     (...)
- <bhml:collectionStartPoint>
-        <bhml:TrajectoryDistance>
-            <bhml:distanceAlong uom="m">0.0</bhml:distanceAlong>
-            <bhml:referent>
-                <bhml:TrajectoryPosition>
-                    <bhml:distanceExpression>
-                        <bhml:TrajectoryDistance>
-                            <bhml:distanceAlong uom="m">0.0</bhml:distanceAlong>
-                            <bhml:referent>
-                                <gml:Point gml:id="p1" srsName="http://spatialreference.org/ref/epsg/4979/">
-                                    <gml:pos>-113.490942 49.175987 1316.341</gml:pos>
-                                 </gml:Point>
-                            </bhml:referent>
-                        <bhml:TrajectoryDistance>
-                    </bhml:distanceExpression>
-                    <bhml:linearElement>
-                        <gml:Curve gml:id="bh.1.shape" srsName="http://spatialreference.org/ref/epsg/4979/>
-                            <gml:segment>
-                                <gml:LineStringSegment>
-                                    <gml:posList srsDimension="3" count="3">-113.490942 49.175987 1316.341 -113.490942 49.175987 1182.8385999999998</gml:posList>
-                                </gml:LineStringSegment>
-                            </gml:segment>
-                        </gml:Curve>
-                    <bhml:linearElement>
-                </bhml:TrajectoryPosition>
-            </bhml:referent>
-        </bhml:TrajectoryDistance>
-    <bhml:collectionStartPoint>
+ <collectionLRS>
+				<BoreholeLRS gml:id="LRS1">
+					<accuracyStatement>Surprisingly good</accuracyStatement>
+					<precisionStatement>As good as the other guy</precisionStatement>
+					<boreholeReferencingMethod>
+						<BoreholeReferencingMethod>
+							<name>relative</name>
+							<unit>http://qudt.org/vocab/unit/M</unit>
+						</BoreholeReferencingMethod>
+					</boreholeReferencingMethod>
+					<linearElement>
+						<BoreholeTrajectory>
+							<gml:Curve gml:id="bh.1.shape" srsName="http://spatialreference.org/ref/epsg/4979/">
+								<gml:segments>
+									<gml:LineStringSegment>
+										<gml:posList srsDimension="3" count="3">-25.9020 132.334 27.9 -25.9025 132.334 -30.65 -25.9030 132.334 -215.6</gml:posList>
+									</gml:LineStringSegment>
+								</gml:segments>
+							</gml:Curve>
+						</BoreholeTrajectory>
+					</linearElement>
+					<trajectoryReferent>
+						<DistanceExpression>
+							<distanceAlong uom="http://qudt.org/vocab/unit/M">0.00</distanceAlong>
+							<trajectoryReferent>
+								<TrajectoryReferent gml:id="TR1">
+									<gml:identifier codeSpace="unn:_">Collar position</gml:identifier>
+									<position>
+										<gml:Point gml:id="p1" srsName="http://spatialreference.org/ref/epsg/4979/">
+											<gml:pos>-25.9020 132.334 27.9</gml:pos>
+										</gml:Point>
+									</position>
+								</TrajectoryReferent>
+							</trajectoryReferent>
+							<location/>
+						</DistanceExpression>
+					</trajectoryReferent>
+				</BoreholeLRS>
+			</collectionLRS>
     (...)
     <!-- at this point, we don't use the  bhml:boreholeEventCollectionMember -->
     <gwml:log>
@@ -325,4 +325,4 @@ The elements of interest are the SWE mapping to properties in the bhml model
                 </swe:field>
 ----
 
-(the URL are entirely made up)
+(the URLs are entirely made up)
