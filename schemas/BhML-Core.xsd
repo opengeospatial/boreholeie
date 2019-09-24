@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2015 sp1 (x64) (http://www.altova.com) by BRGM (BRGM) -->
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:BhML="https://forge.brgm.fr/svnrepository/boreholeie/schemas" xmlns:gml="http://www.opengis.net/gml/3.2" targetNamespace="https://forge.brgm.fr/svnrepository/boreholeie/schemas" elementFormDefault="qualified" version="0.2.1">
+	<import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+	<!--XML Schema document created by ShapeChange - http://shapechange.net/-->
+	<element name="AtLocation" type="BhML:AtLocationType" substitutionGroup="BhML:BoreholeEventLocation">
+		<annotation>
+			<documentation>adaptation of ISO 19148 LE_AtLocation</documentation>
+		</annotation>
+	</element>
+	<complexType name="AtLocationType">
+		<complexContent>
+			<extension base="BhML:BoreholeEventLocationType">
+				<sequence>
+					<element name="atLocation" type="BhML:MeasureOrEventPropertyType"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="AtLocationPropertyType">
+		<sequence minOccurs="0">
+			<element ref="BhML:AtLocation"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<element name="Borehole" type="BhML:BoreholeType" substitutionGroup="gml:AbstractFeature">
+		<annotation>
+			<documentation>Well, Borehole are seen as synonymous terms.
+Potential definition
+A: A Borehole is a hole that is drilled from an origin (top/start) to a terminating point (bottom/end) (PPDM slightly adapted)
+B: A Borehole is the generalized term for any narrow shaft drilled in the ground (INSPIRE def slightly adapted).</documentation>
+		</annotation>
+	</element>
+	<complexType name="BoreholeType">
+		<complexContent>
+			<extension base="gml:AbstractFeatureType">
+				<sequence>
+					<element name="collection" minOccurs="0" maxOccurs="unbounded">
+						<complexType>
+							<complexContent>
+								<extension base="gml:AbstractFeatureMemberType">
+									<sequence minOccurs="0">
+										<element ref="BhML:BoreholeEventCollection"/>
+									</sequence>
+									<attributeGroup ref="gml:AssociationAttributeGroup"/>
+								</extension>
+							</complexContent>
+						</complexType>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="BoreholePropertyType">
+		<sequence minOccurs="0">
+			<element ref="BhML:Borehole"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<element name="BoreholeEvent" type="BhML:BoreholeEventType" substitutionGroup="gml:AbstractFeature">
+		<annotation>
+			<documentation>adaptation of ISO 19148 LE_Event
+see ISO 19148 Figure 44</documentation>
+		</annotation>
+	</element>
+	<complexType name="BoreholeEventType">
+		<complexContent>
+			<extension base="gml:AbstractFeatureType">
+				<sequence>
+					<element name="locatedMember">
+						<annotation>
+							<documentation>Element located along the Borehole path
+Could be a Feature in the ISO191xx sense (OM_Observation, SF_Specimen, gwml2:constructionElement, ...) but not only.</documentation>
+						</annotation>
+						<complexType>
+							<sequence minOccurs="0">
+								<element ref="gml:AbstractObject"/>
+							</sequence>
+							<attributeGroup ref="gml:AssociationAttributeGroup"/>
+						</complexType>
+					</element>
+					<element name="location">
+						<complexType>
+							<complexContent>
+								<extension base="gml:AbstractFeatureMemberType">
+									<sequence minOccurs="0">
+										<element ref="BhML:BoreholeEventLocation"/>
+									</sequence>
+									<attributeGroup ref="gml:AssociationAttributeGroup"/>
+								</extension>
+							</complexContent>
+						</complexType>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="BoreholeEventPropertyType">
+		<sequence minOccurs="0">
+			<element ref="BhML:BoreholeEvent"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<element name="BoreholeEventCollection" type="BhML:BoreholeEventCollectionType" substitutionGroup="gml:AbstractFeature">
+		<annotation>
+			<documentation>adaptation of ISO 19148 LE_Feature
+Collection of BoreholeEvent by "sub-domains" (ex : Borehole Log, Borehole Construction, ...)</documentation>
+		</annotation>
+	</element>
+	<complexType name="BoreholeEventCollectionType">
+		<complexContent>
+			<extension base="gml:AbstractFeatureType">
+				<sequence>
+					<element name="collectionLRS" type="BhML:BoreholeLRSPropertyType"/>
+					<element name="collectionMember" maxOccurs="unbounded">
+						<complexType>
+							<complexContent>
+								<extension base="gml:AbstractFeatureMemberType">
+									<sequence minOccurs="0">
+										<element ref="BhML:BoreholeEvent"/>
+									</sequence>
+									<attributeGroup ref="gml:AssociationAttributeGroup"/>
+								</extension>
+							</complexContent>
+						</complexType>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="BoreholeEventCollectionPropertyType">
+		<sequence minOccurs="0">
+			<element ref="BhML:BoreholeEventCollection"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<element name="BoreholeEventLocation" type="BhML:BoreholeEventLocationType" abstract="true" substitutionGroup="gml:AbstractFeature">
+		<annotation>
+			<documentation>adaptation of ISO 19148 LE_EventLocation</documentation>
+		</annotation>
+	</element>
+	<complexType name="BoreholeEventLocationType" abstract="true">
+		<complexContent>
+			<extension base="gml:AbstractFeatureType">
+				<sequence/>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="BoreholeEventLocationPropertyType">
+		<sequence minOccurs="0">
+			<element ref="BhML:BoreholeEventLocation"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<element name="BoreholeLRS" type="BhML:BoreholeLRSType" substitutionGroup="gml:AbstractFeature">
+		<annotation>
+			<documentation>Borehole Linear Referencing System is an adaptation of ISO 19148 LR_PositionExpression (see ISO 19148 Figure 14)</documentation>
+		</annotation>
+	</element>
+	<complexType name="BoreholeLRSType">
+		<complexContent>
+			<extension base="gml:AbstractFeatureType">
+				<sequence>
+					<element name="accuracyStatement" type="gml:ReferenceType"/>
+					<element name="precisionStatement" type="gml:ReferenceType"/>
+					<element name="boreholeReferencingMethod" type="BhML:BoreholeReferencingMethodPropertyType"/>
+					<element name="linearElement" type="BhML:BoreholeTrajectoryPropertyType" minOccurs="0"/>
+					<element name="trajectoryReferent" type="BhML:DistanceExpressionPropertyType">
+						<annotation>
+							<appinfo>
+								<reversePropertyName xmlns="http://www.opengis.net/gml/3.2">BhML:location</reversePropertyName>
+							</appinfo>
+						</annotation>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="BoreholeLRSPropertyType">
+		<sequence minOccurs="0">
+			<element ref="BhML:BoreholeLRS"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<element name="BoreholeReferencingMethod" type="BhML:BoreholeReferencingMethodType" substitutionGroup="gml:AbstractObject">
+		<annotation>
+			<documentation>adaptation of ISO 19148 LR_LinearReferencingMethod</documentation>
+		</annotation>
+	</element>
+	<complexType name="BoreholeReferencingMethodType">
+		<sequence>
+			<element name="name" type="string"/>
+			<element name="unit" type="gml:ReferenceType">
+				<annotation>
+					<documentation>difference with ISO 19148 which calls it 'units'</documentation>
+				</annotation>
+			</element>
+		</sequence>
+	</complexType>
+	<complexType name="BoreholeReferencingMethodPropertyType">
+		<sequence>
+			<element ref="BhML:BoreholeReferencingMethod"/>
+		</sequence>
+	</complexType>
+	<element name="BoreholeTrajectory" type="BhML:BoreholeTrajectoryType" substitutionGroup="gml:AbstractObject">
+		<annotation>
+			<documentation>adaptation of ISO 19148 LR_LinearElement</documentation>
+		</annotation>
+	</element>
+	<complexType name="BoreholeTrajectoryType">
+		<choice>
+			<element name="feature" type="gml:FeaturePropertyType"/>
+			<element name="curve" type="gml:CurvePropertyType"/>
+		</choice>
+	</complexType>
+	<complexType name="BoreholeTrajectoryPropertyType">
+		<sequence>
+			<element ref="BhML:BoreholeTrajectory"/>
+		</sequence>
+	</complexType>
+	<element name="DistanceExpression" type="BhML:DistanceExpressionType" substitutionGroup="gml:AbstractGML">
+		<annotation>
+			<documentation>Adaptation of ISO 19148 LR_DistanceExpression</documentation>
+		</annotation>
+	</element>
+	<complexType name="DistanceExpressionType">
+		<complexContent>
+			<extension base="gml:AbstractGMLType">
+				<sequence>
+					<element name="distanceAlong" type="gml:MeasureType"/>
+					<element name="trajectoryReferent" type="BhML:TrajectoryReferentPropertyType">
+						<annotation>
+							<appinfo>
+								<reversePropertyName xmlns="http://www.opengis.net/gml/3.2">BhML:location</reversePropertyName>
+							</appinfo>
+						</annotation>
+					</element>
+					<element name="location" type="BhML:BoreholeLRSPropertyType">
+						<annotation>
+							<appinfo>
+								<reversePropertyName xmlns="http://www.opengis.net/gml/3.2">BhML:trajectoryReferent</reversePropertyName>
+							</appinfo>
+						</annotation>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="DistanceExpressionPropertyType">
+		<sequence minOccurs="0">
+			<element ref="BhML:DistanceExpression"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<element name="FromToLocation" type="BhML:FromToLocationType" substitutionGroup="BhML:BoreholeEventLocation">
+		<annotation>
+			<documentation>adaptation of ISO 19148 LE_FromToLocation</documentation>
+		</annotation>
+	</element>
+	<complexType name="FromToLocationType">
+		<complexContent>
+			<extension base="BhML:BoreholeEventLocationType">
+				<sequence>
+					<element name="fromPosition" type="BhML:MeasureOrEventPropertyType"/>
+					<element name="toPosition" type="BhML:MeasureOrEventPropertyType"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="FromToLocationPropertyType">
+		<sequence minOccurs="0">
+			<element ref="BhML:FromToLocation"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	
+	<!-- ###############  Measure of Event ##################-->
+	<group name="MeasureOrEvent">
+		<choice>
+			<element ref="BhML:BoreholeEvent"/>
+			<element ref="gml:measure"/>
+		</choice>
+	</group>
+	
+		<!--  encoding from https://www.seegrid.csiro.au/wiki/AppSchemas/UmL2GMLAS#A_4._Class_association_pattern_45_target_stereotyped_42_60_62_42 -->
+	<complexType name="MeasureOrEventPropertyType">
+		<sequence minOccurs="0">
+			<group ref="BhML:MeasureOrEvent"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+   		<attribute name="unionSemantics" type="BhML:MeasureOrEventUnionSemantics"/>
+	</complexType>
+	
+<simpleType name="MeasureOrEventUnionSemantics">
+   <restriction base="string">
+      <enumeration value="distanceAlong"/>
+      <enumeration value="boreholeEvent"/>
+   </restriction>
+</simpleType>
+	
+	<!--	 old encoding
+	
+	<element name="MeasureOrEvent" type="BhML:MeasureOrEventType" substitutionGroup="gml:AbstractObject">
+		<annotation>
+			<documentation>Adaptation of ISO 19148 LE_AtLocation and LE_FromToLocation pattern in which the properties are not anymore LR_DistanceExpression but either distanceAlong or reference to a boreholeEvent.</documentation>
+		</annotation>
+	</element>
+	
+	<complexType name="MeasureOrEventType">
+		<choice>
+			<element name="boreholeEvent">
+				<complexType>
+					<complexContent>
+						<extension base="gml:AbstractFeatureMemberType">
+							<sequence minOccurs="0">
+								<element ref="BhML:BoreholeEvent"/>
+							</sequence>
+							<attributeGroup ref="gml:AssociationAttributeGroup"/>
+						</extension>
+					</complexContent>
+				</complexType>
+			</element>
+			<element name="distanceAlong" type="gml:MeasureType">
+				<annotation>
+					<documentation>Measure (usually a distance) between the BoreholeEvent and the TrajectoryReferent attached to the BoreholeEventCollection.
+The measure is done according to the BoreholeReferencingMethod to which the TrajectoryReferent is related.</documentation>
+				</annotation>
+			</element>
+		</choice>
+	</complexType>
+ 
+MeasureOrEventPropertyType">
+		<sequence>
+			<element ref="BhML:MeasureOrEvent"/>
+		</sequence>
+	</complexType>
+	-->
+	
+
+	
+	
+	
+	<element name="TrajectoryReferent" type="BhML:TrajectoryReferentType" substitutionGroup="gml:AbstractFeature">
+		<annotation>
+			<documentation>adaptation of LR_Referent</documentation>
+		</annotation>
+	</element>
+	<complexType name="TrajectoryReferentType">
+		<complexContent>
+			<extension base="gml:AbstractFeatureType">
+				<sequence>
+					<element name="feature" type="gml:FeaturePropertyType" minOccurs="0">
+						<annotation>
+							<documentation>ex : BoreholeCollar</documentation>
+						</annotation>
+					</element>
+					<element name="position" type="gml:PointPropertyType" minOccurs="0"/>
+					<element name="location" type="BhML:DistanceExpressionPropertyType" minOccurs="0" maxOccurs="unbounded">
+						<annotation>
+							<appinfo>
+								<reversePropertyName xmlns="http://www.opengis.net/gml/3.2">BhML:trajectoryReferent</reversePropertyName>
+							</appinfo>
+						</annotation>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="TrajectoryReferentPropertyType">
+		<sequence minOccurs="0">
+			<element ref="BhML:TrajectoryReferent"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attributeGroup ref="gml:OwnershipAttributeGroup"/>
+	</complexType>
+	<simpleType name="UnitfOfMeasureTermType">
+		<annotation>
+			<documentation>Reference to a well known uom register entry (ex : QUDT, UCUM, ...)</documentation>
+		</annotation>
+		<union memberTypes="BhML:UnitfOfMeasureTermEnumerationType BhML:UnitfOfMeasureTermOtherType"/>
+	</simpleType>
+	<simpleType name="UnitfOfMeasureTermEnumerationType">
+		<annotation>
+			<documentation>Reference to a well known uom register entry (ex : QUDT, UCUM, ...)</documentation>
+		</annotation>
+		<restriction base="string"/>
+	</simpleType>
+	<simpleType name="UnitfOfMeasureTermOtherType">
+		<restriction base="string">
+			<pattern value="other: \w{2,}"/>
+		</restriction>
+	</simpleType>
+</schema>
