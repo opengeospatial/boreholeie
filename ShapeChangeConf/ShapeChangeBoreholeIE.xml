@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ShapeChangeConfiguration xmlns:xi="http://www.w3.org/2001/XInclude" xmlns="http://www.interactive-instruments.de/ShapeChange/Configuration/1.1" xmlns:sc="http://www.interactive-instruments.de/ShapeChange/Configuration/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.interactive-instruments.de/ShapeChange/Configuration/1.1 http://shapechange.net/resources/schema/ShapeChangeConfiguration.xsd">
+	<input>
+		<parameter name="inputModelType" value="EA7"/>
+		<parameter name="inputFile" value="D:\Documents\grellets\OneDrive - BRGM\OGC\GeoScienceDWG\BoreholeIE\BhML.EAP"/>
+				<parameter name="appSchemaName" value="BhML Core"/>
+		<parameter name="publicOnly" value="true"/>
+		<parameter name="checkingConstraints" value="disabled"/>
+		<parameter name="sortedSchemaOutput" value="true"/>
+		<xi:include href="http://shapechange.net/resources/config/StandardAliases.xml"/>
+	</input>
+	<log>
+		<parameter name="reportLevel" value="INFO"/>
+		<parameter name="logFile" value="BoreholeIE/xmi/log.xml"/>
+	</log>
+	<targets>
+		<TargetXmlSchema class="de.interactive_instruments.ShapeChange.Target.XmlSchema.XmlSchema" mode="enabled">
+			<targetParameter name="outputDirectory" value="BoreholeIE/xmi"/>
+			<targetParameter name="sortedOutput" value="true"/>
+			<targetParameter name="defaultEncodingRule" value="iso19136_2007"/>
+			<!--<targetParameter name="includeDocumentation" value="true"/>--> <!--added-->
+			<xi:include href="http://shapechange.net/resources/config/StandardRules.xml"/>
+			<xi:include href="http://shapechange.net/resources/config/StandardNamespaces.xml"/>
+			<xi:include href="http://shapechange.net/resources/config/StandardMapEntries.xml"/>
+			<xi:include href="http://shapechange.net/resources/config/StandardMapEntries_iso19115.xml"/>
+			<xsdMapEntries>
+				<XsdMapEntry type="URI" xsdEncodingRules="iso19136_2007" xmlPropertyType="anyURI" xmlType="anyURI" xmlTypeType="simple" xmlTypeContent="simple"/>
+			</xsdMapEntries>
+		</TargetXmlSchema>
+		<Target class="de.interactive_instruments.ShapeChange.Target.FeatureCatalogue.FeatureCatalogue" mode="enabled">
+			<targetParameter name="outputDirectory" value="BoreholeIE/xmi"/>
+			<targetParameter name="outputFilename" value="BoreholeIE"/>
+			<targetParameter name="sortedOutput" value="true"/>
+			<targetParameter name="inheritedProperties" value="false"/>
+			<targetParameter name="outputFormat" value="HTML"/>
+			<targetParameter name="name" value="'Test application schema'"/>
+			<targetParameter name="scope" value="This feature catalogue ..."/>
+			<targetParameter name="versionNumber" value="n/a"/>
+			<targetParameter name="versionDate" value="n/a"/>
+			<targetParameter name="producer" value="n/a"/>
+			<targetParameter name="xsltPfad" value="http://shapechange.net/resources/xslt"/>
+			<targetParameter name="xslhtmlFile" value="html.xsl"/>
+		</Target>
+	</targets>
+</ShapeChangeConfiguration>
