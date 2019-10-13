@@ -97,7 +97,7 @@ I think we are 2), because we measure from the collar expressed in the trajector
 							<gml:name>Surface</gml:name>
 							<gsmlb:classifier>
 								<swe:Category>
-									<swe:identifier>http://resource.geosciml.org/classifier/cgi/contacttype/0034</swe:identifier>
+									<swe:identifier>http://resource.geosciml.org/classifier/cgi/contacttype/unconformable_contact</swe:identifier>
 									<!-- unconformable contact -->
 								</swe:Category>
 							</gsmlb:classifier>
@@ -122,7 +122,7 @@ I think we are 2), because we measure from the collar expressed in the trajector
 							<gml:name>Sedimentary contact</gml:name>
 							<gsmlb:classifier>
 								<swe:Category>
-									<swe:identifier>http://resource.geosciml.org/classifier/cgi/contacttype/0010</swe:identifier>
+									<swe:identifier>http://resource.geosciml.org/classifier/cgi/contacttype/depositional_contact</swe:identifier>
 									<!-- depositional contact -->
 								</swe:Category>
 							</gsmlb:classifier>
@@ -147,7 +147,7 @@ I think we are 2), because we measure from the collar expressed in the trajector
 							<gml:name>Sedimentary contact</gml:name>
 							<gsmlb:classifier>
 								<swe:Category>
-									<swe:identifier>http://resource.geosciml.org/classifier/cgi/contacttype/0010</swe:identifier>
+									<swe:identifier>http://resource.geosciml.org/classifier/cgi/contacttype/depositional_contact</swe:identifier>
 									<!-- depositional contact -->
 								</swe:Category>
 							</gsmlb:classifier>
@@ -252,7 +252,7 @@ I think we are 2), because we measure from the collar expressed in the trajector
 							<gml:name>Sedimentary contact</gml:name>
 							<gsmlb:classifier>
 								<swe:Category>
-									<swe:identifier>http://resource.geosciml.org/classifier/cgi/contacttype/0010</swe:identifier>
+									<swe:identifier>http://resource.geosciml.org/classifier/cgi/contacttype/depositional_contact</swe:identifier>
 									<!-- depositional contact -->
 								</swe:Category>
 							</gsmlb:classifier>
@@ -277,7 +277,7 @@ I think we are 2), because we measure from the collar expressed in the trajector
 							<gml:name>Sedimentary contact</gml:name>
 							<gsmlb:classifier>
 								<swe:Category>
-									<swe:identifier>http://resource.geosciml.org/classifier/cgi/contacttype/0010</swe:identifier>
+									<swe:identifierhttp://resource.geosciml.org/classifier/cgi/contacttype/depositional_contact</swe:identifier>
 									<!-- depositional contact -->
 								</swe:Category>
 							</gsmlb:classifier>
@@ -302,7 +302,7 @@ I think we are 2), because we measure from the collar expressed in the trajector
 							<gml:name>Sedimentary contact</gml:name>
 							<gsmlb:classifier>
 								<swe:Category>
-									<swe:identifier>http://resource.geosciml.org/classifier/cgi/contacttype/0010</swe:identifier>
+									<swe:identifier>http://resource.geosciml.org/classifier/cgi/contacttype/depositional_contact</swe:identifier>
 									<!-- depositional contact -->
 								</swe:Category>
 							</gsmlb:classifier>
@@ -327,7 +327,7 @@ I think we are 2), because we measure from the collar expressed in the trajector
 							<gml:name>Sedimentary contact</gml:name>
 							<gsmlb:classifier>
 								<swe:Category>
-									<swe:identifier>http://resource.geosciml.org/classifier/cgi/contacttype/0011</swe:identifier>
+									<swe:identifier>http://resource.geosciml.org/classifier/cgi/contacttype/disconformable_contact</swe:identifier>
 									<!-- Disconformable contact -->
 								</swe:Category>
 							</gsmlb:classifier>
@@ -352,7 +352,7 @@ I think we are 2), because we measure from the collar expressed in the trajector
 							<gml:name>Sedimentary contact with bedrock</gml:name>
 							<gsmlb:classifier>
 								<swe:Category>
-									<swe:identifier>http://resource.geosciml.org/classifier/cgi/contacttype/0028</swe:identifier>
+									<swe:identifier>http://resource.geosciml.org/classifier/cgi/contacttype/nonconformable_contact</swe:identifier>
 									<!-- Nonconformable contact -->
 								</swe:Category>
 							</gsmlb:classifier>
@@ -377,7 +377,7 @@ I think we are 2), because we measure from the collar expressed in the trajector
 							<gml:name>Faulted contact</gml:name>
 							<gsmlb:classifier>
 								<swe:Category>
-									<swe:identifier>http://resource.geosciml.org/classifier/cgi/contacttype/0012</swe:identifier>
+									<swe:identifier>http://resource.geosciml.org/classifier/cgi/contacttype/faulted_contact</swe:identifier>
 									<!-- Faulted contact -->
 								</swe:Category>
 							</gsmlb:classifier>
