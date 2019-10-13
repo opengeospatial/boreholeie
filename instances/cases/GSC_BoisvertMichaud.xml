@@ -8,7 +8,18 @@ diagram on p.119
 
 Complex example made of units constructed from reused contacts and samples
  -->
-<Borehole xmlns:gww="http://www.opengis.net/gwml-well/2.2" xmlns:sam="http://www.opengis.net/sampling/2.0" xmlns:spec="http://www.opengis.net/samplingSpecimen/2.0" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns="https://forge.brgm.fr/svnrepository/boreholeie/schemas" xmlns:sams="http://www.opengis.net/samplingSpatial/2.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gwml2="http://www.opengis.net/gwml-main/2.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gsmlb="http://www.opengis.net/gsml/4.1/GeoSciML-Basic" xsi:schemaLocation="https://forge.brgm.fr/svnrepository/boreholeie/schemas https://forge.brgm.fr/svnrepository/boreholeie/schemas/BhML-Core.xsd http://www.opengis.net/gsml/4.1/GeoSciML-Basic http://schemas.opengis.net/gsml/4.1/geoSciMLBasic.xsd http://www.opengis.net/samplingSpecimen/2.0 http://schemas.opengis.net/samplingSpecimen/2.0/specimen.xsd http://www.opengis.net/gwml-main/2.2 http://schemas.opengis.net/gwml/2.2/gwml2-main.xsd">
+<Borehole xmlns:gww="http://www.opengis.net/gwml-well/2.2" 
+xmlns:sam="http://www.opengis.net/sampling/2.0" 
+xmlns:spec="http://www.opengis.net/samplingSpecimen/2.0" 
+xmlns:swe="http://www.opengis.net/swe/2.0" 
+xmlns="https://raw.githubusercontent.com/opengeospatial/boreholeie/master/schemas" 
+xmlns:sams="http://www.opengis.net/samplingSpatial/2.0" 
+xmlns:xlink="http://www.w3.org/1999/xlink" 
+xmlns:gml="http://www.opengis.net/gml/3.2" 
+xmlns:gwml2="http://www.opengis.net/gwml-main/2.2" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns:gsmlb="http://www.opengis.net/gsml/4.1/GeoSciML-Basic" 
+xsi:schemaLocation="https://raw.githubusercontent.com/opengeospatial/boreholeie/master/schemas https://raw.githubusercontent.com/opengeospatial/boreholeie/master/schemas/BhML-Core.xsd http://www.opengis.net/gsml/4.1/GeoSciML-Basic http://schemas.opengis.net/gsml/4.1/geoSciMLBasic.xsd http://www.opengis.net/samplingSpecimen/2.0 http://schemas.opengis.net/samplingSpecimen/2.0/specimen.xsd http://www.opengis.net/gwml-main/2.2 http://schemas.opengis.net/gwml/2.2/gwml2-main.xsd">
 	<gml:description>Complex example made of units constructed from reused contacts and samples.  This borehole is an encoding of a example described in Boisvert &amp; Michaud, 1998</gml:description>
 	<gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616">https://geoconnex.ca/id/waterwells/unbounded.1</gml:identifier>
 	<gml:name codeSpace="urn:gin">demo</gml:name>
@@ -23,9 +34,9 @@ Complex example made of units constructed from reused contacts and samples
 			<gml:name codeSpace="urn:gin">demo.contacts</gml:name>
 			<collectionLRS>
 				<BoreholeLRS gml:id="LRS1">
-					<accuracyStatement>Good</accuracyStatement>
+					<accuracyStatement xlink:href="https://opengis.org/def/accuracy/good" xlink:title="Good"/>
 					<!-- should be xlink:href -->
-					<precisionStatement>Unknown</precisionStatement>
+					<precisionStatement xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="Unknown"/>
 					<!-- should be xlink:href -->
 					<boreholeReferencingMethod>
 						<BoreholeReferencingMethod>
@@ -47,7 +58,7 @@ accordance with the default length of the linear element
 I think we are 2), because we measure from the collar expressed in the trajectory referent (below)
 
 -->
-							<unit>http://qudt.org/vocab/unit/M</unit>
+							<unit xlink:href="http://qudt.org/vocab/unit/M" xlink:title="meter"/>
 							<!-- Should byReference and use xink:href for the URI, allow code and xlink:title as per se:uom -->
 							<!--e.g. <sunit code="cm" xlink:href="http://qudt.org/vocab/unit/M" xlink:title="Metre"/>-->
 						</BoreholeReferencingMethod>
@@ -94,12 +105,12 @@ I think we are 2), because we measure from the collar expressed in the trajector
 					</locatedMember>
 					<location>
 						<AtLocation>
-							<atLocation>
+							<atPosition>
 								<!-- this is not the right encoding for a union -->
 								<MeasureOrEvent>
 									<distanceAlong uom="http://qudt.org/vocab/unit/M">0</distanceAlong>
 								</MeasureOrEvent>
-							</atLocation>
+							</atPosition>
 						</AtLocation>
 					</location>
 				</BoreholeEvent>
@@ -119,12 +130,12 @@ I think we are 2), because we measure from the collar expressed in the trajector
 					</locatedMember>
 					<location>
 						<AtLocation>
-							<atLocation>
+							<atPosition>
 								<!-- this is not the right encoding for a union -->
 								<MeasureOrEvent>
 									<distanceAlong uom="http://qudt.org/vocab/unit/M">3.2</distanceAlong>
 								</MeasureOrEvent>
-							</atLocation>
+							</atPosition>
 						</AtLocation>
 					</location>
 				</BoreholeEvent>
@@ -144,12 +155,12 @@ I think we are 2), because we measure from the collar expressed in the trajector
 					</locatedMember>
 					<location>
 						<AtLocation>
-							<atLocation>
+							<atPosition>
 								<!-- this is not the right encoding for a union -->
 								<MeasureOrEvent>
 									<distanceAlong uom="http://qudt.org/vocab/unit/M">4.5</distanceAlong>
 								</MeasureOrEvent>
-							</atLocation>
+							</atPosition>
 						</AtLocation>
 					</location>
 				</BoreholeEvent>
@@ -184,12 +195,12 @@ I think we are 2), because we measure from the collar expressed in the trajector
 					</locatedMember>
 					<location>
 						<AtLocation>
-							<atLocation>
+							<atPosition>
 								<!-- this is not the right encoding for a union -->
 								<MeasureOrEvent>
 									<distanceAlong uom="http://qudt.org/vocab/unit/M">4.9</distanceAlong>
 								</MeasureOrEvent>
-							</atLocation>
+							</atPosition>
 						</AtLocation>
 					</location>
 				</BoreholeEvent>
@@ -224,12 +235,12 @@ I think we are 2), because we measure from the collar expressed in the trajector
 					</locatedMember>
 					<location>
 						<AtLocation>
-							<atLocation>
+							<atPosition>
 								<!-- this is not the right encoding for a union -->
 								<MeasureOrEvent>
 									<distanceAlong uom="http://qudt.org/vocab/unit/M">6.6</distanceAlong>
 								</MeasureOrEvent>
-							</atLocation>
+							</atPosition>
 						</AtLocation>
 					</location>
 				</BoreholeEvent>
@@ -249,12 +260,12 @@ I think we are 2), because we measure from the collar expressed in the trajector
 					</locatedMember>
 					<location>
 						<AtLocation>
-							<atLocation>
+							<atPosition>
 								<!-- this is not the right encoding for a union -->
 								<MeasureOrEvent>
 									<distanceAlong uom="http://qudt.org/vocab/unit/M">6.6</distanceAlong>
 								</MeasureOrEvent>
-							</atLocation>
+							</atPosition>
 						</AtLocation>
 					</location>
 				</BoreholeEvent>
@@ -274,12 +285,12 @@ I think we are 2), because we measure from the collar expressed in the trajector
 					</locatedMember>
 					<location>
 						<AtLocation>
-							<atLocation>
+							<atPosition>
 								<!-- this is not the right encoding for a union -->
 								<MeasureOrEvent>
 									<distanceAlong uom="http://qudt.org/vocab/unit/M">10</distanceAlong>
 								</MeasureOrEvent>
-							</atLocation>
+							</atPosition>
 						</AtLocation>
 					</location>
 				</BoreholeEvent>
@@ -299,12 +310,12 @@ I think we are 2), because we measure from the collar expressed in the trajector
 					</locatedMember>
 					<location>
 						<AtLocation>
-							<atLocation>
+							<atPosition>
 								<!-- this is not the right encoding for a union -->
 								<MeasureOrEvent>
 									<distanceAlong uom="http://qudt.org/vocab/unit/M">11.1</distanceAlong>
 								</MeasureOrEvent>
-							</atLocation>
+							</atPosition>
 						</AtLocation>
 					</location>
 				</BoreholeEvent>
@@ -324,12 +335,12 @@ I think we are 2), because we measure from the collar expressed in the trajector
 					</locatedMember>
 					<location>
 						<AtLocation>
-							<atLocation>
+							<atPosition>
 								<!-- this is not the right encoding for a union -->
 								<MeasureOrEvent>
 									<distanceAlong uom="http://qudt.org/vocab/unit/M">13.3</distanceAlong>
 								</MeasureOrEvent>
-							</atLocation>
+							</atPosition>
 						</AtLocation>
 					</location>
 				</BoreholeEvent>
@@ -349,12 +360,12 @@ I think we are 2), because we measure from the collar expressed in the trajector
 					</locatedMember>
 					<location>
 						<AtLocation>
-							<atLocation>
+							<atPosition>
 								<!-- this is not the right encoding for a union -->
 								<MeasureOrEvent>
 									<distanceAlong uom="http://qudt.org/vocab/unit/M">16.5</distanceAlong>
 								</MeasureOrEvent>
-							</atLocation>
+							</atPosition>
 						</AtLocation>
 					</location>
 				</BoreholeEvent>
@@ -374,12 +385,12 @@ I think we are 2), because we measure from the collar expressed in the trajector
 					</locatedMember>
 					<location>
 						<AtLocation>
-							<atLocation>
+							<atPosition>
 								<!-- this is not the right encoding for a union -->
 								<MeasureOrEvent>
 									<distanceAlong uom="http://qudt.org/vocab/unit/M">17.7</distanceAlong>
 								</MeasureOrEvent>
-							</atLocation>
+							</atPosition>
 						</AtLocation>
 					</location>
 				</BoreholeEvent>
@@ -389,12 +400,12 @@ I think we are 2), because we measure from the collar expressed in the trajector
 					<locatedMember xlink:href="https://gwml.org/construction/base" xlink:title="Base of borehole"/>
 					<location>
 						<AtLocation>
-							<atLocation>
+							<atPosition>
 								<!-- this is not the right encoding for a union -->
 								<MeasureOrEvent>
 									<distanceAlong uom="http://qudt.org/vocab/unit/M">18.8</distanceAlong>
 								</MeasureOrEvent>
-							</atLocation>
+							</atPosition>
 						</AtLocation>
 					</location>
 				</BoreholeEvent>
