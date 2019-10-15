@@ -92,17 +92,7 @@ I think we are 2), because we measure from the collar expressed in the trajector
 			</collectionLRS>
 			<collectionMember>
 				<BoreholeEvent>
-					<locatedMember>
-						<gsmlb:Contact gml:id="sm0">
-							<gml:name>Surface</gml:name>
-							<gsmlb:classifier>
-								<swe:Category>
-									<swe:identifier>http://resource.geosciml.org/classifier/cgi/contacttype/unconformable_contact</swe:identifier>
-									<!-- unconformable contact -->
-								</swe:Category>
-							</gsmlb:classifier>
-						</gsmlb:Contact>
-					</locatedMember>
+					<locatedMember xlink:href="http://resource.bhml/org/classifier/boreholeFeatures/surface"/>
 					<location>
 						<AtLocation>
 							<atPosition>
@@ -397,7 +387,7 @@ I think we are 2), because we measure from the collar expressed in the trajector
 			</collectionMember>
 			<collectionMember>
 				<BoreholeEvent gml:id="bs11">
-					<locatedMember xlink:href="https://gwml.org/construction/base" xlink:title="Base of borehole"/>
+					<locatedMember xlink:href="http://resource.bhml/org/classifier/boreholeFeatures/bottom"/>
 					<location>
 						<AtLocation>
 							<atPosition>
@@ -412,6 +402,7 @@ I think we are 2), because we measure from the collar expressed in the trajector
 			</collectionMember>
 		</BoreholeEventCollection>
 	</collection>
+	
 	<!---
 |
 |  ################################ LITHO ###############################
