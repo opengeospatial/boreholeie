@@ -34,6 +34,8 @@ xsi:schemaLocation="https://raw.githubusercontent.com/opengeospatial/boreholeie/
 			<gml:name codeSpace="urn:gin">demo.contacts</gml:name>
 			<collectionLRS>
 				<BoreholeLRS gml:id="LRS1">
+					<gml:description>The reference is an arbitrary point on the ground at the top of the borehole.  Because it's also the beginning of the linear element, it's both, providing no trajectoryReferent  would also be valid by using "absolute" Referencing method</gml:description>
+					<gml:name>ground</gml:name>
 					<accuracyStatement xlink:href="https://opengis.org/def/accuracy/good" xlink:title="Good"/>
 					<!-- should be xlink:href -->
 					<precisionStatement xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="Unknown"/>
@@ -41,26 +43,7 @@ xsi:schemaLocation="https://raw.githubusercontent.com/opengeospatial/boreholeie/
 					<boreholeReferencingMethod>
 						<BoreholeReferencingMethod>
 							<name>relative</name>
-							<!--not sure, see 19148 6.2.11 
-
-
-The enumeration “LR_LRMType” specifies the allowable types for the Linear Referencing Method. These
-include:
-1) “absolute” – (e.g., milepoint, kilometre-point in Annex C) measurements are made from the start of
-the linear element being measured, in the direction of the linear element
-2) “relative” – (e.g., kilometre-post, milepost, reference post, County milepoint in Annex C)
-measurements are made from the specified “from referent” location, in the direction of the linear
-element unless overridden by a towards referent in which case the direction is from the from referent
-towards the towards referent
-3) “interpolative” – (e.g., percentage, normalized in Annex C) measurements are interpolated in
-accordance with the default length of the linear element
-
-I think we are 2), because we measure from the collar expressed in the trajectory referent (below)
-
--->
 							<unit xlink:href="http://qudt.org/vocab/unit/M" xlink:title="meter"/>
-							<!-- Should byReference and use xink:href for the URI, allow code and xlink:title as per se:uom -->
-							<!--e.g. <sunit code="cm" xlink:href="http://qudt.org/vocab/unit/M" xlink:title="Metre"/>-->
 						</BoreholeReferencingMethod>
 					</boreholeReferencingMethod>
 					<linearElement>
