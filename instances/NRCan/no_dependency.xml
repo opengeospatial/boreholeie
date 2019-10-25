@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<BoreholeEventCollection xmlns="https://forge.brgm.fr/svnrepository/boreholeie/schemas"  xmlns:xlink="http://www.w3.org/1999/xlink"  xmlns:gml="http://www.opengis.net/gml/3.2"  xmlns:gsmlb="http://www.opengis.net/gsml/4.1/GeoSciML-Basic" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-xsi:schemaLocation="http://www.opengis.net/gsml/4.1/GeoSciML-Basic http://schemas.opengis.net/gsml/4.1/geoSciMLBasic.xsd https://forge.brgm.fr/svnrepository/boreholeie/schemas https://forge.brgm.fr/svnrepository/boreholeie/schemas/BhML-Core.xsd">
+<BoreholeEventCollection xmlns="https://raw.githubusercontent.com/opengeospatial/boreholeie/master/schemas" xmlns:xlink="http://www.w3.org/1999/xlink"  xmlns:gml="http://www.opengis.net/gml/3.2"  xmlns:gsmlb="http://www.opengis.net/gsml/4.1/GeoSciML-Basic" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.opengis.net/gsml/4.1/GeoSciML-Basic http://schemas.opengis.net/gsml/4.1/geoSciMLBasic.xsd https://raw.githubusercontent.com/opengeospatial/boreholeie/master/schemas https://raw.githubusercontent.com/opengeospatial/boreholeie/master/schemas/BhML-Core.xsd">
 						<collectionLRS>
 				<BoreholeLRS gml:id="LRS1">
 					<accuracyStatement xlink:href="https://opengis.org/def/accuracy/good" xlink:title="Good"/>
