@@ -1,0 +1,1074 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  Handcrafted encoding of 
+
+Boisvert, E., Michaud, Y., 1998, Gestion des données de forage à l'aide d'une approche topologique : application au projet de cartographie hydrogéologique du piémont laurentien, Québec
+Current research 1998-E/Recherches en cours 1998-E; by Geological Survey of Canada; Geological Survey of Canada, Current Research no. 1998-E, 1998 p. 117-124, https://doi.org/10.4095/209958
+
+diagram on p.119
+
+Complex example made of units constructed from reused contacts and samples.
+Examples that use a Borehole derived from core BhML Borehole and adds a BoreholeDetails class adapted from GeoSciML
+ -->
+<my:Borehole xmlns:gww="http://www.opengis.net/gwml-well/2.2" 
+xmlns:sam="http://www.opengis.net/sampling/2.0" 
+xmlns:spec="http://www.opengis.net/samplingSpecimen/2.0" 
+xmlns:swe="http://www.opengis.net/swe/2.0" 
+xmlns:BhML="https://raw.githubusercontent.com/opengeospatial/boreholeie/master/schemas" 
+xmlns:sams="http://www.opengis.net/samplingSpatial/2.0" 
+xmlns:xlink="http://www.w3.org/1999/xlink" 
+xmlns:cit="http://standards.iso.org/iso/19115/-3/cit/1.0" 
+xmlns:my="http://www.example.org/MyBorehole" 
+xmlns:gml="http://www.opengis.net/gml/3.2" 
+xmlns:gwml2="http://www.opengis.net/gwml-main/2.2" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns:gsmlb="http://www.opengis.net/gsml/4.1/GeoSciML-Basic" 
+xsi:schemaLocation="http://www.example.org/MyBorehole MyBorehole.xsd http://www.opengis.net/gsml/4.1/GeoSciML-Basic http://schemas.opengis.net/gsml/4.1/geoSciMLBasic.xsd http://www.opengis.net/samplingSpecimen/2.0 http://schemas.opengis.net/samplingSpecimen/2.0/specimen.xsd http://www.opengis.net/gwml-main/2.2 http://schemas.opengis.net/gwml/2.2/gwml2-main.xsd">
+	<gml:description>Complex example made of units constructed from reused contacts and samples.  This borehole is an encoding of a example described in Boisvert &amp; Michaud, 1998</gml:description>
+	<gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616">https://geoconnex.ca/id/waterwells/unbounded.1</gml:identifier>
+	<gml:name codeSpace="urn:gin">demo</gml:name>
+	<!---
+|
+|  ########################## CONTACTS ################################
+|
+-->
+	<BhML:collection>
+		<BhML:BoreholeEventCollection gml:id="contact.1">
+			<gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616">https://geoconnex.ca/id/log/unbounded.1.contacts</gml:identifier>
+			<gml:name codeSpace="urn:gin">demo.contacts</gml:name>
+			<BhML:collectionLRS>
+				<BhML:BoreholeLRS gml:id="LRS1">
+					<gml:description>The reference is an arbitrary point on the ground at the top of the borehole.  Because it's also the beginning of the linear element, it's both, providing no trajectoryReferent  would also be valid by using "absolute" Referencing method</gml:description>
+					<gml:name>ground</gml:name>
+					<BhML:accuracyStatement xlink:href="https://opengis.org/def/accuracy/good" xlink:title="Good"/>
+					<!-- should be xlink:href -->
+					<BhML:precisionStatement xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="Unknown"/>
+					<!-- should be xlink:href -->
+					<BhML:boreholeReferencingMethod>
+						<BhML:BoreholeReferencingMethod>
+							<BhML:name>relative</BhML:name>
+							<BhML:unit xlink:href="http://qudt.org/vocab/unit/M" xlink:title="meter"/>
+						</BhML:BoreholeReferencingMethod>
+					</BhML:boreholeReferencingMethod>
+					<BhML:linearElement>
+						<BhML:BoreholeTrajectory>
+							<BhML:curve>
+								<gml:LineString gml:id="well.1" srsDimension="2" srsName="http://www.opengis.net/gml/srs/epsg.xml#4326">
+									<gml:posList>47.593616 -70.390738 379.269 47.593616 -70.390738 379.269 360.469</gml:posList>
+								</gml:LineString>
+							</BhML:curve>
+						</BhML:BoreholeTrajectory>
+					</BhML:linearElement>
+					<BhML:trajectoryReferent>
+						<BhML:DistanceExpression>
+							<BhML:distanceAlong uom="http://qudt.org/vocab/unit/M">0.00</BhML:distanceAlong>
+							<BhML:trajectoryReferent>
+								<BhML:TrajectoryReferent gml:id="TR1">
+									<gml:identifier codeSpace="urn:_">Collar position</gml:identifier>
+									<BhML:position>
+										<gml:Point srsDimension="3" srsName="urn:ogc:def:crs:EPSG::4326">
+											<gml:pos>47.593616 -70.390738 379.269 47.593616</gml:pos>
+										</gml:Point>
+									</BhML:position>
+								</BhML:TrajectoryReferent>
+							</BhML:trajectoryReferent>
+							<BhML:location/>
+						</BhML:DistanceExpression>
+					</BhML:trajectoryReferent>
+				</BhML:BoreholeLRS>
+			</BhML:collectionLRS>
+			<BhML:collectionMember>
+				<BhML:BoreholeEvent>
+					<BhML:locatedMember xlink:href="http://resource.bhml/org/classifier/boreholeFeatures/surface"/>
+					<BhML:location>
+						<BhML:AtLocation>
+							<BhML:atPosition>
+								<!-- this is not the right encoding for a union -->
+								<BhML:MeasureOrEvent>
+									<BhML:distanceAlong uom="http://qudt.org/vocab/unit/M">0</BhML:distanceAlong>
+								</BhML:MeasureOrEvent>
+							</BhML:atPosition>
+						</BhML:AtLocation>
+					</BhML:location>
+				</BhML:BoreholeEvent>
+			</BhML:collectionMember>
+			<BhML:collectionMember>
+				<BhML:BoreholeEvent gml:id="qu1">
+					<BhML:locatedMember>
+						<gsmlb:Contact gml:id="c1">
+							<gml:name>Sedimentary contact</gml:name>
+							<gsmlb:classifier>
+								<swe:Category>
+									<swe:identifier>http://resource.geosciml.org/classifier/cgi/contacttype/depositional_contact</swe:identifier>
+									<!-- depositional contact -->
+								</swe:Category>
+							</gsmlb:classifier>
+						</gsmlb:Contact>
+					</BhML:locatedMember>
+					<BhML:location>
+						<BhML:AtLocation>
+							<BhML:atPosition>
+								<!-- this is not the right encoding for a union -->
+								<BhML:MeasureOrEvent>
+									<BhML:distanceAlong uom="http://qudt.org/vocab/unit/M">3.2</BhML:distanceAlong>
+								</BhML:MeasureOrEvent>
+							</BhML:atPosition>
+						</BhML:AtLocation>
+					</BhML:location>
+				</BhML:BoreholeEvent>
+			</BhML:collectionMember>
+			<BhML:collectionMember>
+				<BhML:BoreholeEvent gml:id="qu2">
+					<BhML:locatedMember>
+						<gsmlb:Contact gml:id="c2">
+							<gml:name>Sedimentary contact</gml:name>
+							<gsmlb:classifier>
+								<swe:Category>
+									<swe:identifier>http://resource.geosciml.org/classifier/cgi/contacttype/depositional_contact</swe:identifier>
+									<!-- depositional contact -->
+								</swe:Category>
+							</gsmlb:classifier>
+						</gsmlb:Contact>
+					</BhML:locatedMember>
+					<BhML:location>
+						<BhML:AtLocation>
+							<BhML:atPosition>
+								<!-- this is not the right encoding for a union -->
+								<BhML:MeasureOrEvent>
+									<BhML:distanceAlong uom="http://qudt.org/vocab/unit/M">4.5</BhML:distanceAlong>
+								</BhML:MeasureOrEvent>
+							</BhML:atPosition>
+						</BhML:AtLocation>
+					</BhML:location>
+				</BhML:BoreholeEvent>
+			</BhML:collectionMember>
+			<BhML:collectionMember>
+				<BhML:BoreholeEvent gml:id="ns3">
+					<BhML:locatedMember>
+						<!-- in this case, it's not a contact, but an observation of a static groundwater level -->
+						<om:OM_Observation gml:id="obs.ns3" xmlns:om="http://www.opengis.net/om/2.0">
+							<gml:description>Static Water Level</gml:description>
+							<om:phenomenonTime>
+								<gml:TimeInstant gml:id="ti.1">
+									<gml:timePosition>1981-09-12T00:00:00</gml:timePosition>
+								</gml:TimeInstant>
+							</om:phenomenonTime>
+							<om:resultTime>
+								<gml:TimeInstant gml:id="ti.2">
+									<gml:timePosition>2014-06-09T00:00:00</gml:timePosition>
+								</gml:TimeInstant>
+							</om:resultTime>
+							<om:procedure xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+							<om:observedProperty xlink:href="urn:ogc:def:phenomenon:GIN:StaticWaterLevel" xlink:title="Static Water Level"/>
+							<om:featureOfInterest xlink:href="https://geoconnex.ca/aquifer/StMaurice" xlink:title="St-Maurice Aquifer"/>
+							<om:result>
+								<swe:Quantity>
+									<swe:uom xlink:href="http://qudt.org/vocab/unit/M" xlink:title="m"/>
+									<!-- this is actually an elevation, not a depth -->
+									<swe:value>374.369</swe:value>
+								</swe:Quantity>
+							</om:result>
+						</om:OM_Observation>
+					</BhML:locatedMember>
+					<BhML:location>
+						<BhML:AtLocation>
+							<BhML:atPosition>
+								<!-- this is not the right encoding for a union -->
+								<BhML:MeasureOrEvent>
+									<BhML:distanceAlong uom="http://qudt.org/vocab/unit/M">4.9</BhML:distanceAlong>
+								</BhML:MeasureOrEvent>
+							</BhML:atPosition>
+						</BhML:AtLocation>
+					</BhML:location>
+				</BhML:BoreholeEvent>
+			</BhML:collectionMember>
+			<BhML:collectionMember>
+				<BhML:BoreholeEvent gml:id="nd4">
+					<BhML:locatedMember>
+						<!-- in this case, it's not a contact, but an observation of a dynamic groundwater level -->
+						<om:OM_Observation gml:id="obs.nd3" xmlns:om="http://www.opengis.net/om/2.0">
+							<gml:description>Static Water Level</gml:description>
+							<om:phenomenonTime>
+								<gml:TimeInstant gml:id="ti.3">
+									<gml:timePosition>1981-09-12T00:00:00</gml:timePosition>
+								</gml:TimeInstant>
+							</om:phenomenonTime>
+							<om:resultTime>
+								<gml:TimeInstant gml:id="ti.4">
+									<gml:timePosition>2014-06-09T00:00:00</gml:timePosition>
+								</gml:TimeInstant>
+							</om:resultTime>
+							<om:procedure xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="unknown"/>
+							<om:observedProperty xlink:href="urn:ogc:def:phenomenon:GIN:DynamicWaterLevel" xlink:title="Static Water Level"/>
+							<om:featureOfInterest xlink:href="https://geoconnex.ca/aquifer/StMaurice" xlink:title="St-Maurice Aquifer"/>
+							<om:result>
+								<swe:Quantity>
+									<swe:uom xlink:href="http://qudt.org/vocab/unit/M" xlink:title="m"/>
+									<!-- this is actually an elevation, not a depth -->
+									<swe:value>273.269</swe:value>
+								</swe:Quantity>
+							</om:result>
+						</om:OM_Observation>
+					</BhML:locatedMember>
+					<BhML:location>
+						<BhML:AtLocation>
+							<BhML:atPosition>
+								<!-- this is not the right encoding for a union -->
+								<BhML:MeasureOrEvent>
+									<BhML:distanceAlong uom="http://qudt.org/vocab/unit/M">6.6</BhML:distanceAlong>
+								</BhML:MeasureOrEvent>
+							</BhML:atPosition>
+						</BhML:AtLocation>
+					</BhML:location>
+				</BhML:BoreholeEvent>
+			</BhML:collectionMember>
+			<BhML:collectionMember>
+				<BhML:BoreholeEvent gml:id="qu5">
+					<BhML:locatedMember>
+						<gsmlb:Contact gml:id="c5">
+							<gml:name>Sedimentary contact</gml:name>
+							<gsmlb:classifier>
+								<swe:Category>
+									<swe:identifier>http://resource.geosciml.org/classifier/cgi/contacttype/depositional_contact</swe:identifier>
+									<!-- depositional contact -->
+								</swe:Category>
+							</gsmlb:classifier>
+						</gsmlb:Contact>
+					</BhML:locatedMember>
+					<BhML:location>
+						<BhML:AtLocation>
+							<BhML:atPosition>
+								<!-- this is not the right encoding for a union -->
+								<BhML:MeasureOrEvent>
+									<BhML:distanceAlong uom="http://qudt.org/vocab/unit/M">6.6</BhML:distanceAlong>
+								</BhML:MeasureOrEvent>
+							</BhML:atPosition>
+						</BhML:AtLocation>
+					</BhML:location>
+				</BhML:BoreholeEvent>
+			</BhML:collectionMember>
+			<BhML:collectionMember>
+				<BhML:BoreholeEvent gml:id="qu6">
+					<BhML:locatedMember>
+						<gsmlb:Contact gml:id="c6">
+							<gml:name>Sedimentary contact</gml:name>
+							<gsmlb:classifier>
+								<swe:Category>
+									<swe:identifier>http://resource.geosciml.org/classifier/cgi/contacttype/depositional_contact</swe:identifier>
+									<!-- depositional contact -->
+								</swe:Category>
+							</gsmlb:classifier>
+						</gsmlb:Contact>
+					</BhML:locatedMember>
+					<BhML:location>
+						<BhML:AtLocation>
+							<BhML:atPosition>
+								<!-- this is not the right encoding for a union -->
+								<BhML:MeasureOrEvent>
+									<BhML:distanceAlong uom="http://qudt.org/vocab/unit/M">10</BhML:distanceAlong>
+								</BhML:MeasureOrEvent>
+							</BhML:atPosition>
+						</BhML:AtLocation>
+					</BhML:location>
+				</BhML:BoreholeEvent>
+			</BhML:collectionMember>
+			<BhML:collectionMember>
+				<BhML:BoreholeEvent gml:id="qu7">
+					<BhML:locatedMember>
+						<gsmlb:Contact gml:id="c7">
+							<gml:name>Sedimentary contact</gml:name>
+							<gsmlb:classifier>
+								<swe:Category>
+									<swe:identifier>http://resource.geosciml.org/classifier/cgi/contacttype/depositional_contact</swe:identifier>
+									<!-- depositional contact -->
+								</swe:Category>
+							</gsmlb:classifier>
+						</gsmlb:Contact>
+					</BhML:locatedMember>
+					<BhML:location>
+						<BhML:AtLocation>
+							<BhML:atPosition>
+								<!-- this is not the right encoding for a union -->
+								<BhML:MeasureOrEvent>
+									<BhML:distanceAlong uom="http://qudt.org/vocab/unit/M">11.1</BhML:distanceAlong>
+								</BhML:MeasureOrEvent>
+							</BhML:atPosition>
+						</BhML:AtLocation>
+					</BhML:location>
+				</BhML:BoreholeEvent>
+			</BhML:collectionMember>
+			<BhML:collectionMember>
+				<BhML:BoreholeEvent gml:id="qu8">
+					<BhML:locatedMember>
+						<gsmlb:Contact gml:id="c8">
+							<gml:name>Sedimentary contact</gml:name>
+							<gsmlb:classifier>
+								<swe:Category>
+									<swe:identifier>http://resource.geosciml.org/classifier/cgi/contacttype/disconformable_contact</swe:identifier>
+									<!-- Disconformable contact -->
+								</swe:Category>
+							</gsmlb:classifier>
+						</gsmlb:Contact>
+					</BhML:locatedMember>
+					<BhML:location>
+						<BhML:AtLocation>
+							<BhML:atPosition>
+								<!-- this is not the right encoding for a union -->
+								<BhML:MeasureOrEvent>
+									<BhML:distanceAlong uom="http://qudt.org/vocab/unit/M">13.3</BhML:distanceAlong>
+								</BhML:MeasureOrEvent>
+							</BhML:atPosition>
+						</BhML:AtLocation>
+					</BhML:location>
+				</BhML:BoreholeEvent>
+			</BhML:collectionMember>
+			<BhML:collectionMember>
+				<BhML:BoreholeEvent gml:id="qr9">
+					<BhML:locatedMember>
+						<gsmlb:Contact gml:id="c9">
+							<gml:name>Sedimentary contact with bedrock</gml:name>
+							<gsmlb:classifier>
+								<swe:Category>
+									<swe:identifier>http://resource.geosciml.org/classifier/cgi/contacttype/nonconformable_contact</swe:identifier>
+									<!-- Nonconformable contact -->
+								</swe:Category>
+							</gsmlb:classifier>
+						</gsmlb:Contact>
+					</BhML:locatedMember>
+					<BhML:location>
+						<BhML:AtLocation>
+							<BhML:atPosition>
+								<!-- this is not the right encoding for a union -->
+								<BhML:MeasureOrEvent>
+									<BhML:distanceAlong uom="http://qudt.org/vocab/unit/M">16.5</BhML:distanceAlong>
+								</BhML:MeasureOrEvent>
+							</BhML:atPosition>
+						</BhML:AtLocation>
+					</BhML:location>
+				</BhML:BoreholeEvent>
+			</BhML:collectionMember>
+			<BhML:collectionMember>
+				<BhML:BoreholeEvent gml:id="rc10">
+					<BhML:locatedMember>
+						<gsmlb:Contact gml:id="c10">
+							<gml:name>Faulted contact</gml:name>
+							<gsmlb:classifier>
+								<swe:Category>
+									<swe:identifier>http://resource.geosciml.org/classifier/cgi/contacttype/faulted_contact</swe:identifier>
+									<!-- Faulted contact -->
+								</swe:Category>
+							</gsmlb:classifier>
+						</gsmlb:Contact>
+					</BhML:locatedMember>
+					<BhML:location>
+						<BhML:AtLocation>
+							<BhML:atPosition>
+								<!-- this is not the right encoding for a union -->
+								<BhML:MeasureOrEvent>
+									<BhML:distanceAlong uom="http://qudt.org/vocab/unit/M">17.7</BhML:distanceAlong>
+								</BhML:MeasureOrEvent>
+							</BhML:atPosition>
+						</BhML:AtLocation>
+					</BhML:location>
+				</BhML:BoreholeEvent>
+			</BhML:collectionMember>
+			<BhML:collectionMember>
+				<BhML:BoreholeEvent gml:id="bs11">
+					<BhML:locatedMember xlink:href="http://resource.bhml/org/classifier/boreholeFeatures/bottom"/>
+					<BhML:location>
+						<BhML:AtLocation>
+							<BhML:atPosition>
+								<!-- this is not the right encoding for a union -->
+								<BhML:MeasureOrEvent>
+									<BhML:distanceAlong uom="http://qudt.org/vocab/unit/M">18.8</BhML:distanceAlong>
+								</BhML:MeasureOrEvent>
+							</BhML:atPosition>
+						</BhML:AtLocation>
+					</BhML:location>
+				</BhML:BoreholeEvent>
+			</BhML:collectionMember>
+		</BhML:BoreholeEventCollection>
+	</BhML:collection>
+	
+	<!---
+|
+|  ################################ LITHO ###############################
+|
+-->
+	<BhML:collection>
+		<BhML:BoreholeEventCollection gml:id="litho1">
+			<gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616">https://geoconnex.ca/id/log/unbounded.1.contacts</gml:identifier>
+			<gml:name codeSpace="urn:gin">demo.litho</gml:name>
+			<BhML:collectionLRS xlink:href="#LRS1"/>
+			<!-- same referent as the contact referent, which makes sense -->
+			<BhML:collectionMember>
+				<BhML:BoreholeEvent gml:id="l1">
+					<BhML:locatedMember>
+						<gsmlb:GeologicUnit gml:id="geol.litho.1">
+							<gml:description>Organic, Peat</gml:description>
+							<gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616">https://geoconnex.ca/geologicUnit/well.demo.l1</gml:identifier>
+							<gml:name>Peat</gml:name>
+							<gsmlb:composition>
+								<gsmlb:CompositionPart>
+									<gsmlb:role xlink:title="unspecified part role" xlink:href="http://inspire.ec.europa.eu/codelist/CompositionPartRoleValue/unspecifiedPartRole"/>
+									<gsmlb:material>
+										<gsmlb:RockMaterial gml:id="rock.1">
+											<gsmlb:lithology xlink:href="http://resource.geosciml.org/classifier/cgi/lithology/0185" xlink:title="Peat"/>
+										</gsmlb:RockMaterial>
+									</gsmlb:material>
+									<gsmlb:proportion>
+										<gsmlb:GSML_QuantityRange>
+											<swe:uom code="%" xlink:href="http://unitsofmeasure/ucum.html#para-29" xlink:title="percent"/>
+											<swe:value>90 100</swe:value>
+											<gsmlb:lowerValue>90.0</gsmlb:lowerValue>
+											<gsmlb:upperValue>100.0</gsmlb:upperValue>
+										</gsmlb:GSML_QuantityRange>
+									</gsmlb:proportion>
+								</gsmlb:CompositionPart>
+							</gsmlb:composition>
+						</gsmlb:GeologicUnit>
+					</BhML:locatedMember>
+					<BhML:location>
+						<BhML:FromToLocation>
+							<BhML:fromPosition>
+								<BhML:MeasureOrEvent>
+									<BhML:boreholeEvent xlink:href="#sm0"/>
+								</BhML:MeasureOrEvent>
+							</BhML:fromPosition>
+							<BhML:toPosition>
+								<BhML:MeasureOrEvent>
+									<BhML:boreholeEvent xlink:href="#qu1"/>
+								</BhML:MeasureOrEvent>
+							</BhML:toPosition>
+						</BhML:FromToLocation>
+					</BhML:location>
+				</BhML:BoreholeEvent>
+			</BhML:collectionMember>
+			<BhML:collectionMember>
+				<BhML:BoreholeEvent gml:id="l2">
+					<BhML:locatedMember>
+						<gsmlb:GeologicUnit gml:id="geol.litho.2">
+							<gml:description>Fine Sand</gml:description>
+							<gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616">https://geoconnex.ca/geologicUnit/well.demo.l2</gml:identifier>
+							<gml:name>Fine Sand</gml:name>
+							<gsmlb:composition>
+								<gsmlb:CompositionPart>
+									<gsmlb:role xlink:title="unspecified part role" xlink:href="http://inspire.ec.europa.eu/codelist/CompositionPartRoleValue/unspecifiedPartRole"/>
+									<gsmlb:material>
+										<gsmlb:RockMaterial gml:id="rock.2">
+											<gsmlb:lithology xlink:href="http://resource.geosciml.org/classifier/cgi/lithology/0228" xlink:title="Sand"/>
+										</gsmlb:RockMaterial>
+									</gsmlb:material>
+								</gsmlb:CompositionPart>
+							</gsmlb:composition>
+						</gsmlb:GeologicUnit>
+					</BhML:locatedMember>
+					<BhML:location>
+						<BhML:FromToLocation>
+							<BhML:fromPosition>
+								<BhML:MeasureOrEvent>
+									<BhML:boreholeEvent xlink:href="#qu1"/>
+								</BhML:MeasureOrEvent>
+							</BhML:fromPosition>
+							<BhML:toPosition>
+								<BhML:MeasureOrEvent>
+									<BhML:boreholeEvent xlink:href="#qu5"/>
+								</BhML:MeasureOrEvent>
+							</BhML:toPosition>
+						</BhML:FromToLocation>
+					</BhML:location>
+				</BhML:BoreholeEvent>
+			</BhML:collectionMember>
+			<BhML:collectionMember>
+				<BhML:BoreholeEvent gml:id="l3">
+					<BhML:locatedMember>
+						<gsmlb:GeologicUnit gml:id="geol.litho.3">
+							<gml:description>Fine Sand</gml:description>
+							<gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616">https://geoconnex.ca/geologicUnit/well.demo.l3</gml:identifier>
+							<gml:name>Coarse Sand</gml:name>
+							<gsmlb:composition>
+								<gsmlb:CompositionPart>
+									<gsmlb:role xlink:title="unspecified part role" xlink:href="http://inspire.ec.europa.eu/codelist/CompositionPartRoleValue/unspecifiedPartRole"/>
+									<gsmlb:material>
+										<gsmlb:RockMaterial gml:id="rock.3">
+											<gsmlb:lithology xlink:href="http://resource.geosciml.org/classifier/cgi/lithology/0228" xlink:title="Sand"/>
+										</gsmlb:RockMaterial>
+									</gsmlb:material>
+								</gsmlb:CompositionPart>
+							</gsmlb:composition>
+						</gsmlb:GeologicUnit>
+					</BhML:locatedMember>
+					<BhML:location>
+						<BhML:FromToLocation>
+							<BhML:fromPosition>
+								<BhML:MeasureOrEvent>
+									<BhML:boreholeEvent xlink:href="#qu5"/>
+								</BhML:MeasureOrEvent>
+							</BhML:fromPosition>
+							<BhML:toPosition>
+								<BhML:MeasureOrEvent>
+									<BhML:boreholeEvent xlink:href="#qu6"/>
+								</BhML:MeasureOrEvent>
+							</BhML:toPosition>
+						</BhML:FromToLocation>
+					</BhML:location>
+				</BhML:BoreholeEvent>
+			</BhML:collectionMember>
+			<BhML:collectionMember>
+				<BhML:BoreholeEvent gml:id="l4">
+					<BhML:locatedMember>
+						<gsmlb:GeologicUnit gml:id="geol.litho.4">
+							<gml:description>glaciomarine clay</gml:description>
+							<gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616">https://geoconnex.ca/geologicUnit/well.demo.l4</gml:identifier>
+							<gml:name>Clay</gml:name>
+							<gsmlb:composition>
+								<gsmlb:CompositionPart>
+									<gsmlb:role xlink:title="unspecified part role" xlink:href="http://inspire.ec.europa.eu/codelist/CompositionPartRoleValue/unspecifiedPartRole"/>
+									<gsmlb:material>
+										<gsmlb:RockMaterial gml:id="rock.4">
+											<gsmlb:lithology xlink:href="http://resource.geosciml.org/classifier/cgi/lithology/0060" xlink:title="Clay"/>
+										</gsmlb:RockMaterial>
+									</gsmlb:material>
+								</gsmlb:CompositionPart>
+							</gsmlb:composition>
+						</gsmlb:GeologicUnit>
+					</BhML:locatedMember>
+					<BhML:location>
+						<BhML:FromToLocation>
+							<BhML:fromPosition>
+								<BhML:MeasureOrEvent>
+									<BhML:boreholeEvent xlink:href="#qu6"/>
+								</BhML:MeasureOrEvent>
+							</BhML:fromPosition>
+							<BhML:toPosition>
+								<BhML:MeasureOrEvent>
+									<BhML:boreholeEvent xlink:href="#qu8"/>
+								</BhML:MeasureOrEvent>
+							</BhML:toPosition>
+						</BhML:FromToLocation>
+					</BhML:location>
+				</BhML:BoreholeEvent>
+			</BhML:collectionMember>
+			<BhML:collectionMember>
+				<BhML:BoreholeEvent gml:id="l5">
+					<BhML:locatedMember>
+						<gsmlb:GeologicUnit gml:id="geol.litho.5">
+							<gml:description>Coarse till with sand facies</gml:description>
+							<gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616">https://geoconnex.ca/geologicUnit/well.demo.l5</gml:identifier>
+							<gml:name>Till</gml:name>
+							<gsmlb:composition>
+								<gsmlb:CompositionPart>
+									<gsmlb:role xlink:title="unspecified part role" xlink:href="http://inspire.ec.europa.eu/codelist/CompositionPartRoleValue/unspecifiedPartRole"/>
+									<gsmlb:material>
+										<gsmlb:RockMaterial gml:id="rock.5">
+											<gsmlb:lithology xlink:href="http://resource.geosciml.org/classifier/cgi/lithology/0070" xlink:title="Diamicton"/>
+										</gsmlb:RockMaterial>
+									</gsmlb:material>
+								</gsmlb:CompositionPart>
+							</gsmlb:composition>
+						</gsmlb:GeologicUnit>
+					</BhML:locatedMember>
+					<BhML:location>
+						<BhML:FromToLocation>
+							<BhML:fromPosition>
+								<BhML:MeasureOrEvent>
+									<BhML:boreholeEvent xlink:href="#qu8"/>
+								</BhML:MeasureOrEvent>
+							</BhML:fromPosition>
+							<BhML:toPosition>
+								<BhML:MeasureOrEvent>
+									<BhML:boreholeEvent xlink:href="#qu9"/>
+								</BhML:MeasureOrEvent>
+							</BhML:toPosition>
+						</BhML:FromToLocation>
+					</BhML:location>
+				</BhML:BoreholeEvent>
+			</BhML:collectionMember>
+			<BhML:collectionMember>
+				<BhML:BoreholeEvent gml:id="l6">
+					<BhML:locatedMember>
+						<gsmlb:GeologicUnit gml:id="geol.litho.6">
+							<gml:description>Fractured and altered rock</gml:description>
+							<gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616">https://geoconnex.ca/geologicUnit/well.demo.l6</gml:identifier>
+							<gml:name>Granite</gml:name>
+							<gsmlb:composition>
+								<gsmlb:CompositionPart>
+									<gsmlb:role xlink:title="unspecified part role" xlink:href="http://inspire.ec.europa.eu/codelist/CompositionPartRoleValue/unspecifiedPartRole"/>
+									<gsmlb:material>
+										<gsmlb:RockMaterial gml:id="rock.6">
+											<gsmlb:lithology xlink:href="http://resource.geosciml.org/classifier/cgi/lithology/0125" xlink:title="Granite"/>
+										</gsmlb:RockMaterial>
+									</gsmlb:material>
+								</gsmlb:CompositionPart>
+							</gsmlb:composition>
+						</gsmlb:GeologicUnit>
+					</BhML:locatedMember>
+					<BhML:location>
+						<BhML:FromToLocation>
+							<BhML:fromPosition>
+								<BhML:MeasureOrEvent>
+									<BhML:boreholeEvent xlink:href="#qu9"/>
+								</BhML:MeasureOrEvent>
+							</BhML:fromPosition>
+							<BhML:toPosition>
+								<BhML:MeasureOrEvent>
+									<BhML:boreholeEvent xlink:href="#qu10"/>
+								</BhML:MeasureOrEvent>
+							</BhML:toPosition>
+						</BhML:FromToLocation>
+					</BhML:location>
+				</BhML:BoreholeEvent>
+			</BhML:collectionMember>
+			<BhML:collectionMember>
+				<BhML:BoreholeEvent gml:id="l7">
+					<BhML:locatedMember>
+						<gsmlb:GeologicUnit gml:id="geol.litho.7">
+							<gml:description>Homogenous unfractured granite</gml:description>
+							<gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616">https://geoconnex.ca/geologicUnit/well.demo.l7</gml:identifier>
+							<gml:name>Granite</gml:name>
+							<gsmlb:composition>
+								<gsmlb:CompositionPart>
+									<gsmlb:role xlink:title="unspecified part role" xlink:href="http://inspire.ec.europa.eu/codelist/CompositionPartRoleValue/unspecifiedPartRole"/>
+									<gsmlb:material>
+										<gsmlb:RockMaterial gml:id="rock.7">
+											<gsmlb:lithology xlink:href="http://resource.geosciml.org/classifier/cgi/lithology/0125" xlink:title="Granite"/>
+										</gsmlb:RockMaterial>
+									</gsmlb:material>
+								</gsmlb:CompositionPart>
+							</gsmlb:composition>
+						</gsmlb:GeologicUnit>
+					</BhML:locatedMember>
+					<BhML:location>
+						<BhML:FromToLocation>
+							<BhML:fromPosition>
+								<BhML:MeasureOrEvent>
+									<BhML:boreholeEvent xlink:href="#qu10"/>
+								</BhML:MeasureOrEvent>
+							</BhML:fromPosition>
+							<BhML:toPosition>
+								<BhML:MeasureOrEvent>
+									<BhML:boreholeEvent xlink:href="#qu11"/>
+								</BhML:MeasureOrEvent>
+							</BhML:toPosition>
+						</BhML:FromToLocation>
+					</BhML:location>
+				</BhML:BoreholeEvent>
+			</BhML:collectionMember>
+		</BhML:BoreholeEventCollection>
+	</BhML:collection>
+	<!---
+|
+|  ###################### SURFICAL GEOLOGY GSC STANDARD  ############################
+|
+-->
+	<BhML:collection>
+		<BhML:BoreholeEventCollection gml:id="surf1">
+			<gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616">https://geoconnex.ca/id/log/unbounded.1.contacts</gml:identifier>
+			<gml:name codeSpace="urn:gin">demo.surficialunit</gml:name>
+			<BhML:collectionLRS xlink:href="#LRS1"/>
+			<!-- this time, classified using GSC surficial standard units  -->
+			<BhML:collectionMember>
+				<BhML:BoreholeEvent gml:id="u1">
+					<BhML:locatedMember>
+						<gsmlb:GeologicUnit gml:id="geol.surf.1">
+							<gml:description>Organic</gml:description>
+							<gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616">https://geoconnex.ca/id/surfical/O</gml:identifier>
+							<gml:name>Peat</gml:name>
+						</gsmlb:GeologicUnit>
+					</BhML:locatedMember>
+					<BhML:location>
+						<BhML:FromToLocation>
+							<BhML:fromPosition>
+								<BhML:MeasureOrEvent>
+									<BhML:boreholeEvent xlink:href="#sm0"/>
+								</BhML:MeasureOrEvent>
+							</BhML:fromPosition>
+							<BhML:toPosition>
+								<BhML:MeasureOrEvent>
+									<BhML:boreholeEvent xlink:href="#qu1"/>
+								</BhML:MeasureOrEvent>
+							</BhML:toPosition>
+						</BhML:FromToLocation>
+					</BhML:location>
+				</BhML:BoreholeEvent>
+			</BhML:collectionMember>
+			<BhML:collectionMember>
+				<BhML:BoreholeEvent gml:id="u2">
+					<BhML:locatedMember>
+						<gsmlb:GeologicUnit gml:id="geol.surf.2">
+							<gml:description>Marine deltaique</gml:description>
+							<gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616">https://geoconnex.ca/id/surfical/Md</gml:identifier>
+							<gml:name>Md</gml:name>
+						</gsmlb:GeologicUnit>
+					</BhML:locatedMember>
+					<BhML:location>
+						<BhML:FromToLocation>
+							<BhML:fromPosition>
+								<BhML:MeasureOrEvent>
+									<BhML:boreholeEvent xlink:href="#qu1"/>
+								</BhML:MeasureOrEvent>
+							</BhML:fromPosition>
+							<BhML:toPosition>
+								<BhML:MeasureOrEvent>
+									<BhML:boreholeEvent xlink:href="#qu6"/>
+								</BhML:MeasureOrEvent>
+							</BhML:toPosition>
+						</BhML:FromToLocation>
+					</BhML:location>
+				</BhML:BoreholeEvent>
+			</BhML:collectionMember>
+			<BhML:collectionMember>
+				<BhML:BoreholeEvent gml:id="u3">
+					<BhML:locatedMember>
+						<gsmlb:GeologicUnit gml:id="geol.surf.3">
+							<gml:description>Deep water glaciomarine</gml:description>
+							<gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616">https://geoconnex.ca/id/surfical/Ma</gml:identifier>
+							<gml:name>Ma</gml:name>
+						</gsmlb:GeologicUnit>
+					</BhML:locatedMember>
+					<BhML:location>
+						<BhML:FromToLocation>
+							<BhML:fromPosition>
+								<BhML:MeasureOrEvent>
+									<BhML:boreholeEvent xlink:href="#qu6"/>
+								</BhML:MeasureOrEvent>
+							</BhML:fromPosition>
+							<BhML:toPosition>
+								<BhML:MeasureOrEvent>
+									<BhML:boreholeEvent xlink:href="#qu7"/>
+								</BhML:MeasureOrEvent>
+							</BhML:toPosition>
+						</BhML:FromToLocation>
+					</BhML:location>
+				</BhML:BoreholeEvent>
+			</BhML:collectionMember>
+			<BhML:collectionMember>
+				<BhML:BoreholeEvent gml:id="u4">
+					<BhML:locatedMember>
+						<gsmlb:GeologicUnit gml:id="geol.surf.4">
+							<gml:description>Deep water glaciomarine (deformed)</gml:description>
+							<gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616">https://geoconnex.ca/id/surfical/Ma</gml:identifier>
+							<gml:name>Ma</gml:name>
+						</gsmlb:GeologicUnit>
+					</BhML:locatedMember>
+					<BhML:location>
+						<BhML:FromToLocation>
+							<BhML:fromPosition>
+								<BhML:MeasureOrEvent>
+									<BhML:boreholeEvent xlink:href="#qu7"/>
+								</BhML:MeasureOrEvent>
+							</BhML:fromPosition>
+							<BhML:toPosition>
+								<BhML:MeasureOrEvent>
+									<BhML:boreholeEvent xlink:href="#qu9"/>
+								</BhML:MeasureOrEvent>
+							</BhML:toPosition>
+						</BhML:FromToLocation>
+					</BhML:location>
+				</BhML:BoreholeEvent>
+			</BhML:collectionMember>
+			<BhML:collectionMember>
+				<BhML:BoreholeEvent gml:id="u5">
+					<BhML:locatedMember>
+						<gsmlb:GeologicUnit gml:id="geol.surf.5">
+							<gml:description>Till blanket</gml:description>
+							<gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616">https://geoconnex.ca/id/surfical/Tb</gml:identifier>
+							<gml:name>Tb</gml:name>
+						</gsmlb:GeologicUnit>
+					</BhML:locatedMember>
+					<BhML:location>
+						<BhML:FromToLocation>
+							<BhML:fromPosition>
+								<BhML:MeasureOrEvent>
+									<BhML:boreholeEvent xlink:href="#qu9"/>
+								</BhML:MeasureOrEvent>
+							</BhML:fromPosition>
+							<BhML:toPosition>
+								<BhML:MeasureOrEvent>
+									<BhML:boreholeEvent xlink:href="#bs11"/>
+								</BhML:MeasureOrEvent>
+							</BhML:toPosition>
+						</BhML:FromToLocation>
+					</BhML:location>
+				</BhML:BoreholeEvent>
+			</BhML:collectionMember>
+			<BhML:collectionMember>
+				<BhML:BoreholeEvent gml:id="u6">
+					<BhML:locatedMember>
+						<gsmlb:GeologicUnit gml:id="geol.surf.6">
+							<gml:description>Bedrock</gml:description>
+							<gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616">https://geoconnex.ca/id/surfical/R</gml:identifier>
+							<gml:name>Bedrock</gml:name>
+						</gsmlb:GeologicUnit>
+					</BhML:locatedMember>
+					<BhML:location>
+						<BhML:FromToLocation>
+							<BhML:fromPosition>
+								<BhML:MeasureOrEvent>
+									<BhML:boreholeEvent xlink:href="#qu9"/>
+								</BhML:MeasureOrEvent>
+							</BhML:fromPosition>
+							<BhML:toPosition>
+								<BhML:MeasureOrEvent>
+									<BhML:boreholeEvent xlink:href="#qu10"/>
+								</BhML:MeasureOrEvent>
+							</BhML:toPosition>
+						</BhML:FromToLocation>
+					</BhML:location>
+				</BhML:BoreholeEvent>
+			</BhML:collectionMember>
+		</BhML:BoreholeEventCollection>
+	</BhML:collection>
+	<!---
+|
+|  ############################  HYDROGEOLOGICAL UNITS #########################
+|
+-->
+	<BhML:collection>
+		<BhML:BoreholeEventCollection gml:id="hydrogeo1">
+			<gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616">https://geoconnex.ca/id/log/unbounded.1.contacts</gml:identifier>
+			<gml:name codeSpace="urn:gin">demo.surficialunit</gml:name>
+			<BhML:collectionLRS xlink:href="#LRS1"/>
+			<!-- this time, classified using GSC surficial standard units  -->
+			<BhML:collectionMember>
+				<BhML:BoreholeEvent gml:id="gw1">
+					<BhML:locatedMember>
+						<gwml2:GW_Aquifer gml:id="hg1">
+							<gml:description>Vadose zone is everything about the static gw level</gml:description>
+						</gwml2:GW_Aquifer>
+					</BhML:locatedMember>
+					<BhML:location>
+						<BhML:FromToLocation>
+							<BhML:fromPosition>
+								<BhML:MeasureOrEvent>
+									<BhML:boreholeEvent xlink:href="#sm0"/>
+								</BhML:MeasureOrEvent>
+							</BhML:fromPosition>
+							<BhML:toPosition>
+								<BhML:MeasureOrEvent>
+									<BhML:boreholeEvent xlink:href="#ns3"/>
+								</BhML:MeasureOrEvent>
+							</BhML:toPosition>
+						</BhML:FromToLocation>
+					</BhML:location>
+				</BhML:BoreholeEvent>
+			</BhML:collectionMember>
+			<BhML:collectionMember>
+				<BhML:BoreholeEvent gml:id="gw2">
+					<BhML:locatedMember>
+						<gwml2:GW_Aquifer gml:id="hg2">
+							<gml:description>Aquifer is the saturated sands</gml:description>
+						</gwml2:GW_Aquifer>
+					</BhML:locatedMember>
+					<BhML:location>
+						<BhML:FromToLocation>
+							<BhML:fromPosition>
+								<BhML:MeasureOrEvent>
+									<BhML:boreholeEvent xlink:href="#ns3"/>
+								</BhML:MeasureOrEvent>
+							</BhML:fromPosition>
+							<BhML:toPosition>
+								<BhML:MeasureOrEvent>
+									<BhML:boreholeEvent xlink:href="#qu6"/>
+								</BhML:MeasureOrEvent>
+							</BhML:toPosition>
+						</BhML:FromToLocation>
+					</BhML:location>
+				</BhML:BoreholeEvent>
+			</BhML:collectionMember>
+			<BhML:collectionMember>
+				<BhML:BoreholeEvent gml:id="gw3">
+					<BhML:locatedMember>
+						<gwml2:GW_ConfiningBed gml:id="hg3">
+							<gml:description>All the impermeable units (till and clay)</gml:description>
+						</gwml2:GW_ConfiningBed>
+					</BhML:locatedMember>
+					<BhML:location>
+						<BhML:FromToLocation>
+							<BhML:fromPosition>
+								<BhML:MeasureOrEvent>
+									<BhML:boreholeEvent xlink:href="#qu6"/>
+								</BhML:MeasureOrEvent>
+							</BhML:fromPosition>
+							<BhML:toPosition>
+								<BhML:MeasureOrEvent>
+									<BhML:boreholeEvent xlink:href="#qu9"/>
+								</BhML:MeasureOrEvent>
+							</BhML:toPosition>
+						</BhML:FromToLocation>
+					</BhML:location>
+				</BhML:BoreholeEvent>
+			</BhML:collectionMember>
+			<BhML:collectionMember>
+				<BhML:BoreholeEvent gml:id="gw4">
+					<BhML:locatedMember>
+						<gwml2:GW_Aquifer gml:id="hg4">
+							<gml:description>undefined hydrogeounit	</gml:description>
+						</gwml2:GW_Aquifer>
+					</BhML:locatedMember>
+					<BhML:location>
+						<BhML:FromToLocation>
+							<BhML:fromPosition>
+								<BhML:MeasureOrEvent>
+									<BhML:boreholeEvent xlink:href="#qu7"/>
+								</BhML:MeasureOrEvent>
+							</BhML:fromPosition>
+							<BhML:toPosition>
+								<BhML:MeasureOrEvent>
+									<BhML:boreholeEvent xlink:href="#qu9"/>
+								</BhML:MeasureOrEvent>
+							</BhML:toPosition>
+						</BhML:FromToLocation>
+					</BhML:location>
+				</BhML:BoreholeEvent>
+			</BhML:collectionMember>
+		</BhML:BoreholeEventCollection>
+	</BhML:collection>
+	<BhML:collection>
+		<BhML:BoreholeEventCollection gml:id="samples1">
+			<gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616">https://geoconnex.ca/id/log/unbounded.1.samples</gml:identifier>
+			<gml:name codeSpace="urn:gin">demo.samples</gml:name>
+			<BhML:collectionLRS xlink:href="#LRS1"/>
+			<!-- samples are not constrained by contact, they have arbitrary positions -->
+			<BhML:collectionMember>
+				<BhML:BoreholeEvent>
+					<BhML:locatedMember>
+						<spec:SF_Specimen gml:id="spc.1">
+							<gml:description>Coarse sand sample</gml:description>
+							<gml:name>S.1</gml:name>
+							<sam:sampledFeature xsi:nil="true" nilReason="unknown"/>
+							<spec:materialClass xlink:href="http://resource.geosciml.org/classifier/cgi/lithology/0228" xlink:title="Sand"/>
+							<spec:samplingTime>
+								<gml:TimeInstant gml:id="spc.1.ts">
+									<gml:timePosition>2012-06-24</gml:timePosition>
+								</gml:TimeInstant>
+							</spec:samplingTime>
+							<spec:size uom="g">150</spec:size>
+						</spec:SF_Specimen>
+					</BhML:locatedMember>
+					<BhML:location>
+						<BhML:FromToLocation>
+							<BhML:fromPosition>
+								<BhML:MeasureOrEvent>
+									<BhML:distanceAlong uom="http://qudt.org/vocab/unit/M">6.9</BhML:distanceAlong>
+								</BhML:MeasureOrEvent>
+							</BhML:fromPosition>
+							<BhML:toPosition>
+								<BhML:MeasureOrEvent>
+									<BhML:distanceAlong uom="http://qudt.org/vocab/unit/M">9.6</BhML:distanceAlong>
+								</BhML:MeasureOrEvent>
+							</BhML:toPosition>
+						</BhML:FromToLocation>
+					</BhML:location>
+				</BhML:BoreholeEvent>
+			</BhML:collectionMember>
+			<BhML:collectionMember>
+				<BhML:BoreholeEvent>
+					<BhML:locatedMember>
+						<spec:SF_Specimen gml:id="spc.2">
+							<gml:description>clay sample</gml:description>
+							<gml:name>S.1</gml:name>
+							<sam:sampledFeature xsi:nil="true" nilReason="unknown"/>
+							<spec:materialClass xlink:href="http://resource.geosciml.org/classifier/cgi/lithology/0060" xlink:title="Clay"/>
+							<spec:samplingTime>
+								<gml:TimeInstant gml:id="spc.2.ts">
+									<gml:timePosition>2012-06-24</gml:timePosition>
+								</gml:TimeInstant>
+							</spec:samplingTime>
+							<spec:size uom="g">650</spec:size>
+						</spec:SF_Specimen>
+					</BhML:locatedMember>
+					<BhML:location>
+						<BhML:FromToLocation>
+							<BhML:fromPosition>
+								<BhML:MeasureOrEvent>
+									<BhML:distanceAlong uom="http://qudt.org/vocab/unit/M">10.3</BhML:distanceAlong>
+								</BhML:MeasureOrEvent>
+							</BhML:fromPosition>
+							<BhML:toPosition>
+								<BhML:MeasureOrEvent>
+									<BhML:distanceAlong uom="http://qudt.org/vocab/unit/M">13</BhML:distanceAlong>
+								</BhML:MeasureOrEvent>
+							</BhML:toPosition>
+						</BhML:FromToLocation>
+					</BhML:location>
+				</BhML:BoreholeEvent>
+			</BhML:collectionMember>
+		</BhML:BoreholeEventCollection>
+	</BhML:collection>
+<my:indexData>
+  <my:BoreholeDetails>
+   <my:operator>
+    <cit:CI_Responsibility>
+     <cit:role>
+      <cit:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml" codeListValue="owner"/>
+     </cit:role>
+     <cit:party>
+      <cit:CI_Organisation>
+       <cit:name>
+        <gco:CharacterString>Natural Resources Canada</gco:CharacterString>
+       </cit:name>
+      </cit:CI_Organisation>
+     </cit:party>
+    </cit:CI_Responsibility>
+   </my:operator>
+   <my:driller>
+    <cit:CI_Responsibility>
+     <cit:role>
+      <cit:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml" codeListValue="pointOfContact"/>
+     </cit:role>
+     <cit:party>
+      <cit:CI_Organisation>
+       <cit:name>
+        <gco:CharacterString>Geological Survey of Canada</gco:CharacterString>
+       </cit:name>
+      </cit:CI_Organisation>
+     </cit:party>
+    </cit:CI_Responsibility>
+   </my:driller>
+   <my:dateOfDrilling>
+    <gml:TimePeriod gml:id="drilldates-01">
+     <gml:begin>
+      <gml:TimeInstant gml:id="drilldates_begin-01">
+       <gml:timePosition>1999-08-01</gml:timePosition>
+      </gml:TimeInstant>
+     </gml:begin>
+     <gml:end>
+      <gml:TimeInstant gml:id="drilldates_end-01">
+       <gml:timePosition>1999-08-01</gml:timePosition>
+      </gml:TimeInstant>
+     </gml:end>
+    </gml:TimePeriod>
+   </my:dateOfDrilling>
+   <my:inclinationType xlink:href="http://gin.geosciences.ca/def/inclinationtype/vertical" xlink:title="vertical"/>
+   <my:boreholeMaterialCustodian>
+    <cit:CI_Responsibility>
+     <cit:role>
+      <cit:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml" codeListValue="pointOfContact"/>
+     </cit:role>
+     <cit:party>
+      <cit:CI_Organisation>
+       <cit:name>
+        <gco:CharacterString>Geological Survey of Canada</gco:CharacterString>
+       </cit:name>
+      </cit:CI_Organisation>
+     </cit:party>
+    </cit:CI_Responsibility>
+   </my:boreholeMaterialCustodian>
+   <my:purpose xlink:href="http://gin.geosciences.ca/def/purpose" xlink:title="groundwater monitoring"/>
+   <my:dataCustodian>
+    <cit:CI_Responsibility>
+     <cit:role>
+      <cit:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml" codeListValue="pointOfContact"/>
+     </cit:role>
+     <cit:party>
+      <cit:CI_Organisation>
+       <cit:name>
+        <gco:CharacterString>Geological Survey of Canada</gco:CharacterString>
+       </cit:name>
+      </cit:CI_Organisation>
+     </cit:party>
+    </cit:CI_Responsibility>
+   </my:dataCustodian>
+  </my:BoreholeDetails>
+ </my:indexData>
+</my:Borehole>
