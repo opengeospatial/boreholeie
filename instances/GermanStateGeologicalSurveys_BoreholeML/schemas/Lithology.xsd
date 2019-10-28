@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:bml="http://www.gfz-potsdam.de/boreholeml/4.2" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gn="urn:x-inspire:specification:gmlas:GeographicalNames:3.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" targetNamespace="http://www.gfz-potsdam.de/boreholeml/4.2" elementFormDefault="qualified" attributeFormDefault="unqualified" version="4.1.0" vc:minVersion="1.1">
+	<!-- ########################################################   imports   #################################################################################### -->
+	<xs:import namespace="urn:x-inspire:specification:gmlas:GeographicalNames:3.0" schemaLocation="../bml3.0.1/GeographicalNames.xsd"/>
+	<xs:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="../gml/3.2.1/gml.xsd"/>
+	<xs:import namespace="http://www.isotc211.org/2005/gmd" schemaLocation="../iso/19139/20070417/gmd/gmd.xsd"/>
+	<!-- ########################################################   includes   #################################################################################### -->
+	<xs:include schemaLocation="GeologicalClassification.xsd"/>
+	<!--
+	<xs:element name="lithology" type="bml:LithologyPropertyType" substitutionGroup="gml:AbstractObject" nillable="true">
+		<xs:annotation>
+			<xs:documentation>[de] Die Merkmale von bis zu neun verschiedenen, einer Schicht zugeordneten Gesteinstypen.[en] The characteristics of up to nine different rock types assigned to the interval.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	-->
+	<xs:element name="petrography" type="bml:PetrographyPropertyType" substitutionGroup="gml:AbstractObject" nillable="true">
+		<xs:annotation>
+			<xs:documentation>[de] Die Merkmale von bis zu neun verschiedenen, einer Schicht zugeordneten Gesteinstypen.[en] The characteristics of up to nine different rock types assigned to the interval.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<!-- #################################################         Petrology        ##################################################################################### -->
+	<!-- ##################################################################################################################################################### -->
+	<xs:element name="Petrology" type="bml:PetrologyType" substitutionGroup="gml:AbstractObject"/>
+	<xs:complexType name="PetrologyType"/>
+	<!-- #################################################         Lithology        ##################################################################################### -->
+	<!-- ##################################################################################################################################################### -->
+	<xs:element name="Lithology" type="bml:LithologyType" substitutionGroup="gml:AbstractObject">
+		<xs:annotation>
+			<xs:documentation>[de] Die Merkmale von bis zu neun verschiedenen, einer Schicht zugeordneten Gesteinstypen.[en] The characteristics of up to nine different rock types assigned to the interval.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	
+	<xs:complexType name="LithologyType">
+		<xs:sequence>
+			<xs:element name="rockName" type="gml:CodeType">
+				<xs:annotation>
+					<xs:documentation>[de] Name des Gesteins. Kann auch Haupt- und Nebenbestandteil umfassen.[en] Lithology. It could also comprise main constituent and secondary constituent.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="percentage" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>[de] Prozentualer Anteil des Gesteins.[en] Percentage of the specified rock type.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="xs:double">
+							<xs:attribute name="nilReason" type="gml:NilReasonType"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="percentageFrom" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>[de] Untergrenze des prozentualen Anteils des Gesteins.[en] Lower limit of the percentage of the specified rock type.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="xs:double">
+							<xs:attribute name="nilReason" type="gml:NilReasonType"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="percentageTo" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>[de] Obergrenze des prozentualen Anteils des Gesteins.[en] Lower limit of the percentage of the specified rock type.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="xs:double">
+							<xs:attribute name="nilReason" type="gml:NilReasonType"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="rockColor" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>[de] Farbton und Helligkeit des Gesteintyps.[en] Color and brightness of a rock type.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="gml:CodeType">
+							<xs:attribute name="nilReason" type="gml:NilReasonType"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="rockColorMixture" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>[de] Verteilung der Farbe innerhalb des Gesteintyps.[en] Type of color distribution in he specified rock type.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="gml:CodeType">
+							<xs:attribute name="nilReason" type="gml:NilReasonType"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="nilReason" type="gml:NilReasonType"/>
+	</xs:complexType>
+	<xs:complexType name="PetrographyPropertyType">
+		<xs:choice maxOccurs="unbounded">
+			<xs:element ref="bml:Lithology" minOccurs="0"/>
+			<xs:element ref="bml:Petrology" minOccurs="0"/>
+		</xs:choice>
+		<xs:attribute name="nilReason" type="gml:NilReasonType"/>
+	</xs:complexType>
+	<xs:element name="Origin" type="bml:OriginType" substitutionGroup="gml:AbstractObject">
+		<xs:annotation>
+			<xs:documentation>[de] Angaben zu den (Original)-Koordinaten des Bohransatzpunktes in der Quelldatenbank.[en] Original coordinates of the borehole location from source data (drill start point).</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="OriginType">
+		<xs:sequence>
+			<xs:element name="originalLocation" type="gml:DirectPositionType">
+				<xs:annotation>
+					<xs:documentation>[de] Angaben zu den (Original)-Koordinaten des Bohransatzpunktes in der Quelldatenbank.[en] Original coordinates of the borehole location from source data (drill start point).</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="locationMethod" nillable="true">
+				<xs:annotation>
+					<xs:documentation>[de] Art der Koordinatenermittlung.[en] Determination method of location.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="gml:CodeType">
+							<xs:attribute name="nilReason" type="gml:NilReasonType"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="elevation" type="gml:DirectPositionType">
+				<xs:annotation>
+					<xs:documentation>[de] Höhe des Bohrungsansatzpunktes im verwendeten Höhenreferenzsystem.[en] Level of drilling point according to the applied elevation reference system.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="levelMethod" nillable="true">
+				<xs:annotation>
+					<xs:documentation>[de] Art der Höhenermittlung.[en] Determination method of height level.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="gml:CodeType">
+							<xs:attribute name="nilReason" type="gml:NilReasonType"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="OriginPropertyType">
+		<xs:sequence>
+			<xs:element ref="bml:Origin"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- ############################################################################################################################################ -->
+	<!-- #################################################         Lithology        ########################################################################## -->
+</xs:schema>

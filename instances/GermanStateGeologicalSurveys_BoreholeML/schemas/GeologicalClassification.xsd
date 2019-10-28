@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:bml="http://www.gfz-potsdam.de/boreholeml/4.2" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gn="urn:x-inspire:specification:gmlas:GeographicalNames:3.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" targetNamespace="http://www.gfz-potsdam.de/boreholeml/4.2" elementFormDefault="qualified" attributeFormDefault="unqualified" version="4.1.0" vc:minVersion="1.1">
+	<xs:import namespace="urn:x-inspire:specification:gmlas:GeographicalNames:3.0" schemaLocation="../bml3.0.1/GeographicalNames.xsd"/>
+	<xs:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="../gml/3.2.1/gml.xsd"/>
+	<xs:import namespace="http://www.isotc211.org/2005/gmd" schemaLocation="../iso/19139/20070417/gmd/gmd.xsd"/>
+	<xs:element name="intervalType">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">By using this attribute it is possible to distinguish between intervals consisting of a single rock type, intervals with intercalated rock types or intervals with mixed rock types due to mixing by the drilling process.</xs:documentation>
+			<xs:documentation xml:lang="de">Angabe, ob sich die Schicht aus einem Gesteinstyp (Einzelschicht) oder aus einer nicht weiter aufgelösten Wechsellagerung verschiedener Gesteinstypen (Gesteinswechsel) besteht bzw. ob die Schicht bedingt durch die Art der Probenahme mehrere Gesteinstypen (Mischprobe) enthält.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="gml:CodeType">
+					<xs:attribute name="nilReason" type="gml:NilReasonType"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="rockCode" nillable="true">
+		<xs:annotation>
+			<xs:documentation>[de] Lithologiekodierung der Schicht nach länderspezifischem Standard. Die Kodierung wird ohne Änderungen aus der Quelldatenbank übernommen.
+
+[en] Original rock code of the interval, directly taken from the source database.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="nilReason" type="gml:NilReasonType"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="rockNameText" type="gmd:LocalisedCharacterString_PropertyType" nillable="true">
+		<xs:annotation>
+			<xs:documentation>[de] Prägnante, klartextliche Gesteinsbezeichnung für die gesamte Schicht oder Komponente entsprechend der Information aus der Quelldatenbank.
+
+[en] Identifying textual description of the intervals rock types according to the information in the source database.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="genesis" nillable="true">
+		<xs:annotation>
+			<xs:documentation>[de] Genese der Schicht.
+
+[en] Genesis of the stratigraphic horizon.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="gml:CodeType">
+					<xs:attribute name="nilReason" type="gml:NilReasonType"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="geoGenesis" nillable="true">
+		<xs:annotation>
+			<xs:documentation>[de] Petrogenetische Bezeichnung der Schicht.
+
+[en] Petrogenesis of the layer.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="gml:CodeType">
+					<xs:attribute name="nilReason" type="gml:NilReasonType"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="carbonateContent" nillable="true">
+		<xs:annotation>
+			<xs:documentation>[de] Stärke und Art des Karbonatgehalts der Schicht.
+
+[en] Amount and type of carbonate content of the layer.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="gml:CodeType">
+					<xs:attribute name="nilReason" type="gml:NilReasonType"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="waterContent" nillable="true">
+		<xs:annotation>
+			<xs:documentation>[de] Feuchtezustand der Schicht.
+
+[en] Water content of the layer.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="gml:CodeType">
+					<xs:attribute name="nilReason" type="gml:NilReasonType"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="consistency" nillable="true">
+		<xs:annotation>
+			<xs:documentation>[de] Zustandsform bindiger Lockergesteine in der Schicht.
+
+[en] Consistency of incohesive unconsolidated sediments in the layer.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="gml:CodeType">
+					<xs:attribute name="nilReason" type="gml:NilReasonType"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="compactness" nillable="true">
+		<xs:annotation>
+			<xs:documentation>[de] Lagerungsdichte rolliger Lockergesteine in der Schicht.
+
+[en] Bulk density of incohesive unconsolidated sedimens in the layer.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="gml:CodeType">
+					<xs:attribute name="nilReason" type="gml:NilReasonType"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

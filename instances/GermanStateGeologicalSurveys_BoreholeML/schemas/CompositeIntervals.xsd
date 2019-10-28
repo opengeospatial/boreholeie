@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Mit XMLSpy v2019 rel. 3 sp1 (x64) (http://www.altova.com) von Rainer Haener (Helmholtz-Zentrum Potsdam) bearbeitet -->
+<xs:schema xmlns:bml="http://www.gfz-potsdam.de/boreholeml/4.2" xmlns:BhML="https://raw.githubusercontent.com/opengeospatial/boreholeie/master/schemas" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gn="urn:x-inspire:specification:gmlas:GeographicalNames:3.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" targetNamespace="http://www.gfz-potsdam.de/boreholeml/4.2" elementFormDefault="qualified" attributeFormDefault="unqualified" version="4.1.0" vc:minVersion="1.1">
+	<!-- ##############################################   imports   #################################################################################### -->
+	<xs:import namespace="urn:x-inspire:specification:gmlas:GeographicalNames:3.0" schemaLocation="../bml3.0.1/GeographicalNames.xsd"/>
+	<xs:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="../gml/3.2.1/gml.xsd"/>
+	<xs:import namespace="http://www.isotc211.org/2005/gmd" schemaLocation="../iso/19139/20070417/gmd/gmd.xsd"/>
+	<xs:import namespace="https://raw.githubusercontent.com/opengeospatial/boreholeie/master/schemas" schemaLocation="./BhML-Core-0.3.xsd"/>
+	<!-- ##############################################   includes   #################################################################################### -->
+	<xs:include schemaLocation="Lithology.xsd"/>
+	<xs:include schemaLocation="GeologicalClassification.xsd"/>
+	<xs:include schemaLocation="DepthInterval.xsd"/>
+	<!--	
+	<xs:include schemaLocation="LithostratigraphicUnits.xsd"/>
+-->
+	<!-- ############################################################################################################################################ -->
+	<!--	layer is locally defined because of its context-dependent implementation (Interval and AbstractUnit)
+	<xs:element name="layer" type="bml:LayersType" nillable="true">
+		<xs:annotation>
+			<xs:documentation xml:lang="de"> Der abstrakte Datentyp dient der Vererbung allgemeiner Schichtdaten an Haupt- und Teilschichten</xs:documentation>
+			<xs:documentation xml:lang="en">The abstract data type serves the inheritance of general interval data to main layer and sub layers</xs:documentation>
+			<xs:documentation xml:lang="en">layer is the property (container) implementation of GML, which contains the manifestaion of a geological unit, Component and Interval in this case</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+-->
+	<!-- ############################################################################################################################################ -->
+	<!--	rhaener 2019-07-10: notice the difference between LayersType and LayerType -->
+	<xs:complexType name="LayersType">
+		<xs:annotation>
+			<xs:documentation/>
+		</xs:annotation>
+		<xs:choice minOccurs="0">
+			<xs:element ref="bml:Interval" maxOccurs="unbounded"/>
+			<xs:element ref="bml:Component" maxOccurs="unbounded"/>
+		</xs:choice>
+	</xs:complexType>
+	<!--############################################################################################################################################ -->
+	<!-- ############################################################# the composite's interface ######################################################## -->
+	<!-- ####################################################### don't mistake the geological component with the composite component ##################### -->
+	<xs:complexType name="AbstractComponentType" abstract="true"/>
+	<!-- ############################################################################################################################################ -->
+	<!--
+					<xs:choice minOccurs="1" maxOccurs="unbounded">
+-->
+	<xs:group name="RockComponentsGroup">
+		<xs:sequence>
+			<xs:element ref="bml:rockCode" minOccurs="0"/>
+			<xs:element ref="bml:rockNameText" minOccurs="0"/>
+			<xs:element ref="bml:intervalType" minOccurs="0"/>
+			<xs:element ref="bml:genesis" minOccurs="0"/>
+			<xs:element ref="bml:geoGenesis" minOccurs="0"/>
+			<xs:element ref="bml:carbonateContent" minOccurs="0"/>
+			<xs:element ref="bml:waterContent" minOccurs="0"/>
+			<xs:element ref="bml:consistency" minOccurs="0"/>
+			<xs:element ref="bml:compactness" minOccurs="0"/>
+			<!-- replace by petrography
+					<xs:element ref="bml:lithology" maxOccurs="9"/>
+					-->
+			<!-- 9 temporarily -->
+			<xs:element ref="bml:petrography" maxOccurs="9"/>
+			<xs:element ref="bml:stratigraphy"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:complexType name="RockComponentsType">
+		<xs:complexContent>
+			<xs:extension base="bml:AbstractComponentType">
+				<xs:group ref="bml:RockComponentsGroup"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- ####################################### rock classification, substitutes locatedMember ################################################################### -->
+	<xs:complexType name="LocatedRockClassificationMemberType">
+		<xs:complexContent>
+			<xs:extension base="BhML:AbstractLocatedMemberType">
+				<xs:group ref="bml:RockComponentsGroup"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- ####################################### rock classification, substitutes locatedMember ################################################################### -->
+	<xs:element name="locatedRockClassificationMember" type="bml:LocatedRockClassificationMemberType" substitutionGroup="BhML:locatedMember"/>
+	<!-- ####################################### rock classification event, substitutes BoreholeEvent ################################################################ -->
+	<xs:element name="RockClassificationEvent" type="bml:RockClassificationEventType" substitutionGroup="BhML:BoreholeEvent"/>
+	<!-- ####################################### rock classification event, substitutes BoreholeEvent ################################################################ -->
+	<!-- ####################################### Rock ClassificationEvent Event, Type restricts BoreholeEventType with locatedRockClassificationMember ########################## -->
+	<xs:complexType name="RockClassificationEventType">
+		<xs:complexContent>
+			<xs:restriction base="BhML:BoreholeEventType">
+				<xs:sequence>
+					<xs:element ref="bml:locatedRockClassificationMember"/>
+					<xs:element ref="BhML:location"/>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- ####################################### for compatibility with ComponentType (from, to) ################################################################### -->
+	<xs:complexType name="ComponentType">
+		<xs:complexContent>
+			<xs:extension base="bml:AbstractComponentType">
+				<xs:sequence>
+					<xs:element ref="bml:from"/>
+					<xs:element ref="bml:to"/>
+					<xs:group ref="bml:RockComponentsGroup"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- ############################################################################################################################################ -->
+	<xs:complexType name="AbstractCompositeIntervalType" abstract="true">
+		<xs:complexContent>
+			<xs:extension base="bml:ComponentType"/>
+			<!--	 rhaener 2019-04-25: has to be present in component type, which now however does not differ from Interval, except that from and to may be nil
+				<xs:sequence>
+					<xs:element ref="bml:from"/>
+					<xs:element ref="bml:to"/>
+				</xs:sequence>
+			-->
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- ################################################# the geological Interval (compositeNode) ############################################################# -->
+	<!-- ############################################################################################################################################ -->
+	<xs:complexType name="IntervalType">
+		<xs:complexContent>
+			<xs:extension base="bml:ComponentType">
+				<xs:sequence>
+					<!-- for compatibility with 3.0 unbounded				
+					<xs:element ref="bml:layer" minOccurs="0" maxOccurs="1"/>
+					<xs:element ref="bml:layer" minOccurs="0" maxOccurs="unbounded"/>
+					-->
+					<xs:element name="layer" type="bml:LayersType" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+			<!--		
+			<xs:extension base="bml:AbstractCompositeIntervalType">
+			-->
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- ############################## the interface ################################################################################################# -->
+	<xs:element name="compositeNode" type="bml:AbstractComponentType" abstract="true"/>
+	<!-- ############################################################################################################################################ -->
+	<!-- ############################ Manifestation (Class) of lithostratigraphic units, layer (Property)  ##################################################### -->
+	<xs:element name="Interval" type="bml:IntervalType" substitutionGroup="bml:compositeNode"/>
+	<!-- ############################################################################################################################################ -->
+	<!-- ############################ the geological component (leaf) ################################################################################### -->
+	<xs:element name="Component" type="bml:ComponentType" substitutionGroup="bml:compositeNode"/>
+	<xs:element name="RockComponents" type="bml:RockComponentsType" substitutionGroup="bml:compositeNode"/>
+	<!-- ############################################################################################################################################ -->
+	<!-- ############################################################################################################################################ -->
+	<!-- #############################################         StratigraphyProperty        ##################################################################### -->
+	<!-- ############################################################################################################################################ -->
+	<xs:complexType name="StratigraphyPropertyType">
+		<xs:sequence>
+			<xs:element ref="bml:ChronoStratigraphy" minOccurs="0"/>
+			<xs:element ref="bml:LithoStratigraphy" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="stratigraphy" type="bml:StratigraphyPropertyType" substitutionGroup="gml:AbstractObject" nillable="true"/>
+	<!-- ############################################################################################################################################ -->
+	<xs:complexType name="ChronoStratigraphyType">
+		<xs:simpleContent>
+			<xs:extension base="gml:CodeType">
+				<xs:attribute name="nilReason" type="gml:NilReasonType"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:element name="ChronoStratigraphy" type="bml:ChronoStratigraphyType" substitutionGroup="gml:AbstractObject"/>
+	<!-- ############################################################################################################################################ -->
+	<xs:complexType name="LithoStratigraphyType">
+		<xs:complexContent>
+			<xs:extension base="gmd:LocalisedCharacterString_PropertyType"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="LithoStratigraphy" type="bml:LithoStratigraphyType" substitutionGroup="gml:AbstractObject"/>
+	<!-- ############################################################################################################################################ -->
+	<!-- #############################################         StratigraphyProperty        ##################################################################### -->
+	<!-- ############################################################################################################################################ -->
+	<!-- ################################################# the (technical) Segment (compositeNode) ##################################################### -->
+	<xs:element name="segments" type="bml:SegmentsType"/>
+	<!-- ############################################################################################################################################ -->
+	<xs:complexType name="SegmentsType">
+		<xs:choice>
+			<xs:element ref="bml:Segment" maxOccurs="unbounded"/>
+		</xs:choice>
+	</xs:complexType>
+	<!-- ############################################################################################################################################ -->
+	<xs:complexType name="SegmentType">
+		<xs:complexContent>
+			<xs:extension base="bml:AbstractCompositeIntervalType">
+				<xs:sequence>
+					<xs:element ref="bml:segments" minOccurs="0" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- ############################################################################################################################################ -->
+	<xs:element name="Segment" type="bml:SegmentType" substitutionGroup="bml:compositeNode"/>
+</xs:schema>
