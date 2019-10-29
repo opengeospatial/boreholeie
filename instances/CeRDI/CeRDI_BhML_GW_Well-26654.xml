@@ -1,0 +1,1010 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This is an annotated example handcrafted by B. Simons 25/09/2019 based on NRCan, BRGM and GSGS examples at https://github.com/opengeospatial/boreholeie/tree/master/instances 
+It compares the Federation University (CeRDI) GroundWaterML2 WFS GML (GWML2) response with various BoreholeIE BhML encodings.
+The GWML2 WFS response is at: https://id.cerdi.edu.au/gwml2/feature/well/26654
+This example contains encodings for :
+	- a reference elevation (gwWellReferenceElevation)
+	- three different encodings of lithology (driller logs):
+		- defining the geological contact reference points (gsmlb:Contact) and specifying the lithologies (gsmlb:GeologicUnit) between them (only a few values included because of verbose encoding);
+		- describing a /gwml2w:GW_GeologyLogCoverage (only a few values included because of verbose encoding) and the location of its start and end 
+		- a compact swe data array encoding (all 16 lithology values are included)
+-->
+<BhML:Borehole gml:id="feduni.well.26654" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sam="http://www.opengis.net/sampling/2.0" xmlns:sams="http://www.opengis.net/samplingSpatial/2.0" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gwml2w="http://www.opengis.net/gwml-well/2.2" xmlns:gwml2wc="http://www.opengis.net/gwml-wellconstruction/2.2" xmlns:gsmlb="http://www.opengis.net/gsml/4.1/GeoSciML-Basic" xmlns:om="http://www.opengis.net/om/2.0" xmlns:BhML="https://raw.githubusercontent.com/opengeospatial/boreholeie/master/schemas" xsi:schemaLocation="https://raw.githubusercontent.com/opengeospatial/boreholeie/master/schemas https://raw.githubusercontent.com/opengeospatial/boreholeie/master/schemas/BhML-Core.xsd
+http://www.opengis.net/gsml/4.1/GeoSciML-Basic http://schemas.opengis.net/gsml/4.1/geoSciMLBasic.xsd
+http://www.opengis.net/gwml-well/2.2 http://ngwd-bdnes.cits.nrcan.gc.ca/service/gwml/schemas/2.2/gwml2-well.xsd 
+http://www.opengis.net/samplingSpecimen/2.0 http://schemas.opengis.net/samplingSpecimen/2.0/specimen.xsd">
+	<gml:description>Complex example made of borehole construction elements (Screen and Filters) and lithology</gml:description>
+	<gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616">https://id.cerdi.edu.au/gwml2/feature/well/26654</gml:identifier>
+	<gml:name codeSpace="http://www.vvg.org.au/">26654</gml:name>
+	<gml:name codeSpace="http://www.vvg.org.au/">14</gml:name>
+	<!--
+No encoding was identified for the following GWML2 properties:
+	<gwml2w:gwWellPurpose xlink:title="Groundwater"/>
+	<gwml2w:gwWellPurpose xlink:title="State Observation Network"/>
+	<gwml2w:gwWellTotalLength>
+		<swe:Quantity>
+			<swe:uom code="m" xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre"/>
+			<swe:value>11.68</swe:value>
+	<gwml2w:gwWellWaterUse/>
+	<gwml2w:gwWellYield/>
+	<gwml2w:gwWellReferenceElevation> 
+	<gwml2w:startDepth>/<gwml2w:endDepth> 
+-->
+	<BhML:collection>
+		<!-- The first <BhML:collection> is the linear reference system information. -->
+		<BhML:BoreholeEventCollection gml:id="feduni.well.26654.bhec1">
+			<gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616">https://id.cerdi.edu.au/gwml2/feature/borehole_event_collection/26654.bhec1</gml:identifier>
+			<BhML:collectionLRS>
+				<BhML:BoreholeLRS gml:id="LRS1">
+					<!-- <BhML:BoreholeLRS gml:id="LRS1"> is the linear referencing system for the borehole based on the casing standpipe as the starting point -->
+					<gml:name>Casing Standpipe</gml:name>
+					<BhML:accuracyStatement/><BhML:precisionStatement/><BhML:boreholeReferencingMethod>
+						<BhML:BoreholeReferencingMethod>
+							<BhML:name>relative</BhML:name>
+							<BhML:unit xlink:href="http://qudt.org/vocab/unit/M" xlink:title="metre"/>
+						</BhML:BoreholeReferencingMethod>
+					</BhML:boreholeReferencingMethod>
+					<BhML:linearElement>
+						<BhML:BoreholeTrajectory>
+							<!--This is the Borehole "trace", its x,y,z position as you follow the trajectory-->
+							<BhML:curve>
+								<gml:LineString gml:id="feduni.well.26654.shape" srsDimension="2" srsName="http://www.opengis.net/gml/srs/epsg.xml#4283">
+									<gml:posList>-38.287214 143.650349 164.5 -38.287214 143.650349 152.82</gml:posList>
+								</gml:LineString>
+							</BhML:curve>
+						</BhML:BoreholeTrajectory>
+					</BhML:linearElement>
+					<BhML:trajectoryReferent>
+						<BhML:DistanceExpression>
+							<BhML:distanceAlong uom="http://qudt.org/vocab/unit/M">0.00</BhML:distanceAlong>
+							<BhML:trajectoryReferent>
+								<BhML:TrajectoryReferent gml:id="TR1">
+									<gml:name>Well location</gml:name>
+									<gml:name>Collar position</gml:name>
+									<BhML:feature>
+										<gwml2wc:BoreCollar>
+											<gwml2wc:collarElevation uomLabels="metre">164.5</gwml2wc:collarElevation>
+										</gwml2wc:BoreCollar>
+									</BhML:feature>
+									<BhML:position>
+										<gml:Point srsDimension="3" srsName="urn:ogc:def:crs:EPSG::4979">
+											<gml:pos>-38.287214 143.650349 164.5</gml:pos>
+										</gml:Point>
+									</BhML:position>
+								</BhML:TrajectoryReferent>
+							</BhML:trajectoryReferent>
+							<BhML:location/>
+						</BhML:DistanceExpression>
+					</BhML:trajectoryReferent>
+				</BhML:BoreholeLRS>
+			</BhML:collectionLRS>
+			<BhML:collectionMember>
+				<!-- First BoreholeEvent is the constructed depth. Using xlink:href to specify what the property is that is located at this event. gwWellConstructedDepth has no additional information apart from a from-to depth -->
+				<BhML:BoreholeEvent gml:id="be1">
+					<gml:name>constructed depth</gml:name>
+					<BhML:locatedMember xlink:href="http://www.opengis.net/gwml-well/2.2/gwWellConstructedDepth" xlink:title="gwWellConstructedDepth"/>
+					<BhML:location>
+						<BhML:FromToLocation>
+							<BhML:fromPosition>
+								<BhML:MeasureOrEvent>
+									<BhML:distanceAlong uom="http://qudt.org/vocab/unit/M">0</BhML:distanceAlong>
+								</BhML:MeasureOrEvent>
+							</BhML:fromPosition>
+							<BhML:toPosition>
+								<BhML:MeasureOrEvent>
+									<BhML:distanceAlong uom="http://qudt.org/vocab/unit/M">11.68</BhML:distanceAlong>
+								</BhML:MeasureOrEvent>
+							</BhML:toPosition>
+						</BhML:FromToLocation>
+					</BhML:location>
+				</BhML:BoreholeEvent>
+			</BhML:collectionMember>
+		</BhML:BoreholeEventCollection>
+	</BhML:collection>
+	<!---
+|
+|  ########################## CONTACTS ################################
+|
+-->
+	<!-- The 'CONTACTS' <BhML:collection> specifies the lithology boundaries (<gsmlb:Contact>) that occur in the first 5 metres of the borehole.
+The remainder (to 11.8m) have not been included. These <BhML:BoreholeEvent> are then used to specify the upper and lower depths of the lithology in the 'LITHOLOGY' section.
+This is a verbose encoding. An alternative compact encoding is shown further below  -->
+	<BhML:collection>
+		<BhML:BoreholeEventCollection gml:id="feduni.well.26654.bhec3">
+			<gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616">https://id.cerdi.edu.au/gwml2/feature/borehole_event_collection/26654.bhec3</gml:identifier>
+			<BhML:collectionLRS>
+				<!-- <BhML:BoreholeLRS gml:id="LRS2"> is the linear referencing system for the borehole based on the ground level as the starting point -->
+				<BhML:BoreholeLRS gml:id="LRS2">
+					<BhML:accuracyStatement/>
+					<BhML:precisionStatement/>
+					<BhML:boreholeReferencingMethod>
+						<BhML:BoreholeReferencingMethod>
+							<BhML:name>relative</BhML:name>
+							<BhML:unit xlink:href="http://qudt.org/vocab/unit/M" xlink:title="metre"/>
+						</BhML:BoreholeReferencingMethod>
+					</BhML:boreholeReferencingMethod>
+					<BhML:trajectoryReferent>
+						<!--The ground level Trajectory Referent is 0.25 m along (lower) than the Casing Pipe Trajectory Referent  (TR1)-->
+						<BhML:DistanceExpression>
+							<BhML:distanceAlong uom="http://qudt.org/vocab/unit/M">0.25</BhML:distanceAlong>
+							<BhML:trajectoryReferent xlink:href="#TR1">
+								<BhML:TrajectoryReferent gml:id="TR2"/>
+							</BhML:trajectoryReferent>
+							<BhML:location/>
+						</BhML:DistanceExpression>
+					</BhML:trajectoryReferent>
+				</BhML:BoreholeLRS>
+			</BhML:collectionLRS>
+			<BhML:collectionMember>
+				<BhML:BoreholeEvent gml:id="be4">
+					<gml:name>lithology contacts</gml:name>
+					<BhML:locatedMember>
+						<gsmlb:Contact gml:id="c1">
+							<gml:name>Surface</gml:name>
+							<gsmlb:classifier>
+								<swe:Category>
+									<swe:identifier>http://resource.geosciml.org/classifier/cgi/contacttype/unconformable_contact</swe:identifier>
+									<!-- The surface unconformable contact -->
+								</swe:Category>
+							</gsmlb:classifier>
+						</gsmlb:Contact>
+					</BhML:locatedMember>
+					<BhML:location>
+						<BhML:AtLocation>
+							<BhML:atPosition>
+								<BhML:MeasureOrEvent>
+									<!-- Assuming the ground surface is the ground level Trajectory Referent (TR2) rather than the Standing Pipe Trajectory Referent (TR1), which is 0.25m above the ground surface -->
+									<BhML:distanceAlong uom="http://qudt.org/vocab/unit/M">0.0</BhML:distanceAlong>
+								</BhML:MeasureOrEvent>
+							</BhML:atPosition>
+						</BhML:AtLocation>
+					</BhML:location>
+				</BhML:BoreholeEvent>
+			</BhML:collectionMember>
+			<BhML:collectionMember>
+				<BhML:BoreholeEvent gml:id="be5">
+					<BhML:locatedMember>
+						<gsmlb:Contact gml:id="c2">
+							<gml:name>Sedimentary contact</gml:name>
+							<gsmlb:classifier>
+								<swe:Category>
+									<swe:identifier>http://resource.geosciml.org/classifier/cgi/contacttype/depositional_contact</swe:identifier>
+								</swe:Category>
+							</gsmlb:classifier>
+						</gsmlb:Contact>
+					</BhML:locatedMember>
+					<BhML:location>
+						<BhML:AtLocation>
+							<BhML:atPosition>
+								<BhML:MeasureOrEvent>
+									<BhML:distanceAlong uom="http://qudt.org/vocab/unit/M">0.5</BhML:distanceAlong>
+								</BhML:MeasureOrEvent>
+							</BhML:atPosition>
+						</BhML:AtLocation>
+					</BhML:location>
+				</BhML:BoreholeEvent>
+			</BhML:collectionMember>
+			<BhML:collectionMember>
+				<BhML:BoreholeEvent gml:id="be6">
+					<BhML:locatedMember>
+						<gsmlb:Contact gml:id="c3">
+							<gml:name>Sedimentary contact</gml:name>
+							<gsmlb:classifier>
+								<swe:Category>
+									<swe:identifier>http://resource.geosciml.org/classifier/cgi/contacttype/depositional_contact</swe:identifier>
+								</swe:Category>
+							</gsmlb:classifier>
+						</gsmlb:Contact>
+					</BhML:locatedMember>
+					<BhML:location>
+						<BhML:AtLocation>
+							<BhML:atPosition>
+								<BhML:MeasureOrEvent>
+									<BhML:distanceAlong uom="http://qudt.org/vocab/unit/M">1.5</BhML:distanceAlong>
+								</BhML:MeasureOrEvent>
+							</BhML:atPosition>
+						</BhML:AtLocation>
+					</BhML:location>
+				</BhML:BoreholeEvent>
+			</BhML:collectionMember>
+			<BhML:collectionMember>
+				<BhML:BoreholeEvent gml:id="be7">
+					<BhML:locatedMember>
+						<gsmlb:Contact gml:id="c4">
+							<gml:name>Sedimentary contact</gml:name>
+							<gsmlb:classifier>
+								<swe:Category>
+									<swe:identifier>http://resource.geosciml.org/classifier/cgi/contacttype/depositional_contact</swe:identifier>
+								</swe:Category>
+							</gsmlb:classifier>
+						</gsmlb:Contact>
+					</BhML:locatedMember>
+					<BhML:location>
+						<BhML:AtLocation>
+							<BhML:atPosition>
+								<BhML:MeasureOrEvent>
+									<BhML:distanceAlong uom="http://qudt.org/vocab/unit/M">2.0</BhML:distanceAlong>
+								</BhML:MeasureOrEvent>
+							</BhML:atPosition>
+						</BhML:AtLocation>
+					</BhML:location>
+				</BhML:BoreholeEvent>
+			</BhML:collectionMember>
+			<BhML:collectionMember>
+				<BhML:BoreholeEvent gml:id="be8">
+					<BhML:locatedMember>
+						<gsmlb:Contact gml:id="c5">
+							<gml:name>Sedimentary contact</gml:name>
+							<gsmlb:classifier>
+								<swe:Category>
+									<swe:identifier>http://resource.geosciml.org/classifier/cgi/contacttype/depositional_contact</swe:identifier>
+								</swe:Category>
+							</gsmlb:classifier>
+						</gsmlb:Contact>
+					</BhML:locatedMember>
+					<BhML:location>
+						<BhML:AtLocation>
+							<BhML:atPosition>
+								<BhML:MeasureOrEvent>
+									<BhML:distanceAlong uom="http://qudt.org/vocab/unit/M">2.5</BhML:distanceAlong>
+								</BhML:MeasureOrEvent>
+							</BhML:atPosition>
+						</BhML:AtLocation>
+					</BhML:location>
+				</BhML:BoreholeEvent>
+			</BhML:collectionMember>
+			<BhML:collectionMember>
+				<BhML:BoreholeEvent gml:id="be9">
+					<BhML:locatedMember>
+						<gsmlb:Contact gml:id="c6">
+							<gml:name>Sedimentary contact</gml:name>
+							<gsmlb:classifier>
+								<swe:Category>
+									<swe:identifier>http://resource.geosciml.org/classifier/cgi/contacttype/depositional_contact</swe:identifier>
+								</swe:Category>
+							</gsmlb:classifier>
+						</gsmlb:Contact>
+					</BhML:locatedMember>
+					<BhML:location>
+						<BhML:AtLocation>
+							<BhML:atPosition>
+								<BhML:MeasureOrEvent>
+									<BhML:distanceAlong uom="http://qudt.org/vocab/unit/M">3.5</BhML:distanceAlong>
+								</BhML:MeasureOrEvent>
+							</BhML:atPosition>
+						</BhML:AtLocation>
+					</BhML:location>
+				</BhML:BoreholeEvent>
+			</BhML:collectionMember>
+			<BhML:collectionMember>
+				<BhML:BoreholeEvent gml:id="be10">
+					<BhML:locatedMember>
+						<gsmlb:Contact gml:id="c7">
+							<gml:name>Sedimentary contact</gml:name>
+							<gsmlb:classifier>
+								<swe:Category>
+									<swe:identifier>http://resource.geosciml.org/classifier/cgi/contacttype/depositional_contact</swe:identifier>
+								</swe:Category>
+							</gsmlb:classifier>
+						</gsmlb:Contact>
+					</BhML:locatedMember>
+					<BhML:location>
+						<BhML:AtLocation>
+							<BhML:atPosition>
+								<BhML:MeasureOrEvent>
+									<BhML:distanceAlong uom="http://qudt.org/vocab/unit/M">4.5</BhML:distanceAlong>
+								</BhML:MeasureOrEvent>
+							</BhML:atPosition>
+						</BhML:AtLocation>
+					</BhML:location>
+				</BhML:BoreholeEvent>
+			</BhML:collectionMember>
+			<BhML:collectionMember>
+				<BhML:BoreholeEvent gml:id="be11">
+					<BhML:locatedMember>
+						<gsmlb:Contact gml:id="c8">
+							<gml:name>Sedimentary contact</gml:name>
+							<gsmlb:classifier>
+								<swe:Category>
+									<swe:identifier>http://resource.geosciml.org/classifier/cgi/contacttype/depositional_contact</swe:identifier>
+								</swe:Category>
+							</gsmlb:classifier>
+						</gsmlb:Contact>
+					</BhML:locatedMember>
+					<BhML:location>
+						<BhML:AtLocation>
+							<BhML:atPosition>
+								<BhML:MeasureOrEvent>
+									<BhML:distanceAlong uom="http://qudt.org/vocab/unit/M">5.0</BhML:distanceAlong>
+								</BhML:MeasureOrEvent>
+							</BhML:atPosition>
+						</BhML:AtLocation>
+					</BhML:location>
+				</BhML:BoreholeEvent>
+			</BhML:collectionMember>
+		</BhML:BoreholeEventCollection>
+	</BhML:collection>
+	<!---
+|
+|  ################################ LITHOLOGY RELATED TO CONTACTS ###############################
+|
+-->
+	<!-- These are the first two lithologies. The remainder (1.5 - 11.5) are shown in the compact encoding -->
+	<BhML:collection>
+		<BhML:BoreholeEventCollection gml:id="feduni.well.26654.bhec4">
+			<gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616">https://id.cerdi.edu.au/gwml2/feature/borehole_event_collection/26654.bhec4</gml:identifier>
+			<gml:name>lithology</gml:name>
+			<BhML:collectionLRS xlink:href="#LRS2"/>
+			<!-- same referent as the contact referent, not the Casing Pipe referent -->
+			<BhML:collectionMember>
+				<!--The first lithology -->
+				<BhML:BoreholeEvent gml:id="be12">
+					<BhML:locatedMember>
+						<gsmlb:GeologicUnit>
+							<gsmlb:composition>
+								<gsmlb:CompositionPart>
+									<gsmlb:material>
+										<gsmlb:RockMaterial>
+											<gsmlb:lithology xlink:title="BRN FS LOAM DRY"/>
+										</gsmlb:RockMaterial>
+									</gsmlb:material>
+								</gsmlb:CompositionPart>
+							</gsmlb:composition>
+						</gsmlb:GeologicUnit>
+					</BhML:locatedMember>
+					<BhML:location>
+						<!-- The first lithology occurs between the  first two contacts -->
+						<BhML:FromToLocation>
+							<BhML:fromPosition>
+								<BhML:MeasureOrEvent>
+									<BhML:boreholeEvent xlink:href="#c1"/>
+								</BhML:MeasureOrEvent>
+							</BhML:fromPosition>
+							<BhML:toPosition>
+								<BhML:MeasureOrEvent>
+									<BhML:boreholeEvent xlink:href="#c2"/>
+								</BhML:MeasureOrEvent>
+							</BhML:toPosition>
+						</BhML:FromToLocation>
+					</BhML:location>
+				</BhML:BoreholeEvent>
+			</BhML:collectionMember>
+			<BhML:collectionMember>
+				<!--The second lithology -->
+				<BhML:BoreholeEvent gml:id="be13">
+					<BhML:locatedMember>
+						<gsmlb:GeologicUnit>
+							<gsmlb:composition>
+								<gsmlb:CompositionPart>
+									<gsmlb:material>
+										<gsmlb:RockMaterial>
+											<gsmlb:lithology xlink:title="BLUE GRY FSC DAMP"/>
+										</gsmlb:RockMaterial>
+									</gsmlb:material>
+								</gsmlb:CompositionPart>
+							</gsmlb:composition>
+						</gsmlb:GeologicUnit>
+					</BhML:locatedMember>
+					<BhML:location>
+						<!-- The second lithology occurs between the second two contacts -->
+						<BhML:FromToLocation>
+							<BhML:fromPosition>
+								<BhML:MeasureOrEvent>
+									<BhML:boreholeEvent xlink:href="#c2"/>
+								</BhML:MeasureOrEvent>
+							</BhML:fromPosition>
+							<BhML:toPosition>
+								<BhML:MeasureOrEvent>
+									<BhML:boreholeEvent xlink:href="#c3"/>
+								</BhML:MeasureOrEvent>
+							</BhML:toPosition>
+						</BhML:FromToLocation>
+					</BhML:location>
+				</BhML:BoreholeEvent>
+			</BhML:collectionMember>
+		</BhML:BoreholeEventCollection>
+	</BhML:collection>
+	<!---
+|
+|  ################################ LITHOLOGY ENCODING USING GWML2 ###############################
+|
+-->
+	<!-- In this encoding no reference is made between the depths associated with the lithologies. Instead the depths are encoded with the lithology log and BhML:location provides the upper and lower depths (equivalent to <gwml2w:startDepth> and <gwml2w:endDepth> -->
+	<BhML:collection>
+		<BhML:BoreholeEventCollection>
+			<BhML:collectionLRS xlink:href="#LRS2"/>
+			<BhML:collectionMember>
+				<BhML:BoreholeEvent>
+					<BhML:locatedMember>
+						<gwml2w:GW_GeologyLogCoverage gml:id="feduni.well.26654.1.coverage">
+							<gwml2w:element>
+								<gwml2w:LogValue>
+									<gwml2w:fromDepth>
+										<swe:Quantity>
+											<swe:uom code="m" xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre"/>
+											<swe:value>0.0</swe:value>
+										</swe:Quantity>
+									</gwml2w:fromDepth>
+									<gwml2w:toDepth>
+										<swe:Quantity>
+											<swe:uom code="m" xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre"/>
+											<swe:value>0.5</swe:value>
+										</swe:Quantity>
+									</gwml2w:toDepth>
+									<gwml2w:value>
+										<swe:DataRecord definition="http://www.opengis.net/def/gwml/2.1/datarecord/earthMaterial">
+											<swe:field name="lithology">
+												<swe:Category definition="http://www.opengis.net/def/gwml/2.1/datarecord/earthMaterial">
+													<swe:value>BRN FS LOAM DRY</swe:value>
+												</swe:Category>
+											</swe:field>
+										</swe:DataRecord>
+									</gwml2w:value>
+								</gwml2w:LogValue>
+							</gwml2w:element>
+							<gwml2w:element>
+								<gwml2w:LogValue>
+									<gwml2w:fromDepth>
+										<swe:Quantity>
+											<swe:uom code="m" xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre"/>
+											<swe:value>0.5</swe:value>
+										</swe:Quantity>
+									</gwml2w:fromDepth>
+									<gwml2w:toDepth>
+										<swe:Quantity>
+											<swe:uom code="m" xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre"/>
+											<swe:value>1.5</swe:value>
+										</swe:Quantity>
+									</gwml2w:toDepth>
+									<gwml2w:value>
+										<swe:DataRecord definition="http://www.opengis.net/def/gwml/2.1/datarecord/earthMaterial">
+											<swe:field name="lithology">
+												<swe:Category definition="http://www.opengis.net/def/gwml/2.1/datarecord/earthMaterial">
+													<swe:value>BLUE GRY FSC DAMP</swe:value>
+												</swe:Category>
+											</swe:field>
+										</swe:DataRecord>
+									</gwml2w:value>
+								</gwml2w:LogValue>
+							</gwml2w:element>
+							<gwml2w:element>
+								<gwml2w:LogValue>
+									<gwml2w:fromDepth>
+										<swe:Quantity>
+											<swe:uom code="m" xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre"/>
+											<swe:value>1.5</swe:value>
+										</swe:Quantity>
+									</gwml2w:fromDepth>
+									<gwml2w:toDepth>
+										<swe:Quantity>
+											<swe:uom code="m" xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre"/>
+											<swe:value>2.0</swe:value>
+										</swe:Quantity>
+									</gwml2w:toDepth>
+									<gwml2w:value>
+										<swe:DataRecord definition="http://www.opengis.net/def/gwml/2.1/datarecord/earthMaterial">
+											<swe:field name="lithology">
+												<swe:Category definition="http://www.opengis.net/def/gwml/2.1/datarecord/earthMaterial">
+													<swe:value>BRN/LIYELLGRY/ORNG FSC DAMP</swe:value>
+												</swe:Category>
+											</swe:field>
+										</swe:DataRecord>
+									</gwml2w:value>
+								</gwml2w:LogValue>
+							</gwml2w:element>
+							<gwml2w:element>
+								<gwml2w:LogValue>
+									<gwml2w:fromDepth>
+										<swe:Quantity>
+											<swe:uom code="m" xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre"/>
+											<swe:value>2.0</swe:value>
+										</swe:Quantity>
+									</gwml2w:fromDepth>
+									<gwml2w:toDepth>
+										<swe:Quantity>
+											<swe:uom code="m" xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre"/>
+											<swe:value>2.5</swe:value>
+										</swe:Quantity>
+									</gwml2w:toDepth>
+									<gwml2w:value>
+										<swe:DataRecord definition="http://www.opengis.net/def/gwml/2.1/datarecord/earthMaterial">
+											<swe:field name="lithology">
+												<swe:Category definition="http://www.opengis.net/def/gwml/2.1/datarecord/earthMaterial">
+													<swe:value>LI BRN FSC DAMP</swe:value>
+												</swe:Category>
+											</swe:field>
+										</swe:DataRecord>
+									</gwml2w:value>
+								</gwml2w:LogValue>
+							</gwml2w:element>
+							<gwml2w:element>
+								<gwml2w:LogValue>
+									<gwml2w:fromDepth>
+										<swe:Quantity>
+											<swe:uom code="m" xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre"/>
+											<swe:value>2.5</swe:value>
+										</swe:Quantity>
+									</gwml2w:fromDepth>
+									<gwml2w:toDepth>
+										<swe:Quantity>
+											<swe:uom code="m" xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre"/>
+											<swe:value>3.5</swe:value>
+										</swe:Quantity>
+									</gwml2w:toDepth>
+									<gwml2w:value>
+										<swe:DataRecord definition="http://www.opengis.net/def/gwml/2.1/datarecord/earthMaterial">
+											<swe:field name="lithology">
+												<swe:Category definition="http://www.opengis.net/def/gwml/2.1/datarecord/earthMaterial">
+													<swe:value>GRY BRN FSC DAMP</swe:value>
+												</swe:Category>
+											</swe:field>
+										</swe:DataRecord>
+									</gwml2w:value>
+								</gwml2w:LogValue>
+							</gwml2w:element>
+							<gwml2w:element>
+								<gwml2w:LogValue>
+									<gwml2w:fromDepth>
+										<swe:Quantity>
+											<swe:uom code="m" xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre"/>
+											<swe:value>3.5</swe:value>
+										</swe:Quantity>
+									</gwml2w:fromDepth>
+									<gwml2w:toDepth>
+										<swe:Quantity>
+											<swe:uom code="m" xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre"/>
+											<swe:value>4.5</swe:value>
+										</swe:Quantity>
+									</gwml2w:toDepth>
+									<gwml2w:value>
+										<swe:DataRecord definition="http://www.opengis.net/def/gwml/2.1/datarecord/earthMaterial">
+											<swe:field name="lithology">
+												<swe:Category definition="http://www.opengis.net/def/gwml/2.1/datarecord/earthMaterial">
+													<swe:value>LIYELL/LIGRY FSC WET</swe:value>
+												</swe:Category>
+											</swe:field>
+										</swe:DataRecord>
+									</gwml2w:value>
+								</gwml2w:LogValue>
+							</gwml2w:element>
+							<gwml2w:element>
+								<gwml2w:LogValue>
+									<gwml2w:fromDepth>
+										<swe:Quantity>
+											<swe:uom code="m" xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre"/>
+											<swe:value>4.5</swe:value>
+										</swe:Quantity>
+									</gwml2w:fromDepth>
+									<gwml2w:toDepth>
+										<swe:Quantity>
+											<swe:uom code="m" xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre"/>
+											<swe:value>5.0</swe:value>
+										</swe:Quantity>
+									</gwml2w:toDepth>
+									<gwml2w:value>
+										<swe:DataRecord definition="http://www.opengis.net/def/gwml/2.1/datarecord/earthMaterial">
+											<swe:field name="lithology">
+												<swe:Category definition="http://www.opengis.net/def/gwml/2.1/datarecord/earthMaterial">
+													<swe:value>ORNG/LIGRY FSC WET</swe:value>
+												</swe:Category>
+											</swe:field>
+										</swe:DataRecord>
+									</gwml2w:value>
+								</gwml2w:LogValue>
+							</gwml2w:element>
+							<gwml2w:element>
+								<gwml2w:LogValue>
+									<gwml2w:fromDepth>
+										<swe:Quantity>
+											<swe:uom code="m" xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre"/>
+											<swe:value>5.0</swe:value>
+										</swe:Quantity>
+									</gwml2w:fromDepth>
+									<gwml2w:toDepth>
+										<swe:Quantity>
+											<swe:uom code="m" xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre"/>
+											<swe:value>6.0</swe:value>
+										</swe:Quantity>
+									</gwml2w:toDepth>
+									<gwml2w:value>
+										<swe:DataRecord definition="http://www.opengis.net/def/gwml/2.1/datarecord/earthMaterial">
+											<swe:field name="lithology">
+												<swe:Category definition="http://www.opengis.net/def/gwml/2.1/datarecord/earthMaterial">
+													<swe:value>LI YELL BRN FSC WET</swe:value>
+												</swe:Category>
+											</swe:field>
+										</swe:DataRecord>
+									</gwml2w:value>
+								</gwml2w:LogValue>
+							</gwml2w:element>
+							<gwml2w:element>
+								<gwml2w:LogValue>
+									<gwml2w:fromDepth>
+										<swe:Quantity>
+											<swe:uom code="m" xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre"/>
+											<swe:value>6.0</swe:value>
+										</swe:Quantity>
+									</gwml2w:fromDepth>
+									<gwml2w:toDepth>
+										<swe:Quantity>
+											<swe:uom code="m" xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre"/>
+											<swe:value>6.5</swe:value>
+										</swe:Quantity>
+									</gwml2w:toDepth>
+									<gwml2w:value>
+										<swe:DataRecord definition="http://www.opengis.net/def/gwml/2.1/datarecord/earthMaterial">
+											<swe:field name="lithology">
+												<swe:Category definition="http://www.opengis.net/def/gwml/2.1/datarecord/earthMaterial">
+													<swe:value>LIGRY/BRN FSC WET</swe:value>
+												</swe:Category>
+											</swe:field>
+										</swe:DataRecord>
+									</gwml2w:value>
+								</gwml2w:LogValue>
+							</gwml2w:element>
+							<gwml2w:element>
+								<gwml2w:LogValue>
+									<gwml2w:fromDepth>
+										<swe:Quantity>
+											<swe:uom code="m" xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre"/>
+											<swe:value>6.5</swe:value>
+										</swe:Quantity>
+									</gwml2w:fromDepth>
+									<gwml2w:toDepth>
+										<swe:Quantity>
+											<swe:uom code="m" xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre"/>
+											<swe:value>7.0</swe:value>
+										</swe:Quantity>
+									</gwml2w:toDepth>
+									<gwml2w:value>
+										<swe:DataRecord definition="http://www.opengis.net/def/gwml/2.1/datarecord/earthMaterial">
+											<swe:field name="lithology">
+												<swe:Category definition="http://www.opengis.net/def/gwml/2.1/datarecord/earthMaterial">
+													<swe:value>LI YELL FSC WET</swe:value>
+												</swe:Category>
+											</swe:field>
+										</swe:DataRecord>
+									</gwml2w:value>
+								</gwml2w:LogValue>
+							</gwml2w:element>
+							<gwml2w:element>
+								<gwml2w:LogValue>
+									<gwml2w:fromDepth>
+										<swe:Quantity>
+											<swe:uom code="m" xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre"/>
+											<swe:value>7.0</swe:value>
+										</swe:Quantity>
+									</gwml2w:fromDepth>
+									<gwml2w:toDepth>
+										<swe:Quantity>
+											<swe:uom code="m" xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre"/>
+											<swe:value>8.0</swe:value>
+										</swe:Quantity>
+									</gwml2w:toDepth>
+									<gwml2w:value>
+										<swe:DataRecord definition="http://www.opengis.net/def/gwml/2.1/datarecord/earthMaterial">
+											<swe:field name="lithology">
+												<swe:Category definition="http://www.opengis.net/def/gwml/2.1/datarecord/earthMaterial">
+													<swe:value>LI GRY/YELLBRN FSC WET</swe:value>
+												</swe:Category>
+											</swe:field>
+										</swe:DataRecord>
+									</gwml2w:value>
+								</gwml2w:LogValue>
+							</gwml2w:element>
+							<gwml2w:element>
+								<gwml2w:LogValue>
+									<gwml2w:fromDepth>
+										<swe:Quantity>
+											<swe:uom code="m" xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre"/>
+											<swe:value>8.0</swe:value>
+										</swe:Quantity>
+									</gwml2w:fromDepth>
+									<gwml2w:toDepth>
+										<swe:Quantity>
+											<swe:uom code="m" xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre"/>
+											<swe:value>9.0</swe:value>
+										</swe:Quantity>
+									</gwml2w:toDepth>
+									<gwml2w:value>
+										<swe:DataRecord definition="http://www.opengis.net/def/gwml/2.1/datarecord/earthMaterial">
+											<swe:field name="lithology">
+												<swe:Category definition="http://www.opengis.net/def/gwml/2.1/datarecord/earthMaterial">
+													<swe:value>LI GRY ZC WET</swe:value>
+												</swe:Category>
+											</swe:field>
+										</swe:DataRecord>
+									</gwml2w:value>
+								</gwml2w:LogValue>
+							</gwml2w:element>
+							<gwml2w:element>
+								<gwml2w:LogValue>
+									<gwml2w:fromDepth>
+										<swe:Quantity>
+											<swe:uom code="m" xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre"/>
+											<swe:value>9.0</swe:value>
+										</swe:Quantity>
+									</gwml2w:fromDepth>
+									<gwml2w:toDepth>
+										<swe:Quantity>
+											<swe:uom code="m" xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre"/>
+											<swe:value>10.0</swe:value>
+										</swe:Quantity>
+									</gwml2w:toDepth>
+									<gwml2w:value>
+										<swe:DataRecord definition="http://www.opengis.net/def/gwml/2.1/datarecord/earthMaterial">
+											<swe:field name="lithology">
+												<swe:Category definition="http://www.opengis.net/def/gwml/2.1/datarecord/earthMaterial">
+													<swe:value>DARK GRY CS WET</swe:value>
+												</swe:Category>
+											</swe:field>
+										</swe:DataRecord>
+									</gwml2w:value>
+								</gwml2w:LogValue>
+							</gwml2w:element>
+							<gwml2w:element>
+								<gwml2w:LogValue>
+									<gwml2w:fromDepth>
+										<swe:Quantity>
+											<swe:uom code="m" xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre"/>
+											<swe:value>10.0</swe:value>
+										</swe:Quantity>
+									</gwml2w:fromDepth>
+									<gwml2w:toDepth>
+										<swe:Quantity>
+											<swe:uom code="m" xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre"/>
+											<swe:value>10.5</swe:value>
+										</swe:Quantity>
+									</gwml2w:toDepth>
+									<gwml2w:value>
+										<swe:DataRecord definition="http://www.opengis.net/def/gwml/2.1/datarecord/earthMaterial">
+											<swe:field name="lithology">
+												<swe:Category definition="http://www.opengis.net/def/gwml/2.1/datarecord/earthMaterial">
+													<swe:value>DARK GRY FSC WET</swe:value>
+												</swe:Category>
+											</swe:field>
+										</swe:DataRecord>
+									</gwml2w:value>
+								</gwml2w:LogValue>
+							</gwml2w:element>
+							<gwml2w:element>
+								<gwml2w:LogValue>
+									<gwml2w:fromDepth>
+										<swe:Quantity>
+											<swe:uom code="m" xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre"/>
+											<swe:value>10.5</swe:value>
+										</swe:Quantity>
+									</gwml2w:fromDepth>
+									<gwml2w:toDepth>
+										<swe:Quantity>
+											<swe:uom code="m" xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre"/>
+											<swe:value>11.0</swe:value>
+										</swe:Quantity>
+									</gwml2w:toDepth>
+									<gwml2w:value>
+										<swe:DataRecord definition="http://www.opengis.net/def/gwml/2.1/datarecord/earthMaterial">
+											<swe:field name="lithology">
+												<swe:Category definition="http://www.opengis.net/def/gwml/2.1/datarecord/earthMaterial">
+													<swe:value>DARK GRY FSC WET</swe:value>
+												</swe:Category>
+											</swe:field>
+										</swe:DataRecord>
+									</gwml2w:value>
+								</gwml2w:LogValue>
+							</gwml2w:element>
+							<gwml2w:element>
+								<gwml2w:LogValue>
+									<gwml2w:fromDepth>
+										<swe:Quantity>
+											<swe:uom code="m" xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre"/>
+											<swe:value>11.0</swe:value>
+										</swe:Quantity>
+									</gwml2w:fromDepth>
+									<gwml2w:toDepth>
+										<swe:Quantity>
+											<swe:uom code="m" xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre"/>
+											<swe:value>11.5</swe:value>
+										</swe:Quantity>
+									</gwml2w:toDepth>
+									<gwml2w:value>
+										<swe:DataRecord definition="http://www.opengis.net/def/gwml/2.1/datarecord/earthMaterial">
+											<swe:field name="lithology">
+												<swe:Category definition="http://www.opengis.net/def/gwml/2.1/datarecord/earthMaterial">
+													<swe:value>GRY ZC WET</swe:value>
+												</swe:Category>
+											</swe:field>
+										</swe:DataRecord>
+									</gwml2w:value>
+								</gwml2w:LogValue>
+							</gwml2w:element>
+						</gwml2w:GW_GeologyLogCoverage>
+					</BhML:locatedMember>
+					<BhML:location>
+						<BhML:FromToLocation>
+							<BhML:fromPosition>
+								<BhML:MeasureOrEvent>
+									<BhML:distanceAlong uom="http://qudt.org/vocab/unit/M">0.0</BhML:distanceAlong>
+								</BhML:MeasureOrEvent>
+							</BhML:fromPosition>
+							<BhML:toPosition>
+								<BhML:MeasureOrEvent>
+									<BhML:distanceAlong uom="http://qudt.org/vocab/unit/M">11.8</BhML:distanceAlong>
+								</BhML:MeasureOrEvent>
+							</BhML:toPosition>
+						</BhML:FromToLocation>
+					</BhML:location>
+				</BhML:BoreholeEvent>
+			</BhML:collectionMember>
+		</BhML:BoreholeEventCollection>
+	</BhML:collection>
+	<!---
+|
+|  ################################ LITHOLOGY ENCODING USING swe array ###############################
+|
+-->
+	<!-- This encoding uses gwml2w:GW_GeologyLog and a swe data array -->
+	<BhML:collection>
+		<BhML:BoreholeEventCollection>
+			<BhML:collectionLRS xlink:href="#LRS2"/>
+			<BhML:collectionMember>
+				<BhML:BoreholeEvent>
+					<BhML:locatedMember>
+						<gwml2w:GW_GeologyLog gml:id="feduni.well.26654.1">
+							<om:phenomenonTime>
+								<gml:TimeInstant>
+									<gml:timePosition>1987-02-16Z</gml:timePosition>
+								</gml:TimeInstant>
+							</om:phenomenonTime>
+							<om:resultTime>
+								<gml:TimeInstant>
+									<gml:timePosition>1987-02-16Z</gml:timePosition>
+								</gml:TimeInstant>
+							</om:resultTime>
+							<om:procedure xlink:href="http://www.opengis.net/def/gwml/2.0/observedProperty/earthMaterial" xlink:title="drillers log"/>
+							<om:observedProperty xlink:href="http://www.opengis.net/def/gwml/2.0/observedProperty/earthMaterial" xlink:title="lithology"/>
+							<om:featureOfInterest xlink:href="#feduni.well.26654"/>
+							<om:result>
+								<swe:DataArray definition="http://www.opengis.net/def/gwml/2.0/coverage/geologyLog">
+									<swe:elementCount>
+										<swe:Count>
+											<swe:value>16</swe:value>
+										</swe:Count>
+									</swe:elementCount>
+									<swe:elementType name="LogValue">
+										<swe:DataRecord definition="http://www.opengis.net/def/gwml/2.0/datarecord/earthMaterial">
+											<swe:field name="from">
+												<swe:Quantity definition="https://www.opengis.net/def/BoreholeML/FromToLocation/from">
+													<swe:uom xlink:href="http://www.opengis.net/def/uom/UCUM/0/m" xlink:title="m"/>
+												</swe:Quantity>
+											</swe:field>
+											<swe:field name="to">
+												<swe:Quantity definition="https://www.opengis.net/def/BoreholeML/FromToLocation/to">
+													<swe:uom xlink:href="http://www.opengis.net/def/uom/UCUM/0/m" xlink:title="m"/>
+												</swe:Quantity>
+											</swe:field>
+											<swe:field name="lithdesc">
+												<swe:Text definition="http://www.opengis.net/def/gwml/2.0/observedProperty/lithdesc"/>
+											</swe:field>
+										</swe:DataRecord>
+									</swe:elementType>
+									<swe:encoding>
+										<swe:XMLEncoding/>
+									</swe:encoding>
+									<swe:values xmlns:d="http://www.opengis.net/def/gwml/2.0/datarecord/earthMaterial">
+										<d:LogValue>
+											<d:from>0.0</d:from>
+											<d:to>0.5</d:to>
+											<d:lithdesc>BRN FS LOAM DRY</d:lithdesc>
+										</d:LogValue>
+										<d:LogValue>
+											<d:from>0.5</d:from>
+											<d:to>1.5</d:to>
+											<d:lithdesc>BLUE GRY FSC DAMP</d:lithdesc>
+										</d:LogValue>
+										<d:LogValue>
+											<d:from>1.5</d:from>
+											<d:to>2.0</d:to>
+											<d:lithdesc>BRN/LIYELLGRY/ORNG FSC DAMP</d:lithdesc>
+										</d:LogValue>
+										<d:LogValue>
+											<d:from>2.0</d:from>
+											<d:to>2.5</d:to>
+											<d:lithdesc>LI BRN FSC DAMP</d:lithdesc>
+										</d:LogValue>
+										<d:LogValue>
+											<d:from>2.5</d:from>
+											<d:to>3.5</d:to>
+											<d:lithdesc>GRY BRN FSC DAMP</d:lithdesc>
+										</d:LogValue>
+										<d:LogValue>
+											<d:from>3.5</d:from>
+											<d:to>4.5</d:to>
+											<d:lithdesc>LIYELL/LIGRY FSC WET</d:lithdesc>
+										</d:LogValue>
+										<d:LogValue>
+											<d:from>4.5</d:from>
+											<d:to>5.0</d:to>
+											<d:lithdesc>ORNG/LIGRY FSC WET</d:lithdesc>
+										</d:LogValue>
+										<d:LogValue>
+											<d:from>5.0</d:from>
+											<d:to>6.0</d:to>
+											<d:lithdesc>LI YELL BRN FSC WET</d:lithdesc>
+										</d:LogValue>
+										<d:LogValue>
+											<d:from>6.0</d:from>
+											<d:to>6.5</d:to>
+											<d:lithdesc>LIGRY/BRN FSC WET</d:lithdesc>
+										</d:LogValue>
+										<d:LogValue>
+											<d:from>6.5</d:from>
+											<d:to>7.0</d:to>
+											<d:lithdesc>LI YELL FSC WET</d:lithdesc>
+										</d:LogValue>
+										<d:LogValue>
+											<d:from>7.0</d:from>
+											<d:to>8.0</d:to>
+											<d:lithdesc>LI GRY/YELLBRN FSC WET</d:lithdesc>
+										</d:LogValue>
+										<d:LogValue>
+											<d:from>8.0</d:from>
+											<d:to>9.0</d:to>
+											<d:lithdesc>LI GRY ZC WET</d:lithdesc>
+										</d:LogValue>
+										<d:LogValue>
+											<d:from>9.0</d:from>
+											<d:to>10.0</d:to>
+											<d:lithdesc>DARK GRY CS WET</d:lithdesc>
+										</d:LogValue>
+										<d:LogValue>
+											<d:from>10.0</d:from>
+											<d:to>10.5</d:to>
+											<d:lithdesc>DARK GRY FSC WET</d:lithdesc>
+										</d:LogValue>
+										<d:LogValue>
+											<d:from>10.5</d:from>
+											<d:to>11.0</d:to>
+											<d:lithdesc>DARK GRY FSC WET</d:lithdesc>
+										</d:LogValue>
+										<d:LogValue>
+											<d:from>11.0</d:from>
+											<d:to>11.5</d:to>
+											<d:lithdesc>GRY ZC WET</d:lithdesc>
+										</d:LogValue>
+									</swe:values>
+								</swe:DataArray>
+							</om:result>
+							<gwml2w:startDepth>
+								<swe:Quantity>
+									<swe:uom code="m" xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre"/>
+									<swe:value>0.0</swe:value>
+								</swe:Quantity>
+							</gwml2w:startDepth>
+							<gwml2w:endDepth>
+								<swe:Quantity>
+									<swe:uom code="m" xlink:href="http://qudt.org/vocab/unit#Meter" xlink:title="metre"/>
+									<swe:value>11.5</swe:value>
+								</swe:Quantity>
+							</gwml2w:endDepth>
+						</gwml2w:GW_GeologyLog>
+					</BhML:locatedMember>
+					<BhML:location>
+						<BhML:FromToLocation>
+							<BhML:fromPosition>
+								<BhML:MeasureOrEvent>
+									<BhML:distanceAlong uom="http://qudt.org/vocab/unit/M">0.0</BhML:distanceAlong>
+								</BhML:MeasureOrEvent>
+							</BhML:fromPosition>
+							<BhML:toPosition>
+								<BhML:MeasureOrEvent>
+									<BhML:distanceAlong uom="http://qudt.org/vocab/unit/M">11.8</BhML:distanceAlong>
+								</BhML:MeasureOrEvent>
+							</BhML:toPosition>
+						</BhML:FromToLocation>
+					</BhML:location>
+				</BhML:BoreholeEvent>
+			</BhML:collectionMember>
+		</BhML:BoreholeEventCollection>
+	</BhML:collection>
+</BhML:Borehole>
+
