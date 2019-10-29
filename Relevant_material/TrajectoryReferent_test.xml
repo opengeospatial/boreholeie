@@ -26,18 +26,17 @@ xsi:schemaLocation="https://raw.githubusercontent.com/opengeospatial/boreholeie/
 						<BhML:BoreholeTrajectory>
 							<BhML:curve>
 								<gml:LineString gml:id="well.1" srsDimension="2" srsName="http://www.opengis.net/gml/srs/epsg.xml#4326">
-									<gml:posList>47.593616 -70.390738 379.269 47.593616 -70.390738 379.269 360.469</gml:posList>
+									<gml:posList>47 -70 201 47.593616 47 -70 258</gml:posList>
 								</gml:LineString>
 							</BhML:curve>
 						</BhML:BoreholeTrajectory>
 					</BhML:linearElement>
 					<BhML:trajectoryReferent>
 						<BhML:DistanceExpression>
-							<BhML:distanceAlong uom="http://qudt.org/vocab/unit/M">-1.0</BhML:distanceAlong>
-							<!--Should this be "0.0" and everything be distance from here, or -1.0 and everything distance from ground level. The ppt "Point of Trajectory" suggests it should be "0.0" -->
+							<BhML:distanceAlong uom="http://qudt.org/vocab/unit/M">0.0</BhML:distanceAlong>							
 							<BhML:trajectoryReferent>
 								<BhML:TrajectoryReferent gml:id="TR1">
-									<gml:identifier codeSpace="unn:_">Top of Casing</gml:identifier>
+									<gml:name>Top of Casing</gml:name>
 									<BhML:position>
 										<gml:Point srsDimension="3" srsName="urn:ogc:def:crs:EPSG::4326">
 											<gml:pos>47 -70 201</gml:pos>
@@ -58,8 +57,7 @@ xsi:schemaLocation="https://raw.githubusercontent.com/opengeospatial/boreholeie/
 						<BhML:AtLocation>
 							<BhML:atPosition>
 								<BhML:MeasureOrEvent>
-									<BhML:distanceAlong uom="http://qudt.org/vocab/unit/M">-2</BhML:distanceAlong>
-		<!--Should this be "-2.0" or "-1.0"? The ppt "Point of Trajectory" suggests it should be "-1.0" -->
+									<BhML:distanceAlong uom="http://qudt.org/vocab/unit/M">-1</BhML:distanceAlong>
 								</BhML:MeasureOrEvent>
 							</BhML:atPosition>
 						</BhML:AtLocation>
@@ -74,15 +72,13 @@ xsi:schemaLocation="https://raw.githubusercontent.com/opengeospatial/boreholeie/
 						<BhML:AtLocation>
 							<BhML:atPosition>
 								<BhML:MeasureOrEvent>
-									<BhML:distanceAlong uom="http://qudt.org/vocab/unit/M">0.0</BhML:distanceAlong>
-		<!--Should this be "0.0" or "1.0"? The ppt "Point of Trajectory" suggests it should be "1.0" -->
+									<BhML:distanceAlong uom="http://qudt.org/vocab/unit/M">1.0</BhML:distanceAlong>
 								</BhML:MeasureOrEvent>
 							</BhML:atPosition>
 						</BhML:AtLocation>
 					</BhML:location>
 				</BhML:BoreholeEvent>
-			</BhML:collectionMember>
-			
+			</BhML:collectionMember>			
 			<BhML:collectionMember>
 							<BhML:BoreholeEvent>
 					<gml:name>Depth 1</gml:name>
@@ -91,25 +87,22 @@ xsi:schemaLocation="https://raw.githubusercontent.com/opengeospatial/boreholeie/
 						<BhML:AtLocation>
 							<BhML:atPosition>
 								<BhML:MeasureOrEvent>
-									<BhML:distanceAlong uom="http://qudt.org/vocab/unit/M">1.0</BhML:distanceAlong>
-		<!--Should this be "1.0" or "2.0"? The ppt "Point of Trajectory" suggests it should be "2.0" -->
+									<BhML:distanceAlong uom="http://qudt.org/vocab/unit/M">2.0</BhML:distanceAlong>
 								</BhML:MeasureOrEvent>
 							</BhML:atPosition>
 						</BhML:AtLocation>
 					</BhML:location>
 				</BhML:BoreholeEvent>
-			</BhML:collectionMember>
-			
+			</BhML:collectionMember>			
 			<BhML:collectionMember>
 							<BhML:BoreholeEvent>
 					<gml:name>Final Depth</gml:name>
-					<BhML:locatedMember xlink:href="http://resource.bhml/org/classifier/boreholeFeatures/gfinal-depth"/>
+					<BhML:locatedMember xlink:href="http://resource.bhml/org/classifier/boreholeFeatures/final-depth"/>
 					<BhML:location>
 						<BhML:AtLocation>
 							<BhML:atPosition>
 								<BhML:MeasureOrEvent>
-									<BhML:distanceAlong uom="http://qudt.org/vocab/unit/M">42.0</BhML:distanceAlong>
-		<!--Should this be "42.0" or "43.0"? The ppt "Point of Trajectory" suggests it should be "43.0" -->
+									<BhML:distanceAlong uom="http://qudt.org/vocab/unit/M">43.0</BhML:distanceAlong>
 								</BhML:MeasureOrEvent>
 							</BhML:atPosition>
 						</BhML:AtLocation>
@@ -118,4 +111,3 @@ xsi:schemaLocation="https://raw.githubusercontent.com/opengeospatial/boreholeie/
 			</BhML:collectionMember></BhML:BoreholeEventCollection>
 			</BhML:collection>
 			</BhML:Borehole>
-			
