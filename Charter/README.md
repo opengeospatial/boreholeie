@@ -1,4 +1,4 @@
-## Open Geospatial Consortium
+## Open Geospatial Consortium 
 
 Submission Date: 2018-04-26
 
