@@ -1,4 +1,4 @@
-/!\ work in progress /!\
+/!\ work in progress /!\ 
 
 EPOS EU Research Infrastructure on Solid Earth conceptual and logical model :
 HTML Documentation : https://forge.brgm.fr/svnrepository/epos/trunk/Documents/HTML_documentation/index.htm
