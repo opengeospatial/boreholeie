@@ -97,7 +97,7 @@ xsi:schemaLocation="https://raw.githubusercontent.com/opengeospatial/boreholeie/
 			<BhML:collectionMember>
 							<BhML:BoreholeEvent>
 					<gml:name>Final Depth</gml:name>
-					<BhML:locatedMember xlink:href="http://resource.bhml/org/classifier/boreholeFeatures/gfinal-depth"/>
+					<BhML:locatedMember xlink:href="http://resource.bhml/org/classifier/boreholeFeatures/final-depth"/>
 					<BhML:location>
 						<BhML:AtLocation>
 							<BhML:atPosition>

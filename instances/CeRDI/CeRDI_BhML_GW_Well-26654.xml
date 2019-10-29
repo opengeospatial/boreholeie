@@ -39,7 +39,9 @@ No encoding was identified for the following GWML2 properties:
 				<BhML:BoreholeLRS gml:id="LRS1">
 					<!-- <BhML:BoreholeLRS gml:id="LRS1"> is the linear referencing system for the borehole based on the casing standpipe as the starting point -->
 					<gml:name>Casing Standpipe</gml:name>
-					<BhML:accuracyStatement/><BhML:precisionStatement/><BhML:boreholeReferencingMethod>
+					<BhML:accuracyStatement/>
+					<BhML:precisionStatement/>
+					<BhML:boreholeReferencingMethod>
 						<BhML:BoreholeReferencingMethod>
 							<BhML:name>relative</BhML:name>
 							<BhML:unit xlink:href="http://qudt.org/vocab/unit/M" xlink:title="metre"/>
@@ -1008,4 +1010,3 @@ This is a verbose encoding. An alternative compact encoding is shown further bel
 		</BhML:BoreholeEventCollection>
 	</BhML:collection>
 </BhML:Borehole>
-
