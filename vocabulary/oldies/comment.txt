@@ -1,0 +1,17 @@
+I've been looking at some of the issues in the repo and I'm honestly still in the weed of scoping the problem.  I also have a specific problem in mind (GeoSciML and GWML both having their borehole model)
+What is specific abd reusable about BH ?
+
+What product, pattern, model or anything else would help a client application to ingest borehole data from various sources, considering that each source have their own domain requirements
+vcard is a good case.  Discoverability.  True for any feature. What is special about borehole ? (3D envelope, depth, shape)
+	segmentation (x things along the BH)
+	A GIS would be happy with I have a line, and along this line I have x categories.  What those categories are just "identifiers"
+	I have things that don't overlap, things that do, things that are continuous and a way to document what these things are.
+
+Is this concern specific to borehole ?
+If not specific, does it have a unique "spin" in case of borehole ?
+
+ie:
+
+multiple names (Issue 16) is not unique to BH.
+But, if naming of borehole depends of the number of "holes" (1 well, multiple BH) influence identity, it's a genuine BH use case
+
