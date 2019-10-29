@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:bml="http://www.gfz-potsdam.de/boreholeml/4.2" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gn="urn:x-inspire:specification:gmlas:GeographicalNames:3.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" targetNamespace="http://www.gfz-potsdam.de/boreholeml/4.2" elementFormDefault="qualified" attributeFormDefault="unqualified" version="4.1.0" vc:minVersion="1.1">
+	<!-- ########################################################   imports   #################################################################################### -->
+	<xs:import namespace="urn:x-inspire:specification:gmlas:GeographicalNames:3.0" schemaLocation="../bml3.0.1/GeographicalNames.xsd"/>
+	<xs:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="../gml/3.2.1/gml.xsd"/>
+	<xs:import namespace="http://www.isotc211.org/2005/gmd" schemaLocation="../iso/19139/20070417/gmd/gmd.xsd"/>
+	<!-- ########################################################   includes   #################################################################################### -->
+	<xs:include schemaLocation="Measurements.xsd"/>
+	<xs:include schemaLocation="DepthInterval.xsd"/>
+	<!-- ###################################################################################################################################################### -->
+	<!-- ################################################ implementation (Log, Sequence) of a series of Segments (Borehole Geometry) ################################ -->
+	<xs:element name="BoreholeSegment" type="bml:BoreholeSegmentLogType" substitutionGroup="bml:AbstractMeasurement" nillable="true">
+		<xs:annotation>
+			<xs:documentation xml:lang="de">Rohdaten des geometrischen Verlaufs der Bohrung (Bohrpfad) in Bohrabschnitten entlang des Bohrlochverlaufs soweit bekannt. Eine nicht abgelenkte Bohrung bzw. eine Bohrung ohne spezielle Angaben in der Datenquelle entspricht genau einem Segment der Länge von &lt;i&gt;totalLength&lt;/i&gt;
+</xs:documentation>
+			<xs:documentation xml:lang="en">Raw data for calculating the geometric borehole path along the borehole described in discrete segments. Non-inclined boreholes or boreholes without specific information in the data source equal exactly one segment with the defined length in &lt;i&gt;totalLength&lt;/i&gt;</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<!-- ###################################################################################################################################################### -->
+	<xs:complexType name="BoreholeSegmentLogType">
+		<xs:complexContent>
+			<xs:extension base="bml:AbstractMeasurementType">
+				<xs:sequence>
+					<xs:element name="segment" type="bml:BoreholeSegmentType" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- ###################################################################################################################################################### -->
+	<xs:complexType name="BoreholeSegmentType">
+		<xs:complexContent>
+			<xs:extension base="bml:DepthIntervalType">
+				<xs:sequence>
+					<xs:element name="azimuth" type="gml:AngleType">
+						<xs:annotation>
+							<xs:documentation xml:lang="de">Azimut des Bohrlochsegmentes in Altgrad bezogen auf geographisch Nord</xs:documentation>
+							<xs:documentation xml:lang="en">True north-based azimuth of the borehole segment in degrees</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="inclination" type="gml:AngleType">
+						<xs:annotation>
+							<xs:documentation xml:lang="de"> Inklination des Bohrlochsegmentes in Altgrad</xs:documentation>
+							<xs:documentation xml:lang="en">Inclination of the borehole segment in degrees</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="segmentDataQuality" type="gml:CodeType">
+						<xs:annotation>
+							<xs:documentation xml:lang="de">Qualitative Einstufung der Angaben zu Azimut und Inklination des Bohrlochsegments</xs:documentation>
+							<xs:documentation xml:lang="en">Qualitative classification of the information on azimuth and inclination of the borehole segment</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- ###################################################################################################################################################### -->
+</xs:schema>

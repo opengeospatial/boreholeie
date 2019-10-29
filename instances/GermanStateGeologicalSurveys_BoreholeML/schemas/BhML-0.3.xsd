@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Mit XMLSpy v2018 sp1 (x64) (http://www.altova.com) von Rainer Haener (Helmholtz-Zentrum Potsdam) bearbeitet -->
-<xs:schema xmlns:bml="http://www.gfz-potsdam.de/boreholeml/4.1" xmlns:BhML="https://forge.brgm.fr/svnrepository/boreholeie/schemas"  xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gn="urn:x-inspire:specification:gmlas:GeographicalNames:3.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" targetNamespace="http://www.gfz-potsdam.de/boreholeml/4.1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="4.1.0" vc:minVersion="1.1">
+<xs:schema xmlns:bml="http://www.gfz-potsdam.de/boreholeml/4.2" xmlns:BhML="https://raw.githubusercontent.com/opengeospatial/boreholeie/master/schemas" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gn="urn:x-inspire:specification:gmlas:GeographicalNames:3.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" targetNamespace="http://www.gfz-potsdam.de/boreholeml/4.2" elementFormDefault="qualified" attributeFormDefault="unqualified" version="4.1.0" vc:minVersion="1.1">
 	<!-- ########################################################   imports   #################################################################################### -->
-<xs:import namespace="urn:x-inspire:specification:gmlas:GeographicalNames:3.0" schemaLocation="../bml3.0.1/GeographicalNames.xsd"/>
-	<xs:import namespace="https://forge.brgm.fr/svnrepository/boreholeie/schemas" schemaLocation="./BhML-Core.xsd"/>
+	<xs:import namespace="urn:x-inspire:specification:gmlas:GeographicalNames:3.0" schemaLocation="../bml3.0.1/GeographicalNames.xsd"/>
+	<!--	
+	<xs:import namespace="https://forge.brgm.fr/svnrepository/boreholeie/schemas" schemaLocation="./BhML-Core-0.2.1.xsd"/>
+-->
+	<xs:import namespace="https://raw.githubusercontent.com/opengeospatial/boreholeie/master/schemas" schemaLocation="BhML-Core-0.3.xsd"/>
 	<xs:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="../gml/3.2.1/gml.xsd"/>
 	<xs:import namespace="http://www.isotc211.org/2005/gmd" schemaLocation="../iso/19139/20070417/gmd/gmd.xsd"/>
 	<!-- ########################################################   includes   #################################################################################### -->
 	<xs:include schemaLocation="Observations.xsd"/>
-	<xs:include schemaLocation="CompositeIntervals.xsd"/>
 	<xs:include schemaLocation="IntervalSeries.xsd"/>
 	<xs:include schemaLocation="Groundwater.xsd"/>
 	<xs:include schemaLocation="InstallationDetails.xsd"/>
-	<xs:include schemaLocation="BoreholeFilling.xsd"/>
-	<xs:include schemaLocation="BoreholeSegment.xsd"/>
-	<xs:include schemaLocation="DrillingProcess.xsd"/>
-	<xs:include schemaLocation="Sampling.xsd"/>
-	<xs:include schemaLocation="Investigation.xsd"/>
 	<!--	
 	<xs:include schemaLocation="Origin.xsd"/>
 	<xs:include schemaLocation="BoreholeProvider.xsd"/>

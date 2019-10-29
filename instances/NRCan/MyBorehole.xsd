@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/MyBorehole"  xmlns:cit="http://standards.iso.org/iso/19115/-3/cit/1.0"  xmlns:gml="http://www.opengis.net/gml/3.2"  xmlns:BhML="https://raw.githubusercontent.com/opengeospatial/boreholeie/master/schemas"  xmlns:my="http://www.example.org/MyBorehole" elementFormDefault="qualified">
+
+	<annotation>
+		<documentation>
+			Example of a extending BhML core to add domain specific properties.  This example reuse a slightly modified DrillingDetails from GeoSciML 4.1
+		</documentation>
+	</annotation>
+<import namespace="https://raw.githubusercontent.com/opengeospatial/boreholeie/master/schemas" schemaLocation="https://raw.githubusercontent.com/opengeospatial/boreholeie/master/schemas/BhML-Core.xsd"/>
+<import namespace="http://www.opengis.net/gml/3.3/exr" schemaLocation="http://schemas.opengis.net/gml/3.3/extdEncRule.xsd"/>
+<import namespace="http://standards.iso.org/iso/19115/-3/cit/1.0" schemaLocation="http://standards.iso.org/iso/19115/-3/cit/1.0/cit.xsd"/>
+	
+<complexType name="MyBoreholeType">
+		<complexContent>
+			<extension base="BhML:BoreholeType">
+			<sequence>
+					<element name="indexData" nillable="true" minOccurs="0">
+						<annotation>
+							<documentation>The property indexData:BoreholeDetails describes metadata about a borehole, such as the operator, the custodian, dates of drilling, etc.</documentation>
+						</annotation>
+						<complexType>
+							<sequence>
+								<element ref="gsmlbh:BoreholeDetails"/>
+							</sequence>
+							<attribute name="nilReason" type="gml:NilReasonType"/>
+						</complexType>
+					</element>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+
+	<element name="MyBorehole" type="my:MyBoreholeType" substitutionGroup="BhML:Borehole">
+		<annotation>
+			<documentation>A Borehole is the generalized term for any narrow shaft drilled in the ground, either vertically, horizontally, or inclined.</documentation>
+		</annotation>
+	</element>
+ 
+ <complexType name="BoreholeDetailsType">
+		<sequence>
+			<element name="operator" type="cit:CI_Responsibility_PropertyType" nillable="true" minOccurs="0">
+				<annotation>
+					<documentation>The operator property is an association between a BoreholeDetails and a CIT:CI_ResponsibleParty describing the organisation responsible for commissioning the borehole (as opposed to actually drilling the borehole).</documentation>
+				</annotation>
+			</element>
+			<element name="driller" type="cit:CI_Responsibility_PropertyType" nillable="true" minOccurs="0">
+				<annotation>
+					<documentation>The driller property is an association between a BoreholeDetails and a CIT:CI_ResponsibleParty describing of the organisation responsible for drilling the borehole (as opposed to commissioning the borehole).</documentation>
+				</annotation>
+			</element>
+			<element name="dateOfDrilling" type="gml:TimePeriodPropertyType" nillable="true" minOccurs="0">
+				<annotation>
+					<documentation>The property dateOfDrilling:TM_Period describes the time period during which drilling of the borehole occurred.</documentation>
+				</annotation>
+			</element>
+			<element name="inclinationType" type="gml:ReferenceType" nillable="true" minOccurs="0">
+				<annotation>
+					<documentation>The property inclinationType:BoreholeInclinationCode contains a term from a controlled vocabulary indicating the inclination type of the borehole. Appropriate terms would include vertical; inclined up; inclined down, horizontal.</documentation>
+					<appinfo>
+						<targetElement xmlns="http://www.opengis.net/gml/3.2">gsmlbh:BoreholeInclinationCode</targetElement>
+						<targetCodeList xmlns="http://www.opengis.net/gml/3.3/exr">BoreholeInclinationCode</targetCodeList>
+					</appinfo>
+				</annotation>
+			</element>
+			<element name="boreholeMaterialCustodian" type="cit:CI_Responsibility_PropertyType" nillable="true" minOccurs="0" maxOccurs="unbounded">
+				<annotation>
+					<documentation>The property boreholeMaterialCustodian is an association between BoreholeDetails and a CIT:CI_ResponsibleParty describing the organisation that is custodian of the drilled material recovered from the borehole.</documentation>
+				</annotation>
+			</element>
+			<element name="purpose" type="gml:ReferenceType" nillable="true" minOccurs="0" maxOccurs="unbounded">
+				<annotation>
+					<documentation>The property purpose:BoreholePurposeCode contains a term from a controlled vocabulary describing the purpose for which the borehole was drilled. e.g., site investigation, mineral exploration, hydrocarbon exploration, water resources.</documentation>
+					<appinfo>
+						<targetElement xmlns="http://www.opengis.net/gml/3.2">gsmlbh:BoreholePurposeCode</targetElement>
+						<targetCodeList xmlns="http://www.opengis.net/gml/3.3/exr">BoreholePurposeCode</targetCodeList>
+					</appinfo>
+				</annotation>
+			</element>
+			<element name="dataCustodian" type="cit:CI_Responsibility_PropertyType" nillable="true" minOccurs="0" maxOccurs="unbounded">
+				<annotation>
+					<documentation>The dataCustodian is an association between a BoreholeDetails and a CIT:CI_ResponsibleParty describing the custodian (person or organisation) that is the custodian of data pertaining to this borehole.</documentation>
+				</annotation>
+			</element>
+		</sequence>
+	</complexType>
+	<complexType name="BoreholeDetailsPropertyType">
+		<sequence>
+			<element ref="my:BoreholeDetails"/>
+		</sequence>
+	</complexType>
+	
+	<element name="BoreholeDetails" type="my:BoreholeDetailsType" substitutionGroup="gml:AbstractObject">
+		<annotation>
+			<documentation>BoreholeDetails describes borehole-specific index data, often termed “header information”. It contains metadata about the parties involved in the drilling, the storage of drilled material and other information relevant to the borehole as a whole.  Properties that may vary along the borehole path are managed in DrillingDetails</documentation>
+		</annotation>
+	</element>
+	
+</schema>

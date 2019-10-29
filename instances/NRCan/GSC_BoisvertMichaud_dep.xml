@@ -6,20 +6,23 @@ Current research 1998-E/Recherches en cours 1998-E; by Geological Survey of Cana
 
 diagram on p.119
 
-Complex example made of units constructed from reused contacts and samples
+Complex example made of units constructed from reused contacts and samples.
+Examples that use a Borehole derived from core BhML Borehole and adds a BoreholeDetails class adapted from GeoSciML
  -->
-<BhML:Borehole xmlns:gww="http://www.opengis.net/gwml-well/2.2" 
+<my:Borehole xmlns:gww="http://www.opengis.net/gwml-well/2.2" 
 xmlns:sam="http://www.opengis.net/sampling/2.0" 
 xmlns:spec="http://www.opengis.net/samplingSpecimen/2.0" 
 xmlns:swe="http://www.opengis.net/swe/2.0" 
 xmlns:BhML="https://raw.githubusercontent.com/opengeospatial/boreholeie/master/schemas" 
 xmlns:sams="http://www.opengis.net/samplingSpatial/2.0" 
 xmlns:xlink="http://www.w3.org/1999/xlink" 
+xmlns:cit="http://standards.iso.org/iso/19115/-3/cit/1.0" 
+xmlns:my="http://www.example.org/MyBorehole" 
 xmlns:gml="http://www.opengis.net/gml/3.2" 
 xmlns:gwml2="http://www.opengis.net/gwml-main/2.2" 
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 xmlns:gsmlb="http://www.opengis.net/gsml/4.1/GeoSciML-Basic" 
-xsi:schemaLocation="https://raw.githubusercontent.com/opengeospatial/boreholeie/master/schemas https://raw.githubusercontent.com/opengeospatial/boreholeie/master/schemas/BhML-Core.xsd http://www.opengis.net/gsml/4.1/GeoSciML-Basic http://schemas.opengis.net/gsml/4.1/geoSciMLBasic.xsd http://www.opengis.net/samplingSpecimen/2.0 http://schemas.opengis.net/samplingSpecimen/2.0/specimen.xsd http://www.opengis.net/gwml-main/2.2 http://schemas.opengis.net/gwml/2.2/gwml2-main.xsd">
+xsi:schemaLocation="http://www.example.org/MyBorehole MyBorehole.xsd http://www.opengis.net/gsml/4.1/GeoSciML-Basic http://schemas.opengis.net/gsml/4.1/geoSciMLBasic.xsd http://www.opengis.net/samplingSpecimen/2.0 http://schemas.opengis.net/samplingSpecimen/2.0/specimen.xsd http://www.opengis.net/gwml-main/2.2 http://schemas.opengis.net/gwml/2.2/gwml2-main.xsd">
 	<gml:description>Complex example made of units constructed from reused contacts and samples.  This borehole is an encoding of a example described in Boisvert &amp; Michaud, 1998</gml:description>
 	<gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616">https://geoconnex.ca/id/waterwells/unbounded.1</gml:identifier>
 	<gml:name codeSpace="urn:gin">demo</gml:name>
@@ -992,4 +995,80 @@ xsi:schemaLocation="https://raw.githubusercontent.com/opengeospatial/boreholeie/
 			</BhML:collectionMember>
 		</BhML:BoreholeEventCollection>
 	</BhML:collection>
-</BhML:Borehole>
+<my:indexData>
+  <my:BoreholeDetails>
+   <my:operator>
+    <cit:CI_Responsibility>
+     <cit:role>
+      <cit:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml" codeListValue="owner"/>
+     </cit:role>
+     <cit:party>
+      <cit:CI_Organisation>
+       <cit:name>
+        <gco:CharacterString>Natural Resources Canada</gco:CharacterString>
+       </cit:name>
+      </cit:CI_Organisation>
+     </cit:party>
+    </cit:CI_Responsibility>
+   </my:operator>
+   <my:driller>
+    <cit:CI_Responsibility>
+     <cit:role>
+      <cit:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml" codeListValue="pointOfContact"/>
+     </cit:role>
+     <cit:party>
+      <cit:CI_Organisation>
+       <cit:name>
+        <gco:CharacterString>Geological Survey of Canada</gco:CharacterString>
+       </cit:name>
+      </cit:CI_Organisation>
+     </cit:party>
+    </cit:CI_Responsibility>
+   </my:driller>
+   <my:dateOfDrilling>
+    <gml:TimePeriod gml:id="drilldates-01">
+     <gml:begin>
+      <gml:TimeInstant gml:id="drilldates_begin-01">
+       <gml:timePosition>1999-08-01</gml:timePosition>
+      </gml:TimeInstant>
+     </gml:begin>
+     <gml:end>
+      <gml:TimeInstant gml:id="drilldates_end-01">
+       <gml:timePosition>1999-08-01</gml:timePosition>
+      </gml:TimeInstant>
+     </gml:end>
+    </gml:TimePeriod>
+   </my:dateOfDrilling>
+   <my:inclinationType xlink:href="http://gin.geosciences.ca/def/inclinationtype/vertical" xlink:title="vertical"/>
+   <my:boreholeMaterialCustodian>
+    <cit:CI_Responsibility>
+     <cit:role>
+      <cit:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml" codeListValue="pointOfContact"/>
+     </cit:role>
+     <cit:party>
+      <cit:CI_Organisation>
+       <cit:name>
+        <gco:CharacterString>Geological Survey of Canada</gco:CharacterString>
+       </cit:name>
+      </cit:CI_Organisation>
+     </cit:party>
+    </cit:CI_Responsibility>
+   </my:boreholeMaterialCustodian>
+   <my:purpose xlink:href="http://gin.geosciences.ca/def/purpose" xlink:title="groundwater monitoring"/>
+   <my:dataCustodian>
+    <cit:CI_Responsibility>
+     <cit:role>
+      <cit:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml" codeListValue="pointOfContact"/>
+     </cit:role>
+     <cit:party>
+      <cit:CI_Organisation>
+       <cit:name>
+        <gco:CharacterString>Geological Survey of Canada</gco:CharacterString>
+       </cit:name>
+      </cit:CI_Organisation>
+     </cit:party>
+    </cit:CI_Responsibility>
+   </my:dataCustodian>
+  </my:BoreholeDetails>
+ </my:indexData>
+</my:Borehole>

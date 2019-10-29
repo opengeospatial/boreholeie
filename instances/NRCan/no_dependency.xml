@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<BoreholeEventCollection xmlns="https://forge.brgm.fr/svnrepository/boreholeie/schemas"  xmlns:xlink="http://www.w3.org/1999/xlink"  xmlns:gml="http://www.opengis.net/gml/3.2"  xmlns:gsmlb="http://www.opengis.net/gsml/4.1/GeoSciML-Basic" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-xsi:schemaLocation="http://www.opengis.net/gsml/4.1/GeoSciML-Basic http://schemas.opengis.net/gsml/4.1/geoSciMLBasic.xsd https://forge.brgm.fr/svnrepository/boreholeie/schemas https://forge.brgm.fr/svnrepository/boreholeie/schemas/BhML-Core.xsd">
-						<collectionLRS>
-				<BoreholeLRS gml:id="LRS1">
-					<accuracyStatement xlink:href="https://opengis.org/def/accuracy/good" xlink:title="Good"/>
+<BhML:BoreholeEventCollection xmlns:BhML="https://raw.githubusercontent.com/opengeospatial/boreholeie/master/schemas" xmlns:xlink="http://www.w3.org/1999/xlink"  xmlns:gml="http://www.opengis.net/gml/3.2"  xmlns:gsmlb="http://www.opengis.net/gsml/4.1/GeoSciML-Basic" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.opengis.net/gsml/4.1/GeoSciML-Basic http://schemas.opengis.net/gsml/4.1/geoSciMLBasic.xsd https://raw.githubusercontent.com/opengeospatial/boreholeie/master/schemas https://raw.githubusercontent.com/opengeospatial/boreholeie/master/schemas/BhML-Core.xsd">
+						<BhML:collectionLRS>
+				<BhML:BoreholeLRS gml:id="LRS1">
+					<BhML:accuracyStatement xlink:href="https://opengis.org/def/accuracy/good" xlink:title="Good"/>
 					<!-- should be xlink:href -->
-					<precisionStatement xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="Unknown"/>
+					<BhML:precisionStatement xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown" xlink:title="Unknown"/>
 					<!-- should be xlink:href -->
-					<boreholeReferencingMethod>
-						<BoreholeReferencingMethod>
-							<name>relative</name>
-							<unit xlink:href="http://qudt.org/vocab/unit/M" xlink:title="meter"/>
-						</BoreholeReferencingMethod>
-					</boreholeReferencingMethod>
-<linearElement>
-						<BoreholeTrajectory>
-							<curve>
+					<BhML:boreholeReferencingMethod>
+						<BhML:BoreholeReferencingMethod>
+							<BhML:name>relative</BhML:name>
+							<BhML:unit xlink:href="http://qudt.org/vocab/unit/M" xlink:title="meter"/>
+						</BhML:BoreholeReferencingMethod>
+					</BhML:boreholeReferencingMethod>
+<BhML:linearElement>
+						<BhML:BoreholeTrajectory>
+							<BhML:curve>
 								<gml:Curve gml:id="bh.1.shape" srsName="http://spatialreference.org/ref/epsg/4979/">
 									<gml:segments>
 										<gml:LineStringSegment>
@@ -23,72 +23,76 @@ xsi:schemaLocation="http://www.opengis.net/gsml/4.1/GeoSciML-Basic http://schema
 										</gml:LineStringSegment>
 									</gml:segments>
 								</gml:Curve>
-							</curve>
-						</BoreholeTrajectory>
-					</linearElement>
-					<trajectoryReferent>
-						<DistanceExpression>
-							<distanceAlong uom="http://qudt.org/vocab/unit/M">0.00</distanceAlong>
-							<trajectoryReferent>
-								<TrajectoryReferent gml:id="TR1">
+							</BhML:curve>
+						</BhML:BoreholeTrajectory>
+					</BhML:linearElement>
+					<BhML:trajectoryReferent>
+						<BhML:DistanceExpression>
+						
+							<BhML:distanceAlong uom="http://qudt.org/vocab/unit/M">0.00</BhML:distanceAlong>
+							<BhML:trajectoryReferent>
+								<BhML:TrajectoryReferent gml:id="TR1">
 									<gml:identifier codeSpace="unn:_">Collar position</gml:identifier>
-									<position>
+									<BhML:position>
 				<gml:Point gml:id="p1" srsName="http://spatialreference.org/ref/epsg/4979/">
 					<gml:pos>-25.9020 132.334 27.9</gml:pos>
 				</gml:Point>
-									</position>
-								</TrajectoryReferent>
-							</trajectoryReferent>
-							<location/>
-						</DistanceExpression>
-					</trajectoryReferent>
-				</BoreholeLRS>
-			</collectionLRS>
+									</BhML:position>
+								</BhML:TrajectoryReferent>
+							</BhML:trajectoryReferent>
+							<BhML:location/>
+						</BhML:DistanceExpression>
+						
+					</BhML:trajectoryReferent>
+
+					
+				</BhML:BoreholeLRS>
+			</BhML:collectionLRS>
 			
-	<collectionMember>
-		<BoreholeEvent>
-			<locatedMember>
+	<BhML:collectionMember>
+		<BhML:BoreholeEvent>
+			<BhML:locatedMember>
 				<gsmlb:GeologicUnit gml:id="Hooray.Sandstone">
 					<gml:name>Hooray Sandstone</gml:name>
 					<gsmlb:geologicUnitType xlink:href="http://resource.geoscience.gov.xxx/vocabulary/geologicunittype" xlink:title="lithostratigraphic unit"/>
 					<gsmlb:rank xlink:href="http://resource.geoscience.gov.xxx/vocabulary/geologicunitrank" xlink:title="formation"/>
 				</gsmlb:GeologicUnit>
-			</locatedMember>
-			<location>
-				<FromToLocation>
-					<fromPosition>
-						<MeasureOrEvent>
-							<distanceAlong uom="m">0.0</distanceAlong>
-						</MeasureOrEvent>
-					</fromPosition>
-					<toPosition>
-						<MeasureOrEvent>
-							<distanceAlong uom="m">20.0</distanceAlong>
-						</MeasureOrEvent>
-					</toPosition>
-				</FromToLocation>
-			</location>
-		</BoreholeEvent>
-	</collectionMember>
-	<collectionMember>
-		<BoreholeEvent>
+			</BhML:locatedMember>
+			<BhML:location>
+				<BhML:FromToLocation>
+					<BhML:fromPosition>
+						<BhML:MeasureOrEvent>
+							<BhML:distanceAlong uom="m">0.0</BhML:distanceAlong>
+						</BhML:MeasureOrEvent>
+					</BhML:fromPosition>
+					<BhML:toPosition>
+						<BhML:MeasureOrEvent>
+							<BhML:distanceAlong uom="m">20.0</BhML:distanceAlong>
+						</BhML:MeasureOrEvent>
+					</BhML:toPosition>
+				</BhML:FromToLocation>
+			</BhML:location>
+		</BhML:BoreholeEvent>
+	</BhML:collectionMember>
+	<BhML:collectionMember>
+		<BhML:BoreholeEvent>
 			<!-- by reference this time -->
-			<locatedMember xlink:href="http://geology.au/lexicon/Westbourne.Formation"/>
-			<location>
-				<FromToLocation>
-					<fromPosition>
-						<MeasureOrEvent>
-							<distanceAlong uom="m">20.0</distanceAlong>
-						</MeasureOrEvent>
-					</fromPosition>
-					<toPosition>
-						<MeasureOrEvent>
-							<distanceAlong uom="m">56.0</distanceAlong>
-						</MeasureOrEvent>
-					</toPosition>
-				</FromToLocation>
-			</location>
-		</BoreholeEvent>
-	</collectionMember>
+			<BhML:locatedMember xlink:href="http://geology.au/lexicon/Westbourne.Formation"/>
+			<BhML:location>
+				<BhML:FromToLocation>
+					<BhML:fromPosition>
+						<BhML:MeasureOrEvent>
+							<BhML:distanceAlong uom="m">20.0</BhML:distanceAlong>
+						</BhML:MeasureOrEvent>
+					</BhML:fromPosition>
+					<BhML:toPosition>
+						<BhML:MeasureOrEvent>
+							<BhML:distanceAlong uom="m">56.0</BhML:distanceAlong>
+						</BhML:MeasureOrEvent>
+					</BhML:toPosition>
+				</BhML:FromToLocation>
+			</BhML:location>
+		</BhML:BoreholeEvent>
+	</BhML:collectionMember>
 
-</BoreholeEventCollection>
+</BhML:BoreholeEventCollection>

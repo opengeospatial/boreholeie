@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Mit XMLSpy v2018 rel. 2 sp1 (x64) (http://www.altova.com) von Rainer Haener (Helmholtz-Zentrum Potsdam) bearbeitet -->
+<xs:schema xmlns:bml="http://www.gfz-potsdam.de/boreholeml/4.2" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gn="urn:x-inspire:specification:gmlas:GeographicalNames:3.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" targetNamespace="http://www.gfz-potsdam.de/boreholeml/4.2" elementFormDefault="qualified" attributeFormDefault="unqualified" version="4.1.0" vc:minVersion="1.1">
+	<!-- ########################################################   imports   #################################################################################### -->
+	<xs:import namespace="urn:x-inspire:specification:gmlas:GeographicalNames:3.0" schemaLocation="../bml3.0.1/GeographicalNames.xsd"/>
+	<xs:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="../gml/3.2.1/gml.xsd"/>
+	<xs:import namespace="http://www.isotc211.org/2005/gmd" schemaLocation="../iso/19139/20070417/gmd/gmd.xsd"/>
+	<!-- ########################################################   includes   #################################################################################### -->
+	<xs:include schemaLocation="GeologicalClassification.xsd"/>
+	<xs:include schemaLocation="Measurements.xsd"/>
+	<!-- ############################ Manifestation (Class) of lithostratigraphic units, layer (Property)  #################################################### -->
+	<!-- ############################# Implementation (specific) of the correct hierarchy of litho-startigraphic units #########################################-->
+	<!--
+		layer is the property (container) implementation of GML, which contains the manifestaion of a geological unit
+		Component and Interval in this case
+
+		Note the respective substitutionGroups of the Interval substitutes! This implements the correct hierarchy of the litho startigraphy
+		Also note that each unit can be replaced with the (unspecified) Interval!
+	-->
+	<xs:include schemaLocation="CompositeIntervals.xsd"/>
+	<!-- #################################################################################################################################################### -->
+	<xs:element name="StratigraphicUnits" type="bml:StratigraphicUnitsType" substitutionGroup="bml:AbstractMeasurement">
+		<xs:annotation>
+			<xs:documentation>[de] Beprobungsintervalle im Bohrloch oder im Bohrgut. [en] Sampling intervals in the borehole or rock material.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="StratigraphicUnitsType">
+		<xs:complexContent>
+			<xs:extension base="bml:AbstractMeasurementType">
+				<xs:sequence>
+					<xs:element name="description" type="gmd:LocalisedCharacterString_PropertyType"/>
+					<xs:element name="version" nillable="true" minOccurs="0">
+						<xs:complexType>
+							<xs:simpleContent>
+								<xs:extension base="xs:string">
+									<xs:attribute name="nilReason" type="gml:NilReasonType"/>
+								</xs:extension>
+							</xs:simpleContent>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="layer" type="bml:StratigraphicLayersType" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>[de] Der abstrakte Datentyp dient der Vererbung allgemeiner Schichtdaten an Haupt- und Teilschichten.[en] The abstract data type serves the inheritance of general interval data to main layer and sub layers.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- #################################################################################################################################################### -->
+	<!-- #################################################################################################################################################### -->
+	<xs:complexType name="StratigraphicUnitsPropertyType">
+		<xs:sequence>
+			<xs:element ref="bml:StratigraphicUnits"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- ############################################################################################################################################ -->
+	<!-- ############################################################################################################################################ -->
+	<xs:complexType name="AbstractStratigraphicUnitType" abstract="true"/>
+	<xs:element name="AbstractStratigraphicUnit" type="bml:AbstractStratigraphicUnitType" abstract="true"/>
+	<!-- ############################################################################################################################################ -->
+	<!-- ############################################################################################################################################ -->
+	<xs:complexType name="SuperGroupType">
+		<xs:complexContent>
+			<xs:extension base="bml:AbstractCompositeIntervalType">
+				<xs:sequence>
+					<xs:element name="layer" type="bml:LayersGroupType" minOccurs="0" maxOccurs="unbounded"/>
+					<!--				
+					<xs:element ref="bml:Group" minOccurs="0" maxOccurs="unbounded"/>
+-->
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="GroupType">
+		<xs:complexContent>
+			<xs:extension base="bml:AbstractCompositeIntervalType">
+				<xs:sequence>
+					<xs:element name="layer" type="bml:LayersSubGroupType" minOccurs="0" maxOccurs="unbounded"/>
+					<!--				
+					<xs:element ref="bml:SubGroup" minOccurs="0" maxOccurs="unbounded"/>
+-->
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="SubGroupType">
+		<xs:complexContent>
+			<xs:extension base="bml:AbstractCompositeIntervalType">
+				<xs:sequence>
+					<xs:element name="layer" type="bml:LayersFormationType" minOccurs="0" maxOccurs="unbounded"/>
+					<!--				
+					<xs:element ref="bml:Formation" minOccurs="0" maxOccurs="unbounded"/>
+-->
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="FormationType">
+		<xs:complexContent>
+			<xs:extension base="bml:AbstractCompositeIntervalType">
+				<xs:sequence>
+					<xs:element name="layer" type="bml:LayersMemberType" minOccurs="0" maxOccurs="unbounded"/>
+					<!--				
+					<xs:element ref="bml:Member" minOccurs="0" maxOccurs="unbounded"/>
+-->
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="SubFormationType">
+		<xs:annotation>
+			<xs:documentation>SubFormation is an alias for Member</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="bml:AbstractCompositeIntervalType">
+				<xs:sequence>
+					<xs:element name="layer" type="bml:LayersBankType" minOccurs="0" maxOccurs="unbounded"/>
+					<!--				
+					<xs:element ref="bml:Bank" minOccurs="0" maxOccurs="unbounded"/>
+-->
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="MemberType">
+		<xs:complexContent>
+			<xs:extension base="bml:AbstractCompositeIntervalType">
+				<xs:sequence>
+					<xs:element name="layer" type="bml:LayersBankType" minOccurs="0" maxOccurs="unbounded"/>
+					<!--				
+					<xs:element ref="bml:Bank" minOccurs="0" maxOccurs="unbounded"/>
+-->
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="BankType">
+		<xs:complexContent>
+			<xs:extension base="bml:AbstractCompositeIntervalType">
+				<xs:sequence>
+					<xs:element name="layer" minOccurs="0" maxOccurs="unbounded">
+						<xs:complexType>
+							<xs:choice>
+								<xs:element ref="bml:Component" maxOccurs="unbounded"/>
+							</xs:choice>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- ##################################################################################################################################################### -->
+	<xs:complexType name="LayersSuperGroupType">
+		<xs:complexContent>
+			<xs:extension base="bml:StratigraphicLayersType">
+				<xs:sequence>
+					<xs:choice>
+						<xs:element ref="bml:SuperGroup" maxOccurs="unbounded"/>
+						<xs:group ref="bml:layerDefault" maxOccurs="1"/>
+					</xs:choice>
+					<xs:element name="layer" type="bml:LayersGroupType" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+				<xs:attribute name="type" type="xs:string" use="required" fixed="SuperGroup"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="LayersGroupType">
+		<xs:complexContent>
+			<xs:extension base="bml:StratigraphicLayersType">
+				<xs:sequence>
+					<xs:choice>
+						<xs:element ref="bml:Group" maxOccurs="unbounded"/>
+						<xs:group ref="bml:layerDefault" maxOccurs="1"/>
+					</xs:choice>
+					<xs:element name="layer" type="bml:LayersSubGroupType" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+				<xs:attribute name="type" type="xs:string" use="required" fixed="Group"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="LayersSubGroupType">
+		<xs:complexContent>
+			<xs:extension base="bml:StratigraphicLayersType">
+				<xs:sequence>
+					<xs:choice>
+						<xs:element ref="bml:SubGroup" maxOccurs="unbounded"/>
+						<xs:group ref="bml:layerDefault" maxOccurs="1"/>
+					</xs:choice>
+					<xs:element name="layer" type="bml:LayersFormationType" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+				<xs:attribute name="type" type="xs:string" use="required" fixed="SubGroup"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="LayersFormationType">
+		<xs:complexContent>
+			<xs:extension base="bml:StratigraphicLayersType">
+				<xs:sequence>
+					<xs:choice>
+						<xs:element ref="bml:Formation" maxOccurs="unbounded"/>
+						<xs:group ref="bml:layerDefault" maxOccurs="1"/>
+					</xs:choice>
+					<xs:element name="layer" type="bml:LayersMemberType" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+				<xs:attribute name="type" type="xs:string" use="required" fixed="Formation"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="LayersSubFormationType">
+		<xs:complexContent>
+			<xs:extension base="bml:StratigraphicLayersType">
+				<xs:sequence>
+					<xs:choice>
+						<xs:element ref="bml:SubFormation" maxOccurs="unbounded"/>
+						<xs:group ref="bml:layerDefault" maxOccurs="1"/>
+					</xs:choice>
+					<xs:element name="layer" type="bml:LayersBankType" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+				<xs:attribute name="type" type="xs:string" use="required" fixed="SubFormation"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="LayersMemberType">
+		<xs:complexContent>
+			<xs:extension base="bml:StratigraphicLayersType">
+				<xs:sequence>
+					<xs:choice>
+						<xs:element ref="bml:Member" maxOccurs="unbounded"/>
+						<xs:group ref="bml:layerDefault" maxOccurs="1"/>
+					</xs:choice>
+					<xs:element name="layer" type="bml:LayersBankType" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+				<xs:attribute name="type" type="xs:string" use="required" fixed="Member"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="LayersBankType">
+		<xs:complexContent>
+			<xs:extension base="bml:StratigraphicLayersType">
+				<xs:sequence>
+					<xs:choice maxOccurs="1">
+						<xs:element ref="bml:Bank" maxOccurs="1"/>
+						<xs:group ref="bml:layerDefault" maxOccurs="1"/>
+						<xs:element ref="bml:Component" maxOccurs="unbounded"/>
+					</xs:choice>
+					<xs:element name="layer" minOccurs="0" maxOccurs="unbounded">
+						<xs:complexType>
+							<xs:choice>
+								<xs:element ref="bml:Component" maxOccurs="unbounded"/>
+							</xs:choice>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="type" type="xs:string" use="required" fixed="Bank"/>
+				<!--	alternatives: either element Bank or layer (with type Bank) -->
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- ############################# Implementation (specific) of the correct hierarchy of litho-stratigraphic units ########################################################## -->
+	<!-- ############################# Each Layer-Instance extends the StratigraphicLayersType, only allowing  the correct sub-layer type ####################################### -->
+	<xs:element name="StratigraphicLayers" type="bml:StratigraphicLayersType" abstract="true"/>
+	<xs:group name="layerDefault">
+		<xs:sequence>
+			<xs:element ref="bml:from"/>
+			<xs:element ref="bml:to"/>
+			<xs:element ref="bml:rockCode" minOccurs="0"/>
+			<xs:element ref="bml:rockNameText" minOccurs="0"/>
+			<xs:element ref="bml:intervalType" minOccurs="0"/>
+			<xs:element ref="bml:genesis" minOccurs="0"/>
+			<xs:element ref="bml:geoGenesis" minOccurs="0"/>
+			<xs:element ref="bml:carbonateContent" minOccurs="0"/>
+			<xs:element ref="bml:waterContent" minOccurs="0"/>
+			<xs:element ref="bml:consistency" minOccurs="0"/>
+			<xs:element ref="bml:compactness" minOccurs="0"/>
+			<xs:element ref="bml:petrography" maxOccurs="9"/>
+			<xs:element ref="bml:stratigraphy"/>
+		</xs:sequence>
+	</xs:group>
+	<!-- ########################################################################################################################################################### -->
+	<xs:complexType name="StratigraphicLayersType" abstract="true">
+		<!--	
+		<xs:sequence>
+			<xs:choice>
+				<xs:element ref="bml:AbstractUnit" maxOccurs="unbounded"/>
+				<xs:group ref="bml:layerDefault" maxOccurs="1"/>
+				<xs:element ref="bml:Component" maxOccurs="unbounded"/>
+			</xs:choice>
+		</xs:sequence>
+		<xs:attribute name="type" type="xs:string" use="required"/>
+-->
+	</xs:complexType>
+	<!-- ######################################### the (abstract) basis of all lithostratigraphic units ######################################################################## -->
+	<xs:element name="AbstractUnit" type="bml:AbstractCompositeIntervalType" abstract="true"/>
+	<!-- ######################################### the (abstract) basis of all lithostratigraphic units ######################################################################## -->
+	<xs:element name="Bank" type="bml:BankType" substitutionGroup="bml:AbstractUnit"/>
+	<xs:element name="Member" type="bml:MemberType" substitutionGroup="bml:AbstractUnit"/>
+	<xs:element name="Formation" type="bml:FormationType" substitutionGroup="bml:AbstractUnit"/>
+	<xs:element name="SubFormation" type="bml:SubFormationType" substitutionGroup="bml:AbstractUnit"/>
+	<xs:element name="SubGroup" type="bml:SubGroupType" substitutionGroup="bml:AbstractUnit"/>
+	<xs:element name="Group" type="bml:GroupType" substitutionGroup="bml:AbstractUnit"/>
+	<xs:element name="SuperGroup" type="bml:SuperGroupType" substitutionGroup="bml:AbstractUnit"/>
+</xs:schema>

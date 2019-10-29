@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:bml="http://www.gfz-potsdam.de/boreholeml/4.2" xmlns:BhML="https://raw.githubusercontent.com/opengeospatial/boreholeie/master/schemas" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gn="urn:x-inspire:specification:gmlas:GeographicalNames:3.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" targetNamespace="http://www.gfz-potsdam.de/boreholeml/4.2" elementFormDefault="qualified" attributeFormDefault="unqualified" version="4.1.0" vc:minVersion="1.1">
+	<!-- ########################################################   imports   #################################################################################### -->
+	<xs:import namespace="urn:x-inspire:specification:gmlas:GeographicalNames:3.0" schemaLocation="../bml3.0.1/GeographicalNames.xsd"/>
+	<xs:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="../gml/3.2.1/gml.xsd"/>
+	<xs:import namespace="http://www.isotc211.org/2005/gmd" schemaLocation="../iso/19139/20070417/gmd/gmd.xsd"/>
+	<xs:import namespace="https://raw.githubusercontent.com/opengeospatial/boreholeie/master/schemas" schemaLocation="./BhML-Core-0.3.xsd"/>
+	<!-- ########################################################   includes   #################################################################################### -->
+	<xs:include schemaLocation="Measurements.xsd"/>
+	<xs:include schemaLocation="DepthInterval.xsd"/>
+	<!--	
+	<xs:element name="locatedRockClassificationMember" type="bml:LocatedRockClassificationMemberType" substitutionGroup="BhML:locatedMember"/>
+	<xs:element name="RockClassificationEvent" type="bml:RockClassificationType" substitutionGroup="BhML:BoreholeEvent"/>
+	<xs:complexType name="RockClassificationType">
+		<xs:complexContent>
+			<xs:extension base="BhML:BoreholeEventType">
+				<xs:sequence>
+					<xs:group ref="bml:RockComponentsGroup" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+-->
+	<!-- ####################################### Groundwater  substitutes locatedMember ############################################################# -->
+	<xs:complexType name="LocatedGroundwaterMemberType">
+		<xs:complexContent>
+			<xs:extension base="BhML:AbstractLocatedMemberType">
+				<xs:sequence>
+					<xs:element ref="bml:Groundwater"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="locatedGroundwaterMember" type="bml:LocatedGroundwaterMemberType" substitutionGroup="BhML:locatedMember"/>
+	<!-- ####################################### Groundwater  Event, substitutes BoreholeEvent ############################### ########################## -->
+	<xs:element name="GroundwaterEvent" type="bml:GroundwaterEventType" substitutionGroup="BhML:BoreholeEvent"/>
+	<!-- ####################################### Groundwater Event, Type restricts BoreholeEventType with locatedGroundwaterMember ################## -->
+	<xs:complexType name="GroundwaterEventType">
+		<xs:complexContent>
+			<xs:restriction base="BhML:BoreholeEventType">
+				<xs:sequence>
+					<xs:element ref="bml:Groundwater"/>
+					<xs:element ref="BhML:location"/>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- ############################################### Groundwater   ################################################################################# -->
+	<!-- ########################################################   includes   #################################################################################### -->
+	<!-- ############################################### BoreholeGeometryLog  equivalent to BoreholeSegment ############################################################ -->
+<!--	
+	<xs:element name="Groundwater" type="bml:GroundwaterLogType" substitutionGroup="bml:AbstractMeasurement">
+-->
+	<xs:element name="Groundwater" type="bml:GroundwaterLogType" substitutionGroup="BhML:locatedMember">
+		<xs:annotation>
+			<xs:documentation>[de] Zusammenfassende Grundwasserbeobachtungen bezogen auf den Bohrvorgang nach DIN4022. Enthält die Grundwasserbeobachtungen beim ersten Antreffen des Grundwassers bis zur Beendigung der Bohrarbeiten. [en] Comprehensive Information about the groundwater level according to DIN4022. Contains the groundwater observations during the drilling process until drillhole completion.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="GroundwaterLogType">
+		<xs:complexContent>
+			<xs:extension base="BhML:AbstractLocatedMemberType">
+<!--		
+			<xs:extension base="bml:AbstractMeasurementType">
+-->
+				<xs:sequence>
+					<xs:element name="entryDepth" nillable="true" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>[de] Bohrmeter, bei dem erstmals Grundwasser angetroffen wurde, relativ zum Bohransatzpunkt. Bohrmeter werden entlang des Bohrungspfades gemessen. [en] Distance from the starting point of the borehole to the point of first contact with groundwater. Distances are measured along the borehole path.</xs:documentation>
+						</xs:annotation>
+						<xs:complexType>
+							<xs:simpleContent>
+								<xs:extension base="gml:LengthType">
+									<xs:attribute name="nilReason" type="gml:NilReasonType"/>
+								</xs:extension>
+							</xs:simpleContent>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="entryDateTime" type="gml:TimePositionType" nillable="true" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>[de] Datum und Uhrzeit des Antreffens des Grundwassers. [en] Date and time of first encountering groundwater.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="balancedLevel" nillable="true" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>[de] Eingestellter Grundwasserstand im Bohrloch nach dem ersten Antreffen von Grundwasser. Der Ruhewasser­stand wird entlang des Bohrungs­pfades gemessen. [en] Balanced groundwater level in the borehole after the first contact with groundwater, measured after a rest period. Distances are measured along the borehole path.</xs:documentation>
+						</xs:annotation>
+						<xs:complexType>
+							<xs:simpleContent>
+								<xs:extension base="gml:LengthType">
+									<xs:attribute name="nilReason" type="gml:NilReasonType"/>
+								</xs:extension>
+							</xs:simpleContent>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="balancedDateTime" type="gml:TimePositionType" nillable="true" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>[de] Datum und Uhrzeit der Messung des Ruhewasserstands, gemessen nach einer Pause. [en] Date and Time of measure of balanced groundwater level in the borehole, measured after a rest period.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="endLevel" nillable="true" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>[de] Grundwasserstand im Bohrloch nach Beendigung der Bohrarbeiten. Der Grundwasserstand wird entlang des Bohrungspfades gemessen. [en] Groundwater level in the borehole after finishing the drilling process. Distances are measured along the borehole path.</xs:documentation>
+						</xs:annotation>
+						<xs:complexType>
+							<xs:simpleContent>
+								<xs:extension base="gml:LengthType">
+									<xs:attribute name="nilReason" type="gml:NilReasonType"/>
+								</xs:extension>
+							</xs:simpleContent>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="endDateTime" type="gml:TimePositionType" nillable="true" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>[de] Datum und Uhrzeit der Messung des Grundwasserstandes im Bohrloch nach Beendigung der Bohrarbeiten.[en] Date and time of measure of groundwater level in the borehole after finishing the drilling process.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- ############################################### BoreholeGeometryLog  equivalent to BoreholeSegment ######################################### -->
+	<xs:complexType name="GroundwaterPropertyType">
+		<xs:sequence>
+			<xs:element ref="bml:Groundwater"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>
