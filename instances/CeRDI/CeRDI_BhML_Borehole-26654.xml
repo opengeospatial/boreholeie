@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- This is an annotated example handcrafted by B. Simons 25/09/2019 based on NRCan, BRGM and GSGS examples at https://github.com/opengeospatial/boreholeie/tree/master/instances 
 It compares the Federation University (CeRDI) GroundWaterML2 WFS GML (GWML2) response with various BoreholeIE BhML encodings.
-The GWML2 WFS response is at: https://id.cerdi.edu.au/gwml2/feature/well/26654
+The GWML2 WFS response is at: https://id.cerdi.edu.au/gwml2/feature/well/26654?f=xml
 This example contains encodings for :
 	- a reference elevation (gwWellReferenceElevation)
 	- a Screen (gwml2wc:Screen);
