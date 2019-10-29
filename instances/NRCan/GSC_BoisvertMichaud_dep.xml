@@ -9,7 +9,7 @@ diagram on p.119
 Complex example made of units constructed from reused contacts and samples.
 Examples that use a Borehole derived from core BhML Borehole and adds a BoreholeDetails class adapted from GeoSciML
  -->
-<my:Borehole xmlns:gww="http://www.opengis.net/gwml-well/2.2" 
+<my:MyBorehole xmlns:gww="http://www.opengis.net/gwml-well/2.2" 
 xmlns:sam="http://www.opengis.net/sampling/2.0" 
 xmlns:spec="http://www.opengis.net/samplingSpecimen/2.0" 
 xmlns:swe="http://www.opengis.net/swe/2.0" 
@@ -20,6 +20,7 @@ xmlns:cit="http://standards.iso.org/iso/19115/-3/cit/1.0"
 xmlns:my="http://www.example.org/MyBorehole" 
 xmlns:gml="http://www.opengis.net/gml/3.2" 
 xmlns:gwml2="http://www.opengis.net/gwml-main/2.2" 
+xmlns:gco="http://standards.iso.org/iso/19115/-3/gco/1.0" 
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 xmlns:gsmlb="http://www.opengis.net/gsml/4.1/GeoSciML-Basic" 
 xsi:schemaLocation="http://www.example.org/MyBorehole MyBorehole.xsd http://www.opengis.net/gsml/4.1/GeoSciML-Basic http://schemas.opengis.net/gsml/4.1/geoSciMLBasic.xsd http://www.opengis.net/samplingSpecimen/2.0 http://schemas.opengis.net/samplingSpecimen/2.0/specimen.xsd http://www.opengis.net/gwml-main/2.2 http://schemas.opengis.net/gwml/2.2/gwml2-main.xsd">
@@ -1071,4 +1072,4 @@ xsi:schemaLocation="http://www.example.org/MyBorehole MyBorehole.xsd http://www.
    </my:dataCustodian>
   </my:BoreholeDetails>
  </my:indexData>
-</my:Borehole>
+</my:MyBorehole>

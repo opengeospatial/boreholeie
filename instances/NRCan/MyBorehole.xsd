@@ -1,26 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/MyBorehole"  xmlns:cit="http://standards.iso.org/iso/19115/-3/cit/1.0"  xmlns:gml="http://www.opengis.net/gml/3.2"  xmlns:BhML="https://raw.githubusercontent.com/opengeospatial/boreholeie/master/schemas"  xmlns:my="http://www.example.org/MyBorehole" elementFormDefault="qualified">
-
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:cit="http://standards.iso.org/iso/19115/-3/cit/1.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:BhML="https://raw.githubusercontent.com/opengeospatial/boreholeie/master/schemas" xmlns:my="http://www.example.org/MyBorehole" xmlns:ns1="http://www.opengis.net/gml/3.3/exr" targetNamespace="http://www.example.org/MyBorehole" elementFormDefault="qualified">
 	<annotation>
 		<documentation>
 			Example of a extending BhML core to add domain specific properties.  This example reuse a slightly modified DrillingDetails from GeoSciML 4.1
 		</documentation>
 	</annotation>
-<import namespace="https://raw.githubusercontent.com/opengeospatial/boreholeie/master/schemas" schemaLocation="https://raw.githubusercontent.com/opengeospatial/boreholeie/master/schemas/BhML-Core.xsd"/>
-<import namespace="http://www.opengis.net/gml/3.3/exr" schemaLocation="http://schemas.opengis.net/gml/3.3/extdEncRule.xsd"/>
-<import namespace="http://standards.iso.org/iso/19115/-3/cit/1.0" schemaLocation="http://standards.iso.org/iso/19115/-3/cit/1.0/cit.xsd"/>
-	
-<complexType name="MyBoreholeType">
+	<import namespace="https://raw.githubusercontent.com/opengeospatial/boreholeie/master/schemas" schemaLocation="https://raw.githubusercontent.com/opengeospatial/boreholeie/master/schemas/BhML-Core.xsd"/>
+	<import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+	<import namespace="http://standards.iso.org/iso/19115/-3/cit/1.0" schemaLocation="https://schemas.isotc211.org/19115/-3/cit/1.0/cit.xsd"/>
+	<complexType name="MyBoreholeType">
 		<complexContent>
 			<extension base="BhML:BoreholeType">
-			<sequence>
+				<sequence>
 					<element name="indexData" nillable="true" minOccurs="0">
 						<annotation>
 							<documentation>The property indexData:BoreholeDetails describes metadata about a borehole, such as the operator, the custodian, dates of drilling, etc.</documentation>
 						</annotation>
 						<complexType>
 							<sequence>
-								<element ref="gsmlbh:BoreholeDetails"/>
+								<element ref="my:BoreholeDetails"/>
 							</sequence>
 							<attribute name="nilReason" type="gml:NilReasonType"/>
 						</complexType>
@@ -29,14 +27,12 @@
 			</extension>
 		</complexContent>
 	</complexType>
-
 	<element name="MyBorehole" type="my:MyBoreholeType" substitutionGroup="BhML:Borehole">
 		<annotation>
 			<documentation>A Borehole is the generalized term for any narrow shaft drilled in the ground, either vertically, horizontally, or inclined.</documentation>
 		</annotation>
 	</element>
- 
- <complexType name="BoreholeDetailsType">
+	<complexType name="BoreholeDetailsType">
 		<sequence>
 			<element name="operator" type="cit:CI_Responsibility_PropertyType" nillable="true" minOccurs="0">
 				<annotation>
@@ -88,11 +84,9 @@
 			<element ref="my:BoreholeDetails"/>
 		</sequence>
 	</complexType>
-	
 	<element name="BoreholeDetails" type="my:BoreholeDetailsType" substitutionGroup="gml:AbstractObject">
 		<annotation>
 			<documentation>BoreholeDetails describes borehole-specific index data, often termed “header information”. It contains metadata about the parties involved in the drilling, the storage of drilled material and other information relevant to the borehole as a whole.  Properties that may vary along the borehole path are managed in DrillingDetails</documentation>
 		</annotation>
 	</element>
-	
 </schema>
