@@ -1,0 +1,1 @@
+Just rename GSC_test.epc into .zip and you can unzip its content
