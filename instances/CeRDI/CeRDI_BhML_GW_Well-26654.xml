@@ -5,15 +5,15 @@ The GWML2 WFS response is at: https://id.cerdi.edu.au/gwml2/feature/well/26654?f
 This example contains encodings for :
 	- a reference elevation (gwWellReferenceElevation)
 	- three different encodings of lithology (driller logs):
-		- defining the geological contact reference points (gsmlb:Contact) and specifying the lithologies (gsmlb:GeologicUnit) between them (only a few values included because of verbose encoding);
-		- describing a /gwml2w:GW_GeologyLogCoverage (only a few values included because of verbose encoding) and the location of its start and end 
+		- defining the geological contact reference points (gsmlb:Contact) and specifying the lithologies (gsmlb:GeologicUnit) between them (only a single lithology value is included because of verbose encoding);
+		- describing a /gwml2w:GW_GeologyLogCoverage (only a single lithology value is included because of verbose encoding) and the location of its start and end 
 		- a compact swe data array encoding (all 16 lithology values are included)
 -->
 <BhML:Borehole gml:id="feduni.well.26654" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sam="http://www.opengis.net/sampling/2.0" xmlns:sams="http://www.opengis.net/samplingSpatial/2.0" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gwml2w="http://www.opengis.net/gwml-well/2.2" xmlns:gwml2wc="http://www.opengis.net/gwml-wellconstruction/2.2" xmlns:gsmlb="http://www.opengis.net/gsml/4.1/GeoSciML-Basic" xmlns:om="http://www.opengis.net/om/2.0" xmlns:BhML="https://raw.githubusercontent.com/opengeospatial/boreholeie/master/schemas" xsi:schemaLocation="https://raw.githubusercontent.com/opengeospatial/boreholeie/master/schemas https://raw.githubusercontent.com/opengeospatial/boreholeie/master/schemas/BhML-Core.xsd
 http://www.opengis.net/gsml/4.1/GeoSciML-Basic http://schemas.opengis.net/gsml/4.1/geoSciMLBasic.xsd
 http://www.opengis.net/gwml-well/2.2 http://ngwd-bdnes.cits.nrcan.gc.ca/service/gwml/schemas/2.2/gwml2-well.xsd 
 http://www.opengis.net/samplingSpecimen/2.0 http://schemas.opengis.net/samplingSpecimen/2.0/specimen.xsd">
-	<gml:description>Complex example made of borehole construction elements (Screen and Filters) and lithology</gml:description>
+	<gml:description>Complex example made of borehole lithology</gml:description>
 	<gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616">https://id.cerdi.edu.au/gwml2/feature/well/26654</gml:identifier>
 	<gml:name codeSpace="http://www.vvg.org.au/">26654</gml:name>
 	<gml:name codeSpace="http://www.vvg.org.au/">14</gml:name>
@@ -104,14 +104,9 @@ No encoding was identified for the following GWML2 properties:
 			</BhML:collectionMember>
 		</BhML:BoreholeEventCollection>
 	</BhML:collection>
-	<!---
-|
-|  ########################## CONTACTS ################################
-|
--->
+	<!--- 1a. ########################## CONTACTS ################################-->
 	<!-- The 'CONTACTS' <BhML:collection> specifies the lithology boundaries (<gsmlb:Contact>) that occur in the first 5 metres of the borehole.
-The remainder (to 11.8m) have not been included. These <BhML:BoreholeEvent> are then used to specify the upper and lower depths of the lithology in the 'LITHOLOGY' section.
-This is a verbose encoding. An alternative compact encoding is shown further below  -->
+The remainder (to 11.8m) have not been included. These <BhML:BoreholeEvent> are then used to specify the upper and lower depths of the lithology in the 'LITHOLOGY' section.  -->
 	<BhML:collection>
 		<BhML:BoreholeEventCollection gml:id="feduni.well.26654.bhec3">
 			<gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616">https://id.cerdi.edu.au/gwml2/feature/borehole_event_collection/26654.bhec3</gml:identifier>
@@ -127,7 +122,7 @@ This is a verbose encoding. An alternative compact encoding is shown further bel
 						</BhML:BoreholeReferencingMethod>
 					</BhML:boreholeReferencingMethod>
 					<BhML:trajectoryReferent>
-						<!--The ground level Trajectory Referent is 0.25 m along (lower) than the Casing Pipe Trajectory Referent  (TR1)-->
+<!--The ground level Trajectory Referent is 0.25 m along (lower) than the Casing Pipe Trajectory Referent  (TR1)-->
 						<BhML:DistanceExpression>
 							<BhML:distanceAlong uom="http://qudt.org/vocab/unit/M">0.25</BhML:distanceAlong>
 							<BhML:trajectoryReferent xlink:href="#TR1">
@@ -139,6 +134,7 @@ This is a verbose encoding. An alternative compact encoding is shown further bel
 				</BhML:BoreholeLRS>
 			</BhML:collectionLRS>
 			<BhML:collectionMember>
+			<!--This is the first of the two contacts shown-->
 				<BhML:BoreholeEvent gml:id="be4">
 					<gml:name>lithology contacts</gml:name>
 					<BhML:locatedMember>
@@ -147,7 +143,7 @@ This is a verbose encoding. An alternative compact encoding is shown further bel
 							<gsmlb:classifier>
 								<swe:Category>
 									<swe:identifier>http://resource.geosciml.org/classifier/cgi/contacttype/unconformable_contact</swe:identifier>
-									<!-- The surface unconformable contact -->
+									<!-- The ground surface treated as an unconformable contact -->
 								</swe:Category>
 							</gsmlb:classifier>
 						</gsmlb:Contact>
@@ -156,7 +152,7 @@ This is a verbose encoding. An alternative compact encoding is shown further bel
 						<BhML:AtLocation>
 							<BhML:atPosition>
 								<BhML:MeasureOrEvent>
-									<!-- Assuming the ground surface is the ground level Trajectory Referent (TR2) rather than the Standing Pipe Trajectory Referent (TR1), which is 0.25m above the ground surface -->
+<!-- Assuming the ground surface is the lithology Trajectory Referent (TR2) rather than the Standing Pipe Trajectory Referent (TR1), which is 0.25m above the ground surface -->
 									<BhML:distanceAlong uom="http://qudt.org/vocab/unit/M">0.0</BhML:distanceAlong>
 								</BhML:MeasureOrEvent>
 							</BhML:atPosition>
@@ -165,6 +161,7 @@ This is a verbose encoding. An alternative compact encoding is shown further bel
 				</BhML:BoreholeEvent>
 			</BhML:collectionMember>
 			<BhML:collectionMember>
+			<!--This is the second of the two contacts-->
 				<BhML:BoreholeEvent gml:id="be5">
 					<BhML:locatedMember>
 						<gsmlb:Contact gml:id="c2">
@@ -186,153 +183,12 @@ This is a verbose encoding. An alternative compact encoding is shown further bel
 						</BhML:AtLocation>
 					</BhML:location>
 				</BhML:BoreholeEvent>
-			</BhML:collectionMember>
-			<BhML:collectionMember>
-				<BhML:BoreholeEvent gml:id="be6">
-					<BhML:locatedMember>
-						<gsmlb:Contact gml:id="c3">
-							<gml:name>Sedimentary contact</gml:name>
-							<gsmlb:classifier>
-								<swe:Category>
-									<swe:identifier>http://resource.geosciml.org/classifier/cgi/contacttype/depositional_contact</swe:identifier>
-								</swe:Category>
-							</gsmlb:classifier>
-						</gsmlb:Contact>
-					</BhML:locatedMember>
-					<BhML:location>
-						<BhML:AtLocation>
-							<BhML:atPosition>
-								<BhML:MeasureOrEvent>
-									<BhML:distanceAlong uom="http://qudt.org/vocab/unit/M">1.5</BhML:distanceAlong>
-								</BhML:MeasureOrEvent>
-							</BhML:atPosition>
-						</BhML:AtLocation>
-					</BhML:location>
-				</BhML:BoreholeEvent>
-			</BhML:collectionMember>
-			<BhML:collectionMember>
-				<BhML:BoreholeEvent gml:id="be7">
-					<BhML:locatedMember>
-						<gsmlb:Contact gml:id="c4">
-							<gml:name>Sedimentary contact</gml:name>
-							<gsmlb:classifier>
-								<swe:Category>
-									<swe:identifier>http://resource.geosciml.org/classifier/cgi/contacttype/depositional_contact</swe:identifier>
-								</swe:Category>
-							</gsmlb:classifier>
-						</gsmlb:Contact>
-					</BhML:locatedMember>
-					<BhML:location>
-						<BhML:AtLocation>
-							<BhML:atPosition>
-								<BhML:MeasureOrEvent>
-									<BhML:distanceAlong uom="http://qudt.org/vocab/unit/M">2.0</BhML:distanceAlong>
-								</BhML:MeasureOrEvent>
-							</BhML:atPosition>
-						</BhML:AtLocation>
-					</BhML:location>
-				</BhML:BoreholeEvent>
-			</BhML:collectionMember>
-			<BhML:collectionMember>
-				<BhML:BoreholeEvent gml:id="be8">
-					<BhML:locatedMember>
-						<gsmlb:Contact gml:id="c5">
-							<gml:name>Sedimentary contact</gml:name>
-							<gsmlb:classifier>
-								<swe:Category>
-									<swe:identifier>http://resource.geosciml.org/classifier/cgi/contacttype/depositional_contact</swe:identifier>
-								</swe:Category>
-							</gsmlb:classifier>
-						</gsmlb:Contact>
-					</BhML:locatedMember>
-					<BhML:location>
-						<BhML:AtLocation>
-							<BhML:atPosition>
-								<BhML:MeasureOrEvent>
-									<BhML:distanceAlong uom="http://qudt.org/vocab/unit/M">2.5</BhML:distanceAlong>
-								</BhML:MeasureOrEvent>
-							</BhML:atPosition>
-						</BhML:AtLocation>
-					</BhML:location>
-				</BhML:BoreholeEvent>
-			</BhML:collectionMember>
-			<BhML:collectionMember>
-				<BhML:BoreholeEvent gml:id="be9">
-					<BhML:locatedMember>
-						<gsmlb:Contact gml:id="c6">
-							<gml:name>Sedimentary contact</gml:name>
-							<gsmlb:classifier>
-								<swe:Category>
-									<swe:identifier>http://resource.geosciml.org/classifier/cgi/contacttype/depositional_contact</swe:identifier>
-								</swe:Category>
-							</gsmlb:classifier>
-						</gsmlb:Contact>
-					</BhML:locatedMember>
-					<BhML:location>
-						<BhML:AtLocation>
-							<BhML:atPosition>
-								<BhML:MeasureOrEvent>
-									<BhML:distanceAlong uom="http://qudt.org/vocab/unit/M">3.5</BhML:distanceAlong>
-								</BhML:MeasureOrEvent>
-							</BhML:atPosition>
-						</BhML:AtLocation>
-					</BhML:location>
-				</BhML:BoreholeEvent>
-			</BhML:collectionMember>
-			<BhML:collectionMember>
-				<BhML:BoreholeEvent gml:id="be10">
-					<BhML:locatedMember>
-						<gsmlb:Contact gml:id="c7">
-							<gml:name>Sedimentary contact</gml:name>
-							<gsmlb:classifier>
-								<swe:Category>
-									<swe:identifier>http://resource.geosciml.org/classifier/cgi/contacttype/depositional_contact</swe:identifier>
-								</swe:Category>
-							</gsmlb:classifier>
-						</gsmlb:Contact>
-					</BhML:locatedMember>
-					<BhML:location>
-						<BhML:AtLocation>
-							<BhML:atPosition>
-								<BhML:MeasureOrEvent>
-									<BhML:distanceAlong uom="http://qudt.org/vocab/unit/M">4.5</BhML:distanceAlong>
-								</BhML:MeasureOrEvent>
-							</BhML:atPosition>
-						</BhML:AtLocation>
-					</BhML:location>
-				</BhML:BoreholeEvent>
-			</BhML:collectionMember>
-			<BhML:collectionMember>
-				<BhML:BoreholeEvent gml:id="be11">
-					<BhML:locatedMember>
-						<gsmlb:Contact gml:id="c8">
-							<gml:name>Sedimentary contact</gml:name>
-							<gsmlb:classifier>
-								<swe:Category>
-									<swe:identifier>http://resource.geosciml.org/classifier/cgi/contacttype/depositional_contact</swe:identifier>
-								</swe:Category>
-							</gsmlb:classifier>
-						</gsmlb:Contact>
-					</BhML:locatedMember>
-					<BhML:location>
-						<BhML:AtLocation>
-							<BhML:atPosition>
-								<BhML:MeasureOrEvent>
-									<BhML:distanceAlong uom="http://qudt.org/vocab/unit/M">5.0</BhML:distanceAlong>
-								</BhML:MeasureOrEvent>
-							</BhML:atPosition>
-						</BhML:AtLocation>
-					</BhML:location>
-				</BhML:BoreholeEvent>
+				<!-- Each BhML:BoreholeEvent would be repeated for each lithology contact-->
 			</BhML:collectionMember>
 		</BhML:BoreholeEventCollection>
 	</BhML:collection>
-	<!---
-|
-|  ################################ LITHOLOGY RELATED TO CONTACTS ###############################
-|
--->
-	<!-- These are the first two lithologies. The remainder (1.5 - 11.5) are shown in the compact encoding -->
+	<!--- 1b. ################################ LITHOLOGY RELATED TO CONTACTS #############################-->
+	<!-- This is the first lithology. The remainder are not shown-->
 	<BhML:collection>
 		<BhML:BoreholeEventCollection gml:id="feduni.well.26654.bhec4">
 			<gml:identifier codeSpace="http://www.ietf.org/rfc/rfc2616">https://id.cerdi.edu.au/gwml2/feature/borehole_event_collection/26654.bhec4</gml:identifier>
@@ -372,6 +228,7 @@ This is a verbose encoding. An alternative compact encoding is shown further bel
 					</BhML:location>
 				</BhML:BoreholeEvent>
 			</BhML:collectionMember>
+			<!-- This set of tags would be repeated for all 16 lithologies, each pointing to a contact pair-->
 			<BhML:collectionMember>
 				<!--The second lithology -->
 				<BhML:BoreholeEvent gml:id="be13">
@@ -407,12 +264,8 @@ This is a verbose encoding. An alternative compact encoding is shown further bel
 			</BhML:collectionMember>
 		</BhML:BoreholeEventCollection>
 	</BhML:collection>
-	<!---
-|
-|  ################################ LITHOLOGY ENCODING USING GWML2 ###############################
-|
--->
-	<!-- In this encoding no reference is made between the depths associated with the lithologies. Instead the depths are encoded with the lithology log and BhML:location provides the upper and lower depths (equivalent to <gwml2w:startDepth> and <gwml2w:endDepth> -->
+	<!--- 2. ################################ LITHOLOGY ENCODING USING GWML2 ###############################-->
+	<!-- In this encoding no reference is made between the depths associated with the lithologies. Instead the depths are encoded with the lithology log and BhML:location provides the upper and lower depths of the total log (equivalent to <gwml2w:startDepth> and <gwml2w:endDepth> -->
 	<BhML:collection>
 		<BhML:BoreholeEventCollection>
 			<BhML:collectionLRS xlink:href="#LRS2"/>
@@ -445,6 +298,7 @@ This is a verbose encoding. An alternative compact encoding is shown further bel
 									</gwml2w:value>
 								</gwml2w:LogValue>
 							</gwml2w:element>
+							<!-- gwml2:element is repeated for each lithology -->
 							<gwml2w:element>
 								<gwml2w:LogValue>
 									<gwml2w:fromDepth>
@@ -840,11 +694,7 @@ This is a verbose encoding. An alternative compact encoding is shown further bel
 			</BhML:collectionMember>
 		</BhML:BoreholeEventCollection>
 	</BhML:collection>
-	<!---
-|
-|  ################################ LITHOLOGY ENCODING USING swe array ###############################
-|
--->
+	<!--- 3. ################################ LITHOLOGY ENCODING USING swe array ##############################-->
 	<!-- This encoding uses gwml2w:GW_GeologyLog and a swe data array -->
 	<BhML:collection>
 		<BhML:BoreholeEventCollection>
@@ -852,6 +702,7 @@ This is a verbose encoding. An alternative compact encoding is shown further bel
 			<BhML:collectionMember>
 				<BhML:BoreholeEvent>
 					<BhML:locatedMember>
+					<!--GW_GeologyLog provides the general O&M information about the Data Array -->
 						<gwml2w:GW_GeologyLog gml:id="feduni.well.26654.1">
 							<om:phenomenonTime>
 								<gml:TimeInstant>
@@ -904,6 +755,7 @@ This is a verbose encoding. An alternative compact encoding is shown further bel
 											<d:to>1.5</d:to>
 											<d:lithdesc>BLUE GRY FSC DAMP</d:lithdesc>
 										</d:LogValue>
+										<!-- LogValue is repeated for each depth range/lithology combination-->
 										<d:LogValue>
 											<d:from>1.5</d:from>
 											<d:to>2.0</d:to>
