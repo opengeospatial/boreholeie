@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSpy v2015 sp1 (x64) (http://www.altova.com) by BRGM (BRGM) -->
-<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:BhML="https://raw.githubusercontent.com/opengeospatial/boreholeie/master/schemas" xmlns:gml="http://www.opengis.net/gml/3.2" targetNamespace="https://raw.githubusercontent.com/opengeospatial/boreholeie/master/schemas" elementFormDefault="qualified" version="0.3">
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:BhML="https://raw.githubusercontent.com/opengeospatial/boreholeie/master/schemas" xmlns:gml="http://www.opengis.net/gml/3.2" targetNamespace="https://raw.githubusercontent.com/opengeospatial/boreholeie/master/schemas" elementFormDefault="qualified" version="0.3.1">
 	<import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
 	<annotation>
+		<documentation xml:lang="en">0.3 -> 0.3.1 ChangeLog: Definitions updated according to OGC 19-075.</documentation>
 		<documentation xml:lang="en">0.2.1 -> 0.3 ChangeLog: Definitions added or completed. AtLocation:atLocation becomes atPosition. the 3 codeLists based attributes (accuracyStatement, precisionStatement, unit) are now typed gml:ReferenceType.</documentation>
 	</annotation>
 	<!--XML Schema document created by ShapeChange - http://shapechange.net/-->
@@ -19,7 +20,10 @@ Note : this class is an adaptation of ISO 19148 LE_AtLocation.</documentation>
 				<sequence>
 					<element name="atPosition" type="BhML:MeasureOrEventPropertyType">
 						<annotation>
-							<documentation>Specifies the linearly referenced location of the BoreholeEvent at a single point along the borehole trajectory. The location is defined according to the borehole referencing method defined by the borehole linear referencing system.</documentation>
+							<documentation>Specifies a single position along the Borehole Trajectory.
+AtLocation describes a single location along the borehole trajectory. The location can either by a direct distance measurement or a reference to another feature located at the same location
+Note : this class is an adaptation of ISO 19148 LE_AtLocation.
+</documentation>
 						</annotation>
 					</element>
 				</sequence>
@@ -35,10 +39,10 @@ Note : this class is an adaptation of ISO 19148 LE_AtLocation.</documentation>
 	</complexType>
 	<element name="Borehole" type="BhML:BoreholeType" substitutionGroup="gml:AbstractFeature">
 		<annotation>
-			<documentation>Well, Borehole are considered as synonymous terms.
-A Borehole is the generalized term for any narrow shaft drilled in the ground.
-
-Note : INSPIRE definition slightly adapted</documentation>
+			<documentation>A Borehole is the generalized term for any narrow shaft drilled in the ground.
+			
+			Note : INSPIRE definition slightly adapted
+			</documentation>
 		</annotation>
 	</element>
 	<complexType name="BoreholeType">
@@ -70,9 +74,10 @@ Note : INSPIRE definition slightly adapted</documentation>
 	</complexType>
 	<element name="BoreholeEvent" type="BhML:BoreholeEventType" substitutionGroup="gml:AbstractFeature">
 		<annotation>
-			<documentation>A BoreholeEvent is any information observed along the trajectory of the bore. The concept of an Event is consistent with Observations and Measurements (ISO-19156) which models the act of observing and measuring as events, with methods, subjects and time. The current conceptual model is based on ISO-19148, which also defines its own concept of “Event”, as a description of something happening along a linear network. The common example is an incident on a road, at a certain distance from an intersection. The model also applies to borehole, replacing an incident which some element of interest for a geologist, an engineer, etc.. at some distance from the beginning of the bore. 
-Class used to specify the position (location) of an element (locatedMember) along the borehole trajectory.
-Such locatedMember can correspond to observations, construction elements, ...
+			<documentation>A Class used to specify the position (location) of an element (locatedMember) along the borehole trajectory. The locatedMember can correspond to observations, construction elements, etc.
+
+A BoreholeEvent corresponds to any valuable domain information observed along the trajectory of the bore. The concept of an Event is consistent with Observations and Measurements (ISO-19156) which models the act of observing and measuring as events, with methods, subjects and time. Communities using borehole rarely speak of observations along a borehole as “Event”, but the term “log” suggests a similar concept.
+ISO-19148 defines its own concept of “Event”, as a description of something happening along a linear network. The common example is an incident on a road, at a certain distance from an intersection. The model applies to borehole, replacing an incident which some element of interest for a geologist, an engineer, etc. at some distance from the beginning of the bore. 
 
 Note : this class is an adaptation of ISO 19148 LE_Event (see ISO 19148 Figure 44).</documentation>
 		</annotation>
@@ -121,7 +126,7 @@ Could be a Feature in the ISO191xx sense (OM_Observation, SF_Specimen, gwml2:con
 	</complexType>
 	<element name="BoreholeEventCollection" type="BhML:BoreholeEventCollectionType" substitutionGroup="gml:AbstractFeature">
 		<annotation>
-			<documentation>The BoreholeEventCollection is a collection of BoreholeEvent. Many collections can be managed within a single borehole and the grouping of BoreholeEvent in collection is arbitrary and varies from one community to another.  Geologists tend to group lithologic observations in one collection - called “logs” - and samples in another one. The current model does not impose any grouping by "Borehole sub-domains" (ex : Borehole Log, Borehole Construction, ...) or mixing several “sub-domains” all together.
+			<documentation>The BoreholeEventCollection is a collection of BoreholeEvents. Many collections can be managed within a single borehole. The grouping of BoreholeEvents in a collection is arbitrary and varies from one community to another.  Geologists tend to group lithologic observations in one collection - called “logs” - and samples in another one. The current model does not impose any grouping by (e.g. Borehole Log, Borehole Construction, etc.).
 Note : this class is an adaptation of ISO 19148 LE_Feature.</documentation>
 		</annotation>
 	</element>
@@ -155,11 +160,13 @@ Note : this class is an adaptation of ISO 19148 LE_Feature.</documentation>
 	</complexType>
 	<element name="BoreholeEventLocation" type="BhML:BoreholeEventLocationType" abstract="true" substitutionGroup="gml:AbstractFeature">
 		<annotation>
-			<documentation>A BoreholeEventLocation describes the position of a BoreholeEvent along a borehole as the distance from an origin location specified in the BoreholeLRS (Borehole Linear Reference System).  The location can either be a single location (a point) or an interval, composed of a “from” and a “to” location, defining the boundaries of the interval. BhML considers the borehole trajectory going “from” to origin “to” some distance along the trajectory; therefore “from” is by definition closer to the origin, and “to” further.
-Specifies the linearly referenced location of a linearly located borehole event along the borehole trajectory.
+			<documentation>Specifies the distance of an event along the borehole trajectory.
+
+A BoreholeEventLocation describes the position of a BoreholeEvent along a borehole as the distance from an origin location specified in the BoreholeLRS (Borehole Linear Reference System).  The location can either be a single location (a point) or an interval, composed of a “from” and a “to” location, defining the boundaries of the interval. BhML considers the borehole trajectory going “from” an origin “to” some distance along the trajectory; therefore “from” is by definition closer to the origin, and “to” further.
 
 Note : this class is an adaptation of ISO 19148 LE_EventLocation.
-This class is abstract.</documentation>
+This class is abstract.
+</documentation>
 		</annotation>
 	</element>
 	<complexType name="BoreholeEventLocationType" abstract="true">
@@ -178,7 +185,7 @@ This class is abstract.</documentation>
 	</complexType>
 	<element name="BoreholeLRS" type="BhML:BoreholeLRSType" substitutionGroup="gml:AbstractFeature">
 		<annotation>
-			<documentation>Describes the 'Linear Referencing System' that frames all the locations of the BoreholeEvent(s) composing a BoreholeEventCollection. This framing is defined with the linear element being measured, the method of measurement and the referent relative to which all locations are measured.
+			<documentation>Describes the 'Linear Referencing System' that frames all the locations of the BoreholeEvent(s) composing BoreholeEventCollections. This LRS consists of the linear element being measured, the method of measurement and the referent relative to which all locations are measured.
 Note : this class is an adaptation of ISO 19148 LR_PositionExpression (see ISO 19148 Figure 14).</documentation>
 		</annotation>
 	</element>
@@ -186,8 +193,16 @@ Note : this class is an adaptation of ISO 19148 LR_PositionExpression (see ISO 1
 		<complexContent>
 			<extension base="gml:AbstractFeatureType">
 				<sequence>
-					<element name="accuracyStatement" type="gml:ReferenceType"/>
-					<element name="precisionStatement" type="gml:ReferenceType"/>
+					<element name="accuracyStatement" type="gml:ReferenceType">
+						<annotation>
+							<documentation>Statement regarding the accuracy of the BoreholeLRS.</documentation>
+						</annotation>
+					</element>
+					<element name="precisionStatement" type="gml:ReferenceType">
+						<annotation>
+							<documentation>Statement regarding the precision of the BoreholeLRS.</documentation>
+						</annotation>
+					</element>
 					<element name="boreholeReferencingMethod" type="BhML:BoreholeReferencingMethodPropertyType">
 						<annotation>
 							<documentation>Referencing method used to measure the location of each BoreholeEvent.</documentation>
@@ -214,7 +229,7 @@ Note : this class is an adaptation of ISO 19148 LR_PositionExpression (see ISO 1
 	</complexType>
 	<element name="BoreholeReferencingMethod" type="BhML:BoreholeReferencingMethodType" substitutionGroup="gml:AbstractObject">
 		<annotation>
-			<documentation>Describes the manner in which measurements are made along the borehole trajectory. Commonly used referencing methods are expected to be described in methods registers.
+			<documentation>Describes the procedure used to establish the measured distance along the borehole trajectory. Commonly used referencing methods are expected to be described in appropriate methods registers.
 Note : this class is an adaptation of ISO 19148 LR_LinearReferencingMethod</documentation>
 		</annotation>
 	</element>
@@ -239,9 +254,9 @@ Note : this class is an adaptation of ISO 19148 LR_LinearReferencingMethod</docu
 	</complexType>
 	<element name="BoreholeTrajectory" type="BhML:BoreholeTrajectoryType" substitutionGroup="gml:AbstractObject">
 		<annotation>
-			<documentation>The underlying linear element (the trajectory) representing the center line of the drilled hole, along which the measures in the Borehole Linear Referencing System are made.
-It can express either the trajectory directly with a GM_Curve geometry or an existing feature having such shape. The latter can be used to reuse existing Borehole model, or any feature that displays a linear shape suitable to represent a borehole trajectory. For instance, alternate ways to describe the underground location of the trajectory, such as a collection of tropari measurements, or a spatio-temporal geometry describing the location and time of the drilling operation as the drill head progresses in the ground.
-This class is a Union.
+			<documentation>The linear geometry or feature (the trajectory) representing the centerline of the drilled hole, along which the distance is measured.  The measurement method  is described by the Borehole Linear Referencing System.
+It can express either the trajectory directly with a GM_Curve geometry or an existing feature having such shape. The latter reuse existing Borehole features, or any feature that displays a linear shape suitable to represent a borehole trajectory. For instance, alternative ways to describe the underground location of the trajectory, such as a collection of tropari measurements, or a spatio-temporal geometry describing the location and time of the drilling operation as the drill head progresses in the ground.
+Because the BoreholeTrajectory may be a geometry or a feature containing a geometry it is modelled as a Union class.
 Note : this class is an adaptation of ISO 19148 LR_LinearElement.</documentation>
 		</annotation>
 	</element>
@@ -266,7 +281,7 @@ Note : this class is an adaptation of ISO 19148 LR_LinearElement.</documentation
 	</complexType>
 	<element name="DistanceExpression" type="BhML:DistanceExpressionType" substitutionGroup="gml:AbstractGML">
 		<annotation>
-			<documentation>Specifies the linear referenced measure value of the referent along the BoreholeTrajectory. Indeed, not all referent are located at the "zero" of a Borehole Trajectory. The referent is a real world feature (natural or artificial) designated as the reference point. This feature can be designated at the origin of the reference system (the zero), or located itself using another reference system (such as sea level) and therefore be different from zero.
+			<documentation>Expresses a distance  along the BoreholeTrajectory. Not all referents are necessarily located at the origin of a Borehole Trajectory. The referent is a real world feature (natural or artificial) designated as the reference point. This feature can be designated at the origin of the reference system (the zero), or located itself using another reference system (such as an external height datum like ‘sea level’) and therefore be different from zero.
 Note : this class is adaptation of ISO 19148 LR_DistanceExpression</documentation>
 		</annotation>
 	</element>
@@ -338,9 +353,9 @@ Note : this class is an adaptation of adaptation of ISO 19148 LE_FromToLocation<
 	</complexType>
 	<element name="MeasureOrEvent" type="BhML:MeasureOrEventType" substitutionGroup="gml:AbstractObject">
 		<annotation>
-			<documentation>A position can be expressed using an explicit distance or be referring another located feature, hence expressing that a feature is semantically at the same location by design (and not by coincidence). There are several cases when this design is appropriate: Geologic units ( intervals) delimited by geologic contact, multiple interpretation using the same contacts, etc.).
-This class is a Union.
-Note : this class is an adaptation of ISO 19148 LE_AtLocation and LE_FromToLocation pattern in which the properties are not anymore LR_DistanceExpression but either distanceAlong or reference to a boreholeEvent.</documentation>
+			<documentation>A position can be expressed using an explicit distance or be referring to another located feature, hence expressing that a feature is semantically at the same location by design (and not by coincidence). There are several cases when this design is appropriate: For example, Geologic units (intervals down the borehole) delimited by geologic contacts, with multiple interpretations using the same contacts.
+Because MeasureOrEvent may be a geometry or another located feature it is modelled as a Union class.
+Note : this class is an adaptation of ISO 19148 LE_AtLocation and LE_FromToLocation pattern in which the properties are not LR_DistanceExpression but either distanceAlong or reference to a boreholeEvent.</documentation>
 		</annotation>
 	</element>
 	<complexType name="MeasureOrEventType">
@@ -362,8 +377,7 @@ Note : this class is an adaptation of ISO 19148 LE_AtLocation and LE_FromToLocat
 			</element>
 			<element name="distanceAlong" type="gml:MeasureType">
 				<annotation>
-					<documentation>Measure (usually a distance) between the BoreholeEvent and the TrajectoryReferent attached to the BoreholeEventCollection.
-The measure is done according to the BoreholeReferencingMethod to which the TrajectoryReferent is related.</documentation>
+					<documentation>Measure (usually a distance) done according to the BoreholeReferencingMethod.</documentation>
 				</annotation>
 			</element>
 		</choice>
@@ -392,8 +406,8 @@ The measure is done according to the BoreholeReferencingMethod to which the Traj
 	</simpleType>
 	<element name="TrajectoryReferent" type="BhML:TrajectoryReferentType" substitutionGroup="gml:AbstractFeature">
 		<annotation>
-			<documentation>The “zero” of the positioning within the BoreholeLRS. Every distanceAlong expressing the position of a given BoreholeEvent in a BoreholeEventCollection is relative to this referent.
-The referent can either be well known feature (ex : BoreholeCollar) described with the corresponding semantics or a position.
+			<documentation>The referent provides the link between the 3D world and the 1D view (the linear referencing system). Depending on the BoreholeReferencingMethod, it may be the “zero” of the positioning within the BoreholeLRS.
+The referent can either be a well-known feature (e.g. BoreholeCollar) described with the corresponding semantics or a coordinate (point geometry).
 Note : this class is an adaptation of LR_Referent</documentation>
 		</annotation>
 	</element>
