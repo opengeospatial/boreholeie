@@ -26,7 +26,7 @@ xsi:schemaLocation="https://raw.githubusercontent.com/opengeospatial/boreholeie/
       <BhML:BoreholeTrajectory>
        <BhML:curve>
         <gml:LineString gml:id="well.1" srsDimension="3" srsName="http://www.opengis.net/gml/srs/epsg.xml#9538">
-         <gml:posList>46.915658 1.68 20 46.915658 16 </gml:posList>
+         <gml:posList>46.915658 1.68 36 46.915658 16 </gml:posList>
         </gml:LineString>
        </BhML:curve>
       </BhML:BoreholeTrajectory>
@@ -39,7 +39,7 @@ xsi:schemaLocation="https://raw.githubusercontent.com/opengeospatial/boreholeie/
          <gml:name>Top of Casing</gml:name>
          <BhML:position>
           <gml:Point srsDimension="3" srsName="http://www.opengis.net/gml/srs/epsg.xml#9538">
-           <gml:pos>46.915658 1.68 20</gml:pos>
+           <gml:pos>46.915658 1.68 36</gml:pos>
           </gml:Point>
          </BhML:position>
         </BhML:TrajectoryReferent>
@@ -102,7 +102,7 @@ xsi:schemaLocation="https://raw.githubusercontent.com/opengeospatial/boreholeie/
       <BhML:AtLocation>
        <BhML:atPosition>
         <BhML:MeasureOrEvent>
-         <BhML:distanceAlong uom="http://qudt.org/vocab/unit/M">43.0</BhML:distanceAlong>
+         <BhML:distanceAlong uom="http://qudt.org/vocab/unit/M">20.0</BhML:distanceAlong>
         </BhML:MeasureOrEvent>
        </BhML:atPosition>
       </BhML:AtLocation>
