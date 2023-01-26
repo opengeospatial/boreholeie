@@ -25,8 +25,8 @@ xsi:schemaLocation="https://raw.githubusercontent.com/opengeospatial/boreholeie/
      <BhML:linearElement>
       <BhML:BoreholeTrajectory>
        <BhML:curve>
-        <gml:LineString gml:id="well.1" srsDimension="2" srsName="http://www.opengis.net/gml/srs/epsg.xml#4326">
-         <gml:posList>47 -70 201 47.593616 47 -70 258</gml:posList>
+        <gml:LineString gml:id="well.1" srsDimension="3" srsName="http://www.opengis.net/gml/srs/epsg.xml#9538">
+         <gml:posList>46.915658 1.68 20 46.915658 16 </gml:posList>
         </gml:LineString>
        </BhML:curve>
       </BhML:BoreholeTrajectory>
@@ -38,8 +38,8 @@ xsi:schemaLocation="https://raw.githubusercontent.com/opengeospatial/boreholeie/
         <BhML:TrajectoryReferent gml:id="TR1">
          <gml:name>Top of Casing</gml:name>
          <BhML:position>
-          <gml:Point srsDimension="3" srsName="urn:ogc:def:crs:EPSG::4326">
-           <gml:pos>47 -70 201</gml:pos>
+          <gml:Point srsDimension="3" srsName="http://www.opengis.net/gml/srs/epsg.xml#9538">
+           <gml:pos>46.915658 1.68 20</gml:pos>
           </gml:Point>
          </BhML:position>
         </BhML:TrajectoryReferent>
